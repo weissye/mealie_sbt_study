@@ -1,0 +1,2 @@
+
+.study-transfer/objects/*.blob filter=lfs diff=lfs merge=lfs -text

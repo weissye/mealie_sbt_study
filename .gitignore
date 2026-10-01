@@ -1,4 +1,4 @@
-﻿# Local credentials
+# Local credentials
 .env
 .env.*
 !.env.example
@@ -50,3 +50,4 @@ products/
 *.db-shm
 *.sqlite
 *.sqlite3
+.study-transfer/local/
