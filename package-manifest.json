@@ -1,0 +1,114 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4753,
+      "sha256": "78279144b505c2413a204af590a0d77ed3ef1ca028ab8d012358ae678c27b7c7"
+    },
+    {
+      "path": "VALIDATION.json",
+      "bytes": 700,
+      "sha256": "c5c77d0a87bc913d7fab0d5c7c8ed8f36b831237627016c044857c4b5941b893"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "bytes": 5782,
+      "sha256": "640722b0224b49e7296962ac5c9047d410448fcebefc933959f91211c3d0e41e"
+    },
+    {
+      "path": "maps/reference/01_data_map.json",
+      "bytes": 315304,
+      "sha256": "f4866ebb5c4fe35f20d043166246fb780da14af455eb6fea7332460cd3571eef"
+    },
+    {
+      "path": "maps/reference/02_operation_map.json",
+      "bytes": 639896,
+      "sha256": "49c0ac0b98668e564891c6e728f58d24112056f156c2b4b323f65071543205ff"
+    },
+    {
+      "path": "maps/reference/03_relationship_map.json",
+      "bytes": 55804,
+      "sha256": "e28138eb369aa5de52bbda9397673a077f106f32881271e11e98bc65eb12d431"
+    },
+    {
+      "path": "maps/reference/cycle_report.json",
+      "bytes": 1635,
+      "sha256": "5a540052256abde0fe58a2266f1e43eb3ef7cb6b5be2fa1188e31567e4fd66e2"
+    },
+    {
+      "path": "maps/reference/manifest.json",
+      "bytes": 1478,
+      "sha256": "7d915378826addddd17eb76311247c0dd2af4fe18007615601744e7ea7e4bedb"
+    },
+    {
+      "path": "maps/reference/resource_catalog.json",
+      "bytes": 131183,
+      "sha256": "daea839315fb9876c829a1e3eec18cb762cfac96e7d8afdfc49fcf53fbe12b1f"
+    },
+    {
+      "path": "model/mealie-openapi.reference.json",
+      "bytes": 378236,
+      "sha256": "1c657f37344a3fc045dde235bc32a99ae335ecdb8b8f3484c93caa99d21ff5ac"
+    },
+    {
+      "path": "plans/pilot-topology.json",
+      "bytes": 1953,
+      "sha256": "2381df08735c99a764e6a7b88126e3127100f5c3ef25df354a2de714e1b1c423"
+    },
+    {
+      "path": "profiles/mealie.json",
+      "bytes": 40562,
+      "sha256": "2aabfc0cc02543e08ac4254131c85e87b09a540fa2c38cb0039dbdac38ab61ea"
+    },
+    {
+      "path": "provengo-project-placeholder.txt",
+      "bytes": 344,
+      "sha256": "d1beca607a2c39dc803d940f201aa46624cac4bec282c6578104b80b985f7cca"
+    },
+    {
+      "path": "scripts/Accept-Mealie-Local.ps1",
+      "bytes": 1894,
+      "sha256": "a3ae81631c0f4d4530b9d281e4b7cc6d7a25ca84e6ac03466f54450f5c5e6065"
+    },
+    {
+      "path": "scripts/Audit-Study-Storage.ps1",
+      "bytes": 3438,
+      "sha256": "d5a20cfa1139ea6b5438e89c22cd3f5025fdea55cea5facbc2d4b560dc52f016"
+    },
+    {
+      "path": "scripts/Compile-Mealie-Maps.ps1",
+      "bytes": 704,
+      "sha256": "13d7b28574c4650516971e153f606d88acbb81f4fca9685efd8c5b9fb5cb55f0"
+    },
+    {
+      "path": "scripts/Initialize-Mealie-Study.ps1",
+      "bytes": 1182,
+      "sha256": "eec8ca1daefee910d4f62018e8b9326bb39a86712359286e67c9f263fcbb23fc"
+    },
+    {
+      "path": "scripts/Resolve-Python.ps1",
+      "bytes": 653,
+      "sha256": "061dc0b4e2ef6e79d29bed3ffa2ccbe057c7b505d51e80daa2969db11fdd7774"
+    },
+    {
+      "path": "scripts/Start-Mealie-Local.ps1",
+      "bytes": 2752,
+      "sha256": "308a05771cf4c910b9cb516a94046e38ebe75b88721bf78e3b385d6eb8ccfff3"
+    },
+    {
+      "path": "src/compile_maps.py",
+      "bytes": 13637,
+      "sha256": "402d85f594f4af21ba252aa2d7d14b8be80ebb2c2b70436faa455c3da452a930"
+    },
+    {
+      "path": "src/rtv.py",
+      "bytes": 5509,
+      "sha256": "4947bcbf315be56c4f0e0d5af92bf35ecae25f9f4d7340380efb462dad288951"
+    },
+    {
+      "path": "tests/test_acceptance.py",
+      "bytes": 5118,
+      "sha256": "3da542882057a6d8163cb3326599d50cf95f1148286107f923c359de917b2d30"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "stage": "M4_OFFLINE_MODEL_READY",
+  "stories": [
+    {
+      "name": "recipe_description",
+      "steps": [
+        {
+          "id": "A1",
+          "action": "capture_recipe_description",
+          "method": "GET",
+          "path": "/api/recipes/{slug}",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        },
+        {
+          "id": "A2",
+          "action": "set_owned_recipe_description",
+          "method": "PUT",
+          "path": "/api/recipes/{slug}",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "action": "verify_updated_recipe_description",
+          "method": "GET",
+          "path": "/api/recipes/{slug}",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        },
+        {
+          "id": "A4",
+          "action": "restore_captured_recipe_description",
+          "method": "PUT",
+          "path": "/api/recipes/{slug}",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "list_recipe_membership",
+      "steps": [
+        {
+          "id": "B1",
+          "action": "unlink_owned_recipe_from_list",
+          "method": "POST",
+          "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            },
+            "recipe_id": {
+              "symbol": "R2",
+              "type": "Recipe.id"
+            }
+          }
+        },
+        {
+          "id": "B2",
+          "action": "verify_recipe_link_absent",
+          "method": "GET",
+          "path": "/api/households/shopping/lists/{item_id}",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            }
+          }
+        },
+        {
+          "id": "B3",
+          "action": "relink_owned_recipe_to_list",
+          "method": "POST",
+          "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            },
+            "recipe_id": {
+              "symbol": "R2",
+              "type": "Recipe.id"
+            }
+          }
+        },
+        {
+          "id": "B4",
+          "action": "verify_recipe_link_present",
+          "method": "GET",
+          "path": "/api/households/shopping/lists/{item_id}",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "expected_symbolic_order_count": 70,
+  "transport": "none; symbolic sampling only",
+  "runtime_executor_implemented": false,
+  "standalone_mutation_stories_accepted": false,
+  "reset_replay_validated": false,
+  "actual_parallel_http": false,
+  "next_gate": "Accept each functional story and its restoration against the owned fixture before live composition."
+}

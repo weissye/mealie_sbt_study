@@ -1,0 +1,11 @@
+﻿{
+    "result":  "M4_OFFLINE_SAMPLE_FILE_READY_FOR_REVIEW",
+    "project":  "C:\\work\\temp\\mealie_sbt_study\\provengo\\offline-55b63b9d0d42",
+    "expectedSymbolicOrders":  70,
+    "provengoPath":  "C:\\Program Files\\Provengo\\Provengo Cli\\provengo.bat",
+    "samplingRequested":  true,
+    "sampleFileCreated":  true,
+    "sampleExitCode":  0,
+    "sampledCoverageVerified":  false,
+    "serverRequestsSent":  0
+}

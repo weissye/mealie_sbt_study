@@ -1,0 +1,41 @@
+test_compilation_is_deterministic_and_analysis_stays_opt_in (test_compiled_relationships.CompiledRelationshipTests.test_compilation_is_deterministic_and_analysis_stays_opt_in) ... ok
+test_compiled_plan_has_real_actors_and_interfaces (test_compiled_relationships.CompiledRelationshipTests.test_compiled_plan_has_real_actors_and_interfaces) ... ok
+test_generated_schedules_and_fail_closed_callbacks_in_node_stub (test_compiled_relationships.CompiledRelationshipTests.test_generated_schedules_and_fail_closed_callbacks_in_node_stub) ... ok
+test_native_sample_audit_rejects_truncation_and_wrong_order (test_compiled_relationships.CompiledRelationshipTests.test_native_sample_audit_rejects_truncation_and_wrong_order) ... ok
+test_other_contract_is_rejected (test_compiled_relationships.CompiledRelationshipTests.test_other_contract_is_rejected) ... ok
+test_receipt_must_be_observed_and_is_not_inferred_from_exit_code (test_compiled_relationships.CompiledRelationshipTests.test_receipt_must_be_observed_and_is_not_inferred_from_exit_code) ... ok
+test_required_execution_cycle_is_rejected (test_compiled_relationships.CompiledRelationshipTests.test_required_execution_cycle_is_rejected) ... ok
+test_undocumented_create_identity_requires_external_evidence (test_compiled_relationships.CompiledRelationshipTests.test_undocumented_create_identity_requires_external_evidence) ... ok
+test_equal_schema_and_uuid_shape_do_not_merge_unrelated_families (test_resource_maps.ResourceMapTests.test_equal_schema_and_uuid_shape_do_not_merge_unrelated_families) ... ok
+test_explicit_nested_food_unit_and_recipe_links_are_retained (test_resource_maps.ResourceMapTests.test_explicit_nested_food_unit_and_recipe_links_are_retained) ... ok
+test_foreign_path_identity_is_not_mistaken_for_owning_resource (test_resource_maps.ResourceMapTests.test_foreign_path_identity_is_not_mistaken_for_owning_resource) ... ok
+test_name_based_links_remain_candidates_and_analysis_is_deterministic (test_resource_maps.ResourceMapTests.test_name_based_links_remain_candidates_and_analysis_is_deterministic) ... ok
+test_optional_analysis_keeps_generated_files_and_reports_identical (test_resource_maps.ResourceMapTests.test_optional_analysis_keeps_generated_files_and_reports_identical) ... ok
+test_recursive_views_are_not_flattened_into_creation_prerequisites (test_resource_maps.ResourceMapTests.test_recursive_views_are_not_flattened_into_creation_prerequisites) ... ok
+test_relationship_plan_reuses_instances_and_defers_recursive_links (test_resource_maps.ResourceMapTests.test_relationship_plan_reuses_instances_and_defers_recursive_links) ... ok
+test_tag_lookup_aliases_share_type_and_keep_wire_identity_views (test_resource_maps.ResourceMapTests.test_tag_lookup_aliases_share_type_and_keep_wire_identity_views) ... ok
+test_all_existing_cli_profiles_preserve_plan_reports_and_model_source (test_transport_separation.SeparationRegressionTests.test_all_existing_cli_profiles_preserve_plan_reports_and_model_source) ... ok
+test_configured_request_rules_and_auth_environment_remain_compatible (test_transport_separation.SeparationRegressionTests.test_configured_request_rules_and_auth_environment_remain_compatible) ... ok
+test_multiple_logical_workers_and_instances_preserve_binding_and_cleanup (test_transport_separation.SeparationRegressionTests.test_multiple_logical_workers_and_instances_preserve_binding_and_cleanup) ... ok
+test_prefix_observation_is_lifted_without_changing_caller_state (test_transport_separation.SeparationRegressionTests.test_prefix_observation_is_lifted_without_changing_caller_state) ... ok
+test_repeated_generation_is_deterministic (test_transport_separation.SeparationRegressionTests.test_repeated_generation_is_deterministic) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 60.411s
+
+OK
+
+Final additive checks after last change:
+test_compilation_is_deterministic_and_analysis_stays_opt_in (test_compiled_relationships.CompiledRelationshipTests.test_compilation_is_deterministic_and_analysis_stays_opt_in) ... ok
+test_compiled_plan_has_real_actors_and_interfaces (test_compiled_relationships.CompiledRelationshipTests.test_compiled_plan_has_real_actors_and_interfaces) ... ok
+test_generated_schedules_and_fail_closed_callbacks_in_node_stub (test_compiled_relationships.CompiledRelationshipTests.test_generated_schedules_and_fail_closed_callbacks_in_node_stub) ... ok
+test_native_sample_audit_rejects_truncation_and_wrong_order (test_compiled_relationships.CompiledRelationshipTests.test_native_sample_audit_rejects_truncation_and_wrong_order) ... ok
+test_other_contract_is_rejected (test_compiled_relationships.CompiledRelationshipTests.test_other_contract_is_rejected) ... ok
+test_receipt_must_be_observed_and_is_not_inferred_from_exit_code (test_compiled_relationships.CompiledRelationshipTests.test_receipt_must_be_observed_and_is_not_inferred_from_exit_code) ... ok
+test_required_execution_cycle_is_rejected (test_compiled_relationships.CompiledRelationshipTests.test_required_execution_cycle_is_rejected) ... ok
+test_undocumented_create_identity_requires_external_evidence (test_compiled_relationships.CompiledRelationshipTests.test_undocumented_create_identity_requires_external_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.420s
+
+OK

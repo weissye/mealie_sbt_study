@@ -1,0 +1,19 @@
+{
+  "stage": "M2_STATIC_READY",
+  "python_tests": {
+    "passed": 13,
+    "failed": 0,
+    "command": "python3 -m unittest discover -s mealie_sbt_study/tests -v"
+  },
+  "powershell_runtime_tested": false,
+  "local_server_started": false,
+  "live_contract_accepted": false,
+  "provengo_execution_implemented": false,
+  "windows_storage_scanned": false,
+  "files_deleted": 0,
+  "limitations": [
+    "The Windows scripts were not executed in this Linux environment.",
+    "The reference contract is nightly; local contract and profile acceptance are required before live execution.",
+    "RTV is a prototype; automatic response extraction, payload generation, fixtures and replay remain pending."
+  ]
+}

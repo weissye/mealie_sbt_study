@@ -1,0 +1,35 @@
+{
+  "stage": "M3_LIVE_FIXTURE_REVIEW_PASS_M4_OFFLINE_MODEL_READY",
+  "source_archive_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858",
+  "live_fixture_instance_count": 41,
+  "live_fixture_observed_link_count": 71,
+  "fixture_http_status_counts": {
+    "201": 14,
+    "200": 26
+  },
+  "shopping_lists": [
+    {
+      "symbol": "L1",
+      "item_count": 3,
+      "list_recipe_links": 2,
+      "item_recipe_links": 4,
+      "shared_food_quantity": 2
+    },
+    {
+      "symbol": "L2",
+      "item_count": 3,
+      "list_recipe_links": 2,
+      "item_recipe_links": 4,
+      "shared_food_quantity": 2
+    }
+  ],
+  "python_unit_tests_passed": 28,
+  "actual_uploaded_fixture_model_generation": "PASS",
+  "generated_js_syntax_check": "PASS",
+  "expected_symbolic_orders": 70,
+  "provengo_runtime_tested_here": false,
+  "powershell_new_wrapper_runtime_tested_here": false,
+  "standalone_mutation_stories_accepted": false,
+  "reset_replay_validated": false,
+  "live_interleavings_executed": false
+}

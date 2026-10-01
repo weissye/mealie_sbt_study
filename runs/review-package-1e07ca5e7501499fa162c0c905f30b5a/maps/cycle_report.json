@@ -1,0 +1,59 @@
+{
+  "components": [
+    {
+      "members": [
+        "Recipe-Input",
+        "RecipeIngredient-Input"
+      ],
+      "kind": "SCHEMA_RECURSION",
+      "fields": [
+        {
+          "schema": "Recipe-Input",
+          "field": "recipeIngredient",
+          "contract_allowed_breaks": [
+            "omit optional property",
+            "use empty array where allowed"
+          ]
+        },
+        {
+          "schema": "RecipeIngredient-Input",
+          "field": "referencedRecipe",
+          "contract_allowed_breaks": [
+            "omit optional property",
+            "choose explicit null alternative"
+          ]
+        }
+      ],
+      "execution_policy": "create bounded objects first; attach by a documented operation only",
+      "mandatory_creation_cycle_proven": false
+    },
+    {
+      "members": [
+        "Recipe-Output",
+        "RecipeIngredient-Output"
+      ],
+      "kind": "SCHEMA_RECURSION",
+      "fields": [
+        {
+          "schema": "Recipe-Output",
+          "field": "recipeIngredient",
+          "contract_allowed_breaks": [
+            "omit optional property",
+            "use empty array where allowed"
+          ]
+        },
+        {
+          "schema": "RecipeIngredient-Output",
+          "field": "referencedRecipe",
+          "contract_allowed_breaks": [
+            "omit optional property",
+            "choose explicit null alternative"
+          ]
+        }
+      ],
+      "execution_policy": "create bounded objects first; attach by a documented operation only",
+      "mandatory_creation_cycle_proven": false
+    }
+  ],
+  "creation_dependencies": "not yet empirically confirmed"
+}

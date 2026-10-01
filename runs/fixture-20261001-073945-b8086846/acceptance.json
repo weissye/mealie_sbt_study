@@ -1,0 +1,66 @@
+{
+  "result": "M3_SERIAL_FIXTURE_ACCEPTANCE_PASS",
+  "run_id": "fixture-20261001-073945-b8086846",
+  "reset_replay_validated": false,
+  "provengo_executed": false,
+  "cycle_links_tested": false,
+  "ready_for_schedule_exploration": false,
+  "prefix": "mealie-sbt-ed84ed18cfd4",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "base_url": "http://127.0.0.1:9925",
+  "fixtures_validated": true,
+  "base_resource_count": 14,
+  "instance_count": 41,
+  "observed_link_count": 71,
+  "fixture_request_count": 40,
+  "shared_resource_topology": {
+    "recipe_foods": {
+      "R1": [
+        "F1",
+        "F3"
+      ],
+      "R2": [
+        "F1",
+        "F2"
+      ],
+      "R3": [
+        "F2",
+        "F3"
+      ]
+    },
+    "recipe_categories": {
+      "R1": [
+        "C1"
+      ],
+      "R2": [
+        "C1",
+        "C2"
+      ],
+      "R3": [
+        "C2"
+      ]
+    },
+    "recipe_tags": {
+      "R1": [
+        "T1",
+        "T2"
+      ],
+      "R2": [
+        "T2"
+      ],
+      "R3": [
+        "T1"
+      ]
+    },
+    "shopping_list_recipes": {
+      "L1": [
+        "R1",
+        "R2"
+      ],
+      "L2": [
+        "R2",
+        "R3"
+      ]
+    }
+  }
+}

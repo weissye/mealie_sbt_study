@@ -1,0 +1,21 @@
+{
+  "stage": "M2_STATIC_READY",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "info": {
+    "title": "Mealie",
+    "description": "\nMealie is a web application for managing your recipes, meal plans, and shopping lists. This is the Restful\nAPI interactive documentation that can be used to explore the API. If you're justing getting started with\nthe API and want to get started quickly, you can use the\n[API Usage | Mealie Docs](https://docs.mealie.io/documentation/getting-started/api-usage/)\nas a reference for how to get started.\n\n\nIf you have any questions or comments about mealie, please use the discord server to talk to the developers or other\ncommunity members. If you'd like to file an issue, please use the\n[GitHub Issue Tracker | Mealie](https://github.com/mealie-recipes/mealie/issues/new/choose)\n\n\n## Helpful Links\n- [Home Page](https://mealie.io)\n- [Documentation](https://docs.mealie.io)\n- [Discord](https://discord.gg/QuStdQGSGK)\n- [Demo](https://demo.mealie.io)\n",
+    "version": "v3.28.0"
+  },
+  "schema_count": 255,
+  "schema_reference_count": 202,
+  "operation_count": 266,
+  "family_count": 51,
+  "schema_alias_count": 131,
+  "identity_slot_count": 240,
+  "relationship_template_count": 106,
+  "schema_cycle_count": 2,
+  "live_server_validated": false,
+  "runtime_bindings_observed": 0,
+  "validation_scope": "Static contract analysis only. Server reachability is recorded separately in the acceptance report.",
+  "warning": "Static maps compiled for the supplied contract version. Authentication, fixtures and runtime bindings are not validated by this compiler."
+}

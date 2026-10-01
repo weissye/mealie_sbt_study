@@ -1,0 +1,13 @@
+{
+  "stage": "M1_IDENTITY_SCRIPT_READY",
+  "python_tests_passed": 20,
+  "python_tests_failed": 0,
+  "local_exported_maps_recompiled_and_equal": 6,
+  "pinned_contract_version": "v3.28.0",
+  "server_reachability_confirmed_by_uploaded_evidence": true,
+  "authentication_live_tested": false,
+  "fixture_creation_implemented": false,
+  "provengo_execution_implemented": false,
+  "powershell_runtime_tested_for_new_wrapper": false,
+  "scope": "Login once, read three self endpoints, check identity coherence and seed typed RTV. No fixture mutation or reset."
+}

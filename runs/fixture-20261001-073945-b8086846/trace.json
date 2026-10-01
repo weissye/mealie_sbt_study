@@ -1,0 +1,3473 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/foods",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-F1"
+    },
+    "status": 201,
+    "response": {
+      "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+      "name": "mealie-sbt-ed84ed18cfd4-F1",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:55.933668Z",
+      "updatedAt": "2026-10-01T07:39:55.933672Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/4e6b38df-dda7-4c57-a3d3-652836951a23",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+      "name": "mealie-sbt-ed84ed18cfd4-F1",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:55.933668Z",
+      "updatedAt": "2026-10-01T07:39:55.933672Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/foods",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-F2"
+    },
+    "status": 201,
+    "response": {
+      "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+      "name": "mealie-sbt-ed84ed18cfd4-F2",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:56.113173Z",
+      "updatedAt": "2026-10-01T07:39:56.113176Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/cd97f719-4ce8-4d11-9a23-c6cead235571",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+      "name": "mealie-sbt-ed84ed18cfd4-F2",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:56.113173Z",
+      "updatedAt": "2026-10-01T07:39:56.113176Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/foods",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-F3"
+    },
+    "status": 201,
+    "response": {
+      "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+      "name": "mealie-sbt-ed84ed18cfd4-F3",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:56.276897Z",
+      "updatedAt": "2026-10-01T07:39:56.276899Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+      "name": "mealie-sbt-ed84ed18cfd4-F3",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "labelId": null,
+      "aliases": [],
+      "substitutions": [],
+      "householdsWithIngredientFood": [],
+      "label": null,
+      "createdAt": "2026-10-01T07:39:56.276897Z",
+      "updatedAt": "2026-10-01T07:39:56.276899Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/units",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-Q1"
+    },
+    "status": 201,
+    "response": {
+      "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+      "name": "mealie-sbt-ed84ed18cfd4-Q1",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "fraction": true,
+      "abbreviation": "",
+      "pluralAbbreviation": "",
+      "useAbbreviation": false,
+      "aliases": [],
+      "standardQuantity": null,
+      "standardUnit": null,
+      "createdAt": "2026-10-01T07:39:56.452373Z",
+      "updatedAt": "2026-10-01T07:39:56.452377Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/units/997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+      "name": "mealie-sbt-ed84ed18cfd4-Q1",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "fraction": true,
+      "abbreviation": "",
+      "pluralAbbreviation": "",
+      "useAbbreviation": false,
+      "aliases": [],
+      "standardQuantity": null,
+      "standardUnit": null,
+      "createdAt": "2026-10-01T07:39:56.452373Z",
+      "updatedAt": "2026-10-01T07:39:56.452377Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/units",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-Q2"
+    },
+    "status": 201,
+    "response": {
+      "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+      "name": "mealie-sbt-ed84ed18cfd4-Q2",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "fraction": true,
+      "abbreviation": "",
+      "pluralAbbreviation": "",
+      "useAbbreviation": false,
+      "aliases": [],
+      "standardQuantity": null,
+      "standardUnit": null,
+      "createdAt": "2026-10-01T07:39:56.566066Z",
+      "updatedAt": "2026-10-01T07:39:56.566069Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/units/9b7235a6-69a5-4598-962d-88744301cb21",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+      "name": "mealie-sbt-ed84ed18cfd4-Q2",
+      "pluralName": null,
+      "description": "",
+      "extras": {},
+      "fraction": true,
+      "abbreviation": "",
+      "pluralAbbreviation": "",
+      "useAbbreviation": false,
+      "aliases": [],
+      "standardQuantity": null,
+      "standardUnit": null,
+      "createdAt": "2026-10-01T07:39:56.566066Z",
+      "updatedAt": "2026-10-01T07:39:56.566069Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/organizers/categories",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-C1"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-C1",
+      "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "slug": "mealie-sbt-ed84ed18cfd4-c1",
+      "recipeCount": 0
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/organizers/categories/3ee75716-fa69-49a6-972d-c46c38993e3e",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+      "slug": "mealie-sbt-ed84ed18cfd4-c1",
+      "name": "mealie-sbt-ed84ed18cfd4-C1"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/organizers/categories",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-C2"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-C2",
+      "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "slug": "mealie-sbt-ed84ed18cfd4-c2",
+      "recipeCount": 0
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/organizers/categories/82283c62-ecf9-471b-941c-c24d0788750d",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+      "slug": "mealie-sbt-ed84ed18cfd4-c2",
+      "name": "mealie-sbt-ed84ed18cfd4-C2"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/organizers/tags",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-T1"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-T1",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+      "slug": "mealie-sbt-ed84ed18cfd4-t1",
+      "recipeCount": 0
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/organizers/tags/4c878aef-6017-4f76-9283-ad177b725b5e",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-T1",
+      "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "slug": "mealie-sbt-ed84ed18cfd4-t1",
+      "recipes": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/organizers/tags",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-T2"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-T2",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+      "slug": "mealie-sbt-ed84ed18cfd4-t2",
+      "recipeCount": 0
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/organizers/tags/d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-T2",
+      "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "slug": "mealie-sbt-ed84ed18cfd4-t2",
+      "recipes": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/recipes",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-R1"
+    },
+    "status": 201,
+    "response": "mealie-sbt-ed84ed18cfd4-r1"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r1",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R1",
+      "slug": "mealie-sbt-ed84ed18cfd4-r1",
+      "image": null,
+      "recipeServings": 0.0,
+      "recipeYieldQuantity": 0.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "",
+      "recipeCategory": [],
+      "tags": [],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": "2026-10-01",
+      "dateUpdated": "2026-10-01T07:39:57.375190Z",
+      "createdAt": "2026-10-01T07:39:57.379987Z",
+      "updatedAt": "2026-10-01T07:39:57.379988Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 0.0,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "1 Cup Flour",
+          "display": "1 Cup Flour",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "37bcce50-15a0-4e33-a4aa-00599162e402"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "id": "1a7c0713-5854-4f57-baed-d8028c087094",
+          "title": "",
+          "summary": "",
+          "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+          "ingredientReferences": [],
+          "noteReferences": []
+        }
+      ],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": false,
+        "showNutrition": false,
+        "showAssets": false,
+        "landscapeView": false,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r1",
+    "request": {
+      "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+      "name": "mealie-sbt-ed84ed18cfd4-R1",
+      "slug": "mealie-sbt-ed84ed18cfd4-r1",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeServings": 2,
+      "recipeYieldQuantity": 2,
+      "recipeIngredient": [
+        {
+          "quantity": 1,
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1"
+          },
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1"
+          },
+          "referenceId": "bf5e1567-2f90-47eb-afd2-46bcec3923e2",
+          "note": ""
+        },
+        {
+          "quantity": 1,
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3"
+          },
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2"
+          },
+          "referenceId": "87fd7b7a-c746-4bbc-830a-24136c57d2bb",
+          "note": ""
+        }
+      ],
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1"
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1"
+        },
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2"
+        }
+      ],
+      "description": "Serial functional fixture; shared resources."
+    },
+    "status": 200,
+    "response": {
+      "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R1",
+      "slug": "mealie-sbt-ed84ed18cfd4-r1",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1",
+          "recipeCount": 0
+        },
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:39:58.122452Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:39:58.134116Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "bf5e1567-2f90-47eb-afd2-46bcec3923e2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "87fd7b7a-c746-4bbc-830a-24136c57d2bb"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r1",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R1",
+      "slug": "mealie-sbt-ed84ed18cfd4-r1",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1",
+          "recipeCount": 0
+        },
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:39:58.122452Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:39:58.134116Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "bf5e1567-2f90-47eb-afd2-46bcec3923e2"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "87fd7b7a-c746-4bbc-830a-24136c57d2bb"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/recipes",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-R2"
+    },
+    "status": 201,
+    "response": "mealie-sbt-ed84ed18cfd4-r2"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R2",
+      "slug": "mealie-sbt-ed84ed18cfd4-r2",
+      "image": null,
+      "recipeServings": 0.0,
+      "recipeYieldQuantity": 0.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "",
+      "recipeCategory": [],
+      "tags": [],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": "2026-10-01",
+      "dateUpdated": "2026-10-01T07:39:58.688417Z",
+      "createdAt": "2026-10-01T07:39:58.689550Z",
+      "updatedAt": "2026-10-01T07:39:58.689551Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 0.0,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "1 Cup Flour",
+          "display": "1 Cup Flour",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "b72a378b-e9db-4f73-9522-249eb74b9c35"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "id": "983ce64f-8949-4a69-b1a3-711e80256962",
+          "title": "",
+          "summary": "",
+          "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+          "ingredientReferences": [],
+          "noteReferences": []
+        }
+      ],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": false,
+        "showNutrition": false,
+        "showAssets": false,
+        "landscapeView": false,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "request": {
+      "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+      "name": "mealie-sbt-ed84ed18cfd4-R2",
+      "slug": "mealie-sbt-ed84ed18cfd4-r2",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeServings": 2,
+      "recipeYieldQuantity": 2,
+      "recipeIngredient": [
+        {
+          "quantity": 1,
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1"
+          },
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1"
+          },
+          "referenceId": "686156bf-0d79-40b3-b76c-ed97560051a7",
+          "note": ""
+        },
+        {
+          "quantity": 1,
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2"
+          },
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1"
+          },
+          "referenceId": "02c2958b-7864-4752-9be5-ac2f225806e0",
+          "note": ""
+        }
+      ],
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1"
+        },
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2"
+        }
+      ],
+      "tags": [
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2"
+        }
+      ],
+      "description": "Serial functional fixture; shared resources."
+    },
+    "status": 200,
+    "response": {
+      "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R2",
+      "slug": "mealie-sbt-ed84ed18cfd4-r2",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1",
+          "recipeCount": 0
+        },
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:39:59.386000Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:39:59.394881Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "686156bf-0d79-40b3-b76c-ed97560051a7"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "02c2958b-7864-4752-9be5-ac2f225806e0"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R2",
+      "slug": "mealie-sbt-ed84ed18cfd4-r2",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C1",
+          "slug": "mealie-sbt-ed84ed18cfd4-c1",
+          "recipeCount": 0
+        },
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T2",
+          "slug": "mealie-sbt-ed84ed18cfd4-t2",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:39:59.386000Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:39:59.394881Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "686156bf-0d79-40b3-b76c-ed97560051a7"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "02c2958b-7864-4752-9be5-ac2f225806e0"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/recipes",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-R3"
+    },
+    "status": 201,
+    "response": "mealie-sbt-ed84ed18cfd4-r3"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r3",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R3",
+      "slug": "mealie-sbt-ed84ed18cfd4-r3",
+      "image": null,
+      "recipeServings": 0.0,
+      "recipeYieldQuantity": 0.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "",
+      "recipeCategory": [],
+      "tags": [],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": "2026-10-01",
+      "dateUpdated": "2026-10-01T07:39:59.866478Z",
+      "createdAt": "2026-10-01T07:39:59.867484Z",
+      "updatedAt": "2026-10-01T07:39:59.867485Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 0.0,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "1 Cup Flour",
+          "display": "1 Cup Flour",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "2ff2291f-f42e-4f03-8618-7a7ae9fe2e42"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "id": "1db16ad0-598b-4f9a-992a-9d3e2d594548",
+          "title": "",
+          "summary": "",
+          "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+          "ingredientReferences": [],
+          "noteReferences": []
+        }
+      ],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": false,
+        "showNutrition": false,
+        "showAssets": false,
+        "landscapeView": false,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r3",
+    "request": {
+      "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+      "name": "mealie-sbt-ed84ed18cfd4-R3",
+      "slug": "mealie-sbt-ed84ed18cfd4-r3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeServings": 2,
+      "recipeYieldQuantity": 2,
+      "recipeIngredient": [
+        {
+          "quantity": 1,
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2"
+          },
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1"
+          },
+          "referenceId": "f44a4b8c-ba2e-4dbf-9f8b-29693751f615",
+          "note": ""
+        },
+        {
+          "quantity": 1,
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3"
+          },
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2"
+          },
+          "referenceId": "ef162c85-a494-4f79-8486-07cff29cb214",
+          "note": ""
+        }
+      ],
+      "recipeCategory": [
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2"
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1"
+        }
+      ],
+      "description": "Serial functional fixture; shared resources."
+    },
+    "status": 200,
+    "response": {
+      "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R3",
+      "slug": "mealie-sbt-ed84ed18cfd4-r3",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:40:00.460339Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:40:00.466718Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "f44a4b8c-ba2e-4dbf-9f8b-29693751f615"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "ef162c85-a494-4f79-8486-07cff29cb214"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r3",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "name": "mealie-sbt-ed84ed18cfd4-R3",
+      "slug": "mealie-sbt-ed84ed18cfd4-r3",
+      "image": null,
+      "recipeServings": 2.0,
+      "recipeYieldQuantity": 2.0,
+      "recipeYield": null,
+      "totalTime": null,
+      "prepTime": null,
+      "cookTime": null,
+      "performTime": null,
+      "description": "Serial functional fixture; shared resources.",
+      "recipeCategory": [
+        {
+          "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-C2",
+          "slug": "mealie-sbt-ed84ed18cfd4-c2",
+          "recipeCount": 0
+        }
+      ],
+      "tags": [
+        {
+          "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "name": "mealie-sbt-ed84ed18cfd4-T1",
+          "slug": "mealie-sbt-ed84ed18cfd4-t1",
+          "recipeCount": 0
+        }
+      ],
+      "tools": [],
+      "rating": null,
+      "orgURL": null,
+      "dateAdded": null,
+      "dateUpdated": "2026-10-01T07:40:00.460339Z",
+      "createdAt": null,
+      "updatedAt": "2026-10-01T07:40:00.466718Z",
+      "lastMade": null,
+      "recipeIngredient": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "f44a4b8c-ba2e-4dbf-9f8b-29693751f615"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "title": null,
+          "originalText": null,
+          "substitutions": [],
+          "referenceId": "ef162c85-a494-4f79-8486-07cff29cb214"
+        }
+      ],
+      "recipeInstructions": [],
+      "nutrition": {
+        "calories": null,
+        "carbohydrateContent": null,
+        "cholesterolContent": null,
+        "fatContent": null,
+        "fiberContent": null,
+        "proteinContent": null,
+        "saturatedFatContent": null,
+        "sodiumContent": null,
+        "sugarContent": null,
+        "transFatContent": null,
+        "unsaturatedFatContent": null
+      },
+      "settings": {
+        "public": true,
+        "showNutrition": true,
+        "showAssets": true,
+        "landscapeView": true,
+        "disableComments": false,
+        "locked": false
+      },
+      "assets": [],
+      "notes": [],
+      "extras": {},
+      "comments": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:00.944446Z",
+      "updatedAt": "2026-10-01T07:40:00.944449Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "dd325322-fb27-4884-8be0-1f4377990fe1",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:00.944446Z",
+      "updatedAt": "2026-10-01T07:40:00.944449Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "dd325322-fb27-4884-8be0-1f4377990fe1",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1/recipe/1b0b733e-2115-48d1-8576-354c23f0bb80",
+    "request": {
+      "recipeIncrementQuantity": 1
+    },
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:00.944446Z",
+      "updatedAt": "2026-10-01T07:40:01.603976Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "dd325322-fb27-4884-8be0-1f4377990fe1",
+      "listItems": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "5e7b1d63-d212-409a-bf30-abbb8ca06f19",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "7f799341-98e3-40ed-a0b3-39859a1e6cc3",
+              "shoppingListItemId": "5e7b1d63-d212-409a-bf30-abbb8ca06f19"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560510Z",
+          "updatedAt": "2026-10-01T07:40:01.560515Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+          "labelId": null,
+          "unitId": "9b7235a6-69a5-4598-962d-88744301cb21",
+          "extras": {},
+          "id": "c139b17f-df0b-41a1-be07-7d980cebd192",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "45934d14-d647-4ba8-a0b8-1fcb33102c80",
+              "shoppingListItemId": "c139b17f-df0b-41a1-be07-7d980cebd192"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560519Z",
+          "updatedAt": "2026-10-01T07:40:01.560520Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2bb6414a-85f9-4377-afe9-00db89563703",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R1",
+            "slug": "mealie-sbt-ed84ed18cfd4-r1",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T1",
+                "slug": "mealie-sbt-ed84ed18cfd4-t1",
+                "recipeCount": 0
+              },
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:58.122452Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:58.134116Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1/recipe/7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+    "request": {
+      "recipeIncrementQuantity": 1
+    },
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:00.944446Z",
+      "updatedAt": "2026-10-01T07:40:02.495279Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "dd325322-fb27-4884-8be0-1f4377990fe1",
+      "listItems": [
+        {
+          "quantity": 2.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "2 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "5e7b1d63-d212-409a-bf30-abbb8ca06f19",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "0ffbc037-9a54-48a6-9ad3-c2bf50c38133",
+              "shoppingListItemId": "5e7b1d63-d212-409a-bf30-abbb8ca06f19"
+            },
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "4db9d3ea-290e-45b6-b6ad-67c382e590e2",
+              "shoppingListItemId": "5e7b1d63-d212-409a-bf30-abbb8ca06f19"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560510Z",
+          "updatedAt": "2026-10-01T07:40:02.484536Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+          "labelId": null,
+          "unitId": "9b7235a6-69a5-4598-962d-88744301cb21",
+          "extras": {},
+          "id": "c139b17f-df0b-41a1-be07-7d980cebd192",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "45934d14-d647-4ba8-a0b8-1fcb33102c80",
+              "shoppingListItemId": "c139b17f-df0b-41a1-be07-7d980cebd192"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560519Z",
+          "updatedAt": "2026-10-01T07:40:01.560520Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "997afea5-e917-4eb9-b59a-df4e3861de2f",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "e8540fc6-1c90-45b1-9de5-2e6754b8f63e",
+              "shoppingListItemId": "997afea5-e917-4eb9-b59a-df4e3861de2f"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:02.321621Z",
+          "updatedAt": "2026-10-01T07:40:02.321629Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2bb6414a-85f9-4377-afe9-00db89563703",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R1",
+            "slug": "mealie-sbt-ed84ed18cfd4-r1",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T1",
+                "slug": "mealie-sbt-ed84ed18cfd4-t1",
+                "recipeCount": 0
+              },
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:58.122452Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:58.134116Z",
+            "lastMade": null
+          }
+        },
+        {
+          "id": "37c3273a-dc81-4215-85c6-166001f99110",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R2",
+            "slug": "mealie-sbt-ed84ed18cfd4-r2",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              },
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:59.386000Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:59.394881Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L1",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:00.944446Z",
+      "updatedAt": "2026-10-01T07:40:02.495279Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "dd325322-fb27-4884-8be0-1f4377990fe1",
+      "listItems": [
+        {
+          "quantity": 2.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "2 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "5e7b1d63-d212-409a-bf30-abbb8ca06f19",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "0ffbc037-9a54-48a6-9ad3-c2bf50c38133",
+              "shoppingListItemId": "5e7b1d63-d212-409a-bf30-abbb8ca06f19"
+            },
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "4db9d3ea-290e-45b6-b6ad-67c382e590e2",
+              "shoppingListItemId": "5e7b1d63-d212-409a-bf30-abbb8ca06f19"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560510Z",
+          "updatedAt": "2026-10-01T07:40:02.484536Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+          "labelId": null,
+          "unitId": "9b7235a6-69a5-4598-962d-88744301cb21",
+          "extras": {},
+          "id": "c139b17f-df0b-41a1-be07-7d980cebd192",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "45934d14-d647-4ba8-a0b8-1fcb33102c80",
+              "shoppingListItemId": "c139b17f-df0b-41a1-be07-7d980cebd192"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:01.560519Z",
+          "updatedAt": "2026-10-01T07:40:01.560520Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "checked": false,
+          "position": 0,
+          "foodId": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "997afea5-e917-4eb9-b59a-df4e3861de2f",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "e8540fc6-1c90-45b1-9de5-2e6754b8f63e",
+              "shoppingListItemId": "997afea5-e917-4eb9-b59a-df4e3861de2f"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:02.321621Z",
+          "updatedAt": "2026-10-01T07:40:02.321629Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2bb6414a-85f9-4377-afe9-00db89563703",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "recipeId": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "1b0b733e-2115-48d1-8576-354c23f0bb80",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R1",
+            "slug": "mealie-sbt-ed84ed18cfd4-r1",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T1",
+                "slug": "mealie-sbt-ed84ed18cfd4-t1",
+                "recipeCount": 0
+              },
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:58.122452Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:58.134116Z",
+            "lastMade": null
+          }
+        },
+        {
+          "id": "37c3273a-dc81-4215-85c6-166001f99110",
+          "shoppingListId": "dd325322-fb27-4884-8be0-1f4377990fe1",
+          "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R2",
+            "slug": "mealie-sbt-ed84ed18cfd4-r2",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              },
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:59.386000Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:59.394881Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists",
+    "request": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2"
+    },
+    "status": 201,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:02.939257Z",
+      "updatedAt": "2026-10-01T07:40:02.939259Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:02.939257Z",
+      "updatedAt": "2026-10-01T07:40:02.939259Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists/db5823f5-b1cc-4d7d-bf41-1d26b926b836/recipe/7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+    "request": {
+      "recipeIncrementQuantity": 1
+    },
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:02.939257Z",
+      "updatedAt": "2026-10-01T07:40:03.482933Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+      "listItems": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "b38291ab-3861-434a-9965-38932f8931f2",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "fd71930f-8af2-4931-be1f-a849b3be5fdc",
+              "shoppingListItemId": "b38291ab-3861-434a-9965-38932f8931f2"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448311Z",
+          "updatedAt": "2026-10-01T07:40:03.448319Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "e21f4d56-d387-45d8-b6ad-20f282450a5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "75bd703b-3857-4e39-a433-e091926e29ed",
+              "shoppingListItemId": "e21f4d56-d387-45d8-b6ad-20f282450a5e"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448329Z",
+          "updatedAt": "2026-10-01T07:40:03.448331Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2aa85bce-2b73-4918-a12c-b5a70be5d83b",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R2",
+            "slug": "mealie-sbt-ed84ed18cfd4-r2",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              },
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:59.386000Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:59.394881Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists/db5823f5-b1cc-4d7d-bf41-1d26b926b836/recipe/747bc41b-77a1-46ee-9dc1-96c4061b460e",
+    "request": {
+      "recipeIncrementQuantity": 1
+    },
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:02.939257Z",
+      "updatedAt": "2026-10-01T07:40:04.265217Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+      "listItems": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "b38291ab-3861-434a-9965-38932f8931f2",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "fd71930f-8af2-4931-be1f-a849b3be5fdc",
+              "shoppingListItemId": "b38291ab-3861-434a-9965-38932f8931f2"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448311Z",
+          "updatedAt": "2026-10-01T07:40:03.448319Z"
+        },
+        {
+          "quantity": 2.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "2 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "e21f4d56-d387-45d8-b6ad-20f282450a5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "647c8381-9ea2-4440-bf8e-324f6dada514",
+              "shoppingListItemId": "e21f4d56-d387-45d8-b6ad-20f282450a5e"
+            },
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "6e1cfaeb-9750-4a9a-b0d2-79b5862c7749",
+              "shoppingListItemId": "e21f4d56-d387-45d8-b6ad-20f282450a5e"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448329Z",
+          "updatedAt": "2026-10-01T07:40:04.253870Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+          "labelId": null,
+          "unitId": "9b7235a6-69a5-4598-962d-88744301cb21",
+          "extras": {},
+          "id": "749f5b9f-d1d0-4613-bd45-cf5c800430a0",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "26429350-3307-4d0e-adad-a8e3e070e61f",
+              "shoppingListItemId": "749f5b9f-d1d0-4613-bd45-cf5c800430a0"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:04.126284Z",
+          "updatedAt": "2026-10-01T07:40:04.126290Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2aa85bce-2b73-4918-a12c-b5a70be5d83b",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R2",
+            "slug": "mealie-sbt-ed84ed18cfd4-r2",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              },
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:59.386000Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:59.394881Z",
+            "lastMade": null
+          }
+        },
+        {
+          "id": "ad1448df-0e45-4671-9210-6760372af878",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R3",
+            "slug": "mealie-sbt-ed84ed18cfd4-r3",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T1",
+                "slug": "mealie-sbt-ed84ed18cfd4-t1",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:40:00.460339Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:40:00.466718Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+    "request": null,
+    "status": 200,
+    "response": {
+      "name": "mealie-sbt-ed84ed18cfd4-L2",
+      "extras": {},
+      "createdAt": "2026-10-01T07:40:02.939257Z",
+      "updatedAt": "2026-10-01T07:40:04.265217Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+      "listItems": [
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+            "name": "mealie-sbt-ed84ed18cfd4-F1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:55.933668Z",
+            "updatedAt": "2026-10-01T07:39:55.933672Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F1",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "4e6b38df-dda7-4c57-a3d3-652836951a23",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "b38291ab-3861-434a-9965-38932f8931f2",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "fd71930f-8af2-4931-be1f-a849b3be5fdc",
+              "shoppingListItemId": "b38291ab-3861-434a-9965-38932f8931f2"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448311Z",
+          "updatedAt": "2026-10-01T07:40:03.448319Z"
+        },
+        {
+          "quantity": 2.0,
+          "unit": {
+            "id": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+            "name": "mealie-sbt-ed84ed18cfd4-Q1",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.452373Z",
+            "updatedAt": "2026-10-01T07:39:56.452377Z"
+          },
+          "food": {
+            "id": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+            "name": "mealie-sbt-ed84ed18cfd4-F2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.113173Z",
+            "updatedAt": "2026-10-01T07:39:56.113176Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "2 mealie-sbt-ed84ed18cfd4-Q1 mealie-sbt-ed84ed18cfd4-F2",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "cd97f719-4ce8-4d11-9a23-c6cead235571",
+          "labelId": null,
+          "unitId": "997b43a6-91e5-4a37-9bb8-b385b56c64d8",
+          "extras": {},
+          "id": "e21f4d56-d387-45d8-b6ad-20f282450a5e",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "647c8381-9ea2-4440-bf8e-324f6dada514",
+              "shoppingListItemId": "e21f4d56-d387-45d8-b6ad-20f282450a5e"
+            },
+            {
+              "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "6e1cfaeb-9750-4a9a-b0d2-79b5862c7749",
+              "shoppingListItemId": "e21f4d56-d387-45d8-b6ad-20f282450a5e"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:03.448329Z",
+          "updatedAt": "2026-10-01T07:40:04.253870Z"
+        },
+        {
+          "quantity": 1.0,
+          "unit": {
+            "id": "9b7235a6-69a5-4598-962d-88744301cb21",
+            "name": "mealie-sbt-ed84ed18cfd4-Q2",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-01T07:39:56.566066Z",
+            "updatedAt": "2026-10-01T07:39:56.566069Z"
+          },
+          "food": {
+            "id": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+            "name": "mealie-sbt-ed84ed18cfd4-F3",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-01T07:39:56.276897Z",
+            "updatedAt": "2026-10-01T07:39:56.276899Z"
+          },
+          "referencedRecipe": null,
+          "note": "",
+          "display": "1 mealie-sbt-ed84ed18cfd4-Q2 mealie-sbt-ed84ed18cfd4-F3",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "checked": false,
+          "position": 0,
+          "foodId": "83dfdd2f-b6b9-46f5-8ad8-b3b27e21b919",
+          "labelId": null,
+          "unitId": "9b7235a6-69a5-4598-962d-88744301cb21",
+          "extras": {},
+          "id": "749f5b9f-d1d0-4613-bd45-cf5c800430a0",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [
+            {
+              "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+              "recipeQuantity": 1.0,
+              "recipeScale": 1.0,
+              "recipeNote": null,
+              "id": "26429350-3307-4d0e-adad-a8e3e070e61f",
+              "shoppingListItemId": "749f5b9f-d1d0-4613-bd45-cf5c800430a0"
+            }
+          ],
+          "createdAt": "2026-10-01T07:40:04.126284Z",
+          "updatedAt": "2026-10-01T07:40:04.126290Z"
+        }
+      ],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [
+        {
+          "id": "2aa85bce-2b73-4918-a12c-b5a70be5d83b",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "recipeId": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R2",
+            "slug": "mealie-sbt-ed84ed18cfd4-r2",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "3ee75716-fa69-49a6-972d-c46c38993e3e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C1",
+                "slug": "mealie-sbt-ed84ed18cfd4-c1",
+                "recipeCount": 0
+              },
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "d3fec054-3ac1-4900-888e-c5fbe6b0364a",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T2",
+                "slug": "mealie-sbt-ed84ed18cfd4-t2",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:39:59.386000Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:39:59.394881Z",
+            "lastMade": null
+          }
+        },
+        {
+          "id": "ad1448df-0e45-4671-9210-6760372af878",
+          "shoppingListId": "db5823f5-b1cc-4d7d-bf41-1d26b926b836",
+          "recipeId": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+          "recipeQuantity": 1.0,
+          "recipe": {
+            "id": "747bc41b-77a1-46ee-9dc1-96c4061b460e",
+            "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+            "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+            "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+            "name": "mealie-sbt-ed84ed18cfd4-R3",
+            "slug": "mealie-sbt-ed84ed18cfd4-r3",
+            "image": null,
+            "recipeServings": 2.0,
+            "recipeYieldQuantity": 2.0,
+            "recipeYield": null,
+            "totalTime": null,
+            "prepTime": null,
+            "cookTime": null,
+            "performTime": null,
+            "description": "Serial functional fixture; shared resources.",
+            "recipeCategory": [
+              {
+                "id": "82283c62-ecf9-471b-941c-c24d0788750d",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-C2",
+                "slug": "mealie-sbt-ed84ed18cfd4-c2",
+                "recipeCount": 0
+              }
+            ],
+            "tags": [
+              {
+                "id": "4c878aef-6017-4f76-9283-ad177b725b5e",
+                "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+                "name": "mealie-sbt-ed84ed18cfd4-T1",
+                "slug": "mealie-sbt-ed84ed18cfd4-t1",
+                "recipeCount": 0
+              }
+            ],
+            "tools": [],
+            "rating": null,
+            "orgURL": null,
+            "dateAdded": null,
+            "dateUpdated": "2026-10-01T07:40:00.460339Z",
+            "createdAt": null,
+            "updatedAt": "2026-10-01T07:40:00.466718Z",
+            "lastMade": null
+          }
+        }
+      ],
+      "labelSettings": []
+    }
+  }
+]

@@ -1,0 +1,1746 @@
+{
+  "profile_version": "0.1",
+  "system": "Mealie",
+  "provenance": "Explicit reviewed API domain families; not database foreign-key assertions",
+  "families": {
+    "Group": {
+      "schemas": [
+        "GroupInDB",
+        "GroupSummary",
+        "GroupAdminUpdate",
+        "GroupBase"
+      ],
+      "section": "Identity"
+    },
+    "Household": {
+      "schemas": [
+        "HouseholdInDB",
+        "HouseholdSummary",
+        "HouseholdCreate",
+        "UpdateHouseholdAdmin",
+        "GroupHouseholdSummary",
+        "CookbookHousehold"
+      ],
+      "section": "Identity"
+    },
+    "User": {
+      "schemas": [
+        "UserOut",
+        "UserSummary",
+        "UserIn",
+        "UserBase-Output",
+        "HouseholdUserSummary",
+        "mealie__schema__recipe__recipe_comments__UserBase",
+        "mealie__schema__user__user__UserBase"
+      ],
+      "section": "Identity"
+    },
+    "Group preferences": {
+      "schemas": [
+        "ReadGroupPreferences",
+        "UpdateGroupPreferences"
+      ],
+      "section": "Identity"
+    },
+    "Household preferences": {
+      "schemas": [
+        "ReadHouseholdPreferences",
+        "UpdateHouseholdPreferences"
+      ],
+      "section": "Identity"
+    },
+    "API token": {
+      "schemas": [
+        "LongLiveTokenOut",
+        "LongLiveTokenIn",
+        "LongLiveTokenCreateResponse"
+      ],
+      "section": "Identity"
+    },
+    "Invitation token": {
+      "schemas": [
+        "ReadInviteToken",
+        "CreateInviteToken"
+      ],
+      "section": "Identity"
+    },
+    "Recipe": {
+      "schemas": [
+        "Recipe-Output",
+        "Recipe-Input",
+        "RecipeIn",
+        "RecipeSummary",
+        "CreateRecipe"
+      ],
+      "section": "Recipes"
+    },
+    "Category": {
+      "schemas": [
+        "CategoryOut",
+        "CategoryBase",
+        "CategoryIn",
+        "CategorySummary",
+        "RecipeCategory",
+        "RecipeCategoryIn"
+      ],
+      "section": "Recipes"
+    },
+    "Tag": {
+      "schemas": [
+        "TagOut",
+        "TagBase",
+        "TagIn",
+        "RecipeTag",
+        "RecipeTagIn",
+        "RecipeTagResponse"
+      ],
+      "section": "Recipes"
+    },
+    "Tool": {
+      "schemas": [
+        "RecipeToolOut",
+        "RecipeTool",
+        "RecipeToolIn",
+        "RecipeToolCreate",
+        "RecipeToolResponse"
+      ],
+      "section": "Recipes"
+    },
+    "Recipe ingredient": {
+      "schemas": [
+        "RecipeIngredient-Output",
+        "RecipeIngredient-Input"
+      ],
+      "section": "Ingredients"
+    },
+    "Food": {
+      "schemas": [
+        "IngredientFood-Output",
+        "IngredientFood-Input",
+        "IngredientFoodSummary",
+        "CreateIngredientFood"
+      ],
+      "section": "Ingredients"
+    },
+    "Unit": {
+      "schemas": [
+        "IngredientUnit-Output",
+        "IngredientUnit-Input",
+        "CreateIngredientUnit"
+      ],
+      "section": "Ingredients"
+    },
+    "Food alias": {
+      "schemas": [
+        "IngredientFoodAlias",
+        "CreateIngredientFoodAlias"
+      ],
+      "section": "Ingredients"
+    },
+    "Unit alias": {
+      "schemas": [
+        "IngredientUnitAlias",
+        "CreateIngredientUnitAlias"
+      ],
+      "section": "Ingredients"
+    },
+    "Food substitution": {
+      "schemas": [
+        "IngredientFoodSubstitution",
+        "CreateIngredientFoodSubstitution"
+      ],
+      "section": "Ingredients"
+    },
+    "Ingredient substitution": {
+      "schemas": [
+        "RecipeIngredientSubstitution"
+      ],
+      "section": "Ingredients"
+    },
+    "Label": {
+      "schemas": [
+        "MultiPurposeLabelOut",
+        "MultiPurposeLabelSummary",
+        "MultiPurposeLabelCreate",
+        "MultiPurposeLabelUpdate"
+      ],
+      "section": "Ingredients"
+    },
+    "Recipe step": {
+      "schemas": [
+        "RecipeStep"
+      ],
+      "section": "Recipe details"
+    },
+    "Ingredient reference": {
+      "schemas": [
+        "IngredientReferences"
+      ],
+      "section": "Recipe details"
+    },
+    "Note reference": {
+      "schemas": [
+        "NoteReference"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe note": {
+      "schemas": [
+        "RecipeNote"
+      ],
+      "section": "Recipe details"
+    },
+    "Nutrition": {
+      "schemas": [
+        "Nutrition"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe settings": {
+      "schemas": [
+        "RecipeSettings"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe asset": {
+      "schemas": [
+        "RecipeAsset"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe comment": {
+      "schemas": [
+        "RecipeCommentOut-Output",
+        "RecipeCommentOut-Input",
+        "RecipeCommentCreate",
+        "RecipeCommentUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Rating / favorite": {
+      "schemas": [
+        "UserRatingOut",
+        "UserRatingSummary",
+        "UserRatingUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe timeline event": {
+      "schemas": [
+        "RecipeTimelineEventOut",
+        "RecipeTimelineEventIn",
+        "RecipeTimelineEventUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe share token": {
+      "schemas": [
+        "RecipeShareToken",
+        "RecipeShareTokenSummary",
+        "RecipeShareTokenCreate"
+      ],
+      "section": "Recipe details"
+    },
+    "Household recipe state": {
+      "schemas": [
+        "HouseholdRecipeSummary"
+      ],
+      "section": "Planning"
+    },
+    "Shopping list": {
+      "schemas": [
+        "ShoppingListOut",
+        "ShoppingListSummary",
+        "ShoppingListCreate",
+        "ShoppingListUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "Shopping item": {
+      "schemas": [
+        "ShoppingListItemOut-Output",
+        "ShoppingListItemOut-Input",
+        "ShoppingListItemCreate",
+        "ShoppingListItemUpdate",
+        "ShoppingListItemUpdateBulk"
+      ],
+      "section": "Shopping"
+    },
+    "List-recipe link": {
+      "schemas": [
+        "ShoppingListRecipeRefOut"
+      ],
+      "section": "Shopping"
+    },
+    "Item-recipe link": {
+      "schemas": [
+        "ShoppingListItemRecipeRefOut",
+        "ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemRecipeRefUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "List-label setting": {
+      "schemas": [
+        "ShoppingListMultiPurposeLabelOut",
+        "ShoppingListMultiPurposeLabelUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "Meal-plan entry": {
+      "schemas": [
+        "ReadPlanEntry",
+        "CreatePlanEntry",
+        "UpdatePlanEntry"
+      ],
+      "section": "Planning"
+    },
+    "Meal-plan rule": {
+      "schemas": [
+        "PlanRulesOut",
+        "PlanRulesCreate"
+      ],
+      "section": "Planning"
+    },
+    "Cookbook": {
+      "schemas": [
+        "ReadCookBook",
+        "CreateCookBook",
+        "UpdateCookBook"
+      ],
+      "section": "Planning"
+    },
+    "Query filter": {
+      "schemas": [
+        "QueryFilterJSON"
+      ],
+      "section": "Planning"
+    },
+    "Query-filter part": {
+      "schemas": [
+        "QueryFilterJSONPart"
+      ],
+      "section": "Planning"
+    },
+    "Webhook": {
+      "schemas": [
+        "ReadWebhook",
+        "CreateWebhook"
+      ],
+      "section": "Integrations"
+    },
+    "Notifier": {
+      "schemas": [
+        "GroupEventNotifierOut",
+        "GroupEventNotifierCreate",
+        "GroupEventNotifierUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "Notifier options": {
+      "schemas": [
+        "GroupEventNotifierOptionsOut",
+        "GroupEventNotifierOptions"
+      ],
+      "section": "Integrations"
+    },
+    "Recipe action": {
+      "schemas": [
+        "GroupRecipeActionOut",
+        "CreateGroupRecipeAction",
+        "SaveGroupRecipeAction"
+      ],
+      "section": "Integrations"
+    },
+    "AI-provider settings": {
+      "schemas": [
+        "AIProviderSettingsOut",
+        "AIProviderSettingsUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "AI provider": {
+      "schemas": [
+        "AIProviderOut",
+        "AIProviderSummary",
+        "AIProviderCreate",
+        "AIProviderUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "Report": {
+      "schemas": [
+        "ReportOut",
+        "ReportSummary"
+      ],
+      "section": "Administration"
+    },
+    "Report entry": {
+      "schemas": [
+        "ReportEntryOut"
+      ],
+      "section": "Administration"
+    },
+    "Group data export": {
+      "schemas": [
+        "GroupDataExport"
+      ],
+      "section": "Administration"
+    },
+    "Backup file": {
+      "schemas": [
+        "BackupFile"
+      ],
+      "section": "Administration"
+    }
+  },
+  "relationship_hints": [
+    {
+      "source": "Group",
+      "target": "Invitation token",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Invitation token: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Invitation token",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Invitation token: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe: householdId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe: userId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Category",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Category: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Tag",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Tag: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Tool",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Tool: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Label",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Label: groupId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Recipe comment",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe comment: userId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Rating / favorite",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Rating / favorite: userId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Rating / favorite",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Rating / favorite: recipeId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe timeline event: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe timeline event: householdId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe timeline event: userId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe timeline event: recipeId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Recipe share token",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe share token: groupId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe share token",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe share token: recipeId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Household recipe state",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Household recipe state: recipeId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Shopping list: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Shopping list: householdId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Shopping list: userId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Shopping item",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Shopping item: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Shopping item",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Shopping item: householdId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "List-recipe link",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "List-recipe link: recipeId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Item-recipe link",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Item-recipe link: recipeId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Meal-plan entry: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Meal-plan entry: householdId"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Meal-plan entry: userId"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Meal-plan entry: recipeId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Meal-plan rule",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Meal-plan rule: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Meal-plan rule",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Meal-plan rule: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Cookbook",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Cookbook: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Cookbook",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Cookbook: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Webhook",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Webhook: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Webhook",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Webhook: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Notifier",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Notifier: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Notifier",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Notifier: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Recipe action",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe action: groupId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Recipe action",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe action: householdId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Report",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Report: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Group data export",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Group data export: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Category",
+      "kind": "reference",
+      "labels": [
+        "categories"
+      ],
+      "evidence": [
+        "GroupInDB.categories/anyOf/0/items -> CategoryBase"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Webhook",
+      "kind": "reference",
+      "labels": [
+        "webhooks"
+      ],
+      "evidence": [
+        "GroupInDB.webhooks/items -> ReadWebhook"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Household",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "households"
+      ],
+      "evidence": [
+        "GroupInDB.households/anyOf/0/items -> GroupHouseholdSummary",
+        "Household: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "User",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "users"
+      ],
+      "evidence": [
+        "GroupInDB.users/anyOf/0/items -> UserSummary",
+        "User: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Group preferences",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "preferences"
+      ],
+      "evidence": [
+        "GroupInDB.preferences/anyOf/0 -> ReadGroupPreferences",
+        "GroupSummary.preferences/anyOf/0 -> ReadGroupPreferences",
+        "GroupAdminUpdate.preferences/anyOf/0 -> UpdateGroupPreferences",
+        "Group preferences: groupId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "AI-provider settings",
+      "kind": "contains",
+      "labels": [
+        "aiProviderSettings"
+      ],
+      "evidence": [
+        "GroupInDB.aiProviderSettings/anyOf/0 -> AIProviderSettingsOut",
+        "GroupSummary.aiProviderSettings/anyOf/0 -> AIProviderSettingsOut",
+        "GroupAdminUpdate.aiProviderSettings/anyOf/0 -> AIProviderSettingsUpdate"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Household preferences",
+      "kind": "contains",
+      "labels": [
+        "preferences"
+      ],
+      "evidence": [
+        "HouseholdInDB.preferences/anyOf/0 -> ReadHouseholdPreferences",
+        "HouseholdSummary.preferences/anyOf/0 -> ReadHouseholdPreferences",
+        "UpdateHouseholdAdmin.preferences/anyOf/0 -> UpdateHouseholdPreferences"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "User",
+      "kind": "contains",
+      "labels": [
+        "householdId",
+        "users"
+      ],
+      "evidence": [
+        "HouseholdInDB.users/anyOf/0/items -> HouseholdUserSummary",
+        "User: householdId"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Webhook",
+      "kind": "reference",
+      "labels": [
+        "webhooks"
+      ],
+      "evidence": [
+        "HouseholdInDB.webhooks/items -> ReadWebhook"
+      ]
+    },
+    {
+      "source": "User",
+      "target": "API token",
+      "kind": "contains",
+      "labels": [
+        "tokens"
+      ],
+      "evidence": [
+        "UserOut.tokens/anyOf/0/items -> LongLiveTokenOut"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Category",
+      "kind": "reference",
+      "labels": [
+        "recipeCategory"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeCategory/anyOf/0/items -> RecipeCategory",
+        "Recipe-Input.recipeCategory/anyOf/0/items -> RecipeCategory",
+        "RecipeIn.recipeCategory/anyOf/0/items -> RecipeCategoryIn",
+        "RecipeSummary.recipeCategory/anyOf/0/items -> RecipeCategory"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Tag",
+      "kind": "reference",
+      "labels": [
+        "tags"
+      ],
+      "evidence": [
+        "Recipe-Output.tags/anyOf/0/items -> RecipeTag",
+        "Recipe-Input.tags/anyOf/0/items -> RecipeTag",
+        "RecipeIn.tags/anyOf/0/items -> RecipeTagIn",
+        "RecipeSummary.tags/anyOf/0/items -> RecipeTag"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Tool",
+      "kind": "reference",
+      "labels": [
+        "tools"
+      ],
+      "evidence": [
+        "Recipe-Output.tools/items -> RecipeTool",
+        "Recipe-Input.tools/items -> RecipeTool",
+        "RecipeIn.tools/items -> RecipeToolIn",
+        "RecipeSummary.tools/items -> RecipeTool"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe ingredient",
+      "kind": "contains",
+      "labels": [
+        "recipeIngredient"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeIngredient/items -> RecipeIngredient-Output",
+        "Recipe-Input.recipeIngredient/items -> RecipeIngredient-Input",
+        "RecipeIn.recipeIngredient/items -> RecipeIngredient-Input"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe step",
+      "kind": "contains",
+      "labels": [
+        "recipeInstructions"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeInstructions/anyOf/0/items -> RecipeStep",
+        "Recipe-Input.recipeInstructions/anyOf/0/items -> RecipeStep",
+        "RecipeIn.recipeInstructions/anyOf/0/items -> RecipeStep"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Nutrition",
+      "kind": "contains",
+      "labels": [
+        "nutrition"
+      ],
+      "evidence": [
+        "Recipe-Output.nutrition/anyOf/0 -> Nutrition",
+        "Recipe-Input.nutrition/anyOf/0 -> Nutrition",
+        "RecipeIn.nutrition/anyOf/0 -> Nutrition"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe settings",
+      "kind": "contains",
+      "labels": [
+        "settings"
+      ],
+      "evidence": [
+        "Recipe-Output.settings/anyOf/0 -> RecipeSettings",
+        "Recipe-Input.settings/anyOf/0 -> RecipeSettings",
+        "RecipeIn.settings/anyOf/0 -> RecipeSettings"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe asset",
+      "kind": "contains",
+      "labels": [
+        "assets"
+      ],
+      "evidence": [
+        "Recipe-Output.assets/anyOf/0/items -> RecipeAsset",
+        "Recipe-Input.assets/anyOf/0/items -> RecipeAsset",
+        "RecipeIn.assets/anyOf/0/items -> RecipeAsset"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe note",
+      "kind": "contains",
+      "labels": [
+        "notes"
+      ],
+      "evidence": [
+        "Recipe-Output.notes/anyOf/0/items -> RecipeNote",
+        "Recipe-Input.notes/anyOf/0/items -> RecipeNote",
+        "RecipeIn.notes/anyOf/0/items -> RecipeNote"
+      ]
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe comment",
+      "kind": "contains",
+      "labels": [
+        "comments",
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe-Output.comments/anyOf/0/items -> RecipeCommentOut-Output",
+        "Recipe-Input.comments/anyOf/0/items -> RecipeCommentOut-Input",
+        "RecipeIn.comments/anyOf/0/items -> RecipeCommentOut-Input",
+        "Recipe comment: recipeId"
+      ]
+    },
+    {
+      "source": "Tag",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipes"
+      ],
+      "evidence": [
+        "RecipeTagResponse.recipes/items -> RecipeSummary"
+      ]
+    },
+    {
+      "source": "Tool",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipes"
+      ],
+      "evidence": [
+        "RecipeToolResponse.recipes/items -> RecipeSummary"
+      ]
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Unit",
+      "kind": "reference",
+      "labels": [
+        "unit"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.unit/anyOf/0 -> IngredientUnit-Output",
+        "RecipeIngredient-Output.unit/anyOf/1 -> CreateIngredientUnit",
+        "RecipeIngredient-Input.unit/anyOf/0 -> IngredientUnit-Input",
+        "RecipeIngredient-Input.unit/anyOf/1 -> CreateIngredientUnit"
+      ]
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "food"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.food/anyOf/0 -> IngredientFood-Output",
+        "RecipeIngredient-Output.food/anyOf/1 -> CreateIngredientFood",
+        "RecipeIngredient-Input.food/anyOf/0 -> IngredientFood-Input",
+        "RecipeIngredient-Input.food/anyOf/1 -> CreateIngredientFood"
+      ]
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "referencedRecipe"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.referencedRecipe/anyOf/0 -> Recipe-Output",
+        "RecipeIngredient-Input.referencedRecipe/anyOf/0 -> Recipe-Input"
+      ]
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Ingredient substitution",
+      "kind": "contains",
+      "labels": [
+        "substitutions"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.substitutions/items -> RecipeIngredientSubstitution",
+        "RecipeIngredient-Input.substitutions/items -> RecipeIngredientSubstitution"
+      ]
+    },
+    {
+      "source": "Food",
+      "target": "Food alias",
+      "kind": "contains",
+      "labels": [
+        "aliases"
+      ],
+      "evidence": [
+        "IngredientFood-Output.aliases/items -> IngredientFoodAlias",
+        "IngredientFood-Input.aliases/items -> IngredientFoodAlias",
+        "CreateIngredientFood.aliases/items -> CreateIngredientFoodAlias"
+      ]
+    },
+    {
+      "source": "Food",
+      "target": "Food substitution",
+      "kind": "contains",
+      "labels": [
+        "substitutions"
+      ],
+      "evidence": [
+        "IngredientFood-Output.substitutions/items -> IngredientFoodSubstitution",
+        "IngredientFood-Input.substitutions/items -> IngredientFoodSubstitution",
+        "CreateIngredientFood.substitutions/items -> CreateIngredientFoodSubstitution"
+      ]
+    },
+    {
+      "source": "Food",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "IngredientFood-Output.label/anyOf/0 -> MultiPurposeLabelSummary",
+        "IngredientFood-Input.label/anyOf/0 -> MultiPurposeLabelSummary"
+      ]
+    },
+    {
+      "source": "Unit",
+      "target": "Unit alias",
+      "kind": "contains",
+      "labels": [
+        "aliases"
+      ],
+      "evidence": [
+        "IngredientUnit-Output.aliases/items -> IngredientUnitAlias",
+        "IngredientUnit-Input.aliases/items -> IngredientUnitAlias",
+        "CreateIngredientUnit.aliases/items -> CreateIngredientUnitAlias"
+      ]
+    },
+    {
+      "source": "Food substitution",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "substituteFood"
+      ],
+      "evidence": [
+        "IngredientFoodSubstitution.substituteFood/anyOf/0 -> IngredientFoodSummary"
+      ]
+    },
+    {
+      "source": "Ingredient substitution",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "substituteFood"
+      ],
+      "evidence": [
+        "RecipeIngredientSubstitution.substituteFood/anyOf/0 -> IngredientFoodSummary"
+      ]
+    },
+    {
+      "source": "Recipe step",
+      "target": "Ingredient reference",
+      "kind": "contains",
+      "labels": [
+        "ingredientReferences"
+      ],
+      "evidence": [
+        "RecipeStep.ingredientReferences/items -> IngredientReferences"
+      ]
+    },
+    {
+      "source": "Recipe step",
+      "target": "Note reference",
+      "kind": "contains",
+      "labels": [
+        "noteReferences"
+      ],
+      "evidence": [
+        "RecipeStep.noteReferences/items -> NoteReference"
+      ]
+    },
+    {
+      "source": "Recipe comment",
+      "target": "User",
+      "kind": "reference",
+      "labels": [
+        "user"
+      ],
+      "evidence": [
+        "RecipeCommentOut-Output.user -> UserBase-Output",
+        "RecipeCommentOut-Input.user -> mealie__schema__recipe__recipe_comments__UserBase"
+      ]
+    },
+    {
+      "source": "Recipe share token",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "RecipeShareToken.recipe -> Recipe-Output"
+      ]
+    },
+    {
+      "source": "Shopping list",
+      "target": "Shopping item",
+      "kind": "contains",
+      "labels": [
+        "listItems",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.listItems/items -> ShoppingListItemOut-Output",
+        "ShoppingListUpdate.listItems/items -> ShoppingListItemOut-Input",
+        "Shopping item: shoppingListId"
+      ]
+    },
+    {
+      "source": "Shopping list",
+      "target": "List-recipe link",
+      "kind": "contains",
+      "labels": [
+        "recipeReferences",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.recipeReferences/items -> ShoppingListRecipeRefOut",
+        "ShoppingListSummary.recipeReferences/items -> ShoppingListRecipeRefOut",
+        "List-recipe link: shoppingListId"
+      ]
+    },
+    {
+      "source": "Shopping list",
+      "target": "List-label setting",
+      "kind": "contains",
+      "labels": [
+        "labelSettings",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.labelSettings/items -> ShoppingListMultiPurposeLabelOut",
+        "ShoppingListSummary.labelSettings/items -> ShoppingListMultiPurposeLabelOut",
+        "List-label setting: shoppingListId"
+      ]
+    },
+    {
+      "source": "Shopping item",
+      "target": "Unit",
+      "kind": "reference",
+      "labels": [
+        "unit"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.unit/anyOf/0 -> IngredientUnit-Output",
+        "ShoppingListItemOut-Input.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemCreate.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemCreate.unit/anyOf/1 -> CreateIngredientUnit",
+        "ShoppingListItemUpdate.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemUpdate.unit/anyOf/1 -> CreateIngredientUnit",
+        "ShoppingListItemUpdateBulk.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemUpdateBulk.unit/anyOf/1 -> CreateIngredientUnit"
+      ]
+    },
+    {
+      "source": "Shopping item",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "food"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.food/anyOf/0 -> IngredientFood-Output",
+        "ShoppingListItemOut-Input.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemCreate.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemCreate.food/anyOf/1 -> CreateIngredientFood",
+        "ShoppingListItemUpdate.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemUpdate.food/anyOf/1 -> CreateIngredientFood",
+        "ShoppingListItemUpdateBulk.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemUpdateBulk.food/anyOf/1 -> CreateIngredientFood"
+      ]
+    },
+    {
+      "source": "Shopping item",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "referencedRecipe"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.referencedRecipe/anyOf/0 -> Recipe-Output",
+        "ShoppingListItemOut-Input.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemCreate.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemUpdate.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemUpdateBulk.referencedRecipe/anyOf/0 -> Recipe-Input"
+      ]
+    },
+    {
+      "source": "Shopping item",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.label/anyOf/0 -> MultiPurposeLabelSummary",
+        "ShoppingListItemOut-Input.label/anyOf/0 -> MultiPurposeLabelSummary"
+      ]
+    },
+    {
+      "source": "Shopping item",
+      "target": "Item-recipe link",
+      "kind": "contains",
+      "labels": [
+        "recipeReferences",
+        "shoppingListItemId"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.recipeReferences/items -> ShoppingListItemRecipeRefOut",
+        "ShoppingListItemOut-Input.recipeReferences/items -> ShoppingListItemRecipeRefOut",
+        "ShoppingListItemCreate.recipeReferences/items -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdate.recipeReferences/items/anyOf/0 -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdate.recipeReferences/items/anyOf/1 -> ShoppingListItemRecipeRefUpdate",
+        "ShoppingListItemUpdateBulk.recipeReferences/items/anyOf/0 -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdateBulk.recipeReferences/items/anyOf/1 -> ShoppingListItemRecipeRefUpdate",
+        "Item-recipe link: shoppingListItemId"
+      ]
+    },
+    {
+      "source": "List-recipe link",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "ShoppingListRecipeRefOut.recipe -> RecipeSummary"
+      ]
+    },
+    {
+      "source": "List-label setting",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "ShoppingListMultiPurposeLabelOut.label -> MultiPurposeLabelSummary"
+      ]
+    },
+    {
+      "source": "Meal-plan entry",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "ReadPlanEntry.recipe/anyOf/0 -> RecipeSummary"
+      ]
+    },
+    {
+      "source": "Meal-plan rule",
+      "target": "Query filter",
+      "kind": "reference",
+      "labels": [
+        "queryFilter"
+      ],
+      "evidence": [
+        "PlanRulesOut.queryFilter -> QueryFilterJSON"
+      ]
+    },
+    {
+      "source": "Cookbook",
+      "target": "Query filter",
+      "kind": "reference",
+      "labels": [
+        "queryFilter"
+      ],
+      "evidence": [
+        "ReadCookBook.queryFilter -> QueryFilterJSON"
+      ]
+    },
+    {
+      "source": "Cookbook",
+      "target": "Household",
+      "kind": "reference",
+      "labels": [
+        "household"
+      ],
+      "evidence": [
+        "ReadCookBook.household/anyOf/0 -> CookbookHousehold"
+      ]
+    },
+    {
+      "source": "Query filter",
+      "target": "Query-filter part",
+      "kind": "contains",
+      "labels": [
+        "parts"
+      ],
+      "evidence": [
+        "QueryFilterJSON.parts/items -> QueryFilterJSONPart"
+      ]
+    },
+    {
+      "source": "Notifier",
+      "target": "Notifier options",
+      "kind": "contains",
+      "labels": [
+        "options"
+      ],
+      "evidence": [
+        "GroupEventNotifierOut.options -> GroupEventNotifierOptionsOut",
+        "GroupEventNotifierUpdate.options -> GroupEventNotifierOptions"
+      ]
+    },
+    {
+      "source": "AI-provider settings",
+      "target": "AI provider",
+      "kind": "reference",
+      "labels": [
+        "providers"
+      ],
+      "evidence": [
+        "AIProviderSettingsOut.providers/items -> AIProviderSummary"
+      ]
+    },
+    {
+      "source": "Report",
+      "target": "Report entry",
+      "kind": "contains",
+      "labels": [
+        "entries",
+        "reportId"
+      ],
+      "evidence": [
+        "ReportOut.entries/items -> ReportEntryOut",
+        "Report entry: reportId"
+      ]
+    },
+    {
+      "source": "Food",
+      "target": "Household",
+      "kind": "reference-id",
+      "labels": [
+        "householdsWithIngredientFood[]"
+      ],
+      "evidence": [
+        "householdsWithIngredientFood[]"
+      ]
+    },
+    {
+      "source": "Tool",
+      "target": "Household",
+      "kind": "reference-id",
+      "labels": [
+        "householdsWithTool[]"
+      ],
+      "evidence": [
+        "householdsWithTool[]"
+      ]
+    },
+    {
+      "source": "Food substitution",
+      "target": "Food",
+      "kind": "reference-id",
+      "labels": [
+        "substituteFoodId"
+      ],
+      "evidence": [
+        "substituteFoodId"
+      ]
+    },
+    {
+      "source": "Ingredient substitution",
+      "target": "Food",
+      "kind": "reference-id",
+      "labels": [
+        "substituteFoodId"
+      ],
+      "evidence": [
+        "substituteFoodId"
+      ]
+    },
+    {
+      "source": "Ingredient reference",
+      "target": "Recipe ingredient",
+      "kind": "reference-id",
+      "labels": [
+        "referenceId"
+      ],
+      "evidence": [
+        "referenceId"
+      ]
+    },
+    {
+      "source": "Note reference",
+      "target": "Recipe note",
+      "kind": "reference-id",
+      "labels": [
+        "referenceId"
+      ],
+      "evidence": [
+        "referenceId"
+      ]
+    },
+    {
+      "source": "AI-provider settings",
+      "target": "AI provider",
+      "kind": "reference-id",
+      "labels": [
+        "defaultProviderId / audioProviderId / imageProviderId"
+      ],
+      "evidence": [
+        "defaultProviderId / audioProviderId / imageProviderId"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "AI provider",
+      "kind": "scope",
+      "labels": [
+        "group API scope"
+      ],
+      "evidence": [
+        "/api/groups/ai-providers/providers"
+      ]
+    },
+    {
+      "source": "Group",
+      "target": "Food",
+      "kind": "scope",
+      "labels": [
+        "group explore API scope"
+      ],
+      "evidence": [
+        "/api/explore/groups/{group_slug}/foods"
+      ]
+    },
+    {
+      "source": "Household",
+      "target": "Household recipe state",
+      "kind": "scope",
+      "labels": [
+        "household API scope"
+      ],
+      "evidence": [
+        "/api/households/self/recipes/{recipe_slug}"
+      ]
+    }
+  ],
+  "field_targets": {
+    "groupId": "Group",
+    "householdId": "Household",
+    "userId": "User",
+    "recipeId": "Recipe",
+    "shoppingListId": "Shopping list",
+    "shoppingListItemId": "Shopping item",
+    "foodId": "Food",
+    "unitId": "Unit",
+    "labelId": "Label",
+    "substituteFoodId": "Food",
+    "reportId": "Report"
+  },
+  "identifier_kinds": {
+    "User": [
+      "id",
+      "username"
+    ],
+    "Recipe": [
+      "id",
+      "slug"
+    ],
+    "Category": [
+      "id",
+      "slug"
+    ],
+    "Tag": [
+      "id",
+      "slug"
+    ],
+    "Group": [
+      "id",
+      "slug"
+    ],
+    "Household": [
+      "id",
+      "slug"
+    ]
+  },
+  "resource_routes": {
+    "/api/admin/users": "User",
+    "/api/users": "User",
+    "/api/foods": "Food",
+    "/api/units": "Unit",
+    "/api/groups/labels": "Label",
+    "/api/organizers/categories": "Category",
+    "/api/organizers/tags": "Tag",
+    "/api/organizers/tools": "Tool",
+    "/api/recipes/timeline/events": "Recipe timeline event",
+    "/api/recipes/comments": "Recipe comment",
+    "/api/recipes": "Recipe",
+    "/api/households/shopping/lists": "Shopping list",
+    "/api/households/shopping/items": "Shopping item",
+    "/api/households/mealplans/rules": "Meal-plan rule",
+    "/api/households/mealplans": "Meal-plan entry",
+    "/api/households/cookbooks": "Cookbook",
+    "/api/households/self": "Household",
+    "/api/groups/self": "Group",
+    "/api/groups/households": "Household"
+  },
+  "path_roles": {
+    "user_id": [
+      "User",
+      "id"
+    ],
+    "recipe_id": [
+      "Recipe",
+      "id"
+    ],
+    "group_slug": [
+      "Group",
+      "slug"
+    ],
+    "household_slug": [
+      "Household",
+      "slug"
+    ],
+    "category_slug": [
+      "Category",
+      "slug"
+    ],
+    "tag_slug": [
+      "Tag",
+      "slug"
+    ]
+  },
+  "status": "STATIC_PROFILE_REQUIRES_LIVE_ACCEPTANCE"
+}

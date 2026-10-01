@@ -1,0 +1,23 @@
+{
+  "status": "AUTH_DIAGNOSTIC_WIRE_CAPTURED",
+  "resource_mutations": 0,
+  "automatic_retry": false,
+  "direct_http_status": 200,
+  "direct_token_present": true,
+  "native_sample_exit_code": 0,
+  "native_run_exit_code": 0,
+  "native_wire_requests": [
+    {
+      "content_types": [
+        "application/x-www-form-urlencoded"
+      ],
+      "body_is_json_string": false,
+      "username_matches_input": true,
+      "password_matches_input": true,
+      "grant_type_is_password": true,
+      "duplicate_username": false,
+      "duplicate_password": false,
+      "forwarded_http_status": 200
+    }
+  ]
+}

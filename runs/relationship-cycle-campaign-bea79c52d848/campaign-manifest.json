@@ -1,0 +1,12 @@
+﻿{
+    "expected_runs":  3,
+    "projects":  [
+                     "C:\\work\\temp\\mealie_sbt_study\\provengo\\generic-mealie-7941dedec237",
+                     "C:\\work\\temp\\mealie_sbt_study\\provengo\\generic-mealie-1495eafba18f"
+                 ],
+    "generation_seeds":  [
+                             201,
+                             202
+                         ],
+    "native_sampler_seed_pinned":  false
+}

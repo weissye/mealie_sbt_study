@@ -1,0 +1,5001 @@
+{
+  "families": {
+    "Group": {
+      "schemas": [
+        "GroupInDB",
+        "GroupSummary",
+        "GroupAdminUpdate",
+        "GroupBase"
+      ],
+      "section": "Identity"
+    },
+    "Household": {
+      "schemas": [
+        "HouseholdInDB",
+        "HouseholdSummary",
+        "HouseholdCreate",
+        "UpdateHouseholdAdmin",
+        "GroupHouseholdSummary",
+        "CookbookHousehold"
+      ],
+      "section": "Identity"
+    },
+    "User": {
+      "schemas": [
+        "UserOut",
+        "UserSummary",
+        "UserIn",
+        "UserBase-Output",
+        "HouseholdUserSummary",
+        "mealie__schema__recipe__recipe_comments__UserBase",
+        "mealie__schema__user__user__UserBase"
+      ],
+      "section": "Identity"
+    },
+    "Group preferences": {
+      "schemas": [
+        "ReadGroupPreferences",
+        "UpdateGroupPreferences"
+      ],
+      "section": "Identity"
+    },
+    "Household preferences": {
+      "schemas": [
+        "ReadHouseholdPreferences",
+        "UpdateHouseholdPreferences"
+      ],
+      "section": "Identity"
+    },
+    "API token": {
+      "schemas": [
+        "LongLiveTokenOut",
+        "LongLiveTokenIn",
+        "LongLiveTokenCreateResponse"
+      ],
+      "section": "Identity"
+    },
+    "Invitation token": {
+      "schemas": [
+        "ReadInviteToken",
+        "CreateInviteToken"
+      ],
+      "section": "Identity"
+    },
+    "Recipe": {
+      "schemas": [
+        "Recipe-Output",
+        "Recipe-Input",
+        "RecipeIn",
+        "RecipeSummary",
+        "CreateRecipe"
+      ],
+      "section": "Recipes"
+    },
+    "Category": {
+      "schemas": [
+        "CategoryOut",
+        "CategoryBase",
+        "CategoryIn",
+        "CategorySummary",
+        "RecipeCategory",
+        "RecipeCategoryIn"
+      ],
+      "section": "Recipes"
+    },
+    "Tag": {
+      "schemas": [
+        "TagOut",
+        "TagBase",
+        "TagIn",
+        "RecipeTag",
+        "RecipeTagIn",
+        "RecipeTagResponse"
+      ],
+      "section": "Recipes"
+    },
+    "Tool": {
+      "schemas": [
+        "RecipeToolOut",
+        "RecipeTool",
+        "RecipeToolIn",
+        "RecipeToolCreate",
+        "RecipeToolResponse"
+      ],
+      "section": "Recipes"
+    },
+    "Recipe ingredient": {
+      "schemas": [
+        "RecipeIngredient-Output",
+        "RecipeIngredient-Input"
+      ],
+      "section": "Ingredients"
+    },
+    "Food": {
+      "schemas": [
+        "IngredientFood-Output",
+        "IngredientFood-Input",
+        "IngredientFoodSummary",
+        "CreateIngredientFood"
+      ],
+      "section": "Ingredients"
+    },
+    "Unit": {
+      "schemas": [
+        "IngredientUnit-Output",
+        "IngredientUnit-Input",
+        "CreateIngredientUnit"
+      ],
+      "section": "Ingredients"
+    },
+    "Food alias": {
+      "schemas": [
+        "IngredientFoodAlias",
+        "CreateIngredientFoodAlias"
+      ],
+      "section": "Ingredients"
+    },
+    "Unit alias": {
+      "schemas": [
+        "IngredientUnitAlias",
+        "CreateIngredientUnitAlias"
+      ],
+      "section": "Ingredients"
+    },
+    "Food substitution": {
+      "schemas": [
+        "IngredientFoodSubstitution",
+        "CreateIngredientFoodSubstitution"
+      ],
+      "section": "Ingredients"
+    },
+    "Ingredient substitution": {
+      "schemas": [
+        "RecipeIngredientSubstitution"
+      ],
+      "section": "Ingredients"
+    },
+    "Label": {
+      "schemas": [
+        "MultiPurposeLabelOut",
+        "MultiPurposeLabelSummary",
+        "MultiPurposeLabelCreate",
+        "MultiPurposeLabelUpdate"
+      ],
+      "section": "Ingredients"
+    },
+    "Recipe step": {
+      "schemas": [
+        "RecipeStep"
+      ],
+      "section": "Recipe details"
+    },
+    "Ingredient reference": {
+      "schemas": [
+        "IngredientReferences"
+      ],
+      "section": "Recipe details"
+    },
+    "Note reference": {
+      "schemas": [
+        "NoteReference"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe note": {
+      "schemas": [
+        "RecipeNote"
+      ],
+      "section": "Recipe details"
+    },
+    "Nutrition": {
+      "schemas": [
+        "Nutrition"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe settings": {
+      "schemas": [
+        "RecipeSettings"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe asset": {
+      "schemas": [
+        "RecipeAsset"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe comment": {
+      "schemas": [
+        "RecipeCommentOut-Output",
+        "RecipeCommentOut-Input",
+        "RecipeCommentCreate",
+        "RecipeCommentUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Rating / favorite": {
+      "schemas": [
+        "UserRatingOut",
+        "UserRatingSummary",
+        "UserRatingUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe timeline event": {
+      "schemas": [
+        "RecipeTimelineEventOut",
+        "RecipeTimelineEventIn",
+        "RecipeTimelineEventUpdate"
+      ],
+      "section": "Recipe details"
+    },
+    "Recipe share token": {
+      "schemas": [
+        "RecipeShareToken",
+        "RecipeShareTokenSummary",
+        "RecipeShareTokenCreate"
+      ],
+      "section": "Recipe details"
+    },
+    "Household recipe state": {
+      "schemas": [
+        "HouseholdRecipeSummary"
+      ],
+      "section": "Planning"
+    },
+    "Shopping list": {
+      "schemas": [
+        "ShoppingListOut",
+        "ShoppingListSummary",
+        "ShoppingListCreate",
+        "ShoppingListUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "Shopping item": {
+      "schemas": [
+        "ShoppingListItemOut-Output",
+        "ShoppingListItemOut-Input",
+        "ShoppingListItemCreate",
+        "ShoppingListItemUpdate",
+        "ShoppingListItemUpdateBulk"
+      ],
+      "section": "Shopping"
+    },
+    "List-recipe link": {
+      "schemas": [
+        "ShoppingListRecipeRefOut"
+      ],
+      "section": "Shopping"
+    },
+    "Item-recipe link": {
+      "schemas": [
+        "ShoppingListItemRecipeRefOut",
+        "ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemRecipeRefUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "List-label setting": {
+      "schemas": [
+        "ShoppingListMultiPurposeLabelOut",
+        "ShoppingListMultiPurposeLabelUpdate"
+      ],
+      "section": "Shopping"
+    },
+    "Meal-plan entry": {
+      "schemas": [
+        "ReadPlanEntry",
+        "CreatePlanEntry",
+        "UpdatePlanEntry"
+      ],
+      "section": "Planning"
+    },
+    "Meal-plan rule": {
+      "schemas": [
+        "PlanRulesOut",
+        "PlanRulesCreate"
+      ],
+      "section": "Planning"
+    },
+    "Cookbook": {
+      "schemas": [
+        "ReadCookBook",
+        "CreateCookBook",
+        "UpdateCookBook"
+      ],
+      "section": "Planning"
+    },
+    "Query filter": {
+      "schemas": [
+        "QueryFilterJSON"
+      ],
+      "section": "Planning"
+    },
+    "Query-filter part": {
+      "schemas": [
+        "QueryFilterJSONPart"
+      ],
+      "section": "Planning"
+    },
+    "Webhook": {
+      "schemas": [
+        "ReadWebhook",
+        "CreateWebhook"
+      ],
+      "section": "Integrations"
+    },
+    "Notifier": {
+      "schemas": [
+        "GroupEventNotifierOut",
+        "GroupEventNotifierCreate",
+        "GroupEventNotifierUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "Notifier options": {
+      "schemas": [
+        "GroupEventNotifierOptionsOut",
+        "GroupEventNotifierOptions"
+      ],
+      "section": "Integrations"
+    },
+    "Recipe action": {
+      "schemas": [
+        "GroupRecipeActionOut",
+        "CreateGroupRecipeAction",
+        "SaveGroupRecipeAction"
+      ],
+      "section": "Integrations"
+    },
+    "AI-provider settings": {
+      "schemas": [
+        "AIProviderSettingsOut",
+        "AIProviderSettingsUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "AI provider": {
+      "schemas": [
+        "AIProviderOut",
+        "AIProviderSummary",
+        "AIProviderCreate",
+        "AIProviderUpdate"
+      ],
+      "section": "Integrations"
+    },
+    "Report": {
+      "schemas": [
+        "ReportOut",
+        "ReportSummary"
+      ],
+      "section": "Administration"
+    },
+    "Report entry": {
+      "schemas": [
+        "ReportEntryOut"
+      ],
+      "section": "Administration"
+    },
+    "Group data export": {
+      "schemas": [
+        "GroupDataExport"
+      ],
+      "section": "Administration"
+    },
+    "Backup file": {
+      "schemas": [
+        "BackupFile"
+      ],
+      "section": "Administration"
+    }
+  },
+  "schema_aliases": {
+    "GroupInDB": "Group",
+    "GroupSummary": "Group",
+    "GroupAdminUpdate": "Group",
+    "GroupBase": "Group",
+    "HouseholdInDB": "Household",
+    "HouseholdSummary": "Household",
+    "HouseholdCreate": "Household",
+    "UpdateHouseholdAdmin": "Household",
+    "GroupHouseholdSummary": "Household",
+    "CookbookHousehold": "Household",
+    "UserOut": "User",
+    "UserSummary": "User",
+    "UserIn": "User",
+    "UserBase-Output": "User",
+    "HouseholdUserSummary": "User",
+    "mealie__schema__recipe__recipe_comments__UserBase": "User",
+    "mealie__schema__user__user__UserBase": "User",
+    "ReadGroupPreferences": "Group preferences",
+    "UpdateGroupPreferences": "Group preferences",
+    "ReadHouseholdPreferences": "Household preferences",
+    "UpdateHouseholdPreferences": "Household preferences",
+    "LongLiveTokenOut": "API token",
+    "LongLiveTokenIn": "API token",
+    "LongLiveTokenCreateResponse": "API token",
+    "ReadInviteToken": "Invitation token",
+    "CreateInviteToken": "Invitation token",
+    "Recipe-Output": "Recipe",
+    "Recipe-Input": "Recipe",
+    "RecipeIn": "Recipe",
+    "RecipeSummary": "Recipe",
+    "CreateRecipe": "Recipe",
+    "CategoryOut": "Category",
+    "CategoryBase": "Category",
+    "CategoryIn": "Category",
+    "CategorySummary": "Category",
+    "RecipeCategory": "Category",
+    "RecipeCategoryIn": "Category",
+    "TagOut": "Tag",
+    "TagBase": "Tag",
+    "TagIn": "Tag",
+    "RecipeTag": "Tag",
+    "RecipeTagIn": "Tag",
+    "RecipeTagResponse": "Tag",
+    "RecipeToolOut": "Tool",
+    "RecipeTool": "Tool",
+    "RecipeToolIn": "Tool",
+    "RecipeToolCreate": "Tool",
+    "RecipeToolResponse": "Tool",
+    "RecipeIngredient-Output": "Recipe ingredient",
+    "RecipeIngredient-Input": "Recipe ingredient",
+    "IngredientFood-Output": "Food",
+    "IngredientFood-Input": "Food",
+    "IngredientFoodSummary": "Food",
+    "CreateIngredientFood": "Food",
+    "IngredientUnit-Output": "Unit",
+    "IngredientUnit-Input": "Unit",
+    "CreateIngredientUnit": "Unit",
+    "IngredientFoodAlias": "Food alias",
+    "CreateIngredientFoodAlias": "Food alias",
+    "IngredientUnitAlias": "Unit alias",
+    "CreateIngredientUnitAlias": "Unit alias",
+    "IngredientFoodSubstitution": "Food substitution",
+    "CreateIngredientFoodSubstitution": "Food substitution",
+    "RecipeIngredientSubstitution": "Ingredient substitution",
+    "MultiPurposeLabelOut": "Label",
+    "MultiPurposeLabelSummary": "Label",
+    "MultiPurposeLabelCreate": "Label",
+    "MultiPurposeLabelUpdate": "Label",
+    "RecipeStep": "Recipe step",
+    "IngredientReferences": "Ingredient reference",
+    "NoteReference": "Note reference",
+    "RecipeNote": "Recipe note",
+    "Nutrition": "Nutrition",
+    "RecipeSettings": "Recipe settings",
+    "RecipeAsset": "Recipe asset",
+    "RecipeCommentOut-Output": "Recipe comment",
+    "RecipeCommentOut-Input": "Recipe comment",
+    "RecipeCommentCreate": "Recipe comment",
+    "RecipeCommentUpdate": "Recipe comment",
+    "UserRatingOut": "Rating / favorite",
+    "UserRatingSummary": "Rating / favorite",
+    "UserRatingUpdate": "Rating / favorite",
+    "RecipeTimelineEventOut": "Recipe timeline event",
+    "RecipeTimelineEventIn": "Recipe timeline event",
+    "RecipeTimelineEventUpdate": "Recipe timeline event",
+    "RecipeShareToken": "Recipe share token",
+    "RecipeShareTokenSummary": "Recipe share token",
+    "RecipeShareTokenCreate": "Recipe share token",
+    "HouseholdRecipeSummary": "Household recipe state",
+    "ShoppingListOut": "Shopping list",
+    "ShoppingListSummary": "Shopping list",
+    "ShoppingListCreate": "Shopping list",
+    "ShoppingListUpdate": "Shopping list",
+    "ShoppingListItemOut-Output": "Shopping item",
+    "ShoppingListItemOut-Input": "Shopping item",
+    "ShoppingListItemCreate": "Shopping item",
+    "ShoppingListItemUpdate": "Shopping item",
+    "ShoppingListItemUpdateBulk": "Shopping item",
+    "ShoppingListRecipeRefOut": "List-recipe link",
+    "ShoppingListItemRecipeRefOut": "Item-recipe link",
+    "ShoppingListItemRecipeRefCreate": "Item-recipe link",
+    "ShoppingListItemRecipeRefUpdate": "Item-recipe link",
+    "ShoppingListMultiPurposeLabelOut": "List-label setting",
+    "ShoppingListMultiPurposeLabelUpdate": "List-label setting",
+    "ReadPlanEntry": "Meal-plan entry",
+    "CreatePlanEntry": "Meal-plan entry",
+    "UpdatePlanEntry": "Meal-plan entry",
+    "PlanRulesOut": "Meal-plan rule",
+    "PlanRulesCreate": "Meal-plan rule",
+    "ReadCookBook": "Cookbook",
+    "CreateCookBook": "Cookbook",
+    "UpdateCookBook": "Cookbook",
+    "QueryFilterJSON": "Query filter",
+    "QueryFilterJSONPart": "Query-filter part",
+    "ReadWebhook": "Webhook",
+    "CreateWebhook": "Webhook",
+    "GroupEventNotifierOut": "Notifier",
+    "GroupEventNotifierCreate": "Notifier",
+    "GroupEventNotifierUpdate": "Notifier",
+    "GroupEventNotifierOptionsOut": "Notifier options",
+    "GroupEventNotifierOptions": "Notifier options",
+    "GroupRecipeActionOut": "Recipe action",
+    "CreateGroupRecipeAction": "Recipe action",
+    "SaveGroupRecipeAction": "Recipe action",
+    "AIProviderSettingsOut": "AI-provider settings",
+    "AIProviderSettingsUpdate": "AI-provider settings",
+    "AIProviderOut": "AI provider",
+    "AIProviderSummary": "AI provider",
+    "AIProviderCreate": "AI provider",
+    "AIProviderUpdate": "AI provider",
+    "ReportOut": "Report",
+    "ReportSummary": "Report",
+    "ReportEntryOut": "Report entry",
+    "GroupDataExport": "Group data export",
+    "BackupFile": "Backup file"
+  },
+  "identity_slots": [
+    {
+      "schema": "AIProviderOut",
+      "field": "id",
+      "entity_type": "AI provider",
+      "identifier_kind": "id",
+      "business_type": "AI provider.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "AIProviderSummary",
+      "field": "id",
+      "entity_type": "AI provider",
+      "identifier_kind": "id",
+      "business_type": "AI provider.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryBase",
+      "field": "id",
+      "entity_type": "Category",
+      "identifier_kind": "id",
+      "business_type": "Category.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryBase",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryBase",
+      "field": "slug",
+      "entity_type": "Category",
+      "identifier_kind": "slug",
+      "business_type": "Category.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryOut",
+      "field": "id",
+      "entity_type": "Category",
+      "identifier_kind": "id",
+      "business_type": "Category.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategoryOut",
+      "field": "slug",
+      "entity_type": "Category",
+      "identifier_kind": "slug",
+      "business_type": "Category.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategorySummary",
+      "field": "id",
+      "entity_type": "Category",
+      "identifier_kind": "id",
+      "business_type": "Category.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CategorySummary",
+      "field": "slug",
+      "entity_type": "Category",
+      "identifier_kind": "slug",
+      "business_type": "Category.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CookbookHousehold",
+      "field": "id",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateCookBook",
+      "field": "slug",
+      "entity_type": "Cookbook",
+      "identifier_kind": "slug",
+      "business_type": "Cookbook.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateIngredientFood",
+      "field": "id",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateIngredientFood",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateIngredientFoodSubstitution",
+      "field": "substituteFoodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Substitutefoodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateIngredientUnit",
+      "field": "id",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateInviteToken",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreateInviteToken",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Householdid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "CreatePlanEntry",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Recipeid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupAdminUpdate",
+      "field": "id",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupDataExport",
+      "field": "id",
+      "entity_type": "Group data export",
+      "identifier_kind": "id",
+      "business_type": "Group data export.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupDataExport",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierOptionsOut",
+      "field": "id",
+      "entity_type": "Notifier options",
+      "identifier_kind": "id",
+      "business_type": "Notifier options.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierOut",
+      "field": "id",
+      "entity_type": "Notifier",
+      "identifier_kind": "id",
+      "business_type": "Notifier.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierUpdate",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierUpdate",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupEventNotifierUpdate",
+      "field": "id",
+      "entity_type": "Notifier",
+      "identifier_kind": "id",
+      "business_type": "Notifier.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupHouseholdSummary",
+      "field": "id",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupInDB",
+      "field": "id",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupInDB",
+      "field": "slug",
+      "entity_type": "Group",
+      "identifier_kind": "slug",
+      "business_type": "Group.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupRecipeActionOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupRecipeActionOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupRecipeActionOut",
+      "field": "id",
+      "entity_type": "Recipe action",
+      "identifier_kind": "id",
+      "business_type": "Recipe action.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupSummary",
+      "field": "id",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "GroupSummary",
+      "field": "slug",
+      "entity_type": "Group",
+      "identifier_kind": "slug",
+      "business_type": "Group.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdCreate",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdInDB",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdInDB",
+      "field": "id",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdInDB",
+      "field": "slug",
+      "entity_type": "Household",
+      "identifier_kind": "slug",
+      "business_type": "Household.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdRecipeSummary",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdSummary",
+      "field": "id",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdSummary",
+      "field": "slug",
+      "entity_type": "Household",
+      "identifier_kind": "slug",
+      "business_type": "Household.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "HouseholdUserSummary",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFood-Input",
+      "field": "id",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFood-Input",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFood-Output",
+      "field": "id",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFood-Output",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFoodSubstitution",
+      "field": "substituteFoodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Substitutefoodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientFoodSummary",
+      "field": "id",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientUnit-Input",
+      "field": "id",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "IngredientUnit-Output",
+      "field": "id",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "LongLiveTokenCreateResponse",
+      "field": "id",
+      "entity_type": "API token",
+      "identifier_kind": "id",
+      "business_type": "API token.id",
+      "wire_schema": {
+        "type": "integer",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "LongLiveTokenOut",
+      "field": "id",
+      "entity_type": "API token",
+      "identifier_kind": "id",
+      "business_type": "API token.id",
+      "wire_schema": {
+        "type": "integer",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelOut",
+      "field": "id",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelSummary",
+      "field": "id",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelUpdate",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "MultiPurposeLabelUpdate",
+      "field": "id",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "PlanRulesOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "PlanRulesOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "PlanRulesOut",
+      "field": "id",
+      "entity_type": "Meal-plan rule",
+      "identifier_kind": "id",
+      "business_type": "Meal-plan rule.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadCookBook",
+      "field": "slug",
+      "entity_type": "Cookbook",
+      "identifier_kind": "slug",
+      "business_type": "Cookbook.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadCookBook",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadCookBook",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadCookBook",
+      "field": "id",
+      "entity_type": "Cookbook",
+      "identifier_kind": "id",
+      "business_type": "Cookbook.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadGroupPreferences",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadGroupPreferences",
+      "field": "id",
+      "entity_type": "Group preferences",
+      "identifier_kind": "id",
+      "business_type": "Group preferences.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadHouseholdPreferences",
+      "field": "id",
+      "entity_type": "Household preferences",
+      "identifier_kind": "id",
+      "business_type": "Household preferences.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadInviteToken",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadInviteToken",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadPlanEntry",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Recipeid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadPlanEntry",
+      "field": "id",
+      "entity_type": "Meal-plan entry",
+      "identifier_kind": "id",
+      "business_type": "Meal-plan entry.id",
+      "wire_schema": {
+        "type": "integer",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadPlanEntry",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadPlanEntry",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadPlanEntry",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadWebhook",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadWebhook",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReadWebhook",
+      "field": "id",
+      "entity_type": "Webhook",
+      "identifier_kind": "id",
+      "business_type": "Webhook.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Input",
+      "field": "id",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Input",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Input",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Input",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Input",
+      "field": "slug",
+      "entity_type": "Recipe",
+      "identifier_kind": "slug",
+      "business_type": "Recipe.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug",
+        "default": ""
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Output",
+      "field": "id",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Output",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Output",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Output",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "Recipe-Output",
+      "field": "slug",
+      "entity_type": "Recipe",
+      "identifier_kind": "slug",
+      "business_type": "Recipe.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug",
+        "default": ""
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategory",
+      "field": "id",
+      "entity_type": "Category",
+      "identifier_kind": "id",
+      "business_type": "Category.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategory",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategory",
+      "field": "slug",
+      "entity_type": "Category",
+      "identifier_kind": "slug",
+      "business_type": "Category.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategoryIn",
+      "field": "id",
+      "entity_type": "Category",
+      "identifier_kind": "id",
+      "business_type": "Category.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategoryIn",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCategoryIn",
+      "field": "slug",
+      "entity_type": "Category",
+      "identifier_kind": "slug",
+      "business_type": "Category.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentCreate",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Input",
+      "field": "id",
+      "entity_type": "Recipe comment",
+      "identifier_kind": "id",
+      "business_type": "Recipe comment.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Input",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Input",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Output",
+      "field": "id",
+      "entity_type": "Recipe comment",
+      "identifier_kind": "id",
+      "business_type": "Recipe comment.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Output",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentOut-Output",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeCommentUpdate",
+      "field": "id",
+      "entity_type": "Recipe comment",
+      "identifier_kind": "id",
+      "business_type": "Recipe comment.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIn",
+      "field": "id",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIn",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIn",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIn",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIn",
+      "field": "slug",
+      "entity_type": "Recipe",
+      "identifier_kind": "slug",
+      "business_type": "Recipe.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug",
+        "default": ""
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeIngredientSubstitution",
+      "field": "substituteFoodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Substitutefoodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareToken",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareToken",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareToken",
+      "field": "id",
+      "entity_type": "Recipe share token",
+      "identifier_kind": "id",
+      "business_type": "Recipe share token.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareTokenCreate",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareTokenSummary",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareTokenSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeShareTokenSummary",
+      "field": "id",
+      "entity_type": "Recipe share token",
+      "identifier_kind": "id",
+      "business_type": "Recipe share token.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeStep",
+      "field": "id",
+      "entity_type": "Recipe step",
+      "identifier_kind": "id",
+      "business_type": "Recipe step.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeSummary",
+      "field": "id",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeSummary",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeSummary",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeSummary",
+      "field": "slug",
+      "entity_type": "Recipe",
+      "identifier_kind": "slug",
+      "business_type": "Recipe.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug",
+        "default": ""
+      },
+      "required": false,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTag",
+      "field": "id",
+      "entity_type": "Tag",
+      "identifier_kind": "id",
+      "business_type": "Tag.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTag",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTag",
+      "field": "slug",
+      "entity_type": "Tag",
+      "identifier_kind": "slug",
+      "business_type": "Tag.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagIn",
+      "field": "id",
+      "entity_type": "Tag",
+      "identifier_kind": "id",
+      "business_type": "Tag.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagIn",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagIn",
+      "field": "slug",
+      "entity_type": "Tag",
+      "identifier_kind": "slug",
+      "business_type": "Tag.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagResponse",
+      "field": "id",
+      "entity_type": "Tag",
+      "identifier_kind": "id",
+      "business_type": "Tag.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagResponse",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTagResponse",
+      "field": "slug",
+      "entity_type": "Tag",
+      "identifier_kind": "slug",
+      "business_type": "Tag.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventIn",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventIn",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Userid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventOut",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventOut",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventOut",
+      "field": "id",
+      "entity_type": "Recipe timeline event",
+      "identifier_kind": "id",
+      "business_type": "Recipe timeline event.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTimelineEventOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTool",
+      "field": "id",
+      "entity_type": "Tool",
+      "identifier_kind": "id",
+      "business_type": "Tool.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTool",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeTool",
+      "field": "slug",
+      "entity_type": "Tool",
+      "identifier_kind": "slug",
+      "business_type": "Tool.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolIn",
+      "field": "id",
+      "entity_type": "Tool",
+      "identifier_kind": "id",
+      "business_type": "Tool.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolIn",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolIn",
+      "field": "slug",
+      "entity_type": "Tool",
+      "identifier_kind": "slug",
+      "business_type": "Tool.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolOut",
+      "field": "id",
+      "entity_type": "Tool",
+      "identifier_kind": "id",
+      "business_type": "Tool.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolOut",
+      "field": "slug",
+      "entity_type": "Tool",
+      "identifier_kind": "slug",
+      "business_type": "Tool.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolResponse",
+      "field": "id",
+      "entity_type": "Tool",
+      "identifier_kind": "id",
+      "business_type": "Tool.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolResponse",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "RecipeToolResponse",
+      "field": "slug",
+      "entity_type": "Tool",
+      "identifier_kind": "slug",
+      "business_type": "Tool.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportEntryOut",
+      "field": "reportId",
+      "entity_type": "Report",
+      "identifier_kind": "id",
+      "business_type": "Report.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Reportid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportEntryOut",
+      "field": "id",
+      "entity_type": "Report entry",
+      "identifier_kind": "id",
+      "business_type": "Report entry.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportOut",
+      "field": "id",
+      "entity_type": "Report",
+      "identifier_kind": "id",
+      "business_type": "Report.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ReportSummary",
+      "field": "id",
+      "entity_type": "Report",
+      "identifier_kind": "id",
+      "business_type": "Report.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "SaveGroupRecipeAction",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "SaveGroupRecipeAction",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "SetPermissions",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListAddRecipeParamsBulk",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemCreate",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemCreate",
+      "field": "foodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Foodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemCreate",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemCreate",
+      "field": "unitId",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unitid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemCreate",
+      "field": "id",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "foodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Foodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "unitId",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unitid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "id",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Input",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "foodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Foodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "unitId",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unitid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "id",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemOut-Output",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefCreate",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefOut",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefOut",
+      "field": "id",
+      "entity_type": "Item-recipe link",
+      "identifier_kind": "id",
+      "business_type": "Item-recipe link.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefOut",
+      "field": "shoppingListItemId",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistitemid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefUpdate",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefUpdate",
+      "field": "id",
+      "entity_type": "Item-recipe link",
+      "identifier_kind": "id",
+      "business_type": "Item-recipe link.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemRecipeRefUpdate",
+      "field": "shoppingListItemId",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistitemid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdate",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdate",
+      "field": "foodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Foodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdate",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdate",
+      "field": "unitId",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unitid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdateBulk",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdateBulk",
+      "field": "foodId",
+      "entity_type": "Food",
+      "identifier_kind": "id",
+      "business_type": "Food.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Foodid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdateBulk",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Labelid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdateBulk",
+      "field": "unitId",
+      "entity_type": "Unit",
+      "identifier_kind": "id",
+      "business_type": "Unit.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Unitid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListItemUpdateBulk",
+      "field": "id",
+      "entity_type": "Shopping item",
+      "identifier_kind": "id",
+      "business_type": "Shopping item.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelOut",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelOut",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Labelid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelOut",
+      "field": "id",
+      "entity_type": "List-label setting",
+      "identifier_kind": "id",
+      "business_type": "List-label setting.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelUpdate",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelUpdate",
+      "field": "labelId",
+      "entity_type": "Label",
+      "identifier_kind": "id",
+      "business_type": "Label.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Labelid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListMultiPurposeLabelUpdate",
+      "field": "id",
+      "entity_type": "List-label setting",
+      "identifier_kind": "id",
+      "business_type": "List-label setting.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListOut",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListOut",
+      "field": "id",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListRecipeRefOut",
+      "field": "id",
+      "entity_type": "List-recipe link",
+      "identifier_kind": "id",
+      "business_type": "List-recipe link.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListRecipeRefOut",
+      "field": "shoppingListId",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Shoppinglistid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListRecipeRefOut",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListSummary",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListSummary",
+      "field": "id",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListSummary",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListUpdate",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListUpdate",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "ShoppingListUpdate",
+      "field": "id",
+      "entity_type": "Shopping list",
+      "identifier_kind": "id",
+      "business_type": "Shopping list.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagBase",
+      "field": "id",
+      "entity_type": "Tag",
+      "identifier_kind": "id",
+      "business_type": "Tag.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagBase",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Groupid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagBase",
+      "field": "slug",
+      "entity_type": "Tag",
+      "identifier_kind": "slug",
+      "business_type": "Tag.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagOut",
+      "field": "id",
+      "entity_type": "Tag",
+      "identifier_kind": "id",
+      "business_type": "Tag.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "TagOut",
+      "field": "slug",
+      "entity_type": "Tag",
+      "identifier_kind": "slug",
+      "business_type": "Tag.slug",
+      "wire_schema": {
+        "type": "string",
+        "title": "Slug"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateCookBook",
+      "field": "slug",
+      "entity_type": "Cookbook",
+      "identifier_kind": "slug",
+      "business_type": "Cookbook.slug",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Slug"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateCookBook",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateCookBook",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateCookBook",
+      "field": "id",
+      "entity_type": "Cookbook",
+      "identifier_kind": "id",
+      "business_type": "Cookbook.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateHouseholdAdmin",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdateHouseholdAdmin",
+      "field": "id",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdatePlanEntry",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Recipeid"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdatePlanEntry",
+      "field": "id",
+      "entity_type": "Meal-plan entry",
+      "identifier_kind": "id",
+      "business_type": "Meal-plan entry.id",
+      "wire_schema": {
+        "type": "integer",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdatePlanEntry",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UpdatePlanEntry",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserBase-Output",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserBase-Output",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Username"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserIn",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserIn",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "type": "string",
+        "title": "Username"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserOut",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserOut",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Username"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserOut",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserOut",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserRatingOut",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserRatingOut",
+      "field": "userId",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Userid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserRatingOut",
+      "field": "id",
+      "entity_type": "Rating / favorite",
+      "identifier_kind": "id",
+      "business_type": "Rating / favorite.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserRatingSummary",
+      "field": "recipeId",
+      "entity_type": "Recipe",
+      "identifier_kind": "id",
+      "business_type": "Recipe.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Recipeid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserSummary",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserSummary",
+      "field": "groupId",
+      "entity_type": "Group",
+      "identifier_kind": "id",
+      "business_type": "Group.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Groupid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserSummary",
+      "field": "householdId",
+      "entity_type": "Household",
+      "identifier_kind": "id",
+      "business_type": "Household.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Householdid"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "UserSummary",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "type": "string",
+        "title": "Username"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "mealie__schema__recipe__recipe_comments__UserBase",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "type": "string",
+        "format": "uuid4",
+        "title": "Id"
+      },
+      "required": true,
+      "nullable": false,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "mealie__schema__recipe__recipe_comments__UserBase",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Username"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "mealie__schema__user__user__UserBase",
+      "field": "id",
+      "entity_type": "User",
+      "identifier_kind": "id",
+      "business_type": "User.id",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid4"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Id"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    },
+    {
+      "schema": "mealie__schema__user__user__UserBase",
+      "field": "username",
+      "entity_type": "User",
+      "identifier_kind": "username",
+      "business_type": "User.username",
+      "wire_schema": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Username"
+      },
+      "required": false,
+      "nullable": true,
+      "read_only": false,
+      "evidence": "reviewed profile; runtime co-reference still required"
+    }
+  ],
+  "identity_rule": "Same business type + same run/scope + observed alias evidence; wire format alone never merges entities."
+}

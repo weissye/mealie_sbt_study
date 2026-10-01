@@ -1,0 +1,810 @@
+{
+  "action_candidates": [
+    {
+      "executable": false,
+      "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+      "path_slot": "recipe_id",
+      "source_type": "api/households/shopping/lists",
+      "status": "relationship_effect_requires_observation",
+      "target_type": "api/recipes"
+    },
+    {
+      "executable": false,
+      "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+      "path_slot": "recipe_id",
+      "source_type": "api/households/shopping/lists",
+      "status": "relationship_effect_requires_observation",
+      "target_type": "api/recipes"
+    }
+  ],
+  "blockers": [
+    {
+      "reason": "bootstrap_and_authentication_binding_not_validated"
+    },
+    {
+      "reason": "response_projection_and_readback_bindings_not_validated"
+    },
+    {
+      "reason": "instance_aliases_require_runtime_coobservation"
+    }
+  ],
+  "coverage_limit": "Only explicit nested references writable in an inferred update operation become link tasks. Other relationships remain in the map for review.",
+  "cycle_policy": "Optional relationship links follow instance creation. Required create cycles remain blocked.",
+  "http_policy": "one HTTP request at a time; scheduling belongs to stories, transport to interfaces",
+  "instances": {
+    "api/foods": [
+      "api/foods#1",
+      "api/foods#2",
+      "api/foods#3"
+    ],
+    "api/households/shopping/items": [
+      "api/households/shopping/items#1",
+      "api/households/shopping/items#2",
+      "api/households/shopping/items#3"
+    ],
+    "api/households/shopping/lists": [
+      "api/households/shopping/lists#1",
+      "api/households/shopping/lists#2",
+      "api/households/shopping/lists#3"
+    ],
+    "api/organizers/categories": [
+      "api/organizers/categories#1",
+      "api/organizers/categories#2",
+      "api/organizers/categories#3"
+    ],
+    "api/organizers/tags": [
+      "api/organizers/tags#1",
+      "api/organizers/tags#2",
+      "api/organizers/tags#3"
+    ],
+    "api/recipes": [
+      "api/recipes#1",
+      "api/recipes#2",
+      "api/recipes#3"
+    ],
+    "api/units": [
+      "api/units#1",
+      "api/units#2",
+      "api/units#3"
+    ]
+  },
+  "profile_sha256": "26a4cc5bed1e2e299420b7ef829cef72910cda6b213250e80c91ab5590306025",
+  "server_requests_sent": 0,
+  "source_openapi_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "status": "REVIEW_PLAN_ONLY",
+  "tasks": [
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/foods#1",
+      "instance": "api/foods#1",
+      "kind": "create",
+      "operation": "POST /api/foods",
+      "resource": "api/foods"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/foods#2",
+      "instance": "api/foods#2",
+      "kind": "create",
+      "operation": "POST /api/foods",
+      "resource": "api/foods"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/foods#3",
+      "instance": "api/foods#3",
+      "kind": "create",
+      "operation": "POST /api/foods",
+      "resource": "api/foods"
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#1"
+      ],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/items#1",
+      "instance": "api/households/shopping/items#1",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/items",
+      "resource": "api/households/shopping/items"
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#2"
+      ],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/items#2",
+      "instance": "api/households/shopping/items#2",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/items",
+      "resource": "api/households/shopping/items"
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#3"
+      ],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/items#3",
+      "instance": "api/households/shopping/items#3",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/items",
+      "resource": "api/households/shopping/items"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/lists#1",
+      "instance": "api/households/shopping/lists#1",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/lists",
+      "resource": "api/households/shopping/lists"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/lists#2",
+      "instance": "api/households/shopping/lists#2",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/lists",
+      "resource": "api/households/shopping/lists"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/households/shopping/lists#3",
+      "instance": "api/households/shopping/lists#3",
+      "kind": "create",
+      "operation": "POST /api/households/shopping/lists",
+      "resource": "api/households/shopping/lists"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/categories#1",
+      "instance": "api/organizers/categories#1",
+      "kind": "create",
+      "operation": "POST /api/organizers/categories",
+      "resource": "api/organizers/categories"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/categories#2",
+      "instance": "api/organizers/categories#2",
+      "kind": "create",
+      "operation": "POST /api/organizers/categories",
+      "resource": "api/organizers/categories"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/categories#3",
+      "instance": "api/organizers/categories#3",
+      "kind": "create",
+      "operation": "POST /api/organizers/categories",
+      "resource": "api/organizers/categories"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/tags#1",
+      "instance": "api/organizers/tags#1",
+      "kind": "create",
+      "operation": "POST /api/organizers/tags",
+      "resource": "api/organizers/tags"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/tags#2",
+      "instance": "api/organizers/tags#2",
+      "kind": "create",
+      "operation": "POST /api/organizers/tags",
+      "resource": "api/organizers/tags"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/organizers/tags#3",
+      "instance": "api/organizers/tags#3",
+      "kind": "create",
+      "operation": "POST /api/organizers/tags",
+      "resource": "api/organizers/tags"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/recipes#1",
+      "instance": "api/recipes#1",
+      "kind": "create",
+      "operation": "POST /api/recipes",
+      "resource": "api/recipes"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/recipes#2",
+      "instance": "api/recipes#2",
+      "kind": "create",
+      "operation": "POST /api/recipes",
+      "resource": "api/recipes"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/recipes#3",
+      "instance": "api/recipes#3",
+      "kind": "create",
+      "operation": "POST /api/recipes",
+      "resource": "api/recipes"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/units#1",
+      "instance": "api/units#1",
+      "kind": "create",
+      "operation": "POST /api/units",
+      "resource": "api/units"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/units#2",
+      "instance": "api/units#2",
+      "kind": "create",
+      "operation": "POST /api/units",
+      "resource": "api/units"
+    },
+    {
+      "after": [],
+      "binding": "capture_documented_response_identity",
+      "executable": false,
+      "id": "create:api/units#3",
+      "instance": "api/units#3",
+      "kind": "create",
+      "operation": "POST /api/units",
+      "resource": "api/units"
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#1",
+        "create:api/foods#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "food",
+      "id": "link:1:1",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#1",
+      "target_instances": [
+        "api/foods#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#2",
+        "create:api/foods#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "food",
+      "id": "link:1:2",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#2",
+      "target_instances": [
+        "api/foods#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#3",
+        "create:api/foods#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "food",
+      "id": "link:1:3",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#3",
+      "target_instances": [
+        "api/foods#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#1",
+        "create:api/recipes#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "referencedRecipe",
+      "id": "link:2:1",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#1",
+      "target_instances": [
+        "api/recipes#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#2",
+        "create:api/recipes#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "referencedRecipe",
+      "id": "link:2:2",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#2",
+      "target_instances": [
+        "api/recipes#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#3",
+        "create:api/recipes#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "referencedRecipe",
+      "id": "link:2:3",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#3",
+      "target_instances": [
+        "api/recipes#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#1",
+        "create:api/units#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "unit",
+      "id": "link:3:1",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#1",
+      "target_instances": [
+        "api/units#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#2",
+        "create:api/units#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "unit",
+      "id": "link:3:2",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#2",
+      "target_instances": [
+        "api/units#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/items#3",
+        "create:api/units#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "unit",
+      "id": "link:3:3",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListItemUpdate/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/items#3",
+      "target_instances": [
+        "api/units#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#1",
+        "create:api/households/shopping/items#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "listItems[]",
+      "id": "link:4:1",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/lists/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListUpdate/properties/listItems/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/lists#1",
+      "target_instances": [
+        "api/households/shopping/items#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#2",
+        "create:api/households/shopping/items#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "listItems[]",
+      "id": "link:4:2",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/lists/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListUpdate/properties/listItems/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/lists#2",
+      "target_instances": [
+        "api/households/shopping/items#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/households/shopping/lists#3",
+        "create:api/households/shopping/items#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "listItems[]",
+      "id": "link:4:3",
+      "kind": "link",
+      "operation": "PUT /api/households/shopping/lists/{item_id}",
+      "pointer": "#/components/schemas/ShoppingListUpdate/properties/listItems/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/households/shopping/lists#3",
+      "target_instances": [
+        "api/households/shopping/items#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#1",
+        "create:api/foods#1",
+        "create:api/foods#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].food",
+      "id": "link:5:1",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#1",
+      "target_instances": [
+        "api/foods#1",
+        "api/foods#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#2",
+        "create:api/foods#2",
+        "create:api/foods#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].food",
+      "id": "link:5:2",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#2",
+      "target_instances": [
+        "api/foods#2",
+        "api/foods#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#3",
+        "create:api/foods#3",
+        "create:api/foods#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].food",
+      "id": "link:5:3",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/food/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#3",
+      "target_instances": [
+        "api/foods#3",
+        "api/foods#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#1",
+        "create:api/organizers/categories#1",
+        "create:api/organizers/categories#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeCategory[]",
+      "id": "link:6:1",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/recipeCategory/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#1",
+      "target_instances": [
+        "api/organizers/categories#1",
+        "api/organizers/categories#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#2",
+        "create:api/organizers/categories#2",
+        "create:api/organizers/categories#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeCategory[]",
+      "id": "link:6:2",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/recipeCategory/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#2",
+      "target_instances": [
+        "api/organizers/categories#2",
+        "api/organizers/categories#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#3",
+        "create:api/organizers/categories#3",
+        "create:api/organizers/categories#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeCategory[]",
+      "id": "link:6:3",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/recipeCategory/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#3",
+      "target_instances": [
+        "api/organizers/categories#3",
+        "api/organizers/categories#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#1",
+        "create:api/organizers/tags#1",
+        "create:api/organizers/tags#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "tags[]",
+      "id": "link:7:1",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/tags/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#1",
+      "target_instances": [
+        "api/organizers/tags#1",
+        "api/organizers/tags#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#2",
+        "create:api/organizers/tags#2",
+        "create:api/organizers/tags#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "tags[]",
+      "id": "link:7:2",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/tags/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#2",
+      "target_instances": [
+        "api/organizers/tags#2",
+        "api/organizers/tags#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#3",
+        "create:api/organizers/tags#3",
+        "create:api/organizers/tags#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "tags[]",
+      "id": "link:7:3",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/Recipe-Input/properties/tags/anyOf/0/items",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#3",
+      "target_instances": [
+        "api/organizers/tags#3",
+        "api/organizers/tags#1"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#1",
+        "create:api/recipes#2",
+        "create:api/recipes#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].referencedRecipe",
+      "id": "link:8:1",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#1",
+      "target_instances": [
+        "api/recipes#2",
+        "api/recipes#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#2",
+        "create:api/recipes#1",
+        "create:api/recipes#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].referencedRecipe",
+      "id": "link:8:2",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#2",
+      "target_instances": [
+        "api/recipes#1",
+        "api/recipes#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#3",
+        "create:api/recipes#1",
+        "create:api/recipes#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].referencedRecipe",
+      "id": "link:8:3",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/referencedRecipe/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#3",
+      "target_instances": [
+        "api/recipes#1",
+        "api/recipes#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#1",
+        "create:api/units#1",
+        "create:api/units#2"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].unit",
+      "id": "link:9:1",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#1",
+      "target_instances": [
+        "api/units#1",
+        "api/units#2"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#2",
+        "create:api/units#2",
+        "create:api/units#3"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].unit",
+      "id": "link:9:2",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#2",
+      "target_instances": [
+        "api/units#2",
+        "api/units#3"
+      ]
+    },
+    {
+      "after": [
+        "create:api/recipes#3",
+        "create:api/units#3",
+        "create:api/units#1"
+      ],
+      "binding": "response_projection_into_request_schema",
+      "executable": false,
+      "field_path": "recipeIngredient[].unit",
+      "id": "link:9:3",
+      "kind": "link",
+      "operation": "PUT /api/recipes/{slug}",
+      "pointer": "#/components/schemas/RecipeIngredient-Input/properties/unit/anyOf/0",
+      "readback": "must_resolve_documented_get_and_relationship_path",
+      "source_instance": "api/recipes#3",
+      "target_instances": [
+        "api/units#3",
+        "api/units#1"
+      ]
+    }
+  ],
+  "version": 1
+}

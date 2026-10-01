@@ -1,0 +1,20 @@
+{
+  "stage": "M3_M4_DESIGN_NOT_LIVE_EXECUTED",
+  "transport": "serial HTTP; at most one request in flight",
+  "bootstrap": {"group": "G1", "household": "H1", "actors": ["U1", "U2"], "first_mode": "both stories use U1", "second_mode": "U1 and U2 in the same household after fixture acceptance"},
+  "instances": {"Food": ["F1", "F2", "F3"], "Unit": ["Q1", "Q2"], "Category": ["C1", "C2"], "Tag": ["T1", "T2"], "Recipe": ["R1", "R2", "R3"], "Shopping list": ["L1", "L2"]},
+  "relationships": {
+    "recipe_foods": {"R1": ["F1", "F3"], "R2": ["F1", "F2"], "R3": ["F2", "F3"]},
+    "recipe_categories": {"R1": ["C1"], "R2": ["C1", "C2"], "R3": ["C2"]},
+    "recipe_tags": {"R1": ["T1", "T2"], "R2": ["T2"], "R3": ["T1"]},
+    "shopping_list_recipes": {"L1": ["R1", "R2"], "L2": ["R2", "R3"]}
+  },
+  "observation_goals": ["shared food appears in more than one recipe", "R2 is linked to two shopping lists", "each list links more than one recipe", "recipe ID and slug resolve to the same observed recipe", "list-level and item-level recipe links remain distinct relation types"],
+  "cycle_control": {"initial_recipe_reference": "R3 may reference R1 after both are independently created, only if accepted by the API", "cyclic_links": "not assumed supported; a directed relationship cycle requires a separately documented expectation", "schema_cycle_handling": "omit optional recursive field or choose null when explicitly allowed; never fabricate a parent ID"},
+  "stories": [
+    {"name": "recipe_edit_and_read", "actor": "U1", "steps": ["read R2", "change a benign descriptive field of R2", "read R2"]},
+    {"name": "shopping_link_and_read", "actor": "U1", "steps": ["link R2 into L1", "read L1", "link R2 into L2", "read L2"]}
+  ],
+  "oracle_policy": "No assumption that editing a recipe retroactively changes existing shopping items. Business requirements require documented acceptance before a semantic verdict.",
+  "pilot_execution_implemented": false
+}

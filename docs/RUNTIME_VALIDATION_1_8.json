@@ -1,0 +1,13 @@
+{
+  "increment": "1.8",
+  "python_tests_passed": 44,
+  "uploaded_1_7_sample_preflight": "PASS: exact source and IR; 70 unique complete samples",
+  "uploaded_fixture_read_only_validation": "PASS: 14 base resources; 41 active typed records; 71 active links",
+  "four_mutation_payload_projections": "PASS against reviewed v3.28.0 contract and uploaded GET responses",
+  "simulation": "PASS: both generated standalone traces; semantic restoration; regenerated identities; other parent preserved",
+  "live_server_execution_here": "NOT_RUN",
+  "powershell_runtime_here": "NOT_RUN",
+  "composed_live_schedules": "NOT_IMPLEMENTED",
+  "full_json_schema_validation": false,
+  "full_server_reset_replay": false
+}

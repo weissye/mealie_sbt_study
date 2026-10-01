@@ -1,0 +1,30 @@
+﻿{
+    "result":  "M1_SERVER_CONTRACT_READ_PASS",
+    "baseUrl":  "http://127.0.0.1:9925",
+    "appInfo":  {
+                    "production":  true,
+                    "version":  "v3.28.0",
+                    "demoStatus":  false,
+                    "allowSignup":  false,
+                    "allowPasswordLogin":  true,
+                    "defaultGroupSlug":  null,
+                    "defaultHouseholdSlug":  null,
+                    "enableOidc":  false,
+                    "oidcRedirect":  false,
+                    "oidcProviderName":  "OAuth",
+                    "tokenTime":  48,
+                    "allowedIframeHosts":  [
+                                               "youtube.com",
+                                               "youtube-nocookie.com",
+                                               "vimeo.com",
+                                               "player.vimeo.com"
+                                           ]
+                },
+    "contract":  "C:\\work\\temp\\mealie_sbt_study\\model\\mealie-openapi.local-20261001-070651-703.json",
+    "sha256":  "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+    "maps":  "C:\\work\\temp\\mealie_sbt_study\\maps\\local-20261001-070651-703",
+    "authenticatedRequestsTested":  false,
+    "fixturesValidated":  false,
+    "resetReplayValidated":  false,
+    "readyForLivePilot":  false
+}

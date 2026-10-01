@@ -1,0 +1,36 @@
+{
+  "source": "storage-audit/review-candidates-20261001-064557.csv",
+  "policy": "Exact reviewed paths only. Keep evidence release copy. Delete only after current SHA256 equality.",
+  "items": [
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.1.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.1.txt",
+      "expectedBytes": 104890040
+    },
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.1.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_restler_completed_20260902_204304\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.1.txt",
+      "expectedBytes": 104890040
+    },
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.2.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.2.txt",
+      "expectedBytes": 104995625
+    },
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.2.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_restler_completed_20260902_204304\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.2.txt",
+      "expectedBytes": 104995625
+    },
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.3.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_restler_completed_20260902_204304\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.3.txt",
+      "expectedBytes": 105111511
+    },
+    {
+      "keep": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_evidence_releases\\netbox_a11_final_20260902T192117Z\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.3.txt",
+      "remove": "C:\\work\\temp\\RestEvo\\FSE2027_artifact\\generated_outputs\\netbox_a11_task_scoped_v2\\restler\\fuzz\\Fuzz\\RestlerResults\\experiment11840\\logs\\network.testing.26592.3.txt",
+      "expectedBytes": 105111511
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+    "result":  "GENERIC_GENERATOR_STATIC_FILES_READY",
+    "revision":  "resource-maps.1",
+    "contractSha256":  "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+    "storyProfile":  "parallel-crud",
+    "logicalProcesses":  1,
+    "instancesPerEntity":  1,
+    "directHttpInStories":  false,
+    "serverRequestsSent":  0,
+    "sampled":  false,
+    "liveAccepted":  false,
+    "resourceMapsRequested":  true,
+    "relationshipPlanRequested":  true
+}

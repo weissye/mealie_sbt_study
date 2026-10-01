@@ -1,0 +1,194 @@
+[
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/recipes/{slug}",
+        "method": "GET",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "action": "capture",
+        "id": "A1",
+        "operation": "get_one_api_recipes__slug__get",
+        "story": "recipe_description"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/recipes/{slug}",
+        "method": "PUT",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "action": "update",
+        "id": "A2",
+        "operation": "update_one_api_recipes__slug__put",
+        "story": "recipe_description"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/recipes/{slug}",
+        "method": "GET",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "action": "verify_update",
+        "id": "A3",
+        "operation": "get_one_api_recipes__slug__get",
+        "story": "recipe_description"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/recipes/{slug}",
+        "method": "PUT",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "action": "restore",
+        "id": "A4",
+        "operation": "update_one_api_recipes__slug__put",
+        "story": "recipe_description"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/recipes/mealie-sbt-ed84ed18cfd4-r2",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+        "method": "POST",
+        "bindings": {
+          "recipe_id": {
+            "symbol": "R2",
+            "type": "Recipe.id"
+          },
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "action": "remove_link",
+        "id": "B1",
+        "operation": "remove_recipe_ingredients_from_list_api_households_shopping_lists__item_id__recipe__recipe_id__delete_post",
+        "story": "list_recipe_membership"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1/recipe/7dbdc592-2fa2-4bec-b1c5-b5f5162aa625/delete",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/households/shopping/lists/{item_id}",
+        "method": "GET",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "action": "verify_absent",
+        "id": "B2",
+        "operation": "get_one_api_households_shopping_lists__item_id__get",
+        "story": "list_recipe_membership"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+        "method": "POST",
+        "bindings": {
+          "recipe_id": {
+            "symbol": "R2",
+            "type": "Recipe.id"
+          },
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "action": "add_link",
+        "id": "B3",
+        "operation": "add_single_recipe_ingredients_to_list_api_households_shopping_lists__item_id__recipe__recipe_id__post",
+        "story": "list_recipe_membership"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1/recipe/7dbdc592-2fa2-4bec-b1c5-b5f5162aa625",
+    "completed": true
+  },
+  {
+    "event": {
+      "data": {
+        "actor": "U1",
+        "mode": "SYMBOLIC_ONLY",
+        "path": "/api/households/shopping/lists/{item_id}",
+        "method": "GET",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "action": "verify_present",
+        "id": "B4",
+        "operation": "get_one_api_households_shopping_lists__item_id__get",
+        "story": "list_recipe_membership"
+      },
+      "name": "SBT:Step"
+    },
+    "resolved_path": "/api/households/shopping/lists/dd325322-fb27-4884-8be0-1f4377990fe1",
+    "completed": true
+  }
+]

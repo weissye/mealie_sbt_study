@@ -1,0 +1,79 @@
+{
+  "result": "M4_STANDALONE_RESTORATION_ACCEPTANCE_PASS",
+  "run_id": "standalone-20261001-085244-4b00a598",
+  "execution_mode": "GENERATED_EVENT_STANDALONE_REPLAY",
+  "live_interleavings_executed": false,
+  "provengo_live_executor": false,
+  "reset_replay_validated": false,
+  "complete_json_schema_validation": false,
+  "automatic_retry": false,
+  "automatic_failure_rollback": false,
+  "live_contract_requests_sent": 1,
+  "live_contract": {
+    "path": "/openapi.json",
+    "method": "GET",
+    "status": 200,
+    "sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292"
+  },
+  "identity_acceptance": {
+    "result": "M1_IDENTITY_ACCEPTANCE_PASS",
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/api/auth/token",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/users/self",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/groups/self",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/households/self",
+        "status": 200
+      }
+    ],
+    "identity_scope_confirmed": true,
+    "instance_count": 3,
+    "observed_link_count": 3,
+    "scope": {
+      "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "household": "436203bb-45fe-494d-aae5-736e1592c775"
+    },
+    "user_id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+    "permissions": {
+      "admin": true,
+      "canManage": true,
+      "canManageHousehold": true,
+      "canOrganize": true
+    },
+    "fixtures_validated": false,
+    "reset_replay_validated": false,
+    "ready_for_live_pilot": false
+  },
+  "project": "C:\\work\\temp\\mealie_sbt_study\\provengo\\offline-c4d82e3809f9",
+  "fixture_run": "fixture-20261001-073945-b8086846",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "symbolic_schedules_verified": 70,
+  "actor_id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+  "scope": {
+    "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+    "household": "436203bb-45fe-494d-aae5-736e1592c775"
+  },
+  "stories_accepted": [
+    "recipe_description",
+    "list_recipe_membership"
+  ],
+  "semantic_restoration_accepted": true,
+  "current_rtv_refreshed": true,
+  "active_observed_records": 41,
+  "active_observed_links": 71,
+  "fixture_requests_sent": 51,
+  "restoration_scope": "Selected editable recipe content, resource content, list quantities and provenance; timestamps and generated shopping item/link IDs excluded."
+}

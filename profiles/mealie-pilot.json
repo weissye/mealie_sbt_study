@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "name": "mealie_owned_functional_pilot",
+  "mode": "SYMBOLIC_ONLY",
+  "actor": "U1",
+  "stories": [
+    {
+      "name": "recipe_description",
+      "template": "read_update_verify_restore",
+      "id_prefix": "A",
+      "operations": {
+        "read": {
+          "operation": "get_one_api_recipes__slug__get",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        },
+        "update": {
+          "operation": "update_one_api_recipes__slug__put",
+          "bindings": {
+            "slug": {
+              "symbol": "R2",
+              "type": "Recipe.slug"
+            }
+          }
+        }
+      },
+      "oracles": {
+        "field": "description",
+        "restore": "captured_value"
+      }
+    },
+    {
+      "name": "list_recipe_membership",
+      "template": "remove_verify_add_verify",
+      "id_prefix": "B",
+      "operations": {
+        "remove_link": {
+          "operation": "remove_recipe_ingredients_from_list_api_households_shopping_lists__item_id__recipe__recipe_id__delete_post",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            },
+            "recipe_id": {
+              "symbol": "R2",
+              "type": "Recipe.id"
+            }
+          }
+        },
+        "read": {
+          "operation": "get_one_api_households_shopping_lists__item_id__get",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            }
+          }
+        },
+        "add_link": {
+          "operation": "add_single_recipe_ingredients_to_list_api_households_shopping_lists__item_id__recipe__recipe_id__post",
+          "bindings": {
+            "item_id": {
+              "symbol": "L1",
+              "type": "Shopping list.id"
+            },
+            "recipe_id": {
+              "symbol": "R2",
+              "type": "Recipe.id"
+            }
+          }
+        }
+      },
+      "oracles": {
+        "relationship": "list_recipe_membership",
+        "restore": "captured_membership"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1796 @@
+{
+  "templates": [
+    {
+      "source": "Group",
+      "target": "Invitation token",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Invitation token: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Invitation token",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Invitation token: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Recipe",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Category",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Category: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Tag",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Tag: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Tool",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Tool: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Label",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Label: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Recipe comment",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe comment: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Rating / favorite",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Rating / favorite: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Rating / favorite",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Rating / favorite: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe timeline event: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe timeline event: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Recipe timeline event: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe timeline event",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe timeline event: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Recipe share token",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe share token: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe share token",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe share token: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Household recipe state",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Household recipe state: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Shopping list: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Shopping list: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Shopping list",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Shopping list: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Shopping item",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Shopping item: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Shopping item",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Shopping item: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "List-recipe link",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "List-recipe link: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Item-recipe link",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Item-recipe link: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Meal-plan entry: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Meal-plan entry: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "userId"
+      ],
+      "evidence": [
+        "Meal-plan entry: userId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Meal-plan entry",
+      "kind": "owner-id",
+      "labels": [
+        "recipeId"
+      ],
+      "evidence": [
+        "Meal-plan entry: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Meal-plan rule",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Meal-plan rule: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Meal-plan rule",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Meal-plan rule: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Cookbook",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Cookbook: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Cookbook",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Cookbook: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Webhook",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Webhook: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Webhook",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Webhook: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Notifier",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Notifier: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Notifier",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Notifier: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Recipe action",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Recipe action: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Recipe action",
+      "kind": "owner-id",
+      "labels": [
+        "householdId"
+      ],
+      "evidence": [
+        "Recipe action: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Report",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Report: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Group data export",
+      "kind": "owner-id",
+      "labels": [
+        "groupId"
+      ],
+      "evidence": [
+        "Group data export: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Category",
+      "kind": "reference",
+      "labels": [
+        "categories"
+      ],
+      "evidence": [
+        "GroupInDB.categories/anyOf/0/items -> CategoryBase"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Webhook",
+      "kind": "reference",
+      "labels": [
+        "webhooks"
+      ],
+      "evidence": [
+        "GroupInDB.webhooks/items -> ReadWebhook"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Household",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "households"
+      ],
+      "evidence": [
+        "GroupInDB.households/anyOf/0/items -> GroupHouseholdSummary",
+        "Household: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "User",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "users"
+      ],
+      "evidence": [
+        "GroupInDB.users/anyOf/0/items -> UserSummary",
+        "User: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Group preferences",
+      "kind": "contains",
+      "labels": [
+        "groupId",
+        "preferences"
+      ],
+      "evidence": [
+        "GroupInDB.preferences/anyOf/0 -> ReadGroupPreferences",
+        "GroupSummary.preferences/anyOf/0 -> ReadGroupPreferences",
+        "GroupAdminUpdate.preferences/anyOf/0 -> UpdateGroupPreferences",
+        "Group preferences: groupId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "AI-provider settings",
+      "kind": "contains",
+      "labels": [
+        "aiProviderSettings"
+      ],
+      "evidence": [
+        "GroupInDB.aiProviderSettings/anyOf/0 -> AIProviderSettingsOut",
+        "GroupSummary.aiProviderSettings/anyOf/0 -> AIProviderSettingsOut",
+        "GroupAdminUpdate.aiProviderSettings/anyOf/0 -> AIProviderSettingsUpdate"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Household preferences",
+      "kind": "contains",
+      "labels": [
+        "preferences"
+      ],
+      "evidence": [
+        "HouseholdInDB.preferences/anyOf/0 -> ReadHouseholdPreferences",
+        "HouseholdSummary.preferences/anyOf/0 -> ReadHouseholdPreferences",
+        "UpdateHouseholdAdmin.preferences/anyOf/0 -> UpdateHouseholdPreferences"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "User",
+      "kind": "contains",
+      "labels": [
+        "householdId",
+        "users"
+      ],
+      "evidence": [
+        "HouseholdInDB.users/anyOf/0/items -> HouseholdUserSummary",
+        "User: householdId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Webhook",
+      "kind": "reference",
+      "labels": [
+        "webhooks"
+      ],
+      "evidence": [
+        "HouseholdInDB.webhooks/items -> ReadWebhook"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "User",
+      "target": "API token",
+      "kind": "contains",
+      "labels": [
+        "tokens"
+      ],
+      "evidence": [
+        "UserOut.tokens/anyOf/0/items -> LongLiveTokenOut"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Category",
+      "kind": "reference",
+      "labels": [
+        "recipeCategory"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeCategory/anyOf/0/items -> RecipeCategory",
+        "Recipe-Input.recipeCategory/anyOf/0/items -> RecipeCategory",
+        "RecipeIn.recipeCategory/anyOf/0/items -> RecipeCategoryIn",
+        "RecipeSummary.recipeCategory/anyOf/0/items -> RecipeCategory"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Tag",
+      "kind": "reference",
+      "labels": [
+        "tags"
+      ],
+      "evidence": [
+        "Recipe-Output.tags/anyOf/0/items -> RecipeTag",
+        "Recipe-Input.tags/anyOf/0/items -> RecipeTag",
+        "RecipeIn.tags/anyOf/0/items -> RecipeTagIn",
+        "RecipeSummary.tags/anyOf/0/items -> RecipeTag"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Tool",
+      "kind": "reference",
+      "labels": [
+        "tools"
+      ],
+      "evidence": [
+        "Recipe-Output.tools/items -> RecipeTool",
+        "Recipe-Input.tools/items -> RecipeTool",
+        "RecipeIn.tools/items -> RecipeToolIn",
+        "RecipeSummary.tools/items -> RecipeTool"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe ingredient",
+      "kind": "contains",
+      "labels": [
+        "recipeIngredient"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeIngredient/items -> RecipeIngredient-Output",
+        "Recipe-Input.recipeIngredient/items -> RecipeIngredient-Input",
+        "RecipeIn.recipeIngredient/items -> RecipeIngredient-Input"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe step",
+      "kind": "contains",
+      "labels": [
+        "recipeInstructions"
+      ],
+      "evidence": [
+        "Recipe-Output.recipeInstructions/anyOf/0/items -> RecipeStep",
+        "Recipe-Input.recipeInstructions/anyOf/0/items -> RecipeStep",
+        "RecipeIn.recipeInstructions/anyOf/0/items -> RecipeStep"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Nutrition",
+      "kind": "contains",
+      "labels": [
+        "nutrition"
+      ],
+      "evidence": [
+        "Recipe-Output.nutrition/anyOf/0 -> Nutrition",
+        "Recipe-Input.nutrition/anyOf/0 -> Nutrition",
+        "RecipeIn.nutrition/anyOf/0 -> Nutrition"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe settings",
+      "kind": "contains",
+      "labels": [
+        "settings"
+      ],
+      "evidence": [
+        "Recipe-Output.settings/anyOf/0 -> RecipeSettings",
+        "Recipe-Input.settings/anyOf/0 -> RecipeSettings",
+        "RecipeIn.settings/anyOf/0 -> RecipeSettings"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe asset",
+      "kind": "contains",
+      "labels": [
+        "assets"
+      ],
+      "evidence": [
+        "Recipe-Output.assets/anyOf/0/items -> RecipeAsset",
+        "Recipe-Input.assets/anyOf/0/items -> RecipeAsset",
+        "RecipeIn.assets/anyOf/0/items -> RecipeAsset"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe note",
+      "kind": "contains",
+      "labels": [
+        "notes"
+      ],
+      "evidence": [
+        "Recipe-Output.notes/anyOf/0/items -> RecipeNote",
+        "Recipe-Input.notes/anyOf/0/items -> RecipeNote",
+        "RecipeIn.notes/anyOf/0/items -> RecipeNote"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe",
+      "target": "Recipe comment",
+      "kind": "contains",
+      "labels": [
+        "comments",
+        "recipeId"
+      ],
+      "evidence": [
+        "Recipe-Output.comments/anyOf/0/items -> RecipeCommentOut-Output",
+        "Recipe-Input.comments/anyOf/0/items -> RecipeCommentOut-Input",
+        "RecipeIn.comments/anyOf/0/items -> RecipeCommentOut-Input",
+        "Recipe comment: recipeId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Tag",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipes"
+      ],
+      "evidence": [
+        "RecipeTagResponse.recipes/items -> RecipeSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Tool",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipes"
+      ],
+      "evidence": [
+        "RecipeToolResponse.recipes/items -> RecipeSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Unit",
+      "kind": "reference",
+      "labels": [
+        "unit"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.unit/anyOf/0 -> IngredientUnit-Output",
+        "RecipeIngredient-Output.unit/anyOf/1 -> CreateIngredientUnit",
+        "RecipeIngredient-Input.unit/anyOf/0 -> IngredientUnit-Input",
+        "RecipeIngredient-Input.unit/anyOf/1 -> CreateIngredientUnit"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "food"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.food/anyOf/0 -> IngredientFood-Output",
+        "RecipeIngredient-Output.food/anyOf/1 -> CreateIngredientFood",
+        "RecipeIngredient-Input.food/anyOf/0 -> IngredientFood-Input",
+        "RecipeIngredient-Input.food/anyOf/1 -> CreateIngredientFood"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "referencedRecipe"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.referencedRecipe/anyOf/0 -> Recipe-Output",
+        "RecipeIngredient-Input.referencedRecipe/anyOf/0 -> Recipe-Input"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe ingredient",
+      "target": "Ingredient substitution",
+      "kind": "contains",
+      "labels": [
+        "substitutions"
+      ],
+      "evidence": [
+        "RecipeIngredient-Output.substitutions/items -> RecipeIngredientSubstitution",
+        "RecipeIngredient-Input.substitutions/items -> RecipeIngredientSubstitution"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food",
+      "target": "Food alias",
+      "kind": "contains",
+      "labels": [
+        "aliases"
+      ],
+      "evidence": [
+        "IngredientFood-Output.aliases/items -> IngredientFoodAlias",
+        "IngredientFood-Input.aliases/items -> IngredientFoodAlias",
+        "CreateIngredientFood.aliases/items -> CreateIngredientFoodAlias"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food",
+      "target": "Food substitution",
+      "kind": "contains",
+      "labels": [
+        "substitutions"
+      ],
+      "evidence": [
+        "IngredientFood-Output.substitutions/items -> IngredientFoodSubstitution",
+        "IngredientFood-Input.substitutions/items -> IngredientFoodSubstitution",
+        "CreateIngredientFood.substitutions/items -> CreateIngredientFoodSubstitution"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "IngredientFood-Output.label/anyOf/0 -> MultiPurposeLabelSummary",
+        "IngredientFood-Input.label/anyOf/0 -> MultiPurposeLabelSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Unit",
+      "target": "Unit alias",
+      "kind": "contains",
+      "labels": [
+        "aliases"
+      ],
+      "evidence": [
+        "IngredientUnit-Output.aliases/items -> IngredientUnitAlias",
+        "IngredientUnit-Input.aliases/items -> IngredientUnitAlias",
+        "CreateIngredientUnit.aliases/items -> CreateIngredientUnitAlias"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food substitution",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "substituteFood"
+      ],
+      "evidence": [
+        "IngredientFoodSubstitution.substituteFood/anyOf/0 -> IngredientFoodSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Ingredient substitution",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "substituteFood"
+      ],
+      "evidence": [
+        "RecipeIngredientSubstitution.substituteFood/anyOf/0 -> IngredientFoodSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe step",
+      "target": "Ingredient reference",
+      "kind": "contains",
+      "labels": [
+        "ingredientReferences"
+      ],
+      "evidence": [
+        "RecipeStep.ingredientReferences/items -> IngredientReferences"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe step",
+      "target": "Note reference",
+      "kind": "contains",
+      "labels": [
+        "noteReferences"
+      ],
+      "evidence": [
+        "RecipeStep.noteReferences/items -> NoteReference"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe comment",
+      "target": "User",
+      "kind": "reference",
+      "labels": [
+        "user"
+      ],
+      "evidence": [
+        "RecipeCommentOut-Output.user -> UserBase-Output",
+        "RecipeCommentOut-Input.user -> mealie__schema__recipe__recipe_comments__UserBase"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Recipe share token",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "RecipeShareToken.recipe -> Recipe-Output"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping list",
+      "target": "Shopping item",
+      "kind": "contains",
+      "labels": [
+        "listItems",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.listItems/items -> ShoppingListItemOut-Output",
+        "ShoppingListUpdate.listItems/items -> ShoppingListItemOut-Input",
+        "Shopping item: shoppingListId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping list",
+      "target": "List-recipe link",
+      "kind": "contains",
+      "labels": [
+        "recipeReferences",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.recipeReferences/items -> ShoppingListRecipeRefOut",
+        "ShoppingListSummary.recipeReferences/items -> ShoppingListRecipeRefOut",
+        "List-recipe link: shoppingListId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping list",
+      "target": "List-label setting",
+      "kind": "contains",
+      "labels": [
+        "labelSettings",
+        "shoppingListId"
+      ],
+      "evidence": [
+        "ShoppingListOut.labelSettings/items -> ShoppingListMultiPurposeLabelOut",
+        "ShoppingListSummary.labelSettings/items -> ShoppingListMultiPurposeLabelOut",
+        "List-label setting: shoppingListId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping item",
+      "target": "Unit",
+      "kind": "reference",
+      "labels": [
+        "unit"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.unit/anyOf/0 -> IngredientUnit-Output",
+        "ShoppingListItemOut-Input.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemCreate.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemCreate.unit/anyOf/1 -> CreateIngredientUnit",
+        "ShoppingListItemUpdate.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemUpdate.unit/anyOf/1 -> CreateIngredientUnit",
+        "ShoppingListItemUpdateBulk.unit/anyOf/0 -> IngredientUnit-Input",
+        "ShoppingListItemUpdateBulk.unit/anyOf/1 -> CreateIngredientUnit"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping item",
+      "target": "Food",
+      "kind": "reference",
+      "labels": [
+        "food"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.food/anyOf/0 -> IngredientFood-Output",
+        "ShoppingListItemOut-Input.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemCreate.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemCreate.food/anyOf/1 -> CreateIngredientFood",
+        "ShoppingListItemUpdate.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemUpdate.food/anyOf/1 -> CreateIngredientFood",
+        "ShoppingListItemUpdateBulk.food/anyOf/0 -> IngredientFood-Input",
+        "ShoppingListItemUpdateBulk.food/anyOf/1 -> CreateIngredientFood"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping item",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "referencedRecipe"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.referencedRecipe/anyOf/0 -> Recipe-Output",
+        "ShoppingListItemOut-Input.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemCreate.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemUpdate.referencedRecipe/anyOf/0 -> Recipe-Input",
+        "ShoppingListItemUpdateBulk.referencedRecipe/anyOf/0 -> Recipe-Input"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping item",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.label/anyOf/0 -> MultiPurposeLabelSummary",
+        "ShoppingListItemOut-Input.label/anyOf/0 -> MultiPurposeLabelSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Shopping item",
+      "target": "Item-recipe link",
+      "kind": "contains",
+      "labels": [
+        "recipeReferences",
+        "shoppingListItemId"
+      ],
+      "evidence": [
+        "ShoppingListItemOut-Output.recipeReferences/items -> ShoppingListItemRecipeRefOut",
+        "ShoppingListItemOut-Input.recipeReferences/items -> ShoppingListItemRecipeRefOut",
+        "ShoppingListItemCreate.recipeReferences/items -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdate.recipeReferences/items/anyOf/0 -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdate.recipeReferences/items/anyOf/1 -> ShoppingListItemRecipeRefUpdate",
+        "ShoppingListItemUpdateBulk.recipeReferences/items/anyOf/0 -> ShoppingListItemRecipeRefCreate",
+        "ShoppingListItemUpdateBulk.recipeReferences/items/anyOf/1 -> ShoppingListItemRecipeRefUpdate",
+        "Item-recipe link: shoppingListItemId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "List-recipe link",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "ShoppingListRecipeRefOut.recipe -> RecipeSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "List-label setting",
+      "target": "Label",
+      "kind": "reference",
+      "labels": [
+        "label"
+      ],
+      "evidence": [
+        "ShoppingListMultiPurposeLabelOut.label -> MultiPurposeLabelSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Meal-plan entry",
+      "target": "Recipe",
+      "kind": "reference",
+      "labels": [
+        "recipe"
+      ],
+      "evidence": [
+        "ReadPlanEntry.recipe/anyOf/0 -> RecipeSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Meal-plan rule",
+      "target": "Query filter",
+      "kind": "reference",
+      "labels": [
+        "queryFilter"
+      ],
+      "evidence": [
+        "PlanRulesOut.queryFilter -> QueryFilterJSON"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Cookbook",
+      "target": "Query filter",
+      "kind": "reference",
+      "labels": [
+        "queryFilter"
+      ],
+      "evidence": [
+        "ReadCookBook.queryFilter -> QueryFilterJSON"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Cookbook",
+      "target": "Household",
+      "kind": "reference",
+      "labels": [
+        "household"
+      ],
+      "evidence": [
+        "ReadCookBook.household/anyOf/0 -> CookbookHousehold"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Query filter",
+      "target": "Query-filter part",
+      "kind": "contains",
+      "labels": [
+        "parts"
+      ],
+      "evidence": [
+        "QueryFilterJSON.parts/items -> QueryFilterJSONPart"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Notifier",
+      "target": "Notifier options",
+      "kind": "contains",
+      "labels": [
+        "options"
+      ],
+      "evidence": [
+        "GroupEventNotifierOut.options -> GroupEventNotifierOptionsOut",
+        "GroupEventNotifierUpdate.options -> GroupEventNotifierOptions"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "AI-provider settings",
+      "target": "AI provider",
+      "kind": "reference",
+      "labels": [
+        "providers"
+      ],
+      "evidence": [
+        "AIProviderSettingsOut.providers/items -> AIProviderSummary"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Report",
+      "target": "Report entry",
+      "kind": "contains",
+      "labels": [
+        "entries",
+        "reportId"
+      ],
+      "evidence": [
+        "ReportOut.entries/items -> ReportEntryOut",
+        "Report entry: reportId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food",
+      "target": "Household",
+      "kind": "reference-id",
+      "labels": [
+        "householdsWithIngredientFood[]"
+      ],
+      "evidence": [
+        "householdsWithIngredientFood[]"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Tool",
+      "target": "Household",
+      "kind": "reference-id",
+      "labels": [
+        "householdsWithTool[]"
+      ],
+      "evidence": [
+        "householdsWithTool[]"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Food substitution",
+      "target": "Food",
+      "kind": "reference-id",
+      "labels": [
+        "substituteFoodId"
+      ],
+      "evidence": [
+        "substituteFoodId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Ingredient substitution",
+      "target": "Food",
+      "kind": "reference-id",
+      "labels": [
+        "substituteFoodId"
+      ],
+      "evidence": [
+        "substituteFoodId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Ingredient reference",
+      "target": "Recipe ingredient",
+      "kind": "reference-id",
+      "labels": [
+        "referenceId"
+      ],
+      "evidence": [
+        "referenceId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Note reference",
+      "target": "Recipe note",
+      "kind": "reference-id",
+      "labels": [
+        "referenceId"
+      ],
+      "evidence": [
+        "referenceId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "AI-provider settings",
+      "target": "AI provider",
+      "kind": "reference-id",
+      "labels": [
+        "defaultProviderId / audioProviderId / imageProviderId"
+      ],
+      "evidence": [
+        "defaultProviderId / audioProviderId / imageProviderId"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "AI provider",
+      "kind": "scope",
+      "labels": [
+        "group API scope"
+      ],
+      "evidence": [
+        "/api/groups/ai-providers/providers"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Group",
+      "target": "Food",
+      "kind": "scope",
+      "labels": [
+        "group explore API scope"
+      ],
+      "evidence": [
+        "/api/explore/groups/{group_slug}/foods"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    },
+    {
+      "source": "Household",
+      "target": "Household recipe state",
+      "kind": "scope",
+      "labels": [
+        "household API scope"
+      ],
+      "evidence": [
+        "/api/households/self/recipes/{recipe_slug}"
+      ],
+      "status": "STATIC_RELATIONSHIP_TEMPLATE",
+      "is_creation_precondition": false,
+      "is_database_fk": false,
+      "runtime_edge_requires": "successful response / independent observation",
+      "profile_present_in_contract": true
+    }
+  ],
+  "instances": [],
+  "observed_edges": []
+}

@@ -1,0 +1,52 @@
+﻿# Local credentials
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Dependencies and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local server data
+data/
+volumes/
+docker-data/
+postgres-data/
+mealie-data/
+
+# Runtime evidence and large generated payloads
+logs/
+storage-audit/
+execution-review/
+*.log
+*.jsonl
+*.zip
+*.7z
+*.tar
+*.gz
+*.jar
+*.exe
+*.msi
+relationship-samples.json
+selected-sample.json
+native-result.json
+samples.json
+sample-output.txt
+run-output.txt
+
+# Generated runtime products and local databases
+products/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3

@@ -1,0 +1,15 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:v3.28.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:9925:9000"
+    mem_limit: 1000m
+    volumes:
+      - ./data:/app/data
+    environment:
+      ALLOW_SIGNUP: "false"
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Asia/Jerusalem
+      BASE_URL: http://127.0.0.1:9925

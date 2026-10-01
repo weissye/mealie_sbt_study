@@ -1,0 +1,21 @@
+{
+  "status": "LOCAL_COMPILER_CHECKS_PASS",
+  "legacy_and_additive_tests": 21,
+  "final_compiler_tests_after_last_change": 8,
+  "transport_cases": 466,
+  "node_stub_tasks": 54,
+  "node_stub_http_responses": 167,
+  "node_stub_max_active_http": 1,
+  "node_stub_different_schedule_orders": true,
+  "injected_faults_rejected": [
+    "relationship_readback",
+    "route_identity_drift",
+    "ambiguous_create_identity",
+    "bootstrap_scope_mismatch"
+  ],
+  "native_provengo_tested": false,
+  "powershell_executed": false,
+  "live_server_tested": false,
+  "full_reset_replay_accepted": false,
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292"
+}

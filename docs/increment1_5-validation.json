@@ -1,0 +1,15 @@
+{
+  "stage": "M3_SERIAL_FIXTURE_SCRIPT_READY",
+  "python_unit_tests_passed": 25,
+  "python_unit_tests_failed": 0,
+  "fixture_simulation": "PASS; 14 base resources, six distinct ingredient occurrences, shared foods and R2 on two lists; list-level and item-level links separately observed",
+  "authentication_live_confirmed_by_uploaded_identity_review": true,
+  "fixture_live_executed": false,
+  "powershell_new_wrapper_runtime_tested": false,
+  "request_bound": 64,
+  "expected_fixture_requests_in_simulation": 40,
+  "additional_identity_requests": 4,
+  "provengo_executed": false,
+  "reset_replay_validated": false,
+  "cycle_links_tested": false
+}

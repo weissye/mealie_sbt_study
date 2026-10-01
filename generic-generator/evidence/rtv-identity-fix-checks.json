@@ -1,0 +1,13 @@
+{
+  "local_tests_passed": 32,
+  "legacy_transport_cases_passed": 466,
+  "old_callback_opaque_missing_record_reproduced": true,
+  "new_callback_node_stub": {
+    "result": "NODE_STUB_PASS",
+    "seed": 1,
+    "tasks": 54,
+    "http_requests": 167,
+    "max_active_http": 1
+  },
+  "native_fix_accepted": false
+}

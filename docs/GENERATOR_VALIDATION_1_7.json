@@ -1,0 +1,13 @@
+{
+  "uploaded_sample_verification": "PASS",
+  "unique_complete_samples": 70,
+  "events_per_sample": 8,
+  "live_execution": false,
+  "operation_count": 266,
+  "schema_count": 255,
+  "python_tests_passed": 33,
+  "javascript_syntax": "PASS",
+  "javascript_interface_story_wiring": "PASS (8 events; Node VM stub)",
+  "installed_provengo_new_layout": "NOT_RUN",
+  "live_http": "NOT_RUN"
+}

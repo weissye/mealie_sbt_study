@@ -1,0 +1,132 @@
+[
+  {
+    "name": "recipe_description",
+    "oracles": {
+      "field": "description",
+      "restore": "captured_value"
+    },
+    "steps": [
+      {
+        "operation": "get_one_api_recipes__slug__get",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "id": "A1",
+        "action": "capture",
+        "method": "GET",
+        "path": "/api/recipes/{slug}"
+      },
+      {
+        "operation": "update_one_api_recipes__slug__put",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "id": "A2",
+        "action": "update",
+        "method": "PUT",
+        "path": "/api/recipes/{slug}"
+      },
+      {
+        "operation": "get_one_api_recipes__slug__get",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "id": "A3",
+        "action": "verify_update",
+        "method": "GET",
+        "path": "/api/recipes/{slug}"
+      },
+      {
+        "operation": "update_one_api_recipes__slug__put",
+        "bindings": {
+          "slug": {
+            "symbol": "R2",
+            "type": "Recipe.slug"
+          }
+        },
+        "id": "A4",
+        "action": "restore",
+        "method": "PUT",
+        "path": "/api/recipes/{slug}"
+      }
+    ]
+  },
+  {
+    "name": "list_recipe_membership",
+    "oracles": {
+      "relationship": "list_recipe_membership",
+      "restore": "captured_membership"
+    },
+    "steps": [
+      {
+        "operation": "remove_recipe_ingredients_from_list_api_households_shopping_lists__item_id__recipe__recipe_id__delete_post",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          },
+          "recipe_id": {
+            "symbol": "R2",
+            "type": "Recipe.id"
+          }
+        },
+        "id": "B1",
+        "action": "remove_link",
+        "method": "POST",
+        "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete"
+      },
+      {
+        "operation": "get_one_api_households_shopping_lists__item_id__get",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "id": "B2",
+        "action": "verify_absent",
+        "method": "GET",
+        "path": "/api/households/shopping/lists/{item_id}"
+      },
+      {
+        "operation": "add_single_recipe_ingredients_to_list_api_households_shopping_lists__item_id__recipe__recipe_id__post",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          },
+          "recipe_id": {
+            "symbol": "R2",
+            "type": "Recipe.id"
+          }
+        },
+        "id": "B3",
+        "action": "add_link",
+        "method": "POST",
+        "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}"
+      },
+      {
+        "operation": "get_one_api_households_shopping_lists__item_id__get",
+        "bindings": {
+          "item_id": {
+            "symbol": "L1",
+            "type": "Shopping list.id"
+          }
+        },
+        "id": "B4",
+        "action": "verify_present",
+        "method": "GET",
+        "path": "/api/households/shopping/lists/{item_id}"
+      }
+    ]
+  }
+]

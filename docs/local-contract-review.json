@@ -1,0 +1,56 @@
+{
+  "stage": "M2_LOCAL_STATIC_REVIEW_PASS",
+  "version": "v3.28.0",
+  "sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "exported_maps_recompiled_and_equal": 6,
+  "schema_count": 255,
+  "removed_schema_views": [
+    "RecipeCategoryIn",
+    "RecipeIn",
+    "RecipeTagIn",
+    "RecipeToolIn"
+  ],
+  "changed_schema_fields": {
+    "UserIn": [],
+    "UserOut": [],
+    "Recipe-Input": [
+      "totalTimeSeconds",
+      "prepTimeSeconds",
+      "performTimeSeconds"
+    ],
+    "Recipe-Output": [
+      "totalTimeSeconds",
+      "prepTimeSeconds",
+      "performTimeSeconds"
+    ],
+    "RecipeSummary": [
+      "totalTimeSeconds",
+      "prepTimeSeconds",
+      "performTimeSeconds"
+    ],
+    "mealie__schema__user__user__UserBase": []
+  },
+  "changed_operations": [
+    {
+      "path": "/api/recipes",
+      "method": "PUT"
+    },
+    {
+      "path": "/api/recipes",
+      "method": "PATCH"
+    },
+    {
+      "path": "/api/recipes/{slug}",
+      "method": "PUT"
+    },
+    {
+      "path": "/api/recipes/{slug}",
+      "method": "PATCH"
+    }
+  ],
+  "identity_schema_changes": "User schema differences are examples only; group and household scope properties are unchanged.",
+  "profile_policy": "Missing nightly-only schema aliases stay inactive for this contract. Do not generate RecipeIn payloads for this release.",
+  "authenticated_requests_tested": false,
+  "fixtures_validated": false,
+  "ready_for_live_pilot": false
+}

@@ -1,0 +1,4 @@
+Provengo runtime generation starts at M3 after local contract, authentication and fixture acceptance.
+No HTTP b-threads have been generated in this increment.
+The three maps and the RTV acceptance tests are usable independently of Provengo.
+This prevents a static candidate graph from being treated as an executable or validated test campaign.

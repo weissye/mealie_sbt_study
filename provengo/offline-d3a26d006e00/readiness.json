@@ -1,0 +1,11 @@
+﻿{
+    "result":  "M4_OFFLINE_SAMPLING_NOT_ACCEPTED",
+    "project":  "C:\\work\\temp\\mealie_sbt_study\\provengo\\offline-d3a26d006e00",
+    "expectedSymbolicOrders":  70,
+    "provengoPath":  "C:\\Program Files\\Provengo\\Provengo Cli\\provengo.bat",
+    "samplingRequested":  true,
+    "sampleFileCreated":  false,
+    "sampleExitCode":  40,
+    "sampledCoverageVerified":  false,
+    "serverRequestsSent":  0
+}

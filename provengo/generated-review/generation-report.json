@@ -1,0 +1,11 @@
+{
+  "operation_count": 266,
+  "schema_count": 255,
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "profile_sha256": "45d5b0781f3a614d9edc8564bf20e5235ec8bec54011ada3a4102a2bf956db1c",
+  "selected_operations": 5,
+  "warnings": [],
+  "unsupported": [],
+  "transport": "symbolic",
+  "live_execution_accepted": false
+}
