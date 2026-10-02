@@ -1,352 +1,362 @@
 {
-  "version": 1,
-  "projects": [
-    "C:\\work\\temp\\mealie_sbt_study",
-    "C:\\work\\temp\\vikunja_tse_study"
-  ],
-  "central_project": "C:\\work\\temp\\vikunja_tse_study",
-  "containers": [
-    {
-      "Name": "mealie-sbt-study-mealie-1",
-      "Id": "be6cac334795cf4d6dbbd6cb9de8ac379ffd208519f4f965c22fcbceba893026",
-      "Image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
-      "ImageId": "sha256:dc61bc0635ee37b6a1b83fa0021b776c9e11b6bd1b06cfe4c45a8007a3944766",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "C:\\work\\temp\\mealie_sbt_study\\data",
-          "Destination": "/app/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "mealie-sbt-study",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\mealie_sbt_study",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\mealie_sbt_study\\compose.yaml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\mealie_sbt_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse_keycloak_stage2",
-      "Id": "d03951079b37f0e0ea33d87326aac70bcfa50277ed0d0ea7716d0b146dbd34ba",
-      "Image": "quay.io/keycloak/keycloak:26.7.4",
-      "ImageId": "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
-      "Running": false,
-      "Mounts": [],
-      "ComposeProject": null,
-      "ComposeWorkingDirectory": null,
-      "ComposeConfigurationFiles": null,
-      "CandidateProjectRoots": [],
-      "RequiresOwnershipReview": true
-    },
-    {
-      "Name": "fse_keycloak_stage2_backup_20260927_210309",
-      "Id": "8c8e50067a67a31045fd3569abe3b043a9cc4b20098ee2ee600b5b6ce5a7d674",
-      "Image": "quay.io/keycloak/keycloak:26.7.4",
-      "ImageId": "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
-      "Running": false,
-      "Mounts": [],
-      "ComposeProject": null,
-      "ComposeWorkingDirectory": null,
-      "ComposeConfigurationFiles": null,
-      "CandidateProjectRoots": [],
-      "RequiresOwnershipReview": true
-    },
-    {
-      "Name": "fse-mealie-stage4-mealie-1",
-      "Id": "ec5d69a37322a8b3f85ffd02812c96279bb481ca24bb4dc8c15b86a37c57b027",
-      "Image": "ghcr.io/mealie-recipes/mealie:v3.27.0",
-      "ImageId": "sha256:e966ee76a4c193ee81955193b43b197d20a340ef8dba0234078e6349a8a7cd9d",
-      "Running": false,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "fse-mealie-stage4_appdata",
-          "Source": "/var/lib/docker/volumes/fse-mealie-stage4_appdata/_data",
-          "Destination": "/app/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "fse-mealie-stage4",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4\\compose.yaml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse-mealie-stage4-db-1",
-      "Id": "bde0666e67e4ac3ff5b32033b70ad290bf314bcf8ded5b2c59ba2d307649b3fa",
-      "Image": "postgres:17",
-      "ImageId": "sha256:212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685",
-      "Running": false,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "fse-mealie-stage4_pgdata",
-          "Source": "/var/lib/docker/volumes/fse-mealie-stage4_pgdata/_data",
-          "Destination": "/var/lib/postgresql/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "fse-mealie-stage4",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4\\compose.yaml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "gitea-stage1-server",
-      "Id": "1b97db0ed9f2417c2cf66add85930029ba3647d944beaddbb2e02873423ab87a",
-      "Image": "docker.gitea.com/gitea:1.27.3",
-      "ImageId": "sha256:79814cfc668dec4406178316613c1a918e0f29cd123cee895faf1ca58bab95b3",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "gitea_stage1_gitea_stage1_data",
-          "Source": "/var/lib/docker/volumes/gitea_stage1_gitea_stage1_data/_data",
-          "Destination": "/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "gitea_stage1",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "gitea-stage1-db",
-      "Id": "25dc2557798eeb646e443dde7487a874514b9b605563a170701dc60233cf824c",
-      "Image": "postgres:16-alpine",
-      "ImageId": "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "gitea_stage1_gitea_stage1_postgres_data",
-          "Source": "/var/lib/docker/volumes/gitea_stage1_gitea_stage1_postgres_data/_data",
-          "Destination": "/var/lib/postgresql/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "gitea_stage1",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse_album_immich_server",
-      "Id": "3c67c251bbd5d62723d295d2cdb981815521a5981d15bb68b1775cc9b2986388",
-      "Image": "ghcr.io/immich-app/immich-server:v3.2.0",
-      "ImageId": "sha256:fa3dd90e8ab63ca4385691ad80e960671f1b11eea788244eab80da003727c59b",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\library",
-          "Destination": "/data",
-          "Writable": true
-        },
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "/etc/localtime",
-          "Destination": "/etc/localtime",
-          "Writable": false
-        }
-      ],
-      "ComposeProject": "fse-immich-album-pilot",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse_album_immich_postgres",
-      "Id": "88c19e954a7779209f0247d03e017254e2ef8aee5be5c6a8e75f9a1c7e6b2f06",
-      "Image": "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:bcf63357191b76a916ae5eb93464d65c07511da41e3bf7a8416db519b40b1c23",
-      "ImageId": "sha256:178719aeb38df6f0ce8edc1d8320008379fcf04eb3444e76419cc98d9861e331",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\postgres",
-          "Destination": "/var/lib/postgresql/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "fse-immich-album-pilot",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse_album_immich_redis",
-      "Id": "d1215f0a8a1e62003c27f08e3765b313ee7b1fedf453970db25bd1fe042e4894",
-      "Image": "docker.io/valkey/valkey:9@sha256:70739f85ad2ee01a726a965584a0f94895f01b0c60b3cc8b0aeef11eaa6888cf",
-      "ImageId": "sha256:347c44c089071a13f9d08a418695b0ab0a5dd525fbe9045b5451694c50553569",
-      "Running": true,
-      "Mounts": [],
-      "ComposeProject": "fse-immich-album-pilot",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "fse-mealie-research-fit-mealie-1",
-      "Id": "98fada5cda4d92ce45b6241406bf77aee753a08c97dd1abbf628fe6baa61bef1",
-      "Image": "ghcr.io/mealie-recipes/mealie:v3.27.0",
-      "ImageId": "sha256:e966ee76a4c193ee81955193b43b197d20a340ef8dba0234078e6349a8a7cd9d",
-      "Running": false,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "fse-mealie-research-fit_mealie-research-fit-data",
-          "Source": "/var/lib/docker/volumes/fse-mealie-research-fit_mealie-research-fit-data/_data",
-          "Destination": "/app/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "fse-mealie-research-fit",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_research_fit",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_research_fit\\compose.yaml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "vikunja-increment8-2-postgres",
-      "Id": "966aad2a45466d8e3eeee9ff228fd6bff1a75b3101ce8bf87f8ab23ce60c0663",
-      "Image": "vikunja/vikunja@sha256:417ada6f94e81f0267aa2f007d0a811fc82d38dd2aa58351e3ea520ca01c2ea5",
-      "ImageId": "sha256:0838aba019fa387e569ff6a535329bc2536b31ae4a21fdc873a9fdc23ccc7f53",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "vikunja_increment8_2_increment8_2_vikunja_files",
-          "Source": "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_vikunja_files/_data",
-          "Destination": "/app/vikunja/files",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "vikunja_increment8_2",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "vikunja-increment8-2-files-init",
-      "Id": "2975b406e4cb1638f2ce17e13edcc2e5ce9acdb3943b5fa0cd5e5966f40e3cf1",
-      "Image": "postgres:16-alpine",
-      "ImageId": "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
-      "Running": false,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "vikunja_increment8_2_increment8_2_vikunja_files",
-          "Source": "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_vikunja_files/_data",
-          "Destination": "/files",
-          "Writable": true
-        },
-        {
-          "Type": "volume",
-          "Name": "9afd55a7891be99ae078be992f667101ab82460feabc0d7ee87f64d9b1a207b5",
-          "Source": "/var/lib/docker/volumes/9afd55a7891be99ae078be992f667101ab82460feabc0d7ee87f64d9b1a207b5/_data",
-          "Destination": "/var/lib/postgresql/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "vikunja_increment8_2",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "vikunja-increment8-2-db",
-      "Id": "c7a4c4a0feba28601e28cedb6c11e039c7c7185b2829658ef937c61fed7f5d75",
-      "Image": "postgres:16-alpine",
-      "ImageId": "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "volume",
-          "Name": "vikunja_increment8_2_increment8_2_postgres_data",
-          "Source": "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_postgres_data/_data",
-          "Destination": "/var/lib/postgresql/data",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "vikunja_increment8_2",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    },
-    {
-      "Name": "vikunja-research-sut",
-      "Id": "cbcc4c26707684b4f88e107c6bed8fabcfdc04d9c02e1ecbaf94886cdccab2dd",
-      "Image": "vikunja/vikunja:latest",
-      "ImageId": "sha256:0838aba019fa387e569ff6a535329bc2536b31ae4a21fdc873a9fdc23ccc7f53",
-      "Running": true,
-      "Mounts": [
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "C:\\work\\temp\\vikunja_tse_study\\deployment\\state\\files",
-          "Destination": "/app/vikunja/files",
-          "Writable": true
-        },
-        {
-          "Type": "bind",
-          "Name": null,
-          "Source": "C:\\work\\temp\\vikunja_tse_study\\deployment\\state\\db",
-          "Destination": "/db",
-          "Writable": true
-        }
-      ],
-      "ComposeProject": "deployment",
-      "ComposeWorkingDirectory": "C:\\work\\temp\\vikunja_tse_study\\deployment",
-      "ComposeConfigurationFiles": "C:\\work\\temp\\vikunja_tse_study\\deployment\\docker-compose.yml",
-      "CandidateProjectRoots": [
-        "C:\\work\\temp\\vikunja_tse_study"
-      ],
-      "RequiresOwnershipReview": false
-    }
-  ],
-  "helper_image": "postgres:16-alpine",
-  "chunk_bytes": 33554432,
-  "maximum_new_gib": 8,
-  "source_inventory_utc": "2026-10-01T15:45:47.6531634Z"
+    "version":  1,
+    "projects":  [
+                     "C:\\work\\temp\\mealie_sbt_study",
+                     "C:\\work\\temp\\vikunja_tse_study"
+                 ],
+    "central_project":  "C:\\work\\temp\\vikunja_tse_study",
+    "containers":  [
+                       {
+                           "Name":  "mealie-sbt-study-mealie-1",
+                           "Id":  "be6cac334795cf4d6dbbd6cb9de8ac379ffd208519f4f965c22fcbceba893026",
+                           "Image":  "ghcr.io/mealie-recipes/mealie:v3.28.0",
+                           "ImageId":  "sha256:dc61bc0635ee37b6a1b83fa0021b776c9e11b6bd1b06cfe4c45a8007a3944766",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "C:\\work\\temp\\mealie_sbt_study\\data",
+                                              "Destination":  "/app/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "mealie-sbt-study",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\mealie_sbt_study",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\mealie_sbt_study\\compose.yaml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\mealie_sbt_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse_keycloak_stage2",
+                           "Id":  "d03951079b37f0e0ea33d87326aac70bcfa50277ed0d0ea7716d0b146dbd34ba",
+                           "Image":  "quay.io/keycloak/keycloak:26.7.4",
+                           "ImageId":  "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
+                           "Running":  false,
+                           "Mounts":  [
+
+                                      ],
+                           "ComposeProject":  null,
+                           "ComposeWorkingDirectory":  null,
+                           "ComposeConfigurationFiles":  null,
+                           "CandidateProjectRoots":  [
+
+                                                     ],
+                           "RequiresOwnershipReview":  true
+                       },
+                       {
+                           "Name":  "fse_keycloak_stage2_backup_20260927_210309",
+                           "Id":  "8c8e50067a67a31045fd3569abe3b043a9cc4b20098ee2ee600b5b6ce5a7d674",
+                           "Image":  "quay.io/keycloak/keycloak:26.7.4",
+                           "ImageId":  "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89",
+                           "Running":  false,
+                           "Mounts":  [
+
+                                      ],
+                           "ComposeProject":  null,
+                           "ComposeWorkingDirectory":  null,
+                           "ComposeConfigurationFiles":  null,
+                           "CandidateProjectRoots":  [
+
+                                                     ],
+                           "RequiresOwnershipReview":  true
+                       },
+                       {
+                           "Name":  "fse-mealie-stage4-mealie-1",
+                           "Id":  "ec5d69a37322a8b3f85ffd02812c96279bb481ca24bb4dc8c15b86a37c57b027",
+                           "Image":  "ghcr.io/mealie-recipes/mealie:v3.27.0",
+                           "ImageId":  "sha256:e966ee76a4c193ee81955193b43b197d20a340ef8dba0234078e6349a8a7cd9d",
+                           "Running":  false,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "fse-mealie-stage4_appdata",
+                                              "Source":  "/var/lib/docker/volumes/fse-mealie-stage4_appdata/_data",
+                                              "Destination":  "/app/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "fse-mealie-stage4",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4\\compose.yaml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse-mealie-stage4-db-1",
+                           "Id":  "bde0666e67e4ac3ff5b32033b70ad290bf314bcf8ded5b2c59ba2d307649b3fa",
+                           "Image":  "postgres:17",
+                           "ImageId":  "sha256:212aeeeb8faaef6c46498d86cbec6b9344d8d9492996b174664ff82c562ab685",
+                           "Running":  false,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "fse-mealie-stage4_pgdata",
+                                              "Source":  "/var/lib/docker/volumes/fse-mealie-stage4_pgdata/_data",
+                                              "Destination":  "/var/lib/postgresql/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "fse-mealie-stage4",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_stage4\\compose.yaml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "gitea-stage1-server",
+                           "Id":  "1b97db0ed9f2417c2cf66add85930029ba3647d944beaddbb2e02873423ab87a",
+                           "Image":  "docker.gitea.com/gitea:1.27.3",
+                           "ImageId":  "sha256:79814cfc668dec4406178316613c1a918e0f29cd123cee895faf1ca58bab95b3",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "gitea_stage1_gitea_stage1_data",
+                                              "Source":  "/var/lib/docker/volumes/gitea_stage1_gitea_stage1_data/_data",
+                                              "Destination":  "/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "gitea_stage1",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "gitea-stage1-db",
+                           "Id":  "25dc2557798eeb646e443dde7487a874514b9b605563a170701dc60233cf824c",
+                           "Image":  "postgres:16-alpine",
+                           "ImageId":  "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "gitea_stage1_gitea_stage1_postgres_data",
+                                              "Source":  "/var/lib/docker/volumes/gitea_stage1_gitea_stage1_postgres_data/_data",
+                                              "Destination":  "/var/lib/postgresql/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "gitea_stage1",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\gitea_stage1\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse_album_immich_server",
+                           "Id":  "3c67c251bbd5d62723d295d2cdb981815521a5981d15bb68b1775cc9b2986388",
+                           "Image":  "ghcr.io/immich-app/immich-server:v3.2.0",
+                           "ImageId":  "sha256:fa3dd90e8ab63ca4385691ad80e960671f1b11eea788244eab80da003727c59b",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\library",
+                                              "Destination":  "/data",
+                                              "Writable":  true
+                                          },
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "/etc/localtime",
+                                              "Destination":  "/etc/localtime",
+                                              "Writable":  false
+                                          }
+                                      ],
+                           "ComposeProject":  "fse-immich-album-pilot",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse_album_immich_postgres",
+                           "Id":  "88c19e954a7779209f0247d03e017254e2ef8aee5be5c6a8e75f9a1c7e6b2f06",
+                           "Image":  "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:bcf63357191b76a916ae5eb93464d65c07511da41e3bf7a8416db519b40b1c23",
+                           "ImageId":  "sha256:178719aeb38df6f0ce8edc1d8320008379fcf04eb3444e76419cc98d9861e331",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\postgres",
+                                              "Destination":  "/var/lib/postgresql/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "fse-immich-album-pilot",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse_album_immich_redis",
+                           "Id":  "d1215f0a8a1e62003c27f08e3765b313ee7b1fedf453970db25bd1fe042e4894",
+                           "Image":  "docker.io/valkey/valkey:9@sha256:70739f85ad2ee01a726a965584a0f94895f01b0c60b3cc8b0aeef11eaa6888cf",
+                           "ImageId":  "sha256:347c44c089071a13f9d08a418695b0ab0a5dd525fbe9045b5451694c50553569",
+                           "Running":  true,
+                           "Mounts":  [
+
+                                      ],
+                           "ComposeProject":  "fse-immich-album-pilot",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\immich_album_pilot\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "fse-mealie-research-fit-mealie-1",
+                           "Id":  "98fada5cda4d92ce45b6241406bf77aee753a08c97dd1abbf628fe6baa61bef1",
+                           "Image":  "ghcr.io/mealie-recipes/mealie:v3.27.0",
+                           "ImageId":  "sha256:e966ee76a4c193ee81955193b43b197d20a340ef8dba0234078e6349a8a7cd9d",
+                           "Running":  false,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "fse-mealie-research-fit_mealie-research-fit-data",
+                                              "Source":  "/var/lib/docker/volumes/fse-mealie-research-fit_mealie-research-fit-data/_data",
+                                              "Destination":  "/app/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "fse-mealie-research-fit",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_research_fit",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\mealie_research_fit\\compose.yaml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "vikunja-increment8-2-postgres",
+                           "Id":  "966aad2a45466d8e3eeee9ff228fd6bff1a75b3101ce8bf87f8ab23ce60c0663",
+                           "Image":  "vikunja/vikunja@sha256:417ada6f94e81f0267aa2f007d0a811fc82d38dd2aa58351e3ea520ca01c2ea5",
+                           "ImageId":  "sha256:0838aba019fa387e569ff6a535329bc2536b31ae4a21fdc873a9fdc23ccc7f53",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "vikunja_increment8_2_increment8_2_vikunja_files",
+                                              "Source":  "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_vikunja_files/_data",
+                                              "Destination":  "/app/vikunja/files",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "vikunja_increment8_2",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "vikunja-increment8-2-files-init",
+                           "Id":  "2975b406e4cb1638f2ce17e13edcc2e5ce9acdb3943b5fa0cd5e5966f40e3cf1",
+                           "Image":  "postgres:16-alpine",
+                           "ImageId":  "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
+                           "Running":  false,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "vikunja_increment8_2_increment8_2_vikunja_files",
+                                              "Source":  "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_vikunja_files/_data",
+                                              "Destination":  "/files",
+                                              "Writable":  true
+                                          },
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "9afd55a7891be99ae078be992f667101ab82460feabc0d7ee87f64d9b1a207b5",
+                                              "Source":  "/var/lib/docker/volumes/9afd55a7891be99ae078be992f667101ab82460feabc0d7ee87f64d9b1a207b5/_data",
+                                              "Destination":  "/var/lib/postgresql/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "vikunja_increment8_2",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "vikunja-increment8-2-db",
+                           "Id":  "c7a4c4a0feba28601e28cedb6c11e039c7c7185b2829658ef937c61fed7f5d75",
+                           "Image":  "postgres:16-alpine",
+                           "ImageId":  "sha256:81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "vikunja_increment8_2_increment8_2_postgres_data",
+                                              "Source":  "/var/lib/docker/volumes/vikunja_increment8_2_increment8_2_postgres_data/_data",
+                                              "Destination":  "/var/lib/postgresql/data",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "vikunja_increment8_2",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\increment8_2\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       },
+                       {
+                           "Name":  "vikunja-research-sut",
+                           "Id":  "cbcc4c26707684b4f88e107c6bed8fabcfdc04d9c02e1ecbaf94886cdccab2dd",
+                           "Image":  "vikunja/vikunja:latest",
+                           "ImageId":  "sha256:0838aba019fa387e569ff6a535329bc2536b31ae4a21fdc873a9fdc23ccc7f53",
+                           "Running":  true,
+                           "Mounts":  [
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\state\\files",
+                                              "Destination":  "/app/vikunja/files",
+                                              "Writable":  true
+                                          },
+                                          {
+                                              "Type":  "bind",
+                                              "Name":  null,
+                                              "Source":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\state\\db",
+                                              "Destination":  "/db",
+                                              "Writable":  true
+                                          }
+                                      ],
+                           "ComposeProject":  "deployment",
+                           "ComposeWorkingDirectory":  "C:\\work\\temp\\vikunja_tse_study\\deployment",
+                           "ComposeConfigurationFiles":  "C:\\work\\temp\\vikunja_tse_study\\deployment\\docker-compose.yml",
+                           "CandidateProjectRoots":  [
+                                                         "C:\\work\\temp\\vikunja_tse_study"
+                                                     ],
+                           "RequiresOwnershipReview":  false
+                       }
+                   ],
+    "helper_image":  "postgres:16-alpine",
+    "chunk_bytes":  33554432,
+    "maximum_new_gib":  32,
+    "source_inventory_utc":  "2026-10-01T15:45:47.6531634Z"
 }
