@@ -4,7 +4,7 @@ This tool transfers the two existing private repositories and an encrypted snaps
 
 ## Validation boundary
 
-The supplied automated tests exercise encryption, corruption detection, archive round trips, unchanged-file staging, Docker configuration reconstruction, backup verification ordering and source restart on export failure. They use a simulated Docker API. Windows PowerShell, Docker Desktop archives, native image loading and GitHub LFS upload/download have **not** been executed in the development environment. Successful export is not proof of successful home restoration. Treat the first export/import as migration acceptance, retain originals and read the resulting status.
+The supplied automated tests exercise encryption, corruption detection, archive round trips, unchanged-file staging, Docker configuration reconstruction, backup verification ordering and source restart on export failure. Docker tests use a simulated API. An additional local integration check uses real Git LFS to stage prelinked ciphertext, commit valid pointers and run LFS fsck. Windows hard-link behavior and native Docker transfer acceptance remain unverified. Windows PowerShell, Docker Desktop archives, native image loading and GitHub LFS upload/download have **not** been executed in the development environment. Successful export is not proof of successful home restoration. Treat the first export/import as migration acceptance, retain originals and read the resulting status.
 
 ## At work: first installation
 
@@ -20,9 +20,9 @@ Enter a new transfer password of at least 12 characters. Keep it independently o
 
 Export commits tracked source edits and the tool. Previously untracked or ignored project files travel in the encrypted snapshot, rather than being automatically added to plaintext Git. Normal Git history that already contains secrets is not scrubbed by this tool. The source code is unchanged by the migration backend. The selected running Docker services are stopped during capture and restarted afterward; originally stopped services stay stopped. Source files and data are not deleted. New temporary commit images are removed after their archive is captured.
 
-`SOURCE_EXPORT_AND_PUSH_COMPLETE` means both local commits were pushed without a reported Git error. Inspect `snapshot_encrypted_gib` and `new_encrypted_gib`. Compression size is not predictable from raw JSON sizes. The export reserves room for a later local LFS object copy and rejects excess capacity. Docker's own image commit storage also needs space in Docker Desktop's data disk. A failed upload leaves the local committed snapshot intact; after resolving Git/LFS capacity or authentication, use ordinary `git push origin main` in both repositories without recapturing the data.
+`SOURCE_EXPORT_AND_PUSH_COMPLETE` means both local commits were pushed without a reported Git error. Inspect `snapshot_encrypted_gib` and `new_encrypted_gib`. Compression size is not predictable from raw JSON sizes. Version 1.1 keeps each immutable encrypted chunk as a single physical file shared by hard links between the transfer tree and Git LFS storage. It verifies hard-link support before stopping services. Existing encrypted objects from the failed version 1 export are authenticated and reused. If duplicate encrypted copies already exist, their hashes are checked and their paths are joined without changing the ciphertext. No original study files, selected samples or server data are deleted. At least 1 GiB is reserved plus room for bounded LFS clean temporary files; the tool rejects excess capacity with measured free-space and capacity values. Hard links must be supported on the same filesystem (normally NTFS on the source Windows machine). Docker's own image commit storage also needs space in Docker Desktop's data disk. A failed upload leaves the local committed snapshot intact; after resolving Git/LFS capacity or authentication, use ordinary `git push origin main` in both repositories without recapturing the data.
 
-For the inventory supplied, the two trees occupied about 26.4 GiB and free disk space was about 9.7 GiB. The automatic encrypted-object cap is at most 8 GiB, and is reduced to reserve roughly half the available drive space. The first export may fail cleanly if images/data do not compress sufficiently. No billing plan is changed. GitHub LFS quota and historical objects must be accounted for separately; this tool does not promise unlimited or free storage, and does not prune LFS history.
+For the inventory supplied, the two trees occupied about 26.4 GiB and free disk space was about 9.7 GiB. The new-object cap is at most 8 GiB per export and is reduced to the current free space minus 1 GiB. This replaces version 1's half-free-space cap. Existing authenticated encrypted chunks are reused and do not count as new bytes. The first export may fail cleanly if images/data do not compress sufficiently. No billing plan is changed. GitHub LFS quota and historical objects must be accounted for separately; this tool does not promise unlimited or free storage, and does not prune LFS history.
 
 ## At home: first checkout
 
@@ -105,3 +105,13 @@ py -3 -m unittest discover -s C:\work\temp\study-git-transfer-v1\tests -v
 ```
 
 See `validation.txt` for the checks run when this package was built.
+
+## Updating a failed version 1 export
+
+```powershell
+Expand-Archive -LiteralPath "$env:USERPROFILE\Downloads\study_git_transfer_v1_1_disk_fix_delta.zip" -DestinationPath 'C:\work\temp' -Force
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+& 'C:\work\temp\study-git-transfer-v1\Invoke-Study-Git-Transfer.ps1' -Mode Export -Push
+```
+
+Use the same encryption password as the failed export. Dependencies are already installed. Do not delete `key.json` or partial `.blob` files; they are authenticated and reused. A failed export did not push a complete snapshot. The correction reduces local duplication and revises the overly conservative cap, but cannot guarantee that all project files plus Docker archives fit in the actual remaining space. GitHub LFS capacity is separate from local free space. The updated tool and README are copied into both repositories by the next export.

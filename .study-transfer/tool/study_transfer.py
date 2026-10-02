@@ -101,9 +101,17 @@ def export(plan, password, push=False):
         setup_tracking(root)
     central = Path(plan['central_project'])
     transfer = central / '.study-transfer'
+    store = open_store(transfer, password, create=True, maximum_bytes=int(plan['maximum_new_gib'] * 1024**3))
+    lfs_environment = git(central, 'lfs', 'env')
+    media_directory = next((line.split('=', 1)[1] for line in lfs_environment.splitlines() if line.startswith('LocalMediaDir=')), None)
+    if not media_directory:
+        raise ValueError('Git LFS did not report its local object directory. No containers were stopped.')
+    store.enable_single_copy_lfs(media_directory)
     available = shutil.disk_usage(central).free
-    cap = min(int(plan['maximum_new_gib'] * 1024**3), max(0, available // 2 - 512 * 1024**2))
-    store = open_store(transfer, password, create=True, maximum_bytes=cap)
+    cap = min(int(plan['maximum_new_gib'] * 1024**3), max(0, available - 1024**3))
+    store.maximum_bytes = cap
+    print('Single-copy encrypted Git LFS storage enabled. Existing partial objects were authenticated and retained.', flush=True)
+    print('New-object capacity: %.3f GiB; current free space: %.3f GiB.' % (cap / 1024**3, shutil.disk_usage(central).free / 1024**3), flush=True)
     heads = {root: git(root, 'rev-parse', 'HEAD') for root in plan['projects']}
     manifest = {'version': 1, 'created_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                 'source_heads': heads, 'files': [], 'excluded_dependencies': ['.git', '.study-transfer', 'node_modules', '.venv', 'venv', '__pycache__', '.pytest_cache'],

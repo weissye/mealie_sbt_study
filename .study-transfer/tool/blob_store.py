@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import uuid
 
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives import hashes
@@ -49,6 +50,52 @@ class Store:
         self.objects.mkdir(exist_ok=True)
         self.maximum_bytes = maximum_bytes
         self.new_bytes = 0
+        self.lfs_media = None
+
+    def enable_single_copy_lfs(self, media_directory):
+        """Use immutable hard links for this tool's encrypted objects only."""
+        media = Path(media_directory)
+        media.mkdir(parents=True, exist_ok=True)
+        probe = self.objects / ('.link-probe-' + uuid.uuid4().hex)
+        linked = media / probe.name
+        try:
+            probe.write_bytes(b'probe')
+            os.link(probe, linked)
+            if not os.path.samefile(probe, linked):
+                raise OSError('Hard link verification failed.')
+        except OSError as error:
+            raise ValueError('Single-copy Git LFS requires hard-link support on the same filesystem. No study containers were stopped.') from error
+        finally:
+            probe.unlink(missing_ok=True)
+            linked.unlink(missing_ok=True)
+        self.lfs_media = media
+        # Reuse authenticated partial objects from a failed export without
+        # deleting source data or producing a second full-size ciphertext copy.
+        for path in sorted(self.objects.glob('*.blob')):
+            payload = path.read_bytes()
+            digest = path.stem
+            record = {'digest': digest, 'bytes': len(payload) - len(MAGIC) - 28,
+                      'cipher_sha256': hashlib.sha256(payload).hexdigest()}
+            self.get(record)
+            self._link_lfs(path, record['cipher_sha256'])
+
+    def _link_lfs(self, path, ciphertext_digest):
+        if self.lfs_media is None:
+            return
+        target = self.lfs_media / ciphertext_digest[:2] / ciphertext_digest[2:4] / ciphertext_digest
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if target.exists():
+            if hashlib.sha256(target.read_bytes()).hexdigest() != ciphertext_digest:
+                raise ValueError('Existing local Git LFS object failed its ciphertext hash check.')
+            if not os.path.samefile(path, target):
+                temporary = path.with_name(path.name + '.link-' + uuid.uuid4().hex)
+                try:
+                    os.link(target, temporary)
+                    os.replace(temporary, path)
+                finally:
+                    temporary.unlink(missing_ok=True)
+        else:
+            os.link(path, target)
 
     def path(self, digest):
         if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
@@ -63,15 +110,20 @@ class Store:
             if self.get(record) != plain:
                 raise ValueError('Existing encrypted object does not match its identity.')
             return record
-        # Reserve both the snapshot and its later local Git LFS object copy.
+        # Single-copy mode reserves headroom for bounded Git LFS clean temp
+        # files rather than a second full-size copy of the entire snapshot.
         size = len(plain) + len(MAGIC) + 12 + 16
-        if self.new_bytes + size > self.maximum_bytes or shutil.disk_usage(self.root).free < self.new_bytes + size * 2 + 512 * 1024**2:
-            raise ValueError('Insufficient reserved disk space or configured snapshot capacity. Source data remains intact.')
+        required_free = size * 2 + 1024**3 if self.lfs_media else self.new_bytes + size * 2 + 512 * 1024**2
+        free = shutil.disk_usage(self.root).free
+        if self.new_bytes + size > self.maximum_bytes or free < required_free:
+            raise ValueError('Snapshot capacity exhausted: free_gib=%.3f, new_encrypted_gib=%.3f, new_object_cap_gib=%.3f. Source data remains intact; partial encrypted objects are reusable.' % (free / 1024**3, self.new_bytes / 1024**3, self.maximum_bytes / 1024**3))
         nonce = os.urandom(12)
         payload = MAGIC + nonce + AESGCM(self.key).encrypt(nonce, plain, digest.encode('ascii'))
         path.write_bytes(payload)
         self.new_bytes += len(payload)
-        return {'digest': digest, 'bytes': len(plain), 'cipher_sha256': hashlib.sha256(payload).hexdigest()}
+        cipher_digest = hashlib.sha256(payload).hexdigest()
+        self._link_lfs(path, cipher_digest)
+        return {'digest': digest, 'bytes': len(plain), 'cipher_sha256': cipher_digest}
 
     def get(self, record):
         path = self.path(record['digest'])
