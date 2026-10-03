@@ -14,6 +14,8 @@ import uuid
 from blob_store import Reader, Writer, Store, open_store
 from file_snapshots import restore_files, snapshot_files, within, checked_target
 from docker_state import client, inspect_selected, snapshot_docker, put_mount, capture_mount, recreate_container
+from root_mapping import relocate_plan, relocate_snapshot
+from external_storage import configure as configure_external_storage, write_pointer
 
 
 def git(root, *arguments, allow_empty=False):
@@ -69,7 +71,7 @@ def setup_tracking(root):
     tool = root / '.study-transfer/tool'
     tool.mkdir(parents=True, exist_ok=True)
     source = Path(__file__).resolve().parent
-    for filename in ['study_transfer.py', 'blob_store.py', 'file_snapshots.py', 'docker_state.py', 'Invoke-Study-Git-Transfer.ps1', 'requirements.txt', 'README.md', 'transfer-plan.json']:
+    for filename in ['study_transfer.py', 'blob_store.py', 'file_snapshots.py', 'docker_state.py', 'root_mapping.py', 'external_storage.py', 'Invoke-Study-Git-Transfer.ps1', 'requirements.txt', 'README.md', 'transfer-plan.json']:
         if (source / filename).resolve() != (tool / filename).resolve():
             shutil.copy2(source / filename, tool / filename)
     # Commit already-tracked source edits and the migration tool. Ignored and
@@ -89,7 +91,7 @@ def validate_no_nested_bind_data(items):
     return binds
 
 
-def export(plan, password, push=False):
+def export(plan, password, push=False, storage_root=None):
     for root in plan['projects']:
         if not (Path(root) / '.git').is_dir():
             raise ValueError('Each study must already be a local Git repository.')
@@ -102,16 +104,26 @@ def export(plan, password, push=False):
     central = Path(plan['central_project'])
     transfer = central / '.study-transfer'
     store = open_store(transfer, password, create=True, maximum_bytes=int(plan['maximum_new_gib'] * 1024**3))
+    if storage_root:
+        storage_root = Path(storage_root).resolve()
+        if any(within(storage_root, root) for root in plan['projects']):
+            raise ValueError('StorageRoot must be outside the source study trees.')
+        store.objects = configure_external_storage(central, transfer, storage_root)
+        store.source_disk = central
     lfs_environment = git(central, 'lfs', 'env')
     media_directory = next((line.split('=', 1)[1] for line in lfs_environment.splitlines() if line.startswith('LocalMediaDir=')), None)
     if not media_directory:
         raise ValueError('Git LFS did not report its local object directory. No containers were stopped.')
     store.enable_single_copy_lfs(media_directory)
-    available = shutil.disk_usage(central).free
-    cap = min(int(plan['maximum_new_gib'] * 1024**3), max(0, available - 1024**3))
+    available = shutil.disk_usage(store.objects).free
+    requested_cap = 64 * 1024**3 if storage_root else int(plan['maximum_new_gib'] * 1024**3)
+    cap = min(requested_cap, max(0, available - 1024**3))
     store.maximum_bytes = cap
     print('Single-copy encrypted Git LFS storage enabled. Existing partial objects were authenticated and retained.', flush=True)
-    print('New-object capacity: %.3f GiB; current free space: %.3f GiB.' % (cap / 1024**3, shutil.disk_usage(central).free / 1024**3), flush=True)
+    print('Encrypted payload storage: ' + str(store.objects), flush=True)
+    print('New-object capacity: %.3f GiB; current storage free space: %.3f GiB.' % (cap / 1024**3, available / 1024**3), flush=True)
+    if storage_root and shutil.disk_usage(central).free < 2 * 1024**3:
+        raise ValueError('Keep at least 2 GiB free on the source disk for Git metadata and Docker activity.')
     heads = {root: git(root, 'rev-parse', 'HEAD') for root in plan['projects']}
     manifest = {'version': 1, 'created_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                 'source_heads': heads, 'files': [], 'excluded_dependencies': ['.git', '.study-transfer', 'node_modules', '.venv', 'venv', '__pycache__', '.pytest_cache'],
@@ -145,6 +157,8 @@ def export(plan, password, push=False):
     (transfer / 'manifest.json').write_text(json.dumps(public, indent=2) + '\n')
     git(central, 'add', '-f', '--', '.study-transfer/key.json', '.study-transfer/manifest.json')
     for record in records:
+        if storage_root:
+            write_pointer(transfer / 'objects' / (record['digest'] + '.blob'), store.path(record['digest']), record['cipher_sha256'])
         git(central, 'add', '-f', '--', '.study-transfer/objects/' + record['digest'] + '.blob')
     git(central, 'lfs', 'fsck')
     git(central, 'commit', '-m', 'Save encrypted study and stopped-server handoff')
@@ -203,6 +217,7 @@ def import_state(plan, password, pull=False):
         manifest = json.loads(gzip.decompress(source.read()))
     if manifest['source_heads'] != public['source_heads']:
         raise ValueError('Authenticated snapshot and public code references differ.')
+    manifest = relocate_snapshot(manifest, plan)
     for root, head in manifest['source_heads'].items():
         if root not in plan['projects']:
             raise ValueError('Snapshot project root is outside the migration plan.')
@@ -357,6 +372,7 @@ def import_state(plan, password, pull=False):
     return {'status': 'HOME_FILES_AND_DOCKER_BYTES_RESTORED', 'project_files_verified': file_count,
             'containers_restored': len(created), 'mounted_data_verified': len(docker['mounts']),
             'backup_directory': str(local), 'application_api_acceptance': False,
+            'host_root_mapping': manifest['host_root_mapping'],
             'active_test_processes_resumed': False, 'running': running}
 
 
@@ -366,13 +382,17 @@ def main():
     parser.add_argument('--plan', type=Path, default=Path(__file__).with_name('transfer-plan.json'))
     parser.add_argument('--push', action='store_true')
     parser.add_argument('--pull', action='store_true')
+    parser.add_argument('--root', help='Absolute parent directory containing both study repositories.')
+    parser.add_argument('--storage-root', type=Path, help='External payload and Git LFS storage directory for export.')
     args = parser.parse_args()
     password = os.environ.get('STUDY_TRANSFER_PASSWORD', '')
     if len(password) < 12:
         raise ValueError('Use a transfer password of at least 12 characters.')
-    plan = json.loads(args.plan.read_text(encoding='utf-8-sig'))
     try:
-        result = export(plan, password, args.push) if args.mode == 'export' else import_state(plan, password, args.pull)
+        plan = relocate_plan(json.loads(args.plan.read_text(encoding='utf-8-sig')), args.root)
+        if args.mode == 'import' and args.storage_root:
+            raise ValueError('StorageRoot currently applies to export only.')
+        result = export(plan, password, args.push, args.storage_root) if args.mode == 'export' else import_state(plan, password, args.pull)
         print(json.dumps(result, indent=2), flush=True)
         return 0
     except Exception as error:

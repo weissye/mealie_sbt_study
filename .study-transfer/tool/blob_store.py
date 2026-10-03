@@ -19,7 +19,7 @@ def derive(password, salt):
     return PBKDF2HMAC(algorithm=hashes.SHA256(), length=32, salt=salt, iterations=600000).derive(password.encode('utf-8'))
 
 
-def open_store(root, password, create=False, maximum_bytes=8 * 1024**3):
+def open_store(root, password, create=False, maximum_bytes=8 * 1024**3, objects_directory=None):
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
     path = root / 'key.json'
@@ -40,17 +40,18 @@ def open_store(root, password, create=False, maximum_bytes=8 * 1024**3):
         nonce = os.urandom(12)
         config = {'version': 1, 'salt': salt.hex(), 'nonce': nonce.hex(), 'check': base64.b64encode(AESGCM(key).encrypt(nonce, MAGIC, MAGIC)).decode('ascii')}
         path.write_text(json.dumps(config, indent=2) + '\n')
-    return Store(root, key, maximum_bytes)
+    return Store(root, key, maximum_bytes, objects_directory)
 
 
 class Store:
-    def __init__(self, root, key, maximum_bytes):
+    def __init__(self, root, key, maximum_bytes, objects_directory=None):
         self.root, self.key = Path(root), key
-        self.objects = self.root / 'objects'
-        self.objects.mkdir(exist_ok=True)
+        self.objects = Path(objects_directory) if objects_directory else self.root / 'objects'
+        self.objects.mkdir(parents=True, exist_ok=True)
         self.maximum_bytes = maximum_bytes
         self.new_bytes = 0
         self.lfs_media = None
+        self.source_disk = None
 
     def enable_single_copy_lfs(self, media_directory):
         """Use immutable hard links for this tool's encrypted objects only."""
@@ -103,6 +104,8 @@ class Store:
         return self.objects / (digest + '.blob')
 
     def put(self, plain):
+        if self.source_disk and shutil.disk_usage(self.source_disk).free < 2 * 1024**3:
+            raise ValueError('Source disk free space fell below 2 GiB. External payloads remain intact; source files were not deleted.')
         digest = hashlib.sha256(plain).hexdigest()
         path = self.path(digest)
         if path.exists():
@@ -114,7 +117,7 @@ class Store:
         # files rather than a second full-size copy of the entire snapshot.
         size = len(plain) + len(MAGIC) + 12 + 16
         required_free = size * 2 + 1024**3 if self.lfs_media else self.new_bytes + size * 2 + 512 * 1024**2
-        free = shutil.disk_usage(self.root).free
+        free = shutil.disk_usage(self.objects).free
         if self.new_bytes + size > self.maximum_bytes or free < required_free:
             raise ValueError('Snapshot capacity exhausted: free_gib=%.3f, new_encrypted_gib=%.3f, new_object_cap_gib=%.3f. Source data remains intact; partial encrypted objects are reusable.' % (free / 1024**3, self.new_bytes / 1024**3, self.maximum_bytes / 1024**3))
         nonce = os.urandom(12)

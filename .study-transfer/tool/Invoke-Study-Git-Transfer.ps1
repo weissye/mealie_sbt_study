@@ -3,11 +3,21 @@ param(
     [Parameter(Mandatory = $true)][ValidateSet('Export','Import')][string]$Mode,
     [switch]$Push,
     [switch]$Pull,
-    [switch]$InstallDependencies
+    [switch]$InstallDependencies,
+    [string]$Root,
+    [string]$StorageRoot
 )
 $ErrorActionPreference = 'Stop'
 if ($Mode -eq 'Export' -and $Pull) { throw 'Pull is only supported for Import.' }
 if ($Mode -eq 'Import' -and $Push) { throw 'Push is only supported for Export.' }
+if ($Mode -eq 'Import' -and $StorageRoot) { throw 'StorageRoot currently applies to Export only.' }
+if (-not $Root -and (Split-Path $PSScriptRoot -Leaf) -eq 'tool') {
+    $transferDirectory = Split-Path $PSScriptRoot -Parent
+    if ((Split-Path $transferDirectory -Leaf) -eq '.study-transfer') {
+        $projectDirectory = Split-Path $transferDirectory -Parent
+        $Root = Split-Path $projectDirectory -Parent
+    }
+}
 $python = Get-Command py -ErrorAction SilentlyContinue
 $prefix = @('-3')
 if (-not $python) {
@@ -34,6 +44,8 @@ try {
     $arguments = @($prefix) + @((Join-Path $PSScriptRoot 'study_transfer.py'), $Mode.ToLowerInvariant())
     if ($Push) { $arguments += '--push' }
     if ($Pull) { $arguments += '--pull' }
+    if ($Root) { $arguments += @('--root', $Root) }
+    if ($StorageRoot) { $arguments += @('--storage-root', $StorageRoot) }
     & $python.Source @arguments
     if ($LASTEXITCODE -ne 0) { throw 'Study transfer was not accepted. Keep the original files and inspect the last message before retrying.' }
 } finally {
