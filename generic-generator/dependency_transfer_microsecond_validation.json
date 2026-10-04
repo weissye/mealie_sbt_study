@@ -1,0 +1,8 @@
+{
+  "native_transfer_tests_passed": 3,
+  "healthy_schedules": 8,
+  "injected_faults_detected": 6,
+  "native_timestamp_parser_regression": "PASS: six, three, two and one fractional digits; malformed values rejected",
+  "original_timestamp_values_preserved": true,
+  "live_mealie_corrected_campaign_accepted": false
+}

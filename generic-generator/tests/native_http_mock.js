@@ -85,7 +85,7 @@ function serve(method,url,options){
         if(data.description?.includes('-post-delete-')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
         objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
         if(model.tasks.some(t=>t.kind==='dependency_transfer')&&Object.values(objects).some(x=>x.name?.includes('-old-before-transfer'))){
-          if(!result.recipeIngredient&&!result.recipeReferences)result.updatedAt=new Date().toISOString();
+          if(!result.recipeIngredient&&!result.recipeReferences)result.updatedAt=new Date().toISOString().replace(/(\.\d{3})Z$/,'$1'+'790Z');
           if(fault==='transfer-quantity'&&result.recipeIngredient)result.recipeIngredient[0].quantity=999;
           if(fault==='transfer-unrelated-timestamp'&&!result.recipeIngredient)for(const other of Object.values(objects))if(other.id!==result.id&&other.updatedAt)other.updatedAt='2026-10-05T00:00:00Z';
           if(fault==='transfer-unrelated-target'&&!result.recipeIngredient)for(const other of Object.values(objects))if(other.id!==result.id&&other.name&&!other.recipeIngredient&&!other.recipeReferences)other.name='UNRELATED_TARGET';

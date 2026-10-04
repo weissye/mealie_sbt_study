@@ -48,5 +48,9 @@
   "evidence/dependency-transfer-timestamp-control-20261004/campaign-original.zip",
   "evidence/dependency-transfer-timestamp-control-20261004/checksums.json",
   "evidence/dependency-transfer-timestamp-control-20261004/FINDINGS.md",
-  "generic-generator/dependency_transfer_timestamp_validation.json"
+  "generic-generator/dependency_transfer_timestamp_validation.json",
+  "evidence/dependency-transfer-microsecond-control-20261004/campaign-original.zip",
+  "evidence/dependency-transfer-microsecond-control-20261004/checksums.json",
+  "evidence/dependency-transfer-microsecond-control-20261004/FINDINGS.md",
+  "generic-generator/dependency_transfer_microsecond_validation.json"
 ]
