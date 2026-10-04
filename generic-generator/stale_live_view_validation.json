@@ -1,0 +1,20 @@
+{
+  "static_suite": {
+    "tests_run": 110,
+    "skipped": 11,
+    "result": "PASS"
+  },
+  "native_suite": {
+    "tests_run": 3,
+    "result": "PASS",
+    "heap_mib": 512,
+    "healthy_schedules": 8,
+    "injected_state_faults_detected": 8,
+    "accepted_deleted_dependency_policy_observations": 2
+  },
+  "transport_cases": 466,
+  "transport_result": "PASS",
+  "uploaded_false_positive_regression": "PASS",
+  "live_mealie_rerun": "PENDING",
+  "scope": "Opt-in reference lifecycle live views; no HTTP calls added to stories."
+}

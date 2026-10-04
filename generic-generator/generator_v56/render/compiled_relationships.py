@@ -11,7 +11,7 @@ from .relationship_runtime_js import CODE, SHARED_CODE, EXPANDED_CODE
 
 
 def compile_relationships(plan, maps, raw, runtime):
-    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle'}:
+    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle', 'dependency_transfer'}:
         raise ValueError('Invalid relationship runtime configuration.')
     if 'semantic_program' in runtime and not runtime['semantic_program']:
         raise ValueError('semantic_program must be a nonempty explicit policy.')
@@ -39,6 +39,11 @@ def compile_relationships(plan, maps, raw, runtime):
         if runtime['semantic_program'].get('require_merge_collision'):
             from .semantic_runtime_js import COLLISION_CODE
             callback_code = COLLISION_CODE
+    if 'dependency_transfer' in runtime:
+        if any(runtime.get(k) for k in ('reference_lifecycle','semantic_program','shared_target_updates','detached_target_deletions','attached_target_deletions')):
+            raise ValueError('Dependency transfer requires a separate opt-in runtime profile.')
+        from .dependency_transfer import TRANSFER_CODE
+        callback_code = TRANSFER_CODE
     blueprint = copy.deepcopy(maps['relationship_scenario_plan'])
     schemas = raw.get('components', {}).get('schemas', {})
     aliases = {a['alias']: a['canonical'] for a in maps['resource_catalog']['entity_aliases']}
@@ -521,6 +526,11 @@ def compile_relationships(plan, maps, raw, runtime):
     from .reference_lifecycle import append_reference_lifecycle
     reference_tasks = append_reference_lifecycle(blueprint, info, entities, runtime, add_request, request_schema, property_schema, root, response_schema)
     interface_steps.update(reference_tasks)
+    transfer_tasks = {}
+    if 'dependency_transfer' in runtime:
+        from .dependency_transfer import append_dependency_transfer
+        transfer_tasks = append_dependency_transfer(blueprint, info, entities, runtime['dependency_transfer'], add_request, request_schema, response_schema, property_schema, root, embedded_string_view)
+        interface_steps.update(transfer_tasks)
     semantic_tasks = {}
     if runtime.get('semantic_program'):
         from .semantic_campaign import append_semantic_program
@@ -570,6 +580,8 @@ def compile_relationships(plan, maps, raw, runtime):
         finish_context['expected_deletion_tasks'] = list(deletion_tasks)
     if reference_tasks:
         finish_context['expected_reference_tasks'] = list(reference_tasks)
+    if transfer_tasks:
+        finish_context['expected_transfer_tasks'] = list(transfer_tasks)
     if semantic_tasks:
         finish_context['expected_semantic_tasks'] = list(semantic_tasks)
     finish_call = add_request(bootstrap[0]['operation'], finish_context)
@@ -634,6 +646,9 @@ return new Function("response",source);}
     if semantic_tasks:
         report['semantic_family'] = runtime['semantic_program']['family']
         report['semantic_policy'] = 'EXPLICIT_CONFIGURATION_PENDING_LIVE_VERIFICATION'
+    if transfer_tasks:
+        report['dependency_transfer_tasks'] = list(transfer_tasks)
+        report['dependency_transfer_policy'] = 'EXPLICIT_REBINDING_WITH_INTERMEDIATE_TARGET_UPDATES_AND_THREE_SOURCE_READBACKS'
     if reference_tasks:
-        report['reference_lifecycle_policy'] = 'QUALIFICATION: SUCCESS_NULLS_REFERENCES_OR_REJECTION_PRESERVES_STATE; FOLLOWUP_UPDATE_AND_REBIND'
+        report['reference_lifecycle_policy'] = ('STALE_SNAPSHOT: ATOMIC_REJECTION_OR_SUCCESS_POLICY_OBSERVATION' if runtime['reference_lifecycle'].get('stale_snapshot') else 'QUALIFICATION: SUCCESS_NULLS_REFERENCES_OR_REJECTION_PRESERVES_STATE; FOLLOWUP_UPDATE_AND_REBIND')
     return interfaces, '\n'.join(stories) + '\n', blueprint, report, contexts

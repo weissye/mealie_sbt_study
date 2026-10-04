@@ -3,7 +3,7 @@
 const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');
 const root=process.argv[2],seed=1,fault=process.env.NATIVE_MOCK_FAULT||'',missingMode='';
 const model=JSON.parse(fs.readFileSync(path.join(root,'relationship_scenario_plan.json'),'utf8'));
-const expandedViews=model.tasks.some(t=>t.kind==='shared_update'&&t.referrers.some(r=>r.object_path));
+const expandedViews=model.tasks.some(t=>t.kind==='dependency_transfer'||(t.kind==='shared_update'&&t.referrers.some(r=>r.object_path)));
 const actors=[],rtv={},objects={},requests=[],selected=[],failures=[];
 let callbackBytes=0,counter=0,random=seed,activeRequests=0,maximumActive=0,corrupt=false,currentTask=null,sharedChanged=false;
 function uuid(){return '00000000-0000-4000-8000-'+String(++counter).padStart(12,'0');}
@@ -34,6 +34,10 @@ function serve(method,url,options){
       else if(resource==='api/households/shopping/items')result={createdItems:[result],updatedItems:[],deletedItems:[]};
       if(fault==='ambiguous-create'&&resource==='api/households/shopping/items')result.createdItems.push({...result.createdItems[0],id:uuid()});
     }else if(method==='get'&&objects[url]){result=objects[url];
+      if(model.tasks.some(t=>t.rule?.stale_snapshot)&&result.recipeReferences){
+        result=JSON.parse(JSON.stringify(result));
+        result.recipeReferences.forEach(ref=>{const recipe=Object.values(objects).find(x=>x.recipeIngredient&&x.id===ref.recipeId);if(recipe)ref.recipe={id:recipe.id,name:recipe.name,description:recipe.description||'',dateUpdated:recipe.dateUpdated||'before',updatedAt:recipe.updatedAt||'before'};});
+      }
       if(expandedViews&&fault!=='embedded-stale'){
         result=JSON.parse(JSON.stringify(result));
         function hydrate(node){if(!node||typeof node!=='object')return;for(const field of ['food','unit']){if(node[field]?.id){const family=field==='food'?'foods':'units',current=objects['/api/'+family+'/'+node[field].id];if(current)node[field]=JSON.parse(JSON.stringify(current));}}for(const value of Object.values(node))if(value&&typeof value==='object')hydrate(value);}
@@ -75,9 +79,19 @@ function serve(method,url,options){
         if(fault==='cycle-target-mutates-on-reject'){const target=(data.recipeIngredient||[]).find(x=>x.referencedRecipe)?.referencedRecipe.id;const member=Object.values(objects).find(x=>x.id===target);assert(member);member.description='TARGET_WRITE_DESPITE_REJECTION';}
       }else if(fault==='legal-rejected'&&currentTask?.endsWith(':legal-reverse')){status=400;result={detail:'Incorrect rejection of acyclic link'};}
       else if((fault==='unlink-ignored'&&currentTask?.endsWith(':unlink'))||(fault==='alternate-unlink-ignored'&&currentTask?.endsWith(':remove-left'))){result=objects[url];}
+      else if(data.description?.includes('-stale-write')&&model.tasks.some(t=>t.rule?.stale_snapshot&&t.rule.mode==='delete')&&fault!=='stale-accepted'){status=422;result={detail:'Removed dependency'};if(fault==='stale-partial')objects[url].description=data.description;if(fault==='stale-other-source')for(const other of Object.values(objects))if(other.recipeIngredient&&other.id!==objects[url].id)other.recipeIngredient[0].quantity=999;}
       else{if(data.description?.includes('-post-delete-')&&fault==='reference-followup-ignored')data.description=objects[url].description;
         if(data.description?.includes('-post-delete-')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
         objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
+        if(model.tasks.some(t=>t.kind==='dependency_transfer')&&Object.values(objects).some(x=>x.name?.includes('-old-before-transfer'))){
+          if(fault==='transfer-quantity'&&result.recipeIngredient)result.recipeIngredient[0].quantity=999;
+          if(fault==='transfer-unrelated-target'&&!result.recipeIngredient)for(const other of Object.values(objects))if(other.id!==result.id&&other.name&&!other.recipeIngredient&&!other.recipeReferences)other.name='UNRELATED_TARGET';
+        }
+        if(data.description?.includes('-stale-write')){
+          result.dateUpdated='after';result.updatedAt='after';
+          if(fault==='stale-list-quantity')for(const list of Object.values(objects))if(list.recipeReferences?.length)list.recipeReferences[0].recipeQuantity=999;
+          if(fault==='stale-view-name')result.name='UNEXPECTED_NAME';
+        }
         if(fault==='identity-view'&&url.startsWith('/api/households/shopping/items/')&&data.foodId)result.foodId=uuid();
       }
     }

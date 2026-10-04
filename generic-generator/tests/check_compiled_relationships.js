@@ -75,6 +75,7 @@ function serve(method,url,options){
         if(fault==='cycle-target-mutates-on-reject'){const target=(data.recipeIngredient||[]).find(x=>x.referencedRecipe)?.referencedRecipe.id;const member=Object.values(objects).find(x=>x.id===target);assert(member);member.description='TARGET_WRITE_DESPITE_REJECTION';}
       }else if(fault==='legal-rejected'&&currentTask?.endsWith(':legal-reverse')){status=400;result={detail:'Incorrect rejection of acyclic link'};}
       else if((fault==='unlink-ignored'&&currentTask?.endsWith(':unlink'))||(fault==='alternate-unlink-ignored'&&currentTask?.endsWith(':remove-left'))){result=objects[url];}
+      else if(data.description?.includes('-stale-write')&&model.tasks.some(t=>t.rule?.stale_snapshot&&t.rule.mode==='delete')&&fault!=='stale-accepted'){status=422;result={detail:'Removed dependency'};if(fault==='stale-partial')objects[url].description=data.description;if(fault==='stale-other-source')for(const other of Object.values(objects))if(other.recipeIngredient&&other.id!==objects[url].id)other.recipeIngredient[0].quantity=999;}
       else{if(currentTask?.startsWith('reference-lifecycle:')&&fault==='reference-followup-ignored')data.description=objects[url].description;
         if(currentTask?.startsWith('reference-lifecycle:')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
         objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';

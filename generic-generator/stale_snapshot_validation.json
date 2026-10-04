@@ -1,0 +1,17 @@
+{
+  "status": "LOCAL_VALIDATION_PASS",
+  "live_mealie_execution": "PENDING_AT_HOME",
+  "regression_tests": 109,
+  "regression_skipped": 11,
+  "transport_comparison_sites": 466,
+  "native_healthy_runs": 8,
+  "native_injected_atomicity_fault_runs": 4,
+  "native_success_policy_observations": 2,
+  "native_java_heap_mib": 512,
+  "new_bug_confirmed": false,
+  "limitations": [
+    "PowerShell runner not executed in Linux validation",
+    "Successful post-delete stale write requires independent inline recreation qualification",
+    "Home server restoration is not performed by this package"
+  ]
+}

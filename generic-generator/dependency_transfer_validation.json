@@ -1,0 +1,23 @@
+{
+  "static_suite": {
+    "tests_run": 114,
+    "skipped": 12,
+    "result": "PASS"
+  },
+  "native_suite": {
+    "tests_run": 3,
+    "healthy_schedules": 8,
+    "injected_corruptions_detected": 4,
+    "heap_mib": 512,
+    "result": "PASS"
+  },
+  "transport_cases": 466,
+  "transport_result": "PASS",
+  "prior_evidence_offline_verification": "PASS",
+  "new_live_mealie_campaign": "PENDING",
+  "expected_responses_per_control": 125,
+  "expected_responses_per_transfer": 152,
+  "http_concurrency": false,
+  "phase_orders": "one explicit phase order per case; native prefix ordering varies",
+  "reset_replay_accepted": false
+}

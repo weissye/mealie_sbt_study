@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools.reference_receipts import validate_reference_receipts
+from tools.transfer_receipts import validate_transfer_receipts
 
 
 def classify(path):
@@ -15,12 +16,19 @@ def classify(path):
     if acceptance.get('live_accepted') is True:
         receipt=acceptance.get('runtime_receipt',{})
         validate_reference_receipts(receipt,plan)
-        result.update(status='PASS',outcomes=[r['outcome'] for r in receipt['reference_lifecycles']])
+        validate_transfer_receipts(receipt,plan)
+        result.update(status='PASS',outcomes=[r['outcome'] for r in receipt.get('reference_lifecycles',[])])
     else:
+        transfer_failures=[line for line in output.splitlines() if ' WARN [' in line and 'FAIL: Dependency transfer mismatch: ' in line]
+        if transfer_failures:
+            payload=transfer_failures[0].split('FAIL: Dependency transfer mismatch: ',1)[1].removesuffix('.')
+            result.update(status='TRANSFER_CANDIDATE',first_failure=json.loads(payload))
+            return result
         failures=[line for line in output.splitlines() if ' WARN [' in line and 'FAIL: Reference lifecycle mismatch: ' in line]
         if failures:
             payload=failures[0].split('FAIL: Reference lifecycle mismatch: ',1)[1].removesuffix('.')
-            result.update(status='REFERENCE_CANDIDATE',first_failure=json.loads(payload))
+            evidence=json.loads(payload)
+            result.update(status='POLICY_OBSERVATION' if evidence.get('stage')=='stale_success_requires_policy_qualification' else 'REFERENCE_CANDIDATE',first_failure=evidence)
         else:
             # A server error is a candidate only when associated with a selected
             # non-authentication REST operation. No success receipt is inferred.
