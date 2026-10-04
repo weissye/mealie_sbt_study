@@ -138,6 +138,9 @@
         "target_index": 2,
         "value": "replacement-after-return"
       }
+    ],
+    "target_timestamp_fields": [
+      "updatedAt"
     ]
   }
 }

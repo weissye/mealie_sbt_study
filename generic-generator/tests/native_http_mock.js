@@ -26,6 +26,7 @@ function serve(method,url,options){
     else if(method==='post'&&createOps[url]){
       const data=JSON.parse(body),resource=createOps[url];const id=uuid(),slug='owned-'+counter;
       result={...data,id,slug,groupId:fakeScope.groupId,userId:fakeScope.id,householdId:fakeScope.householdId};
+      if(model.tasks.some(t=>t.kind==='dependency_transfer')&&['api/foods','api/units'].includes(resource))Object.assign(result,{createdAt:'2026-10-04T00:00:00Z',updatedAt:'2026-10-04T00:00:00Z'});
       if(resource==='api/recipes')Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});
       if(resource==='api/households/shopping/lists')Object.assign(result,{listItems:[],recipeReferences:[]});
       if(resource==='api/households/shopping/items')Object.assign(result,{food:null,foodId:null,unit:fault==='projection-null'?17:null,unitId:null,referencedRecipe:null,recipeReferences:model.semantic_program?[]:[{id:uuid(),shoppingListItemId:id,recipeId:'44444444-4444-4444-8444-444444444444',recipeQuantity:2,recipeScale:1}]});
@@ -84,7 +85,9 @@ function serve(method,url,options){
         if(data.description?.includes('-post-delete-')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
         objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
         if(model.tasks.some(t=>t.kind==='dependency_transfer')&&Object.values(objects).some(x=>x.name?.includes('-old-before-transfer'))){
+          if(!result.recipeIngredient&&!result.recipeReferences)result.updatedAt=new Date().toISOString();
           if(fault==='transfer-quantity'&&result.recipeIngredient)result.recipeIngredient[0].quantity=999;
+          if(fault==='transfer-unrelated-timestamp'&&!result.recipeIngredient)for(const other of Object.values(objects))if(other.id!==result.id&&other.updatedAt)other.updatedAt='2026-10-05T00:00:00Z';
           if(fault==='transfer-unrelated-target'&&!result.recipeIngredient)for(const other of Object.values(objects))if(other.id!==result.id&&other.name&&!other.recipeIngredient&&!other.recipeReferences)other.name='UNRELATED_TARGET';
         }
         if(data.description?.includes('-stale-write')){

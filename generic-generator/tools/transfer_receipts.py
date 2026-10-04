@@ -1,5 +1,6 @@
 """Independent checks for complete dependency transfer receipts. No HTTP."""
 import copy
+from datetime import datetime
 
 
 def _walk(value,path,visitor):
@@ -53,8 +54,19 @@ def validate_transfer_receipts(receipt,plan):
             target=ids[phase['target_index']-1]
             if phase['kind']=='update':
                 value=record['namespace']+'-'+phase['value'];expected=copy.deepcopy(targets[target]);expected[field]=value
-                if actual.get('value')!=value or actual.get('expected_target')!=expected or actual.get('observed_target')!=expected:raise ValueError('Target update receipt mismatch.')
-                targets[target]=expected;templates[target][field]=value
+                observed=actual.get('observed_target');protected=copy.deepcopy(observed)
+                if not isinstance(observed,dict):raise ValueError('Missing observed target.')
+                for timestamp in cfg.get('target_timestamp_fields',[]):
+                    value_time=observed.get(timestamp)
+                    if not isinstance(value_time,str):raise ValueError('Missing update timestamp.')
+                    try:datetime.fromisoformat(value_time.replace('Z','+00:00'))
+                    except ValueError as error:raise ValueError('Invalid update timestamp.') from error
+                    if timestamp in expected:protected[timestamp]=expected[timestamp]
+                    else:protected.pop(timestamp,None)
+                if actual.get('value')!=value or actual.get('expected_target')!=expected or protected!=expected:raise ValueError('Target update receipt mismatch.')
+                targets[target]=copy.deepcopy(observed);templates[target][field]=value
+                for timestamp in cfg.get('target_timestamp_fields',[]):
+                    if timestamp in templates[target]:templates[target][timestamp]=observed[timestamp]
             else:assignments[phase['source']]=phase['target_index']
             checks=actual.get('checks',[])
             if sorted(c.get('instance','') for c in checks)!=sorted(sources):raise ValueError('Missing or duplicate transfer source check.')

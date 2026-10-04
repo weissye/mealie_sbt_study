@@ -22,8 +22,8 @@ TRANSFER_CODE = CODE.replace("  if(ctx.mode==='prepare_action'){", r'''
     data=project(ctx.request_schema,data,0,false);pvg.rtv.set(ctx.body_variable,JSON.stringify(data));store(ctx.transfer_variable,rec);
   }
   if(ctx.mode==='transfer_target_after'){
-    identity(ctx,body);var rec=read(ctx.transfer_variable),id=idOf(body),expected=rec.pending.expected_target;if(stable(body)!==stable(expected))transferFail('target_update',expected,body);
-    rec.targets[id]=clone(body);rec.templates[id][ctx.target_field]=rec.pending.value;rec.pending.observed_target=clone(body);store(ctx.transfer_variable,rec);
+    identity(ctx,body);var rec=read(ctx.transfer_variable),id=idOf(body),expected=rec.pending.expected_target,protectedBody=clone(body);(ctx.target_timestamp_fields||[]).forEach(function(f){if(typeof body[f]!=='string'||isNaN(Date.parse(body[f])))transferFail('invalid_update_timestamp',expected,body);if(Object.prototype.hasOwnProperty.call(expected,f))protectedBody[f]=expected[f];else delete protectedBody[f];});if(stable(protectedBody)!==stable(expected))transferFail('target_update',expected,body);
+    rec.targets[id]=clone(body);rec.templates[id][ctx.target_field]=rec.pending.value;(ctx.target_timestamp_fields||[]).forEach(function(f){if(Object.prototype.hasOwnProperty.call(rec.templates[id],f))rec.templates[id][f]=body[f];});rec.pending.observed_target=clone(body);store(ctx.transfer_variable,rec);
   }
   if(ctx.mode==='transfer_phase_begin'){
     var rec=read(ctx.transfer_variable);if(ctx.phase.kind==='rebind')rec.assignments[ctx.phase.source]=ctx.phase.target_index;rec.pending.checks=[];store(ctx.transfer_variable,rec);
@@ -47,7 +47,7 @@ TRANSFER_CODE=TRANSFER_CODE.replace("  if(ctx.mode==='transfer_target_before'){"
 
 def append_dependency_transfer(blueprint,info,entities,config,add_request,request_schema,response_schema,property_schema,root,embedded_string_view):
     required={'target_type','source_type','target_operation','source_operation','field_path','target_field','preserve_fields','derived_fields','phases'}
-    if not isinstance(config,dict) or set(config)!=required:raise ValueError('Dependency transfer requires a complete explicit configuration.')
+    if not isinstance(config,dict) or not required.issubset(config) or set(config)-required-{'target_timestamp_fields'}:raise ValueError('Dependency transfer requires a complete explicit configuration.')
     target_type=config['target_type'];source_type=config['source_type']
     if target_type==source_type or any(t not in blueprint['instances'] or len(blueprint['instances'][t])!=3 for t in (target_type,source_type)):raise ValueError('Transfer requires three owned sources and three distinct targets.')
     def getter(t):
@@ -61,6 +61,13 @@ def append_dependency_transfer(blueprint,info,entities,config,add_request,reques
     for schema in [request_schema(config['target_operation']),response_schema(getter(target_type))]:
         node=root(property_schema(schema,field,writable=schema is not None))
         if node.get('type')!='string':raise ValueError('Transfer target field must be a documented string.')
+    timestamps=config.get('target_timestamp_fields',[])
+    if not isinstance(timestamps,list) or len(set(timestamps))!=len(timestamps):raise ValueError('Timestamp fields must be a distinct list.')
+    for timestamp in timestamps:
+        if timestamp not in ('updatedAt','dateUpdated','updated_at','updated'):raise ValueError('Only explicit update timestamps may vary.')
+        node=root(property_schema(response_schema(getter(target_type)),timestamp))
+        variants=node.get('anyOf',node.get('oneOf',[node]));nonnull=[root(n) for n in variants if root(n).get('type')!='null']
+        if len(nonnull)!=1 or nonnull[0].get('type')!='string' or nonnull[0].get('format')!='date-time':raise ValueError('Update timestamp must be documented as date-time.')
     sources=blueprint['instances'][source_type];targets=blueprint['instances'][target_type];path=config['field_path'];protected=config['preserve_fields'];derived=config['derived_fields']
     source_schema=request_schema(config['source_operation'])
     property_schema(source_schema,path,writable=True)
@@ -84,7 +91,7 @@ def append_dependency_transfer(blueprint,info,entities,config,add_request,reques
             if set(phase)!={'kind','target_index','value'} or not isinstance(phase['value'],str) or not phase['value']:raise ValueError('Transfer update requires a value suffix.')
         elif set(phase)!={'kind','target_index','source_index'} or type(phase['source_index']) is not int or phase['source_index'] not in (1,2):raise ValueError('Only sources one and two may be rebound.')
     task_id='dependency-transfer:'+target_type;variable='rel_transfer_'+hashlib.sha256(task_id.encode()).hexdigest()[:16]
-    common={'transfer_variable':variable,'transfer_task':task_id,'field_path':path,'target_field':field,'source_schema':source_schema,'protected_fields':protected,'derived_fields':derived}
+    common={'transfer_variable':variable,'transfer_task':task_id,'field_path':path,'target_field':field,'source_schema':source_schema,'protected_fields':protected,'derived_fields':derived,'target_timestamp_fields':timestamps}
     def ctx(instance,mode,**extra):return dict(info[instance],mode=mode,**common,**extra)
     steps=[add_request(getter(target_type),ctx(targets[0],'transfer_initialize'),targets[0])]
     for index,s in enumerate(targets):steps.append(add_request(getter(target_type),ctx(s,'transfer_target_before',target_index=index+1),s))

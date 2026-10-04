@@ -16,11 +16,12 @@ class TransferConfigurationTests(unittest.TestCase):
   self.assertEqual(len(task['phases']),7);self.assertEqual(len(task['sources']),3)
  def test_invalid_identity_and_control_mutations_are_rejected(self):
   base=json.loads((ROOT/'profiles/mealie-transfer-food-transfer-runtime.json').read_text())
-  for mutation in ['identity','control','excluded_identity']:
+  for mutation in ['identity','control','excluded_identity','timestamp_identity','timestamp_created']:
    runtime=json.loads(json.dumps(base));rule=runtime['dependency_transfer']
    if mutation=='identity':rule['target_field']='id'
    elif mutation=='control':rule['phases'][1]['source_index']=3
-   else:rule['derived_fields']=['recipeIngredient[].quantity']
+   elif mutation=='excluded_identity':rule['derived_fields']=['recipeIngredient[].quantity']
+   else:rule['target_timestamp_fields']=['id' if mutation=='timestamp_identity' else 'createdAt']
    with self.assertRaises(ValueError):generate(config=runtime)
 @unittest.skipUnless(os.environ.get('PROVENGO_TEST_JAR') and shutil.which('java'),'Native jar required')
 class TransferNativeTests(unittest.TestCase):
@@ -37,7 +38,7 @@ class TransferNativeTests(unittest.TestCase):
      plan=result.resource_maps['relationship_scenario_plan'];(project/'relationship_scenario_plan.json').write_text(json.dumps(plan))
      sample=subprocess.run(command+['sample','--size','2','--max-length','700','-o','samples.json',str(project)],capture_output=True,text=True,timeout=60)
      self.assertEqual(sample.returncode,0,sample.stdout+sample.stderr);audit_samples(json.loads((project/'samples.json').read_text()),plan);self.assertLess((project/'samples.json').stat().st_size,8*1024*1024)
-     for index,fault in enumerate(['','']+(['transfer-quantity','transfer-unrelated-target'] if mode=='transfer' else [])):
+     for index,fault in enumerate(['','']+(['transfer-quantity','transfer-unrelated-target','transfer-unrelated-timestamp'] if mode=='transfer' else [])):
       env=dict(os.environ,NATIVE_MOCK_PORT=str(port),NATIVE_MOCK_FAULT=fault,SBT_REL_USERNAME='local',SBT_REL_PASSWORD='local')
       server=subprocess.Popen(['node',str(ROOT/'tests/native_http_mock.js'),str(project)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
       try:

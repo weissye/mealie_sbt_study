@@ -44,5 +44,9 @@
   "generic-generator/tools/transfer_receipts.py",
   "scripts/Run-Generic-Dependency-Transfer.ps1",
   "scripts/Run-Generic-Stale-Snapshot.ps1",
-  "scripts/Save-Generic-Dependency-Transfer.ps1"
+  "scripts/Save-Generic-Dependency-Transfer.ps1",
+  "evidence/dependency-transfer-timestamp-control-20261004/campaign-original.zip",
+  "evidence/dependency-transfer-timestamp-control-20261004/checksums.json",
+  "evidence/dependency-transfer-timestamp-control-20261004/FINDINGS.md",
+  "generic-generator/dependency_transfer_timestamp_validation.json"
 ]

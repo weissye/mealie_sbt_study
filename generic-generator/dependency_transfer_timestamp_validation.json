@@ -1,0 +1,9 @@
+{
+  "native_provengo_tests_passed": 3,
+  "healthy_schedules_passed": 8,
+  "injected_fault_schedules_rejected": 6,
+  "heap_limit_mib": 512,
+  "legacy_transport_cases_identical": 466,
+  "live_mealie_corrected_campaign_accepted": false,
+  "windows_powershell_native_tested": false
+}
