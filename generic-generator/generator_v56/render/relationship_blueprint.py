@@ -110,7 +110,7 @@ def build_relationship_blueprint(plan, maps, profile):
         raise ValueError('target_bindings must be a list.')
     binding_by_path = {}
     for binding in bindings:
-        if not isinstance(binding, dict) or set(binding) not in ({'source_type','target_type','field_path','target_index','after_fields'}, {'source_type','target_type','field_path','target_indices','after_fields'}):
+        if not isinstance(binding, dict) or set(binding) not in ({'source_type','target_type','field_path','target_index','after_fields'}, {'source_type','target_type','field_path','target_indices','after_fields'}, {'source_type','target_type','field_path','target_indices_by_source','after_fields'}):
             raise ValueError('Explicit target binding requires typed relationship and dependencies.')
         if any(not isinstance(binding[k],str) for k in ('source_type','target_type','field_path')):
             raise ValueError('Target binding types and path must be strings.')
@@ -118,10 +118,13 @@ def build_relationship_blueprint(plan, maps, profile):
         key = (binding['source_type'],binding['field_path'])
         if signature not in choices or key in binding_by_path or key in excluded_keys or key in policy_by_path:
             raise ValueError('Target binding is unknown, duplicate, excluded or recursive.')
-        indices = binding.get('target_indices', [binding.get('target_index')])
-        if not isinstance(indices, list) or not 1 <= len(indices) <= 8 or any(type(i) is not int or not 1 <= i <= count for i in indices):
+        rows = binding.get('target_indices_by_source')
+        if rows is not None and (not isinstance(rows,list) or len(rows)!=count or any(not isinstance(row,list) or not 1<=len(row)<=8 for row in rows)):
+            raise ValueError('Target binding requires one occurrence list per source instance.')
+        indices = [i for row in rows for i in row] if rows is not None else binding.get('target_indices', [binding.get('target_index')])
+        if not isinstance(indices, list) or not 1 <= len(indices) <= (8*count if rows is not None else 8) or any(type(i) is not int or not 1 <= i <= count for i in indices):
             raise ValueError('Target binding index is outside selected instances.')
-        if 'target_indices' in binding and '[]' not in binding['field_path']:
+        if ('target_indices' in binding or rows is not None) and '[]' not in binding['field_path']:
             raise ValueError('Multiple target occurrences require an array relationship.')
         if binding['source_type'] == binding['target_type'] or any(canonical(e.target)==binding['source_type'] for e in by_type[binding['target_type']].dependencies):
             raise ValueError('Target binding cannot override recursive or contained-child ownership.')
@@ -153,7 +156,8 @@ def build_relationship_blueprint(plan, maps, profile):
                 targets = [instances[target][0 if i < 2 else i % count]]
             binding = binding_by_path.get((source,field))
             if binding:
-                targets = [instances[target][n-1] for n in binding.get('target_indices', [binding.get('target_index')])]
+                selected = binding['target_indices_by_source'][i] if 'target_indices_by_source' in binding else binding.get('target_indices', [binding.get('target_index')])
+                targets = [instances[target][n-1] for n in selected]
             task_id = 'link:' + str(index) + ':' + str(i + 1)
             tasks.append({'id': task_id, 'kind': 'link', 'source_instance': source_instance,
                 'target_instances': targets, 'field_path': field, 'operation': relation['operation'],

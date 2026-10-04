@@ -101,8 +101,10 @@ def find_receipt(text, structured=None):
 
 if __package__:
     from .semantic_receipts import validate_semantic_receipts
+    from .reference_receipts import validate_reference_receipts
 else:
     from semantic_receipts import validate_semantic_receipts
+    from reference_receipts import validate_reference_receipts
 
 def validate_negative_receipts(receipt, plan):
     expected = {t['id']: t for t in plan['tasks'] if t['kind'] == 'negative_link'}
@@ -370,6 +372,7 @@ def main():
             validate_legal_receipts(receipt, plan)
             validate_shared_update_receipts(receipt, plan)
             validate_deletion_receipts(receipt, plan)
+            validate_reference_receipts(receipt, plan)
             validate_semantic_receipts(receipt, plan)
             if receipt.get('task_count') != compilation['task_count'] or receipt.get('response_count') != compilation['http_requests_per_complete_schedule'] or receipt.get('owned_instances') != sum(map(len, plan['instances'].values())):
                 raise ValueError('Runtime receipt does not cover the complete generated model.')

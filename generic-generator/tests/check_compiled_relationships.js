@@ -63,6 +63,7 @@ function serve(method,url,options){
       }
       let cycle=false;
       if(url.startsWith('/api/recipes/')){
+        if(model.tasks.some(t=>t.kind==='reference_lifecycle'))for(const ingredient of data.recipeIngredient||[]){ingredient.display=[ingredient.quantity,ingredient.unit?.name,ingredient.food?.name,ingredient.note].filter(v=>v!==undefined&&v!==null&&v!=='').join(' ');}
         const recipes=Object.values(objects).filter(x=>x.recipeIngredient),source=objects[url].id;
         function reaches(id,seen){if(id===source)return true;if(seen.has(id))return false;seen.add(id);const item=recipes.find(x=>x.id===id);return (item?.recipeIngredient||[]).some(x=>x.referencedRecipe&&reaches(x.referencedRecipe.id,seen));}
         cycle=(data.recipeIngredient||[]).some(x=>x.referencedRecipe&&reaches(x.referencedRecipe.id,new Set()));
@@ -74,13 +75,23 @@ function serve(method,url,options){
         if(fault==='cycle-target-mutates-on-reject'){const target=(data.recipeIngredient||[]).find(x=>x.referencedRecipe)?.referencedRecipe.id;const member=Object.values(objects).find(x=>x.id===target);assert(member);member.description='TARGET_WRITE_DESPITE_REJECTION';}
       }else if(fault==='legal-rejected'&&currentTask?.endsWith(':legal-reverse')){status=400;result={detail:'Incorrect rejection of acyclic link'};}
       else if((fault==='unlink-ignored'&&currentTask?.endsWith(':unlink'))||(fault==='alternate-unlink-ignored'&&currentTask?.endsWith(':remove-left'))){result=objects[url];}
-      else{objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
+      else{if(currentTask?.startsWith('reference-lifecycle:')&&fault==='reference-followup-ignored')data.description=objects[url].description;
+        if(currentTask?.startsWith('reference-lifecycle:')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
+        objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
         if(fault==='identity-view'&&url.startsWith('/api/households/shopping/items/')&&data.foodId)result.foodId=uuid();
       }
     }
     else if(method==='delete'&&objects[url]){result=objects[url];status=200;
-      if(fault!=='delete-ignored'){
+      const reference=model.tasks.find(t=>t.kind==='reference_lifecycle');
+      
+
+      if(reference&&(fault==='reference-reject'||fault==='reference-reject-partial')){status=409;if(fault==='reference-reject-partial')for(const object of Object.values(objects))if(object.recipeIngredient)object.recipeIngredient[0].quantity=999;}else if(fault!=='delete-ignored'){
         delete objects[url];
+        if(reference&&fault!=='reference-dangling'){
+          const field=reference.rule.field_path.split('.').pop();
+          for(const object of Object.values(objects))for(const ingredient of object.recipeIngredient||[]){if(ingredient[field]?.id===result.id)ingredient[field]=null;}
+          if(fault==='reference-unrelated')for(const object of Object.values(objects))if(object.recipeIngredient?.length)object.recipeIngredient[0].quantity=999;
+        }
         if(model.tasks.some(t=>t.kind==='attached_delete')&&fault!=='delete-dangling'){
           const field=url.startsWith('/api/organizers/tags/')?'tags':url.startsWith('/api/organizers/categories/')?'recipeCategory':null;
           if(field)for(const object of Object.values(objects))if(Array.isArray(object[field]))object[field]=object[field].filter(x=>x.id!==result.id);
@@ -142,5 +153,5 @@ try{
     assert.deepStrictEqual(observed.map(r=>r.method),[...members.map(()=> 'get'),'get','put','get',...members.map(()=> 'get')]);
   }
 }catch(e){error=e;}
-if(fault){assert(error,'Injected fault was not rejected');assert(!selected.some(e=>e.name==='SBT:RelScenarioComplete'));if(['unsynchronized-view','identity-view','ignored-recipe-field','association-readback'].includes(fault))assert(failures.some(message=>message.startsWith('Relationship readback mismatch:')), 'Expected identity readback failure');if(fault==='projection-null')assert(failures.some(message=>message.startsWith('Source projection:')||message.startsWith('Create response contract:')));if(fault.startsWith('cycle-')){assert.strictEqual(requests[requests.length-1].method,'get');const evidence=JSON.parse(rtv.sbt_rel_last_cycle_probe);assert(evidence.cycle_length>=2);if(fault==='cycle-mutates-on-reject')assert.strictEqual(evidence.source_unchanged,false);else if(fault==='cycle-target-mutates-on-reject'){assert.strictEqual(evidence.source_unchanged,true);assert(evidence.member_checks.some(x=>!x.unchanged));}else assert.notStrictEqual(evidence.code,400);}process.stdout.write('PASS: rejected '+fault+'; no scenario completion.\n');}
+if(fault&&fault!=='reference-reject'){assert(error,'Injected fault was not rejected');assert(!selected.some(e=>e.name==='SBT:RelScenarioComplete'));if(['unsynchronized-view','identity-view','ignored-recipe-field','association-readback'].includes(fault))assert(failures.some(message=>message.startsWith('Relationship readback mismatch:')), 'Expected identity readback failure');if(fault==='projection-null')assert(failures.some(message=>message.startsWith('Source projection:')||message.startsWith('Create response contract:')));if(fault.startsWith('cycle-')){assert.strictEqual(requests[requests.length-1].method,'get');const evidence=JSON.parse(rtv.sbt_rel_last_cycle_probe);assert(evidence.cycle_length>=2);if(fault==='cycle-mutates-on-reject')assert.strictEqual(evidence.source_unchanged,false);else if(fault==='cycle-target-mutates-on-reject'){assert.strictEqual(evidence.source_unchanged,true);assert(evidence.member_checks.some(x=>!x.unchanged));}else assert.notStrictEqual(evidence.code,400);}process.stdout.write('PASS: rejected '+fault+'; no scenario completion.\n');}
 else{if(error)throw error;process.stdout.write(JSON.stringify({result:'NODE_STUB_PASS',seed,tasks:model.tasks.length,http_requests:requests.length,serialized_callback_bytes:callbackBytes,max_active_http:maximumActive,receipt:JSON.parse(rtv.sbt_rel_execution_receipt),shared_updates:JSON.parse(rtv.sbt_rel_execution_receipt).shared_updates||[],detached_deletions:JSON.parse(rtv.sbt_rel_execution_receipt).detached_deletions||[],task_order:selected.filter(e=>e.name==='SBT:RelTask').map(e=>e.data.id)})+'\n');}

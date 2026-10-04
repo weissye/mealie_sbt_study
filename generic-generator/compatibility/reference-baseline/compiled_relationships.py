@@ -11,7 +11,7 @@ from .relationship_runtime_js import CODE, SHARED_CODE, EXPANDED_CODE
 
 
 def compile_relationships(plan, maps, raw, runtime):
-    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle'}:
+    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program'}:
         raise ValueError('Invalid relationship runtime configuration.')
     if 'semantic_program' in runtime and not runtime['semantic_program']:
         raise ValueError('semantic_program must be a nonempty explicit policy.')
@@ -26,11 +26,6 @@ def compile_relationships(plan, maps, raw, runtime):
     if runtime.get('attached_target_deletions'):
         from .relationship_runtime_js import ATTACHED_CODE
         callback_code = ATTACHED_CODE
-    if 'reference_lifecycle' in runtime:
-        if any(runtime.get(k) for k in ('semantic_program', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions')):
-            raise ValueError('Reference lifecycle requires a separate runtime profile.')
-        from .reference_lifecycle import REFERENCE_CODE
-        callback_code = REFERENCE_CODE
     if runtime.get('semantic_program'):
         if any(runtime.get(k) for k in ('shared_target_updates','detached_target_deletions','attached_target_deletions')):
             raise ValueError('Semantic programs require a separate runtime profile from deletion/update programs.')
@@ -518,9 +513,6 @@ def compile_relationships(plan, maps, raw, runtime):
     from .relationship_deletion import append_detached_deletions
     deletion_tasks = append_detached_deletions(blueprint, info, entities, runtime, add_request, request_schema, property_schema, root)
     interface_steps.update(deletion_tasks)
-    from .reference_lifecycle import append_reference_lifecycle
-    reference_tasks = append_reference_lifecycle(blueprint, info, entities, runtime, add_request, request_schema, property_schema, root, response_schema)
-    interface_steps.update(reference_tasks)
     semantic_tasks = {}
     if runtime.get('semantic_program'):
         from .semantic_campaign import append_semantic_program
@@ -568,8 +560,6 @@ def compile_relationships(plan, maps, raw, runtime):
         finish_context['expected_shared_tasks'] = [t['id'] for t in blueprint['tasks'] if t['kind'] == 'shared_update']
     if deletion_tasks:
         finish_context['expected_deletion_tasks'] = list(deletion_tasks)
-    if reference_tasks:
-        finish_context['expected_reference_tasks'] = list(reference_tasks)
     if semantic_tasks:
         finish_context['expected_semantic_tasks'] = list(semantic_tasks)
     finish_call = add_request(bootstrap[0]['operation'], finish_context)
@@ -634,6 +624,4 @@ return new Function("response",source);}
     if semantic_tasks:
         report['semantic_family'] = runtime['semantic_program']['family']
         report['semantic_policy'] = 'EXPLICIT_CONFIGURATION_PENDING_LIVE_VERIFICATION'
-    if reference_tasks:
-        report['reference_lifecycle_policy'] = 'QUALIFICATION: SUCCESS_NULLS_REFERENCES_OR_REJECTION_PRESERVES_STATE; FOLLOWUP_UPDATE_AND_REBIND'
     return interfaces, '\n'.join(stories) + '\n', blueprint, report, contexts

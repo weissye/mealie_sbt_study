@@ -1,0 +1,34 @@
+{
+  "scope": "generic reference deletion qualification and continued use",
+  "date": "2026-10-04",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "legacy_regression_suite": {
+    "tests": 106,
+    "skipped": 10,
+    "status": "PASS"
+  },
+  "native_reference_matrix": {
+    "healthy_runs": 10,
+    "injected_fault_runs": 8,
+    "status": "PASS",
+    "java_heap": "512 MiB"
+  },
+  "final_profile_node_matrix": {
+    "tests": 5,
+    "status": "PASS"
+  },
+  "reference_review_classifier_test": "PASS",
+  "old_compiler_comparison_profiles": 4,
+  "old_compiler_comparison": "BYTE_IDENTICAL_JS_AND_REPORTS",
+  "transport_comparison_sites": 466,
+  "transport_comparison": "IDENTICAL_ARGUMENTS_AND_CALLBACK_EFFECTS",
+  "live_mealie_acceptance": false,
+  "powershell_runner_executed_locally": false,
+  "complete_campaign_http_requests": 804,
+  "generated_owned_instances_per_run": 12,
+  "notes": [
+    "Success/null and rejection/unchanged are qualification hypotheses, not source-confirmed Mealie guarantees.",
+    "Matched controls must pass before deletion cases.",
+    "No full reset/replay, simultaneous HTTP, or automatic cleanup."
+  ]
+}
