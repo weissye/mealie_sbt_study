@@ -7,12 +7,33 @@ import json
 import re
 
 from ..inference.values import generate_value
-from .relationship_runtime_js import CODE
+from .relationship_runtime_js import CODE, SHARED_CODE, EXPANDED_CODE
 
 
 def compile_relationships(plan, maps, raw, runtime):
-    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views'}:
+    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program'}:
         raise ValueError('Invalid relationship runtime configuration.')
+    if 'semantic_program' in runtime and not runtime['semantic_program']:
+        raise ValueError('semantic_program must be a nonempty explicit policy.')
+    if 'compact_callbacks' in runtime and type(runtime['compact_callbacks']) is not bool:
+        raise ValueError('compact_callbacks must be a boolean.')
+    if 'interleave_mutations' in runtime and type(runtime['interleave_mutations']) is not bool:
+        raise ValueError('interleave_mutations must be a boolean.')
+    if 'mutate_during_construction' in runtime and type(runtime['mutate_during_construction']) is not bool:
+        raise ValueError('mutate_during_construction must be a boolean.')
+    embedded_checks = any(isinstance(r, dict) and r.get('verify_embedded_value') for r in runtime.get('shared_target_updates', []) or [])
+    callback_code = EXPANDED_CODE if embedded_checks or runtime.get('detached_target_deletions') else (SHARED_CODE if runtime.get('shared_target_updates') else CODE)
+    if runtime.get('attached_target_deletions'):
+        from .relationship_runtime_js import ATTACHED_CODE
+        callback_code = ATTACHED_CODE
+    if runtime.get('semantic_program'):
+        if any(runtime.get(k) for k in ('shared_target_updates','detached_target_deletions','attached_target_deletions')):
+            raise ValueError('Semantic programs require a separate runtime profile from deletion/update programs.')
+        from .semantic_runtime_js import SEMANTIC_CODE
+        callback_code = SEMANTIC_CODE
+        if runtime['semantic_program'].get('require_merge_collision'):
+            from .semantic_runtime_js import COLLISION_CODE
+            callback_code = COLLISION_CODE
     blueprint = copy.deepcopy(maps['relationship_scenario_plan'])
     schemas = raw.get('components', {}).get('schemas', {})
     aliases = {a['alias']: a['canonical'] for a in maps['resource_catalog']['entity_aliases']}
@@ -70,6 +91,28 @@ def compile_relationships(plan, maps, raw, runtime):
             if segment.endswith('[]'):
                 node = root(node).get('items', {})
         return root(node)
+
+    def embedded_string_view(node, path):
+        # Nullable input/output alternatives may share the same readable label.
+        nodes = [node]
+        def alternatives(node):
+            node = root(node)
+            branches = node.get('anyOf', node.get('oneOf'))
+            if branches:
+                return [v for branch in branches for v in alternatives(branch) if v.get('type') != 'null']
+            return [node]
+        for segment in path.split('.'):
+            next_nodes = []
+            for node in nodes:
+                for branch in alternatives(node):
+                    child = branch.get('properties', {}).get(segment.removesuffix('[]'))
+                    if child is None:
+                        raise ValueError('Embedded value path is not documented in every nonnull view: ' + path)
+                    if segment.endswith('[]'):
+                        child = root(child).get('items', {})
+                    next_nodes.append(child)
+            nodes = next_nodes
+        return bool(nodes) and all(view.get('type') == 'string' for node in nodes for view in alternatives(node))
 
     identity_views = runtime.get('relationship_identity_views', [])
     if not isinstance(identity_views, list):
@@ -232,7 +275,7 @@ def compile_relationships(plan, maps, raw, runtime):
         op = document_ops[identity]; method, path = identity.split(' ', 1)
         # Probe responses are captured before the unchanged-state GET, even
         # when the server accepts an invalid cycle or returns a server error.
-        codes = list(range(200, 600)) if context.get('mode') == 'reject_link' else [int(r.status) for r in op.success_responses]
+        codes = list(range(200, 600)) if context.get('mode') == 'reject_link' else context.get('absence_codes', [int(r.status) for r in op.success_responses])
         context = dict(context, operation=identity, codes=codes)
         route = {f['parameter']: '@{' + f['variable'] + '}' for f in info[instance]['route_fields']} if instance else {}
         route.update(route_override or {})
@@ -261,6 +304,16 @@ def compile_relationships(plan, maps, raw, runtime):
             schema = request_schema(task['operation']); props = root(schema).get('properties', {})
             names = set(root(schema).get('required', [])) | ({'name'} if 'name' in props else set())
             seed_body = {field: generate_value(root(props[field]), plan.seed, instance + '.' + field) for field in sorted(names) if not props[field].get('readOnly')}
+            create_defaults = runtime.get('create_defaults', {})
+            if not isinstance(create_defaults, dict):
+                raise ValueError('create_defaults must map operations to documented fields.')
+            for operation, values in create_defaults.items():
+                if operation not in operations or not operation.startswith('POST ') or not isinstance(values, dict):
+                    raise ValueError('Invalid creation default operation.')
+                documented = root(request_schema(operation)).get('properties', {})
+                if any(field not in documented or documented[field].get('readOnly') for field in values):
+                    raise ValueError('Undocumented creation default field.')
+            seed_body.update(copy.deepcopy(create_defaults.get(task['operation'], {})))
             parents = []
             for edge in ep.dependencies:
                 key = canonical(edge.target)
@@ -280,6 +333,11 @@ def compile_relationships(plan, maps, raw, runtime):
                             instance, body_variable), add_request(getter, dict(meta, mode='snapshot', task_id=task['id']), instance)]
         else:
             negative = task['kind'] == 'negative_link'
+            unlink = task['kind'] == 'unlink'
+            if unlink:
+                leaf = root(property_schema(request_schema(task['operation']), task['field_path'], writable=True))
+                if not (leaf.get('nullable') or any(root(b).get('type') == 'null' for b in leaf.get('anyOf', []) + leaf.get('oneOf', []))):
+                    raise ValueError('Relationship removal requires a documented nullable field.')
             if negative and (not re.fullmatch('[0-9a-f]{64}', task.get('evidence_sha256', '')) or
                     not task.get('rejection_codes') or any(type(code) is not int or not 400 <= code < 500 for code in task['rejection_codes'])):
                 raise ValueError('Negative relationship task requires qualified rejection evidence.')
@@ -308,7 +366,7 @@ def compile_relationships(plan, maps, raw, runtime):
                 'targets': [info[t]['snapshot_variable'] for t in task['target_instances']],
                 'field_path': task['field_path'], 'defaults': defaults, 'identity_views': views,
                 'write_view': binding,
-                'rejection_probe': negative,
+                'rejection_probe': negative, 'unlink': unlink,
                 'cycle_snapshots': [info[t]['snapshot_variable'] for t in task.get('cycle_path', [])],
                 'verify_cycle_members': all_members,
                 'body_variable': body_variable, 'expectation_variable': expectation_variable}, instance),
@@ -317,8 +375,17 @@ def compile_relationships(plan, maps, raw, runtime):
                 add_request(getter, dict(meta, mode='verify_rejection' if negative else 'verify_link', field_path=binding['readback_path'] if binding else task['field_path'],
                     expectation_variable=expectation_variable, identity_views=views, task_id=None if all_members else task['id'],
                     probe_task_id=task['id'], verify_cycle_members=all_members,
+                    legal_readback=bool(task.get('legal_readback')), exact_empty=unlink,
                     rejection_codes=task.get('rejection_codes', []), cycle_length=len(task.get('cycle_path', []))), instance)]
             steps = before_steps + steps + after_steps
+            if task.get('legal_readback') and not negative:
+                # Fresh target GETs establish resolvable identities without mutation.
+                for target in task['target_instances']:
+                    target_meta = info[target]
+                    target_ep = entities[target_meta['resource']]
+                    target_get = target_ep.get_op.op.method + ' ' + target_ep.get_op.op.path
+                    steps.append(add_request(target_get, dict(target_meta, mode='legal_target',
+                        legal_task_id=task['id']), target))
         interface_steps[task['id']] = steps
 
     qualified = runtime.get('actions', [])
@@ -335,7 +402,7 @@ def compile_relationships(plan, maps, raw, runtime):
             for target in (blueprint['instances'][action['target_type']][i], blueprint['instances'][action['target_type']][(i + 1) % len(blueprint['instances'][action['target_type']])]):
                 task_id = 'action:' + str(index + 1) + ':' + str(i + 1) + ':' + target
                 dependencies = ['create:' + source, 'create:' + target]
-                dependencies += [t['id'] for t in blueprint['tasks'] if t['kind'] == 'link' and t['source_instance'] == target]
+                dependencies += [t['id'] for t in blueprint['tasks'] if t['kind'] == 'link' and not t.get('lifecycle_phase') and t['source_instance'] == target]
                 task = {'id': task_id, 'kind': 'qualified_action', 'source_instance': source,
                     'target_instances': [target], 'operation': action['operation'], 'after': dependencies,
                     'evidence_sha256': action['evidence_sha256'], 'executable': True}
@@ -350,6 +417,116 @@ def compile_relationships(plan, maps, raw, runtime):
                     add_request(getter, dict(meta, mode='verify_link', field_path=action['readback_path'],
                         expectation_variable=body_var + '_expected', task_id=task_id), source)]
                 blueprint['tasks'].append(task); interface_steps[task_id] = steps
+
+    for task in blueprint['tasks']:
+        if task.get('lifecycle_phase') and task['kind'] == 'unlink':
+            task['after'] += [t['id'] for t in blueprint['tasks'] if t['kind'] == 'qualified_action']
+
+    shared_updates = runtime.get('shared_target_updates', [])
+    if not isinstance(shared_updates, list):
+        raise ValueError('shared_target_updates must be a list.')
+    shared_keys = set()
+    shared_prefix = [t['id'] for t in blueprint['tasks']]
+    for index, rule in enumerate(shared_updates):
+        if not isinstance(rule, dict) or set(rule) - {'resource_type', 'operation', 'field', 'value', 'verify_embedded_value'} or not {'resource_type', 'operation', 'field', 'value'}.issubset(rule):
+            raise ValueError('Shared update requires resource_type, operation, field and value.')
+        if 'verify_embedded_value' in rule and type(rule['verify_embedded_value']) is not bool:
+            raise ValueError('verify_embedded_value must be a boolean.')
+        resource = rule['resource_type']; operation = rule['operation']; field = rule['field']
+        if not isinstance(resource, str) or resource not in blueprint['instances'] or not isinstance(field, str) or '.' in field or field in {'id', 'slug'}:
+            raise ValueError('Shared update requires a selected resource and a non-identity scalar field.')
+        ep = entities[resource]
+        if not isinstance(operation, str) or not operation.startswith(('PUT ', 'PATCH ')) or operation not in [o.op.method + ' ' + o.op.path for o in ep.ops]:
+            raise ValueError('Shared update operation must belong to its resource.')
+        if (resource, field) in shared_keys:
+            raise ValueError('Duplicate shared update rule.')
+        if any(field == route['response_field'] for instance in blueprint['instances'][resource] for route in info[instance]['route_fields']):
+            raise ValueError('Shared update cannot change a route identity field.')
+        shared_keys.add((resource, field))
+        writable = root(property_schema(request_schema(operation), field, writable=True))
+        getter = ep.get_op.op.method + ' ' + ep.get_op.op.path
+        readable = root(property_schema(response_schema(getter), field, writable=False))
+        if writable.get('type') != 'string' or readable.get('type') != 'string' or not isinstance(rule['value'], str) or not rule['value']:
+            raise ValueError('Shared update currently requires a documented string field and value.')
+        selected = []
+        for target in blueprint['instances'][resource]:
+            references = {}
+            for link in blueprint['tasks']:
+                if link['kind'] != 'link' or link.get('lifecycle_phase') or target not in link['target_instances']:
+                    continue
+                source = link['source_instance']
+                if info[source]['resource'] == resource:
+                    continue
+                view = link.get('configured_write_view')
+                path = view['readback_path'] if view else link['field_path']
+                identity_view = next((v for v in identity_views if v['operation'] == link['operation'] and v['field_path'] == link['field_path']), None)
+                if identity_view:
+                    path = identity_view['readback_path']
+                reference = {'instance': source, 'field_path': path}
+                if rule.get('verify_embedded_value'):
+                    source_ep = entities[info[source]['resource']]
+                    source_get = source_ep.get_op.op.method + ' ' + source_ep.get_op.op.path
+                    if not embedded_string_view(response_schema(source_get), link['field_path'] + '.' + field):
+                        raise ValueError('Embedded update check requires a documented string view.')
+                    reference.update(object_path=link['field_path'], value_field=field)
+                references[(source, path)] = reference
+            if len({source for source, path in references}) < 2:
+                continue
+            selected.append(target)
+            task_id = 'shared-update:' + str(index + 1) + ':' + target
+            task = {'id': task_id, 'kind': 'shared_update', 'source_instance': target,
+                    'target_instances': [], 'operation': operation, 'field': field,
+                    'value': rule['value'], 'referrers': list(references.values()),
+                    'after': list(shared_prefix) if runtime.get('interleave_mutations') else [t['id'] for t in blueprint['tasks']], 'executable': True}
+            if runtime.get('mutate_during_construction'):
+                sources = {r['instance'] for r in task['referrers']}
+                task['after'] = [t['id'] for t in blueprint['tasks']
+                    if (t['kind'] == 'create' and t['instance'] in sources | {target})
+                    or (t['kind'] == 'link' and not t.get('lifecycle_phase') and target in t['target_instances'])]
+            meta = info[target]; variable = 'rel_shared_' + hashlib.sha256(task_id.encode()).hexdigest()[:16]
+            steps = []
+            for reference_index, reference in enumerate(task['referrers']):
+                source = reference['instance']; source_ep = entities[info[source]['resource']]
+                source_get = source_ep.get_op.op.method + ' ' + source_ep.get_op.op.path
+                steps.append(add_request(source_get, dict(info[source], mode='shared_before',
+                    field_path=reference['field_path'], target_snapshot=meta['snapshot_variable'],
+                    expectation_variable=variable, reference_index=reference_index), source))
+            steps += [add_request(getter, dict(meta, mode='prepare_shared_update', field=field,
+                         value=rule['value'], request_schema=request_schema(operation),
+                         body_variable=variable, expectation_variable=variable), target),
+                      add_request(operation, {'mode': 'write'}, target, variable),
+                      add_request(getter, dict(meta, mode='shared_updated', field=field,
+                         expectation_variable=variable), target)]
+            for reference_index, reference in enumerate(task['referrers']):
+                source = reference['instance']; source_ep = entities[info[source]['resource']]
+                source_get = source_ep.get_op.op.method + ' ' + source_ep.get_op.op.path
+                steps.append(add_request(source_get, dict(info[source], mode='shared_after',
+                    field_path=reference['field_path'], expectation_variable=variable,
+                    **({key: reference[key] for key in ('object_path', 'value_field')} if rule.get('verify_embedded_value') else {}),
+                    reference_index=reference_index, reference_count=len(task['referrers']),
+                    shared_task_id=task_id,
+                    task_id=task_id if reference_index == len(task['referrers']) - 1 else None), source))
+            blueprint['tasks'].append(task); interface_steps[task_id] = steps
+        if not selected:
+            raise ValueError('Shared update has no target with two distinct referrers: ' + resource)
+
+    from .relationship_deletion import append_detached_deletions
+    deletion_tasks = append_detached_deletions(blueprint, info, entities, runtime, add_request, request_schema, property_schema, root)
+    interface_steps.update(deletion_tasks)
+    semantic_tasks = {}
+    if runtime.get('semantic_program'):
+        from .semantic_campaign import append_semantic_program
+        semantic_tasks = append_semantic_program(blueprint, info, entities, runtime['semantic_program'],
+            add_request, request_schema, response_schema, root, document_ops)
+        interface_steps.update(semantic_tasks)
+
+    if runtime.get('mutate_during_construction'):
+        mutation_ids = [t['id'] for t in blueprint['tasks'] if t['kind'] in ('shared_update', 'detached_delete', 'attached_delete')]
+        late_actions = [t for t in blueprint['tasks'] if t['kind'] == 'qualified_action']
+        if not mutation_ids or not late_actions:
+            raise ValueError('Construction interleaving requires mutations and later construction actions.')
+        for task in late_actions:
+            task['after'] = list(dict.fromkeys(task['after'] + mutation_ids))
 
     # Each actor retains its own order. The coordinator admits one complete task
     # at a time while choosing among ready actors; no HTTP requests overlap.
@@ -375,13 +552,44 @@ def compile_relationships(plan, maps, raw, runtime):
     auth_options = '{headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"grant_type=password&username=@{encodeURIComponent(getEnv(\'SBT_REL_USERNAME\'))}&password=@{encodeURIComponent(getEnv(\'SBT_REL_PASSWORD\'))}",expectedResponseCodes:' + json.dumps(oauth_codes) + ',callback:sbtRelCallback(' + json.dumps(auth_ctx) + ')}'
     functions.insert(0, 'function sbtRelAuthenticate(){svc.post(' + json.dumps(urls[0]) + ',' + auth_options + ');}')
     bootstrap_calls = ['sbtRelAuthenticate();'] + [add_request(c['operation'], c) for c in bootstrap_contexts]
-    finish_call = add_request(bootstrap[0]['operation'], {'mode': 'finish', 'expected_tasks': [t['id'] for t in blueprint['tasks']],
+    finish_context = {'mode': 'finish', 'expected_tasks': [t['id'] for t in blueprint['tasks']],
         'expected_instances': len(info), 'expected_responses': len(contexts) + 2,
-        'expected_negative_tasks': [t['id'] for t in blueprint['tasks'] if t['kind'] == 'negative_link']})
+        'expected_negative_tasks': [t['id'] for t in blueprint['tasks'] if t['kind'] == 'negative_link'],
+        'expected_legal_tasks': [t['id'] for t in blueprint['tasks'] if t.get('legal_readback') and t['kind'] != 'negative_link']}
+    if shared_updates:
+        finish_context['expected_shared_tasks'] = [t['id'] for t in blueprint['tasks'] if t['kind'] == 'shared_update']
+    if deletion_tasks:
+        finish_context['expected_deletion_tasks'] = list(deletion_tasks)
+    if semantic_tasks:
+        finish_context['expected_semantic_tasks'] = list(semantic_tasks)
+    finish_call = add_request(bootstrap[0]['operation'], finish_context)
     factory = '''
 function sbtRelCallback(ctx){var selected={};function collect(node){if(!node||typeof node!=="object")return;if(node.$ref){var n=node.$ref.split('/').pop().replace(/~1/g,'/').replace(/~0/g,'~');if(!selected[n]&&sbtRelSchemas[n]){selected[n]=sbtRelSchemas[n];collect(selected[n]);}}Object.keys(node).forEach(function(k){if(['example','examples','default','enum','const'].indexOf(k)<0)collect(node[k]);});}collect(ctx);return new Function("response","("+sbtRelRuntime.toString()+")(response,"+JSON.stringify(ctx)+",{},"+JSON.stringify(selected)+");");}
 '''
-    interfaces = '\n// Compiled relationship interfaces: all HTTP and callbacks remain here.\nconst sbtRelSchemas=' + json.dumps(schemas, separators=(',', ':')) + ';\n' + CODE + factory + '\n'.join(functions)
+    if runtime.get('compact_callbacks'):
+        # Preserve a self-contained callback while storing schemas/runtime once.
+        # Native sampling serializes functions, so closures/global references are unsafe.
+        factory = r'''
+function sbtRelCallback(ctx){
+var contextJson=JSON.stringify(JSON.stringify(ctx));
+var invocation="var code='function(response,contextJson,schemaJson,pvg){return ('+pvg.rtv.get('sbt_rel_runtime_code')+')(response,JSON.parse(contextJson),{},JSON.parse(schemaJson));}';"+
+"var fn;if(typeof Packages!=='undefined'){var cx=Packages.org.mozilla.javascript.Context.getCurrentContext();fn=cx.compileFunction(cx.initStandardObjects(),code,'relationship-runtime',1,null);}else{fn=eval('('+code+')');}"+
+"fn(response,"+contextJson+",pvg.rtv.get('sbt_rel_schema_registry'),pvg);";
+var setup=ctx.mode==="auth"?"pvg.rtv.set('sbt_rel_runtime_code',"+JSON.stringify(sbtRelRuntime.toString())+");pvg.rtv.set('sbt_rel_schema_registry',"+JSON.stringify(JSON.stringify(sbtRelSchemas))+");":"";
+var hydrate="if(typeof Packages!=='undefined'){Packages.org.mozilla.javascript.Context.getCurrentContext().initStandardObjects(Packages.org.mozilla.javascript.ScriptableObject.getTopLevelScope(this));}";
+var source=hydrate+setup+invocation;
+if(typeof Packages!=="undefined"){
+// Keep the sampled callback detached; hydrate standard builtins only during live execution.
+// Shadow arguments to avoid Rhino creating its builtin Arguments object before hydration.
+var scope=new Packages.org.mozilla.javascript.NativeObject();
+(new Packages.org.mozilla.javascript.ClassCache()).associate(scope);
+return Packages.org.mozilla.javascript.Context.getCurrentContext().compileFunction(scope,"function(response,arguments){"+source+"}","generated-relationship-callback",1,null);
+}
+return new Function("response",source);}
+
+
+'''
+    interfaces = '\n// Compiled relationship interfaces: all HTTP and callbacks remain here.\nconst sbtRelSchemas=' + json.dumps(schemas, separators=(',', ':')) + ';\n' + callback_code + factory + '\n'.join(functions)
     dependencies = {t['id']: t['after'] for t in blueprint['tasks']}
     stories = ['// @provengo summon rest\n// @provengo summon rtv\n// Generated from OpenAPI relationship maps. One HTTP request at a time.',
         'bthread("relationship-bootstrap",function(){' + ''.join(bootstrap_calls) + 'sync({request:Event("SBT:RelBootstrapDone")});});',
@@ -401,9 +609,19 @@ function sbtRelCallback(ctx){var selected={};function collect(node){if(!node||ty
         'configured_write_views': write_views,
         'write_view_semantics': 'EXPLICIT_ASSOCIATION_CONFIGURATION_PENDING_NATIVE_WRITE_VERIFICATION',
         'negative_task_policy': 'qualified status rejection plus full source snapshot equality after GET'}
+    if any(t.get('legal_readback') for t in blueprint['tasks']):
+        report['legal_readback_tasks'] = [t['id'] for t in blueprint['tasks'] if t.get('legal_readback') and t['kind'] != 'negative_link']
+        report['graph_lifecycle_tasks'] = [t['id'] for t in blueprint['tasks'] if t.get('lifecycle_phase')]
     member_tasks = [task for task in blueprint['tasks'] if task.get('verify_cycle_members')]
     if member_tasks:
         report['cycle_member_verification_tasks'] = [task['id'] for task in member_tasks]
         report['additional_cycle_member_gets'] = sum(2 * (len(task['cycle_path']) - 1) for task in member_tasks)
         report['negative_task_policy'] = 'qualified status rejection; source equality and opt-in full cycle member equality using fresh before/after GETs'
+    if runtime.get('mutate_during_construction'):
+        report['mutate_during_construction'] = True
+    if runtime.get('attached_target_deletions'):
+        report['attached_deletion_policy'] = 'EXPLICIT_REMOVE_REFERENCES_ON_SUCCESS_PENDING_LIVE_VERIFICATION'
+    if semantic_tasks:
+        report['semantic_family'] = runtime['semantic_program']['family']
+        report['semantic_policy'] = 'EXPLICIT_CONFIGURATION_PENDING_LIVE_VERIFICATION'
     return interfaces, '\n'.join(stories) + '\n', blueprint, report, contexts

@@ -1,0 +1,36 @@
+{
+  "status": "GENERIC_ATTACHED_CONSTRUCTION_REGRESSION_PASS",
+  "tests": 79,
+  "test_seconds": 253.436,
+  "native_tests_enabled": true,
+  "native_heap_mib": 512,
+  "transport_comparison_cases": 466,
+  "previous_profiles_byte_identical": [
+    "mealie-relational-runtime.json",
+    "mealie-relational-compact-runtime.json",
+    "mealie-relational-shared-update-runtime.json",
+    "mealie-relational-consistency-runtime.json"
+  ],
+  "schedule": {
+    "tasks": 129,
+    "http_calls": 598,
+    "owned_target_deletions_while_attached": 10,
+    "shared_updates": 10,
+    "post_delete_recipe_checks": 50
+  },
+  "node_initial_links_remaining_after_first_mutation": {
+    "11": 28,
+    "22": 29,
+    "33": 36
+  },
+  "faults_rejected": [
+    "delete-dangling",
+    "delete-ignored",
+    "delete-unrelated-links",
+    "delete-cascades-source",
+    "embedded-stale"
+  ],
+  "live_mealie_campaign_pending": true,
+  "reset_replay_accepted": false,
+  "scope": "Native runtime regressions use a local HTTP fixture, not Mealie."
+}

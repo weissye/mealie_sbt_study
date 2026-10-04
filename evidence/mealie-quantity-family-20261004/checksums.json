@@ -1,0 +1,22 @@
+{
+  "README.md": "e197d7cc65d6218d98135408c97121f736aabdad9175f3c7cb8548f436426ed8",
+  "analysis/control-campaign-analysis.json": "0d9fa3e01c8830926dc72b4ed535a168d77f86bd0a4ab28a5b26b4897358baae",
+  "analysis/freeze-verification.json": "f92068c903802735ace6344aab7484adcaf4934ee94ec5cb02f0192ecdbc48e0",
+  "analysis/lifecycle-campaign-analysis.json": "bdf75704c05468324875b6f944d862cf6f2608df34dbf25180d6aae8880a7d30",
+  "analysis/removal-controls-campaign-analysis.json": "ce25ed86d8fb17f9444c3e6fd1c7db7e79b977751bdbc8863bfb0a45aac981ec",
+  "originals/earlier-construction-controls.zip": "f8fa42d9c616e9df248b4c33cbbb29197d29ca738dca657e5125e915ab002bf7",
+  "originals/earlier-semantic-controls.zip": "0676b6187752235a3c7a32a4f2fddc87f934a9ed05595f97a4b7cf61bb7fcb6d",
+  "originals/excluded-authentication-401.zip": "afeec7057ef44aa4bc8be79df589473cae34105389eda67ff55b2fb38a554ff1",
+  "originals/integer-merge-lifecycle.zip": "f360a4b7c8a9c4cf14d92a27f5bc9cbe602f99672750a17250a20d2ceb833b34",
+  "originals/original-collision.zip": "018e226d5d37796048b7af3879d266cbe8c133b400a071f39d451ba4f3bc891b",
+  "originals/original-confirmation.zip": "7fd55883b9f2920f05520f64c6a12df21539b5fdceaca40ab38ed1f4d062901a",
+  "originals/removal-isolation-controls.zip": "eaf51101af89745f0816215154d1ab640bd879db7409b6276dd5c22699cf9f47",
+  "originals/scaling-controls.zip": "cf1ed643f14b9eb417376e4ef35e27e6c187868d1dcd743c5335dd7628c7ff8e",
+  "semantic_receipts.py": "064d34ff5c0d96359a57fa337899bc78b2e252012a127e349f36f66c69eacf0f",
+  "source-paths.json": "d64764db8be68e45a5b128af938315e715767c7e6d04d8053749f9eeb7847633",
+  "verify_freeze.py": "6c2f3aa4cb563c6b91076bb6f6d9936cad8967c781a9d981130d03eacc6de48f",
+  "work/generator-and-scripts-snapshot.zip": "a0e88fce6cb8625e8675dc148c459889e7ad2c61a426e63df35744d2e459e9d4",
+  "work/generic_generator_collision_controls_delta.zip": "c63950e41b2128d7187d7c6ce5ce8a2c64232923b5a6a148c6c3ef900c84d0b2",
+  "work/generic_generator_merge_lifecycle_delta.zip": "622270cfdb63aa513c8cd7e8e7492348628bfe4ee59c996419070248a03ec260",
+  "work/generic_generator_removal_controls_delta.zip": "82b8037e4019fae91b5afe5736fd0ce8f7aedd594456fdbdf29aeeaabe55138d"
+}

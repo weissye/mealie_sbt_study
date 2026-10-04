@@ -7,9 +7,9 @@ import sys
 import zipfile
 
 if __package__:
-    from .relationship_execution import bundle, model_hashes, redact, validate_negative_receipts, write
+    from .relationship_execution import bundle, model_hashes, redact, validate_negative_receipts, validate_legal_receipts, write
 else:
-    from relationship_execution import bundle, model_hashes, redact, validate_negative_receipts, write
+    from relationship_execution import bundle, model_hashes, redact, validate_negative_receipts, validate_legal_receipts, write
 
 
 def evaluate_project(project):
@@ -39,6 +39,7 @@ def evaluate_project(project):
     if receipt.get('status') != 'LIVE_CALLBACKS_COMPLETE' or receipt.get('task_count') != len(tasks) or receipt.get('response_count') != compilation['http_requests_per_complete_schedule'] or receipt.get('owned_instances') != sum(map(len, plan['instances'].values())):
         raise ValueError('Native runtime receipt is incomplete.')
     validate_negative_receipts(receipt, plan)
+    validate_legal_receipts(receipt, plan)
     # This extended campaign deliberately requires full member evidence.
     probes = [task for task in tasks.values() if task['kind'] == 'negative_link']
     if not probes or not all(task.get('verify_cycle_members') for task in probes):

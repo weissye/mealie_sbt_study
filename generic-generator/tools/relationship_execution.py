@@ -12,7 +12,11 @@ import zipfile
 
 
 def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    value = hashlib.sha256()
+    with Path(path).open('rb') as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b''):
+            value.update(chunk)
+    return value.hexdigest()
 
 
 def failure_excerpt(output):
@@ -20,7 +24,7 @@ def failure_excerpt(output):
     safe = redact(output)
     lines = safe.splitlines()
     for index, line in enumerate(lines):
-        if re.search(r'\bFAIL:|\bERROR:|Relationship readback mismatch:', line):
+        if re.search(r'\b(?:WARN|ERR|ERROR)\b.*\b(?:FAIL:|ERROR:|Relationship readback mismatch:)', line):
             return '\n'.join(lines[max(0, index - 2):index + 4])[:4000]
     return safe[-4000:]
 
@@ -95,6 +99,11 @@ def find_receipt(text, structured=None):
     return None
 
 
+if __package__:
+    from .semantic_receipts import validate_semantic_receipts
+else:
+    from semantic_receipts import validate_semantic_receipts
+
 def validate_negative_receipts(receipt, plan):
     expected = {t['id']: t for t in plan['tasks'] if t['kind'] == 'negative_link'}
     records = receipt.get('negative_tests', [])
@@ -112,6 +121,85 @@ def validate_negative_receipts(receipt, plan):
             if record.get('all_members_unchanged') is not True or not isinstance(checks, list) or len(checks) != len(task['cycle_path']) or any(not isinstance(check, dict) or check.get('unchanged') is not True or not isinstance(check.get('instance'), str) for check in checks) or sorted(check['instance'] for check in checks) != sorted(task['cycle_path']):
                 raise ValueError('Negative receipt lacks complete unchanged cycle member evidence.')
         seen.add(record['task_id'])
+
+
+def validate_legal_receipts(receipt, plan):
+    expected = {t['id']: t for t in plan['tasks'] if t.get('legal_readback') and t['kind'] != 'negative_link'}
+    if not expected:
+        return
+    records = receipt.get('legal_tests', [])
+    if not isinstance(records, list) or len(records) != len(expected):
+        raise ValueError('Native receipt lacks complete legal relationship readbacks.')
+    seen = set()
+    for record in records:
+        task = expected.get(record.get('task_id')) if isinstance(record, dict) else None
+        if not task or task['id'] in seen or record.get('source_readback') is not True or sorted(record.get('targets_read', [])) != sorted(task['target_instances']):
+            raise ValueError('Legal relationship receipt lacks source or target readback.')
+        observed, identities = record.get('observed'), record.get('expected')
+        if not isinstance(observed, list) or not isinstance(identities, list) or len(identities) != len(task['target_instances']) or any(value is None or value not in observed for value in identities) or (task['kind'] == 'unlink' and observed):
+            raise ValueError('Legal relationship receipt has an invalid relationship state.')
+        seen.add(task['id'])
+
+
+def validate_shared_update_receipts(receipt, plan):
+    expected = {t['id']: t for t in plan['tasks'] if t['kind'] == 'shared_update'}
+    if not expected:
+        return
+    records = receipt.get('shared_updates', [])
+    if not isinstance(records, list) or len(records) != len(expected):
+        raise ValueError('Native receipt lacks complete shared update readbacks.')
+    seen = set()
+    for record in records:
+        task = expected.get(record.get('task_id')) if isinstance(record, dict) else None
+        if not task or task['id'] in seen or record.get('target') != task['source_instance'] or record.get('field') != task['field'] or record.get('target_readback') is not True or not isinstance(record.get('expected'), str) or not record['expected'].endswith('-' + task['value'] + '-' + task['source_instance'].split('#')[-1]) or record.get('before') == record.get('expected'):
+            raise ValueError('Invalid shared target update receipt.')
+        checks = record.get('referrers', [])
+        if not isinstance(checks, list) or len(checks) != len(task['referrers']):
+            raise ValueError('Incomplete shared referrer readbacks.')
+        observed = []
+        for check in checks:
+            if not isinstance(check, dict) or check.get('identities_preserved') is not True or not isinstance(check.get('before'), list) or not isinstance(check.get('after'), list) or sorted(check['before']) != sorted(check['after']) or record.get('target_id') is None or record['target_id'] not in check['before']:
+                raise ValueError('Shared referrer identities were not preserved.')
+            reference = next((r for r in task['referrers'] if r['instance'] == check.get('instance') and r['field_path'] == check.get('field_path')), None)
+            if reference and reference.get('object_path'):
+                values = check.get('embedded_values')
+                if check.get('object_path') != reference['object_path'] or check.get('value_field') != reference['value_field'] or not isinstance(values, list) or not values or len(values) != check['before'].count(record['target_id']) or any(v != record['expected'] for v in values):
+                    raise ValueError('Shared update lacks fresh embedded value readbacks.')
+            observed.append((check.get('instance'), check.get('field_path')))
+        if sorted(observed) != sorted((r['instance'], r['field_path']) for r in task['referrers']):
+            raise ValueError('Wrong shared referrers in native receipt.')
+        seen.add(task['id'])
+
+
+def validate_deletion_receipts(receipt, plan):
+    expected = {t['id']: t for t in plan['tasks'] if t['kind'] in ('detached_delete', 'attached_delete')}
+    if not expected:
+        return
+    records = receipt.get('detached_deletions', [])
+    if not isinstance(records, list) or len(records) != len(expected):
+        raise ValueError('Incomplete detached deletion receipts.')
+    seen = set()
+    for record in records:
+        task = expected.get(record.get('task_id')) if isinstance(record, dict) else None
+        if not task or task['id'] in seen or record.get('target') != task['source_instance'] or record.get('target_id') is None or record.get('target_deleted') is not True or record.get('absence_code') not in task['absent_codes']:
+            raise ValueError('Invalid deletion absence receipt.')
+        if task['kind'] == 'attached_delete' and record.get('attached_at_delete') is not True:
+            raise ValueError('Deletion while attached was not explicitly observed.')
+        checks = record.get('checks', [])
+        if not isinstance(checks, list) or len(checks) != len(task['checks']):
+            raise ValueError('Incomplete deletion source/control checks.')
+        observed = []
+        for check in checks:
+            source = next((c for c in task['checks'] if c['instance'] == check.get('instance')), None) if isinstance(check, dict) else None
+            if not source or check.get('field_path') != source['field_path'] or check.get('detached') is not source['detached'] or not isinstance(check.get('before'), list) or not isinstance(check.get('after'), list):
+                raise ValueError('Invalid deletion source/control check.')
+            wanted = sorted(v for v in check['before'] if not source['detached'] or v != record['target_id'])
+            if (record['target_id'] in check['before']) != source['detached'] or sorted(check['after']) != wanted or check.get('expected') != wanted or check.get('other_relationships_preserved') is not True or not isinstance(check.get('protected_before'), dict) or check['protected_before'] != check.get('protected_after') or sorted(check['protected_before']) != sorted(source['protected_fields']):
+                raise ValueError('Deletion left a reference or changed unrelated bindings.')
+            observed.append(check['instance'])
+        if sorted(observed) != sorted(c['instance'] for c in task['checks']):
+            raise ValueError('Duplicate or missing deletion source/control check.')
+        seen.add(task['id'])
 
 
 def redact(value):
@@ -195,6 +283,16 @@ def bundle(project, report_paths, destination):
                 archive.write(path, path.relative_to(project))
 
 
+def select_run_source(samples, sample_id, samples_path, report_dir):
+    # One audited sample can be replayed directly without duplicating its large
+    # serialized callbacks. Multi-sample selection preserves the existing path.
+    if len(samples) == 1 and sample_id == 1:
+        return samples_path
+    selected = report_dir / 'selected-sample.json'
+    write(selected, [samples[sample_id - 1]])
+    return selected
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=['sample', 'run'])
@@ -223,7 +321,7 @@ def main():
             if samples_path.exists():
                 raise ValueError('Samples already exist. Generate a new project to sample again.')
             response = native(['sample', '--algorithm', 'random', '--size', str(args.size),
-                               '--max-length', '600', '-o', str(samples_path)], project)
+                               '--max-length', str(max(600, 2 * compilation['task_count'] + compilation['http_requests_per_complete_schedule'] + 4)), '-o', str(samples_path)], project)
             output_path.write_text(redact(response.stdout + '\n' + response.stderr), encoding='utf-8')
             if response.returncode:
                 raise ValueError('Native sampling returned exit code ' + str(response.returncode) + '\n' + redact(response.stdout + '\n' + response.stderr)[-4000:])
@@ -242,8 +340,10 @@ def main():
             audit_samples(samples, plan)
             if not 1 <= args.sample_id <= len(samples):
                 raise ValueError('Sample ID is outside the sampled range.')
-            selected = report_dir / 'selected-sample.json'
-            write(selected, [samples[args.sample_id - 1]])
+            selected = select_run_source(samples, args.sample_id, samples_path, report_dir)
+            # Release audited samples before starting Java.
+            del samples
+            __import__('gc').collect()
             response = native(['--batch-mode', 'run', '--run-source', str(selected), '--run-id', '1',
                                '--output-file', str(result_path)], project)
             output = response.stdout + '\n' + response.stderr
@@ -267,6 +367,10 @@ def main():
                 status['status'] = 'INCONCLUSIVE_RECEIPT_MISSING'
                 raise ValueError('Native exit was zero but the complete runtime receipt was not observed.')
             validate_negative_receipts(receipt, plan)
+            validate_legal_receipts(receipt, plan)
+            validate_shared_update_receipts(receipt, plan)
+            validate_deletion_receipts(receipt, plan)
+            validate_semantic_receipts(receipt, plan)
             if receipt.get('task_count') != compilation['task_count'] or receipt.get('response_count') != compilation['http_requests_per_complete_schedule'] or receipt.get('owned_instances') != sum(map(len, plan['instances'].values())):
                 raise ValueError('Runtime receipt does not cover the complete generated model.')
             status.update(status='NATIVE_RELATIONSHIP_CALLBACKS_PASS', live_accepted=True, runtime_receipt=receipt)

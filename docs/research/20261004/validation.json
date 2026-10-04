@@ -1,0 +1,13 @@
+{
+  "document_pages": 8,
+  "all_pages_visually_checked": true,
+  "final_pages_2_to_8_identical_to_checked_render": true,
+  "archived_main_runs": 24,
+  "semantic_discrepancies": 18,
+  "successful_runs": 6,
+  "corruption_rejected": true,
+  "git_selected_path_commit_and_bare_remote_test": "PASS",
+  "windows_powershell_end_to_end": "pending on user computer",
+  "remote_user_repository_push": "pending on user computer",
+  "raw_jwt_scan_findings": 0
+}

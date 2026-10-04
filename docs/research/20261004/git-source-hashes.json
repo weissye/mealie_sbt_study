@@ -1,0 +1,734 @@
+﻿[
+    {
+        "path":  "generic-generator/ASSOCIATION-VIEWS.md",
+        "sha256":  "6e6503961f0b38e6a6c5c1e2776443849e69c8e3924bb9374d9dbcfd8bb0137a"
+    },
+    {
+        "path":  "generic-generator/ATTACHED-CONSTRUCTION-CAMPAIGN.md",
+        "sha256":  "6da57fdee5c2776f256666a97e9bd0579e935e84a0a1fc2215a929df48e043af"
+    },
+    {
+        "path":  "generic-generator/COMPILED-RELATIONSHIPS.md",
+        "sha256":  "4620482d7956b896781bd79ca05aadf13cf48646f6ebc7bef7af2c1b438836a7"
+    },
+    {
+        "path":  "generic-generator/CONSISTENCY-CAMPAIGN.md",
+        "status":  "NOT_PRESENT_LOCALLY",
+        "archived_snapshot_preserved":  true
+    },
+    {
+        "path":  "generic-generator/CYCLE-CAMPAIGN.md",
+        "sha256":  "6c929ece567226135138ced53b1ebdb02870748e525100dd28b2f7877ede27be"
+    },
+    {
+        "path":  "generic-generator/CYCLE-PROBES.md",
+        "sha256":  "77d4daea92e13edb046985e675bca8f61079192273565c4b93cfc84588059022"
+    },
+    {
+        "path":  "generic-generator/IDENTITY-VIEWS-FIX.md",
+        "sha256":  "81a76e4c770f5ca5f8cadee7650b8da9ae8b999f14b2609183053a14019ecd58"
+    },
+    {
+        "path":  "generic-generator/README.md",
+        "sha256":  "a20b028d23e722f944778bf10034d31c2082f4c2ff15f4f214910f2cc9c7cc0e"
+    },
+    {
+        "path":  "generic-generator/RELATIONSHIP-FAILURE-COLLECTION.md",
+        "sha256":  "124557d8c590325797c94a7246b599873d5c09c9e3a7b7785d4f965dfdca18e5"
+    },
+    {
+        "path":  "generic-generator/RESOURCE-MAPS.md",
+        "sha256":  "88aaa8a280fc6de1031b4ae201afcfc3bb90c39996f1a7e3644d2fb64482e8c7"
+    },
+    {
+        "path":  "generic-generator/SHARED-RESOURCE-UPDATES.md",
+        "status":  "NOT_PRESENT_LOCALLY",
+        "archived_snapshot_preserved":  true
+    },
+    {
+        "path":  "generic-generator/attached_construction_validation.json",
+        "sha256":  "6b856ee7b6de0fd8c1c3b715abf633acdde9c16db03a42548986ed489e3d4baa"
+    },
+    {
+        "path":  "generic-generator/compatibility/acceptance.json",
+        "sha256":  "2bfe7eebe9160c5369aead7915ebcfab6e8fabe7d9fba7378b50bdfc1e384a0a"
+    },
+    {
+        "path":  "generic-generator/compatibility/acceptance.log",
+        "sha256":  "ae8213c08d62ba43348de4a925033a15d0dd78b00f19a3286aee53f7bb1cd174"
+    },
+    {
+        "path":  "generic-generator/compatibility/baseline/cli.py",
+        "sha256":  "c14db707af6b64f0c72d3cc6f8c72724e650b188861919559cff35331f9e8d4f"
+    },
+    {
+        "path":  "generic-generator/compatibility/baseline/parallel_crud_v3.py",
+        "sha256":  "4da3a90949ca169d78d5f3a7a435bbcd6acf05d95910679601848ba3e2a511d8"
+    },
+    {
+        "path":  "generic-generator/compatibility/baseline/pipeline.py",
+        "sha256":  "542e5bf93b23a9c1eba87153cd9d4f876b1a8902cce3bfb0af51c8426b5b99fc"
+    },
+    {
+        "path":  "generic-generator/compatibility/baseline/stories_js.py",
+        "sha256":  "ff4c704c6bef5bdf4e43b744b80b0c8efb4df7cc362970514b3a0a516afc6e1f"
+    },
+    {
+        "path":  "generic-generator/compatibility/change.patch",
+        "sha256":  "117c7fe4d663207cc01c269a81ac386202a45448c211066535fd6146633af639"
+    },
+    {
+        "path":  "generic-generator/compatibility/contracts/keycloak.json",
+        "sha256":  "ba68e1c3842c11701ec64c5f3ba23387cf53963f8d16dd7c3d45da103b9421db"
+    },
+    {
+        "path":  "generic-generator/compatibility/contracts/mealie.json",
+        "sha256":  "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292"
+    },
+    {
+        "path":  "generic-generator/compatibility/keycloak-rules.json",
+        "sha256":  "223481c31071ed2c3785b4e008cd27e1055baa31fe416627fa2aca0f24614a3b"
+    },
+    {
+        "path":  "generic-generator/compatibility/resource-maps-acceptance.json",
+        "sha256":  "7f09e8a7576326c1031d083eea22c4a53f40286d59bd59032609cd2d74e416e7"
+    },
+    {
+        "path":  "generic-generator/compatibility/resource-maps-acceptance.log",
+        "sha256":  "049d933fb9b9fb4b0dbb98788d6a8c944df071c88e670ddebc01d2d1968e10e3"
+    },
+    {
+        "path":  "generic-generator/consistency_validation.json",
+        "status":  "NOT_PRESENT_LOCALLY",
+        "archived_snapshot_preserved":  true
+    },
+    {
+        "path":  "scripts/Collect-Generic-Relationship-Failure.ps1",
+        "sha256":  "af1bbc9fb7a7b665baddcad705fecf6369396baf9b947d894a26db4b42cce1d5"
+    },
+    {
+        "path":  "scripts/Diagnose-Generic-Provengo-Auth.ps1",
+        "sha256":  "0932f593f72f44b6df979d7cc04de8f0f1cdaaf70a4157f0265f20015dc09d04"
+    },
+    {
+        "path":  "scripts/Invoke-Generic-Relationship-Scenario.ps1",
+        "sha256":  "38ca4af3afbc0d63ec8b55d200d4994b7f0a48a6a1e011440c2c63ab70933736"
+    },
+    {
+        "path":  "scripts/Prepare-Generic-Provengo-Model.ps1",
+        "sha256":  "26d788dd4c7215d630f5cb45b706665b614385bcec10b121689f2dceb411a57c"
+    },
+    {
+        "path":  "scripts/Run-Generic-Alternate-Path-Pilot.ps1",
+        "sha256":  "20deff76b0c9f214ebe4eb258a7cbd76352d366a6a5472b1692822e266d5bbe1"
+    },
+    {
+        "path":  "scripts/Run-Generic-Attached-Construction-Campaign.ps1",
+        "sha256":  "288337dd6da5545dcc178a10e9aebc480d099e790c059ad866a66e108a9257ff"
+    },
+    {
+        "path":  "scripts/Run-Generic-Collision-Campaign.ps1",
+        "sha256":  "17c05810770cb387adadaef0941c76e2e8eea50f6afbb9dedcf8174f4bcc7687"
+    },
+    {
+        "path":  "scripts/Run-Generic-Collision-Controls.ps1",
+        "sha256":  "d1eb0d8f77d47576675da84443593481436d0d610b1c0832007d96448d053d5e"
+    },
+    {
+        "path":  "scripts/Run-Generic-Consistency-Campaign.ps1",
+        "sha256":  "647152c006a548f3fc4368b7100b44525b78f1822337304d90a8e7929c01b736"
+    },
+    {
+        "path":  "scripts/Run-Generic-Legal-Relationship-Pilot.ps1",
+        "sha256":  "b15e03e809c88b520fd4f5975f8cdf389dadd489476b630ef880e68cacbf4518"
+    },
+    {
+        "path":  "scripts/Run-Generic-Merge-Lifecycle.ps1",
+        "sha256":  "342a885f225f05688c74b1d204d49e2406cab6ef129649dd5722fdf2e1d2c1db"
+    },
+    {
+        "path":  "scripts/Run-Generic-Relationship-Cycle-Campaign.ps1",
+        "sha256":  "7eca1220c76fc4c18266353acadb0e0b57994f6e435e3ae031be0338de0df2ce"
+    },
+    {
+        "path":  "scripts/Run-Generic-Relationship-Pilot.ps1",
+        "sha256":  "6bab2fdaa2cee8fc025e0fa6a1921a23d96da39787825b3620528bec48a395b4"
+    },
+    {
+        "path":  "scripts/Run-Generic-Removal-Controls.ps1",
+        "sha256":  "ead2fa82a66bea0b33a954d6d586ea7935313f5e7c2053ca28956940a026111c"
+    },
+    {
+        "path":  "scripts/Run-Generic-Semantic-Campaign.ps1",
+        "sha256":  "f152cd5f459e7bb626173ee3cb7747221323c749d24397884923bdda54244206"
+    },
+    {
+        "path":  "scripts/Run-Generic-Shared-Resource-Pilot.ps1",
+        "sha256":  "44b2e4ea86e16358ccf7e8986d38200844f4d4b1e289117d5c7261a919653e70"
+    },
+    {
+        "path":  "scripts/Sample-Generic-Relationship-Model.ps1",
+        "sha256":  "3bbbae1b1a96ad0a3ae1a489c48a5a28e19e756d4174fd45937e14e5c0ef4354"
+    },
+    {
+        "path":  "scripts/Test-Generic-Generator-Compatibility.ps1",
+        "sha256":  "bab8b829b73e382c7d362016e6976190ed3e150b77d1c1b0e34067c93d65680c"
+    },
+    {
+        "path":  "scripts/Test-Provengo-Callback-Scope.ps1",
+        "sha256":  "961ba7a5d9cb0e0c69bba6682649c271ec618524d9adc8f11083626ea8c3e728"
+    },
+    {
+        "path":  "generic-generator/docs/collision-controls-validation.json",
+        "sha256":  "320adcfad32460e669163229d5425d0d92ae2b1d257142d93e71f8fec0c980e1"
+    },
+    {
+        "path":  "generic-generator/docs/collision-controls.md",
+        "sha256":  "9fbf28bdeb83a03e2595a225df8b2515a86e815b0478839c727ac2ac5a488f5d"
+    },
+    {
+        "path":  "generic-generator/docs/merge-collision-campaign.md",
+        "sha256":  "31b67dc4e8cc9bb15d881d5bf4670634f5c27a658c1cb4b7cb552b0cbe4229a8"
+    },
+    {
+        "path":  "generic-generator/docs/merge-collision-validation.txt",
+        "sha256":  "00e5d8e878d436a1014df0aa89e472228c61915e6b45e7f6cf58b336a5f6271f"
+    },
+    {
+        "path":  "generic-generator/docs/removal-controls.md",
+        "sha256":  "1bb64bfc9b883f477232df22e7c2cf005ab2802fa5c14a5d539da410b0897b69"
+    },
+    {
+        "path":  "generic-generator/docs/semantic-campaign.md",
+        "sha256":  "cab67b1be74dee2234e5211c9976cf5df89c8c6ac22dca0c03981d06db253bf3"
+    },
+    {
+        "path":  "generic-generator/docs/semantic-validation.txt",
+        "sha256":  "cde8bc6c62ae5f60386c9d539fc3ff765da499fd34bd4ce209385410c3de86eb"
+    },
+    {
+        "path":  "generic-generator/evidence/association-view-checks.json",
+        "sha256":  "ec8ab58f80dc73ef85c1b29d67a937f118a80fe090d7a162369612d3e3f22cd8"
+    },
+    {
+        "path":  "generic-generator/evidence/cycle-campaign-checks.json",
+        "sha256":  "9896038e706e234afbe36ff8270f8f7f1e3e0a5bc0a031dba6595bfeefdae893"
+    },
+    {
+        "path":  "generic-generator/evidence/cycle-probe-checks.json",
+        "sha256":  "3e78507b7e73b0942e72af5dc731e70df604c38db61d85a7ce43dc7d58ef42f2"
+    },
+    {
+        "path":  "generic-generator/evidence/identity-views-checks.json",
+        "sha256":  "03028330b4dc5f2cef2231794a1ecefe58a6f07a6e3707a1825890e0e9db4c17"
+    },
+    {
+        "path":  "generic-generator/evidence/relationship-live3-analysis.json",
+        "sha256":  "a781de9505cd9127e24bfce2d7f6f90e8a675b8468166bc141804f6b0fc4b3a3"
+    },
+    {
+        "path":  "generic-generator/generator_v56/__init__.py",
+        "sha256":  "53571aae787639efea7e8efc65482c85cafcff492a5ebfb0a1d5e98513dfbaf4"
+    },
+    {
+        "path":  "generic-generator/generator_v56/__main__.py",
+        "sha256":  "d3f82f6c81f4f37f91de43eee2834f771a95e76d88f2d52a943da34f5dc0a793"
+    },
+    {
+        "path":  "generic-generator/generator_v56/cli.py",
+        "sha256":  "cd37c18d37940720107a99011355e61720b8b50d8678ef3f2d5d7bf657c2bcc1"
+    },
+    {
+        "path":  "generic-generator/generator_v56/combined_oracles.py",
+        "sha256":  "6952f57c5e4599b16050c0fd0d7f175930f5cf115f7e69e75cf80b576a2e76a5"
+    },
+    {
+        "path":  "generic-generator/generator_v56/compare/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/compare/reference_comparator.py",
+        "sha256":  "b2e2ce628953294908197bd59614fa0b8397543c4fdf21adda078016a979a868"
+    },
+    {
+        "path":  "generic-generator/generator_v56/concurrency_adapter.py",
+        "sha256":  "04d91c00bf94cc29a41b22f3f9da491defc561f0a8cfaf6c080bde9956a855bc"
+    },
+    {
+        "path":  "generic-generator/generator_v56/confirm_noop_candidate.py",
+        "sha256":  "1c5dc64272292f7bc6c120d991d647610d5831a428ae1fa29c7f4ccb2f4b0118"
+    },
+    {
+        "path":  "generic-generator/generator_v56/cross_method.py",
+        "sha256":  "45bd64dc10b445b1df6cc0f665c74dbda357aa093d9b601597e5cb61dd45e17e"
+    },
+    {
+        "path":  "generic-generator/generator_v56/evaluate_verifiers.py",
+        "sha256":  "f8df54cd9af5920c421d5090fcab007b5c2d0924d96028617d32b05eba72323f"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/dependencies.py",
+        "sha256":  "679099ad4bbc47663a329bcf333248233e575c012667249d65d0a3fc6a7c91f6"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/entities.py",
+        "sha256":  "b8466a6477deeb95d64feb111d29511bb384cf09778257716c654f8d1e065cf7"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/graph.py",
+        "sha256":  "9381d4adc429ca24eb0d55c360bb8194623fd098ab8a4d2af857c891b89c3f6b"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/keys.py",
+        "sha256":  "5a18b82fa253c39bba375d9bc6df00059fb47372750dd2b0cfdcfc20713ceeae"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/resource_maps.py",
+        "sha256":  "38edc3c05c44c0f532a1bfcd36db3ce1bc9df63c26f99f2d8fad20ff20d607da"
+    },
+    {
+        "path":  "generic-generator/generator_v56/inference/values.py",
+        "sha256":  "74a928dc8f0009d39bf318ed5a98240cde99dd5804585ef9dda50467e3e56b94"
+    },
+    {
+        "path":  "generic-generator/generator_v56/isolation.py",
+        "sha256":  "508ba1780837215c95fcd11ce70a80addc37c206da62791f229cc03cfd4ba513"
+    },
+    {
+        "path":  "generic-generator/generator_v56/parsing/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/parsing/loader.py",
+        "sha256":  "e2d52674728f77c4af2b882125c8174043b140014be14be219f907efb621423c"
+    },
+    {
+        "path":  "generic-generator/generator_v56/parsing/model.py",
+        "sha256":  "0f58a5dc19566949d4282fd99cea562adf5d698fc29eec32bce71b38ae868356"
+    },
+    {
+        "path":  "generic-generator/generator_v56/parsing/normalize.py",
+        "sha256":  "a92373a067c1c9a4589cf7d1cd2c8c4b2e5f286a2226d0621d83243614d31d60"
+    },
+    {
+        "path":  "generic-generator/generator_v56/pipeline.py",
+        "sha256":  "76ff8987dd05bdd3b4dab6b30c8b927dc0b4d62bfe843c155e903d79ab6b2499"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/compiled_relationships.py",
+        "sha256":  "76a57c4e35d573a67a3bcdb70a5182ed660ff7becc3ae59ed16f359cde347579"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/http_interfaces.py",
+        "sha256":  "0a2f639861bcf65002677558480fcaebe3f134bea0560fbef411fa667fcba667"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/interfaces_js.py",
+        "sha256":  "62eeecdf8b2adbb20c0ed3920b42ccafa0b7dce384e8358c75d2cba94c203ccb"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/naming.py",
+        "sha256":  "1a95edf5ba1d00570ffb3a01ef381e12c59b639966732f697db445d2e9e9dab2"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/parallel_crud.py",
+        "sha256":  "27abbcbb7c5ae2f6e802e51ab657fadca1b1945b6451daa99a62a8db19294693"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/parallel_crud_v3.py",
+        "sha256":  "d31d60125b815eaf163cae66f15c5eae6d9e230ce165ab1c72c28c93e97b1c31"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/plan.py",
+        "sha256":  "77178d71984479e88606b8fec18f09d207c3ea235d6b1e819db36e4c73d52a34"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/relationship_blueprint.py",
+        "sha256":  "324d49bac5a357a8bd9138ed97467e9aa62face68dff088aa6a80d3d18db0012"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/relationship_deletion.py",
+        "sha256":  "28ac1ecc06d2d55b417e6bf8b2ea8b34a8dbafeb56787796037c29f9a80a2f3a"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/relationship_runtime_js.py",
+        "sha256":  "6eda75213ef483bdf40e8eb2a87f165adf6de35332d9ac730ff95350aad46852"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/semantic_campaign.py",
+        "sha256":  "fda469e3aa057912b83f1a9ae30387182913f7fb4de44d265ce477143298d301"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/semantic_runtime_js.py",
+        "sha256":  "e2bb31105750b72ce51edb17736309a1c49eb919ff5334892fb2a20b36f618f3"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/stories_js.py",
+        "sha256":  "a58b21d1a10b723359e12971d95dae251b5a9a8ff730c3fc19776b732ce84bc3"
+    },
+    {
+        "path":  "generic-generator/generator_v56/render/verification_js.py",
+        "sha256":  "0d734b2b9e3eb3c342a6439e3a51ca17c6081844b5751717fb68d050399228b8"
+    },
+    {
+        "path":  "generic-generator/generator_v56/report/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/report/generation_report.py",
+        "sha256":  "94a2d642d22276270d89797e06e2ff88077286a7a4104e7e4e3ea38cb06bcfe5"
+    },
+    {
+        "path":  "generic-generator/generator_v56/reproducibility.py",
+        "sha256":  "11f4188722d657a6e18cb590f62ff741528faacdb2d59c50e382f783020bc84c"
+    },
+    {
+        "path":  "generic-generator/generator_v56/request_variants.py",
+        "sha256":  "ef9710a2622684bec72066f6790af001a54d30ea0d756af3613b1b249346858f"
+    },
+    {
+        "path":  "generic-generator/generator_v56/runtime_observation.py",
+        "sha256":  "fc9d6588edbe43337e359167c118e12077a4077c622b8e2a81e5e20aac719520"
+    },
+    {
+        "path":  "generic-generator/generator_v56/trace_proxy.py",
+        "sha256":  "b287019f86ae286571f9a0b4b0da47ab41bba710421b6af719af5cd80fed404a"
+    },
+    {
+        "path":  "generic-generator/generator_v56/validate/__init__.py",
+        "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+        "path":  "generic-generator/generator_v56/validate/static_validate.py",
+        "sha256":  "50f48f566c1a4a8387378fc14dbb0f51cd457db11e2679059f764e53794a83c9"
+    },
+    {
+        "path":  "generic-generator/generator_v56/verification.py",
+        "sha256":  "24ecd40ba161aceaa690c02be51438eabebccf6bccac0f07401511e64a4d1341"
+    },
+    {
+        "path":  "generic-generator/generator_v56/verification_cli.py",
+        "sha256":  "0901d6c820cadbe1a686013ddf6995c4752076d2e838c663f4fa00c3251c4c94"
+    },
+    {
+        "path":  "generic-generator/preview/dependency_graph.json",
+        "sha256":  "c1d68845a307b3cea25c46f9d2d3140024e030df1224a069a6a5aa3146be85fc"
+    },
+    {
+        "path":  "generic-generator/preview/generation_report.json",
+        "sha256":  "a24d8bf8b291705337a229dd3a5d827c3c6beed6b80c2cc376a1e372f5f4ef15"
+    },
+    {
+        "path":  "generic-generator/preview/interfaces.mealie.js",
+        "sha256":  "2024b2b91e3f4656106f92a4700ca24e0954295b2010bff2cdb98b86824dc5bb"
+    },
+    {
+        "path":  "generic-generator/preview/stories.mealie.js",
+        "sha256":  "a4660ddb52fd430341ba8cbfdc3825d9e2086bc04cffc54dbeee9e3b902a6505"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-chain-readd-runtime.json",
+        "sha256":  "87ebb087bfcc6fc76b3ebac7383e0b1419cee6ad7baa64921c02d0af94f1064e"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-chain-readd-scope.json",
+        "sha256":  "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-duplicate-no-merge-runtime.json",
+        "sha256":  "c6bcc79fe0cad8fb932f808f25bf052f6302802b98114c79a99a6ab53384338d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-duplicate-no-merge-scope.json",
+        "sha256":  "06d10fc103d3c91750f9796b9636ba6ae002c1ed6828df1abfdbc006987f3e4b"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-lifecycle-runtime.json",
+        "sha256":  "94cf88e5d73fd630e61f25f8c79a0fd71e53f30ab6d387f448a04d105e82cb1b"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-lifecycle-scope.json",
+        "sha256":  "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-no-merge-runtime.json",
+        "sha256":  "0c5e84b23802b3954befd537f1a2f41a1e64bf43bdbaa3c99442bf7521df9c13"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-no-merge-scope.json",
+        "sha256":  "038aa7934345665526135096d6cf2d0d515726a398548255ea1bdb4795d36b4f"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-one-merge-runtime.json",
+        "sha256":  "d281aadc6aebb23e07c64137ce3687624d0aca280e70598b255151207f5113bb"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-food-integer-one-merge-scope.json",
+        "sha256":  "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-merge-no-decrement-runtime.json",
+        "sha256":  "859e03f402673917bc6b866be6a9eb502cf1e23a5ac75c31cc95a1bcdf6005ec"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-merge-no-decrement-scope.json",
+        "sha256":  "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-single-ingredient-runtime.json",
+        "sha256":  "c3d03b639e4c168e39da5f8c6203b594c6d9497967f3c27c35d535ff5959390e"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-single-ingredient-scope.json",
+        "sha256":  "5a4bc80da867d17b0ac941ddb8b6123d0146d131d8053c0c71a292eb379b51b2"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-three-ingredient-runtime.json",
+        "sha256":  "3d18659305948b55b2a94ba13b3cbd46f519e7ee4f3a008f4a164a6b6e597b29"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-three-ingredient-scope.json",
+        "sha256":  "5f975448b28fbbdd4090466d3f056c20e01a36494c7f18c999cd42b67432fb41"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-lifecycle-runtime.json",
+        "sha256":  "65410b7a7b8e6617965a1572277d1b77771b8df50b7f1656062c1bf920d3c657"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-lifecycle-scope.json",
+        "sha256":  "e47d5614b12eac9e936a26a590431822c53820130742a91687d05a1a99d1a48b"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-no-merge-runtime.json",
+        "sha256":  "60ff6be7a21f64bba3108442b88cbfab9c84b2e43283b39432bed3caf2212e05"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-no-merge-scope.json",
+        "sha256":  "ad1f840771058bf573b52c806b7f0f6f8dfb164debfdeb34b5e3969b5a5d5273"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-one-merge-runtime.json",
+        "sha256":  "546dbf45a1d72f1f8c07f097467d1b9879045ac15c50cf955a5ce7c0a3ac3928"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-control-unit-integer-one-merge-scope.json",
+        "sha256":  "e47d5614b12eac9e936a26a590431822c53820130742a91687d05a1a99d1a48b"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-alternate-paths.json",
+        "sha256":  "a50822c28c2ddc3fc8d9c3129d64c8528e0994167696af164465a832a717f9c9"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-attached-runtime.json",
+        "sha256":  "82d6a2134c48539579c06ac208e3895905c77d276da2f58a21539e11f44697b2"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-collision-runtime.json",
+        "sha256":  "15e8da5700359edce9c0e8749037e832d14b33efbae9ab033526d31e46085e12"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-collision-scope.json",
+        "sha256":  "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-combined-runtime.json",
+        "sha256":  "2be89572e92c9d62aa7e2fe69e3d8668e180de62a89f335432eee2c11ae93342"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-compact-runtime.json",
+        "sha256":  "ef400b458bba440e1ae552154cd43fd606d573deca4be6d060bd04f0aff11abe"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-consistency-runtime.json",
+        "sha256":  "75a0cc5131933a061a3583f161d67ac79dc65ab15966621dd7896ee3b864f614"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-cycle-expansion.json",
+        "sha256":  "21eb8f26f9078de6a65ff00f994b308f313488ae9c8dbf3ecd6c8e8801a2ea0b"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-legal-lifecycle.json",
+        "sha256":  "0b9f23c8832553fd3dcd6c4223bdd3295c05f3ad2e9b1a4bab321c81c2347a9c"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-map-pilot.json",
+        "sha256":  "75bb9a0b8b5b401b63c1438e90558a7f01176c9025671c20e03da547d04dfc01"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-merge-runtime.json",
+        "sha256":  "7041ad8214f7161c36d72a36425db1d7454d47df4474cf1f2dd2a3fd08fbfbd0"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-quantity-runtime.json",
+        "sha256":  "3d9ad448490967c2e7cf4f21ef41f8e737d184048b1be68aeeb82bf2705c4144"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-runtime.json",
+        "sha256":  "e42b238712194a53aec1d8b2047bc6ca82b034a32efb3f94c868d8dfbdb5d3ad"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-semantic-scope.json",
+        "sha256":  "fccb788cfdbf2cebe79bf6fc0879145d69c55311fb27571bb4667e031bc981a2"
+    },
+    {
+        "path":  "generic-generator/profiles/mealie-relational-shared-update-runtime.json",
+        "sha256":  "1fd321514613698350d527781b4039a9633553af9727b703ab4625074eb415c8"
+    },
+    {
+        "path":  "generic-generator/shared_update_validation.json",
+        "status":  "NOT_PRESENT_LOCALLY",
+        "archived_snapshot_preserved":  true
+    },
+    {
+        "path":  "generic-generator/tests/check_compiled_relationships.js",
+        "sha256":  "439e97115d464eece0192205c31a79e62477f4cb4abe5ef054132c248136c29c"
+    },
+    {
+        "path":  "generic-generator/tests/check_transport_equivalence.js",
+        "sha256":  "0d94439d05fb2a32d1281cc4d6801422d50cb03e81019d9dc5f6aa9aa3182184"
+    },
+    {
+        "path":  "generic-generator/tests/export_transport_cases.py",
+        "sha256":  "6e70ada272365caeb3b0457c372952d49342657a690c2fe0938b922665bf1077"
+    },
+    {
+        "path":  "generic-generator/tests/native_http_mock.js",
+        "sha256":  "e5f4d2680c804d4428d8ac4c4044c799930747f685d8b59358724cb63ab0c901"
+    },
+    {
+        "path":  "generic-generator/tests/semantic_http_fixture.js",
+        "sha256":  "9cccc224bbde257169c362b864567dac61f062e62381ac1e081b959a7445431b"
+    },
+    {
+        "path":  "generic-generator/tests/test_alternate_paths.py",
+        "sha256":  "fa337c9a9bdbc3e8f12e6572db3de91965992a35fc100bb4c4db1ec0af78f5ec"
+    },
+    {
+        "path":  "generic-generator/tests/test_attached_construction.py",
+        "sha256":  "741e74acf5fc9d6f1c5aef04a865a1c3970a9ac0cea3b1e535f02c7052d30591"
+    },
+    {
+        "path":  "generic-generator/tests/test_auth_diagnostic.py",
+        "sha256":  "66fcddcdef94d8c0c95e0916b6c246eb5e22dc41c3e27d197e1b60d29f76a698"
+    },
+    {
+        "path":  "generic-generator/tests/test_callback_scope_probe.py",
+        "sha256":  "2d1695654f41c8cf8f7821669bb2f1fdeb7387107069d49de0ad1b8802cc391e"
+    },
+    {
+        "path":  "generic-generator/tests/test_compiled_relationships.py",
+        "sha256":  "181d860aa1f721fc45c3b40047210a7e499b4b93e38c1d8a84a63b76c5b99d90"
+    },
+    {
+        "path":  "generic-generator/tests/test_control_review.py",
+        "sha256":  "26a07d5dc048b50e78386b0196a763e1ced81c8ab050c37600b19a3aecfd21b3"
+    },
+    {
+        "path":  "generic-generator/tests/test_execution_review.py",
+        "sha256":  "79f9c05c551a11aef2c96ffb376be540e24a466f56073e2e3d377672e9b8a94c"
+    },
+    {
+        "path":  "generic-generator/tests/test_failure_collection.py",
+        "sha256":  "6a6ab70d38e381615d02362131f0383224d66d4e492a9f2b85a209a17d95e34b"
+    },
+    {
+        "path":  "generic-generator/tests/test_legal_lifecycle.py",
+        "sha256":  "d923ae5807ac4c1f82ebbb33144dee2c94e9acb9efdcefd94a6cf8666b7f7def"
+    },
+    {
+        "path":  "generic-generator/tests/test_merge_collisions.py",
+        "sha256":  "d8edac8145b6b693a0bc574490613990b1df02948e052a57314be89ed55ec646"
+    },
+    {
+        "path":  "generic-generator/tests/test_native_callback_scope.py",
+        "sha256":  "8a458f20f625e4f984b7800b34f1f604faee2e9d07c75dff18c93ac9bfa0effc"
+    },
+    {
+        "path":  "generic-generator/tests/test_relationship_campaign.py",
+        "sha256":  "7ebd4c42bb9c6acde16c285ac72925d44e450ca6bbbd70566b284b65862bf7ff"
+    },
+    {
+        "path":  "generic-generator/tests/test_relationship_consistency.py",
+        "sha256":  "63f35b1eb70fab5cad199dd1ee81a9ce100dbd9516b5e7ac3b9c8295d21fe8f8"
+    },
+    {
+        "path":  "generic-generator/tests/test_removal_controls.py",
+        "sha256":  "0f3aa4e74427fc5702c53bd14f930e35efb378a357ef4c04c80e64e2dfcd0986"
+    },
+    {
+        "path":  "generic-generator/tests/test_resource_maps.py",
+        "sha256":  "49e9db9140f1808c396d73f7b4c0747c860132043c90400823e9168a044936af"
+    },
+    {
+        "path":  "generic-generator/tests/test_sample_campaign.py",
+        "sha256":  "82b03354235a1f0a6a22e3925dee418a918021107ce6eba24ecea34b4df1cf86"
+    },
+    {
+        "path":  "generic-generator/tests/test_semantic_campaign.py",
+        "sha256":  "db60841ab6fcecd5612894a2d9c08feab78d57433b764fe1d1bfa546c87ae4a9"
+    },
+    {
+        "path":  "generic-generator/tests/test_semantic_controls.py",
+        "sha256":  "59f874de0b1aac0d62c18190bbffa3f1458d8f87f1acd3fa71851a1a4dd278ea"
+    },
+    {
+        "path":  "generic-generator/tests/test_shared_updates.py",
+        "sha256":  "65210a3b5f21bde217e5ae301015bc148766ed90ee58d62028dcdb2dd8516fee"
+    },
+    {
+        "path":  "generic-generator/tests/test_transport_separation.py",
+        "sha256":  "b70d5ffa752f8cc2b311b1adefd0ae98fc2e4b6e0d19f4d934fcd24b52284373"
+    },
+    {
+        "path":  "generic-generator/tests/test_windows_native_launch.py",
+        "sha256":  "6da5249d19f180a8fca06288c62ec957323f49f46a09b27216eee452b722d934"
+    },
+    {
+        "path":  "generic-generator/tools/callback_scope_probe.py",
+        "sha256":  "12f686e45e0f6600ab39846ab3bd5fa39415a366f96051453af1fbab219b425b"
+    },
+    {
+        "path":  "generic-generator/tools/classify_control_review.py",
+        "sha256":  "dcd68e656ff8b7b8f8547b75d84711cdf5e7faf1ce00fa8ecb98fb7e5ac826d9"
+    },
+    {
+        "path":  "generic-generator/tools/collect_relationship_failure.py",
+        "sha256":  "9dc590158cf39c75fdbca5e00a29cc11b6a41971001a926919e275f850f5eac0"
+    },
+    {
+        "path":  "generic-generator/tools/diagnose_native_auth.py",
+        "sha256":  "db459c9fcc16604d4380dddeafa7344644168f5ebbf7d48a7178eb374c303710"
+    },
+    {
+        "path":  "generic-generator/tools/relationship_campaign.py",
+        "sha256":  "c846349a7fd51790cfbc1573ec63a883f372dd170923ed50926f6ffed870e8d6"
+    },
+    {
+        "path":  "generic-generator/tools/relationship_execution.py",
+        "sha256":  "8af87d8137478343e2a67c85c2d7e2bc57e6a55c9f8b373eabdb64b7a5c7d761"
+    },
+    {
+        "path":  "generic-generator/tools/relationship_sample_campaign.py",
+        "sha256":  "b4e910febd9b14a6ce0254842e66cfe8b16a5c1a26f7abb5e5e05a967487442a"
+    },
+    {
+        "path":  "generic-generator/tools/semantic_campaign_review.py",
+        "sha256":  "9ac55737ca88d11915d6d5b50ee49ec51e09abf95d505cb0caf4c349b6f3df43"
+    },
+    {
+        "path":  "generic-generator/tools/semantic_receipts.py",
+        "sha256":  "064d34ff5c0d96359a57fa337899bc78b2e252012a127e349f36f66c69eacf0f"
+    },
+    {
+        "path":  "generic-generator/tools/verify_collision_discrepancy.py",
+        "sha256":  "7400fd55e49002044a0b0558d56c81d7c01467239510b4d5e363e69f7197b49b"
+    }
+]

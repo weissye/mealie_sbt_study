@@ -19,6 +19,11 @@ class ExecutionReviewTests(unittest.TestCase):
         self.assertIn('Relationship readback mismatch: food', failure_excerpt(output))
         self.assertLess(len(failure_excerpt(output)), 4001)
 
+    def test_dumped_callback_source_is_not_a_runtime_failure(self):
+        source = 'if(mismatch)fail("Relationship readback mismatch: "+JSON.stringify(evidence));'
+        output = source + '\n12:00 WARN [RUN>TEST-1] FAIL: Semantic consistency mismatch: actual 20 expected 19\n'
+        self.assertIn('actual 20 expected 19', failure_excerpt(output))
+
     def test_runtime_receipt_can_be_read_from_native_rtv_log(self):
         receipt = {'status': 'LIVE_CALLBACKS_COMPLETE', 'task_count': 54, 'response_count': 167}
         line = "INFO [RUN>TEST-1] RTV: setting 'sbt_rel_execution_receipt' to '" + json.dumps(receipt) + "'"

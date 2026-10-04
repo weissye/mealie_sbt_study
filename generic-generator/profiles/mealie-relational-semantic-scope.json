@@ -1,0 +1,21 @@
+{
+  "resource_types": [
+    "api/foods",
+    "api/units",
+    "api/recipes",
+    "api/households/shopping/lists",
+    "api/households/shopping/items"
+  ],
+  "instances_per_type": 3,
+  "recursive_relationships": [],
+  "excluded_relationships": [
+    {
+      "source_type": "api/recipes",
+      "field_path": "recipeIngredient[].referencedRecipe"
+    },
+    {
+      "source_type": "api/households/shopping/items",
+      "field_path": "referencedRecipe"
+    }
+  ]
+}

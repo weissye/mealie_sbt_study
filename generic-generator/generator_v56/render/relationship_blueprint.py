@@ -8,7 +8,7 @@ import re
 
 
 def build_relationship_blueprint(plan, maps, profile):
-    allowed = {'resource_types', 'instances_per_type', 'recursive_relationships'}
+    allowed = {'resource_types', 'instances_per_type', 'recursive_relationships', 'excluded_relationships', 'target_bindings'}
     if not isinstance(profile, dict) or set(profile) - allowed:
         raise ValueError('Unsupported relationship profile field.')
     catalog = maps['resource_catalog']
@@ -26,7 +26,7 @@ def build_relationship_blueprint(plan, maps, profile):
     policy_by_path = {}
     for policy in policies:
         required = {'source_type', 'field_path', 'rejection_codes', 'evidence_sha256'}
-        if not isinstance(policy, dict) or not required.issubset(policy) or set(policy) - required - {'cycle_lengths', 'verify_cycle_members'}:
+        if not isinstance(policy, dict) or not required.issubset(policy) or set(policy) - required - {'cycle_lengths', 'verify_cycle_members', 'legal_lifecycle', 'alternate_paths'}:
             raise ValueError('Recursive rejection policy requires explicit relationship and evidence.')
         if not all(isinstance(policy[k], str) for k in ('source_type', 'field_path')):
             raise ValueError('Recursive relationship type and path must be strings.')
@@ -38,6 +38,12 @@ def build_relationship_blueprint(plan, maps, profile):
             raise ValueError('Recursive rejection codes must be explicit client error codes.')
         if not isinstance(policy['evidence_sha256'], str) or not re.fullmatch('[0-9a-f]{64}', policy['evidence_sha256']):
             raise ValueError('Recursive rejection requires observed external evidence.')
+        if 'legal_lifecycle' in policy and type(policy['legal_lifecycle']) is not bool:
+            raise ValueError('legal_lifecycle must be a boolean.')
+        if 'alternate_paths' in policy and type(policy['alternate_paths']) is not bool:
+            raise ValueError('alternate_paths must be a boolean.')
+        if policy.get('alternate_paths') and (not policy.get('legal_lifecycle') or count < 4):
+            raise ValueError('Alternate paths require legal lifecycle and at least four instances.')
         lengths = policy.get('cycle_lengths', [2])
         if 'verify_cycle_members' in policy and type(policy['verify_cycle_members']) is not bool:
             raise ValueError('verify_cycle_members must be a boolean.')
@@ -92,8 +98,41 @@ def build_relationship_blueprint(plan, maps, profile):
         if previous is None or (operation.startswith('PUT '), operation) > (previous['operation'].startswith('PUT '), previous['operation']):
             choices[signature] = relation
     matched_policies = set()
+    excluded = profile.get('excluded_relationships', [])
+    if not isinstance(excluded, list) or any(not isinstance(e, dict) or set(e) != {'source_type','field_path'} or not all(isinstance(v,str) for v in e.values()) for e in excluded):
+        raise ValueError('Excluded relationships require source_type and field_path.')
+    excluded_keys = {(e['source_type'],e['field_path']) for e in excluded}
+    available = {(s,f) for s,t,f in choices}
+    if len(excluded_keys) != len(excluded) or not excluded_keys <= available or excluded_keys & set(policy_by_path):
+        raise ValueError('Unknown, duplicate or policy-conflicting excluded relationship.')
+    bindings = profile.get('target_bindings', [])
+    if not isinstance(bindings, list):
+        raise ValueError('target_bindings must be a list.')
+    binding_by_path = {}
+    for binding in bindings:
+        if not isinstance(binding, dict) or set(binding) not in ({'source_type','target_type','field_path','target_index','after_fields'}, {'source_type','target_type','field_path','target_indices','after_fields'}):
+            raise ValueError('Explicit target binding requires typed relationship and dependencies.')
+        if any(not isinstance(binding[k],str) for k in ('source_type','target_type','field_path')):
+            raise ValueError('Target binding types and path must be strings.')
+        signature = (binding['source_type'],binding['target_type'],binding['field_path'])
+        key = (binding['source_type'],binding['field_path'])
+        if signature not in choices or key in binding_by_path or key in excluded_keys or key in policy_by_path:
+            raise ValueError('Target binding is unknown, duplicate, excluded or recursive.')
+        indices = binding.get('target_indices', [binding.get('target_index')])
+        if not isinstance(indices, list) or not 1 <= len(indices) <= 8 or any(type(i) is not int or not 1 <= i <= count for i in indices):
+            raise ValueError('Target binding index is outside selected instances.')
+        if 'target_indices' in binding and '[]' not in binding['field_path']:
+            raise ValueError('Multiple target occurrences require an array relationship.')
+        if binding['source_type'] == binding['target_type'] or any(canonical(e.target)==binding['source_type'] for e in by_type[binding['target_type']].dependencies):
+            raise ValueError('Target binding cannot override recursive or contained-child ownership.')
+        after = binding['after_fields']
+        if not isinstance(after,list) or any(not isinstance(f,str) or (binding['source_type'],f) not in available or f==binding['field_path'] or (binding['source_type'],f) in excluded_keys for f in after) or len(set(after))!=len(after):
+            raise ValueError('Invalid target-binding relationship dependencies.')
+        binding_by_path[key] = binding
     for index, (signature, relation) in enumerate(sorted(choices.items()), 1):
         source, target, field = signature
+        if (source,field) in excluded_keys:
+            continue
         policy = policy_by_path.get((source, field)) if source == target else None
         if policy:
             matched_policies.add((source, field))
@@ -112,6 +151,9 @@ def build_relationship_blueprint(plan, maps, profile):
                 targets = [instances[target][i % count], instances[target][(i + 1) % count]]
             else:
                 targets = [instances[target][0 if i < 2 else i % count]]
+            binding = binding_by_path.get((source,field))
+            if binding:
+                targets = [instances[target][n-1] for n in binding.get('target_indices', [binding.get('target_index')])]
             task_id = 'link:' + str(index) + ':' + str(i + 1)
             tasks.append({'id': task_id, 'kind': 'link', 'source_instance': source_instance,
                 'target_instances': targets, 'field_path': field, 'operation': relation['operation'],
@@ -129,6 +171,62 @@ def build_relationship_blueprint(plan, maps, profile):
                 for length in sorted(policy.get('cycle_lengths', [2]), reverse=True)[1:]:
                     tasks.append(dict(template, id='negative:' + str(index) + ':' + str(i + 1) + ':cycle-' + str(length),
                         target_instances=[instances[target][-length]], cycle_path=instances[source][-length:]))
+    for task in tasks:
+        binding = binding_by_path.get((task.get('source_instance','').rsplit('#',1)[0],task.get('field_path')))
+        if binding:
+            for field in binding['after_fields']:
+                matches = [t['id'] for t in tasks if t.get('source_instance')==task['source_instance'] and t.get('field_path')==field and t['kind']=='link']
+                if len(matches)!=1:
+                    raise ValueError('Target binding prerequisite does not resolve uniquely.')
+                task['after'] += matches
+    # Explicit opt-in: remove one edge, accept the formerly cyclic reverse
+    # edge, then reject restoring the removed edge. No server-specific paths.
+    for signature, policy in policy_by_path.items():
+        if not policy.get('legal_lifecycle'):
+            continue
+        source, field = signature
+        chain = instances[source]
+        positives = [t for t in tasks if t['kind'] == 'link' and
+                     t['source_instance'] in chain and t['field_path'] == field]
+        for task in positives:
+            task['legal_readback'] = True
+        template = next(t for t in positives if t['source_instance'] == chain[0])
+        baseline = [t['id'] for t in tasks]
+        prefix = 'lifecycle:' + source + ':' + field
+        unlink = dict(template, id=prefix + ':unlink', kind='unlink',
+                      target_instances=[], after=baseline, lifecycle_phase=True)
+        reverse = dict(template, id=prefix + ':legal-reverse', source_instance=chain[-1],
+                       target_instances=[chain[0]], after=[unlink['id']], lifecycle_phase=True)
+        reject = dict(template, id=prefix + ':reject-restore', kind='negative_link',
+                      after=[reverse['id']], lifecycle_phase=True, legal_readback=False,
+                      rejection_codes=policy['rejection_codes'], evidence_sha256=policy['evidence_sha256'],
+                      cycle_path=chain[1:] + chain[:1], verify_cycle_members=True)
+        tasks.extend([unlink, reverse, reject])
+        if policy.get('alternate_paths'):
+            previous = reject['id']
+            def transition(label, owner, targets, kind='link', cycle=None):
+                nonlocal previous
+                task = dict(template, id=prefix + ':alternate:' + label,
+                            source_instance=owner, target_instances=targets, kind=kind,
+                            after=[previous], lifecycle_phase=True, legal_readback=kind != 'negative_link')
+                if cycle:
+                    task.update(cycle_path=cycle, verify_cycle_members=True,
+                                rejection_codes=policy['rejection_codes'], evidence_sha256=policy['evidence_sha256'])
+                tasks.append(task)
+                previous = task['id']
+            # Start from an observed empty graph; keep the owned instances.
+            for i, owner in enumerate(chain):
+                transition('clear-' + str(i + 1), owner, [], 'unlink')
+            a, b, c, d = chain[:4]
+            transition('fork', a, [b, c])
+            transition('left', b, [d])
+            transition('right', c, [d])
+            transition('reject-both-paths', d, [a], 'negative_link', [a, b, d])
+            transition('remove-left', b, [], 'unlink')
+            transition('reject-remaining-path', d, [a], 'negative_link', [a, c, d])
+            transition('remove-right', c, [], 'unlink')
+            transition('accept-after-both-removed', d, [a])
+
     if matched_policies != set(policy_by_path):
         raise ValueError('Recursive rejection policy does not match a writable self-relationship.')
     action_candidates = []
