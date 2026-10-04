@@ -1,0 +1,9 @@
+{
+  "campaign-original.zip": "265d31071973dbfbb11e0a1b90524968a4037380bb6eeda93246df2fdc4a3356",
+  "source-provenance.json": "5d7948cd3e972fa918a7722e7a91b69a7fffbdc5d6cb06a1f6b0c7f3b7000dfd",
+  "source/instruction.py": "2dfedafefe0b2d1f38950bab70301a4019be030f5c773c61e605fd852e7f7cef",
+  "source/repository_recipes.py": "ab7bc0f281825dd6fc64a69be5194d7c8e0ad4a90a286403189c0ce0624f9767",
+  "source/recipe.py": "fa12a5cf58ed68e496ebc85ca503bdda31e2cee3412c7f352e41e8adc43c9316",
+  "source/auto_init.py": "afb5d869a06d87bc17fc79b3ab0a1d1a76b3f2ccf7438e4904d4c37b882e955c",
+  "source/repository_generic.py": "1a81d303aef6dc94d35891ab913a73f5a34a826c56fcffbf3c2af11d94ad449a"
+}

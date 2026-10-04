@@ -1,6 +1,7 @@
 """Independent route change receipt validation. No HTTP requests."""
 import copy
 from datetime import datetime
+from uuid import UUID
 
 
 def _view(value,targets,cfg,change):
@@ -11,6 +12,15 @@ def _view(value,targets,cfg,change):
             if target:
                 for field in [cfg['route_field'],change]+cfg['timestamp_fields']:
                     if field in o and field in target:o[field]=target[field]
+                for path in cfg.get('recreated_identity_paths',[]):
+                    def child_rows(obj):
+                        for key in path[:-5].split('.'):
+                            if not isinstance(obj,dict):return None
+                            obj=obj.get(key)
+                        return obj
+                    rows=child_rows(o);current=child_rows(target)
+                    if isinstance(rows,list) and isinstance(current,list) and len(rows)==len(current):
+                        for row,item in zip(rows,current):row['id']=item['id']
             for child in o.values():walk(child)
         elif isinstance(o,list):
             for child in o:walk(child)
@@ -57,6 +67,19 @@ def validate_route_receipts(receipt,plan):
                 except (KeyError,TypeError,AttributeError,ValueError) as e:raise ValueError('Invalid observed timestamp.') from e
                 if timestamp in expected:protected[timestamp]=expected[timestamp]
                 else:protected.pop(timestamp,None)
+            changes=[]
+            for path in cfg.get('recreated_identity_paths',[]):
+                arrays=values(expected,path[:-5]);others=values(protected,path[:-5])
+                if len(arrays)!=1 or len(others)!=1 or not isinstance(arrays[0],list) or not isinstance(others[0],list) or len(arrays[0])!=len(others[0]):raise ValueError('Child identity shape changed.')
+                observed_ids=[]
+                for index,(old,new) in enumerate(zip(arrays[0],others[0])):
+                    try:UUID(old['id']);UUID(new['id'])
+                    except (KeyError,TypeError,AttributeError,ValueError) as e:raise ValueError('Invalid child identity.') from e
+                    observed_ids.append(new['id'])
+                    if old['id']!=new['id']:changes.append(dict(path=path,index=index,before=old['id'],after=new['id']))
+                    new['id']=old['id']
+                if len(set(observed_ids))!=len(observed_ids):raise ValueError('Duplicate child identity.')
+            if actual.get('recreated_identities',[])!=changes:raise ValueError('Unrecorded child identity replacement.')
             if actual.get('phase')!=phase or actual.get('before')!=before or actual.get('expected')!=expected or actual.get('value')!=value or protected!=expected:raise ValueError('Route identity or protected state mismatch.')
             targets[id]=copy.deepcopy(observed)
             checks=actual.get('checks',[])

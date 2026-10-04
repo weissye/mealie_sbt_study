@@ -10,6 +10,8 @@ if ($LASTEXITCODE -ne 0) { throw 'ZIP portability checks failed. Git was not cha
 if ($LASTEXITCODE -ne 0) { throw 'Original evidence verification failed. Git was not changed.' }
 & $python.Exe @($python.Prefix) -B (Join-Path $Root 'evidence\dependency-transfer-complete-20261004\verify_campaign.py')
 if ($LASTEXITCODE -ne 0) { throw 'Completed campaign verification failed. Git was not changed.' }
+& $python.Exe @($python.Prefix) -B (Join-Path $Root 'evidence\route-put-control-20261004\verify_campaign.py')
+if ($LASTEXITCODE -ne 0) { throw 'Route control evidence verification failed. Git was not changed.' }
 $gitRoot=git -C $Root rev-parse --show-toplevel
 if ($LASTEXITCODE -ne 0 -or [IO.Path]::GetFullPath($gitRoot) -ne $Root) { throw 'Expected the study repository root.' }
 $branch=git -C $Root symbolic-ref --short HEAD
@@ -31,7 +33,7 @@ try {
     $changed=$LASTEXITCODE
     if ($changed -gt 1) { throw 'Staged comparison failed.' }
     if ($changed -eq 1) {
-        git -C $Root commit --only -m 'Preserve completed dependency transfer evidence and generic route identity campaign' --pathspec-from-file=$pathFile --pathspec-file-nul
+        git -C $Root commit --only -m 'Preserve route PUT control and declare explicit child identity replacement policy' --pathspec-from-file=$pathFile --pathspec-file-nul
         if ($LASTEXITCODE -ne 0) { throw 'Commit failed.' }
     }
     $head=git -C $Root rev-parse HEAD

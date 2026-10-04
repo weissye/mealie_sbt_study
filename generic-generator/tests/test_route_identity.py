@@ -13,7 +13,7 @@ class RouteConfigurationTests(unittest.TestCase):
    a=generate(mode);b=generate(mode);self.assertEqual(a.interfaces_js,b.interfaces_js);self.assertEqual(a.stories_js,b.stories_js);self.assertNotRegex(a.stories_js,r'\bsvc\.')
  def test_identity_and_timestamp_exclusions_rejected(self):
   base=json.loads((ROOT/'profiles/mealie-route-rename-runtime.json').read_text())
-  for key,value in [('route_field','id'),('timestamp_fields',['createdAt']),('mode','unknown')]:
+  for key,value in [('route_field','id'),('timestamp_fields',['createdAt']),('mode','unknown'),('recreated_identity_paths',['id']),('recreated_identity_paths',['recipeIngredient[].id'])]:
    cfg=copy.deepcopy(base);cfg['route_identity'][key]=value
    with self.assertRaises(ValueError):generate(runtime=cfg)
 @unittest.skipUnless(os.environ.get('PROVENGO_TEST_JAR') and shutil.which('java'),'Native jar required')
@@ -26,7 +26,7 @@ class RouteNativeTests(unittest.TestCase):
     with socket.socket() as probe:probe.bind(('127.0.0.1',0));port=probe.getsockname()[1]
     result=generate(mode,base=f'http://127.0.0.1:{port}');plan=result.resource_maps['relationship_scenario_plan'];(project/'spec/js').mkdir(parents=True);(project/'config').mkdir();(project/'config/provengo.yml').write_text('version: 2\n');(project/'spec/js/interfaces.native.js').write_text(result.interfaces_js);(project/'spec/js/stories.native.js').write_text(result.stories_js);(project/'relationship_scenario_plan.json').write_text(json.dumps(plan))
     sample=subprocess.run(command+['sample','--size','2','--max-length','700','-o','samples.json',str(project)],capture_output=True,text=True,timeout=60);self.assertEqual(sample.returncode,0,sample.stdout+sample.stderr);audit_samples(json.loads((project/'samples.json').read_text()),plan)
-    faults=['','']+(['route-id-changed','route-old-retained','route-quantity','route-stale-view','route-new-missing'] if mode=='rename' else (['route-reference-migrated'] if mode=='reuse' else []))
+    faults=['','','route-instruction-content']+(['route-id-changed','route-old-retained','route-quantity','route-stale-view','route-new-missing'] if mode=='rename' else (['route-reference-migrated'] if mode=='reuse' else []))
     for i,fault in enumerate(faults):
      env=dict(os.environ,NATIVE_MOCK_PORT=str(port),NATIVE_MOCK_FAULT=fault,SBT_REL_USERNAME='local',SBT_REL_PASSWORD='local');server=subprocess.Popen(['node',str(ROOT/'tests/native_http_mock.js'),str(project)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
      try:
@@ -34,6 +34,12 @@ class RouteNativeTests(unittest.TestCase):
       if fault:self.assertNotEqual(run.returncode,0,fault);self.assertIsNone(receipt);self.assertIn('Route identity mismatch:',output)
       else:
        self.assertEqual(run.returncode,0,'\n'.join(l for l in output.splitlines() if 'WARN [' in l or 'ERR [' in l));validate_route_receipts(receipt,plan);self.assertEqual(receipt['response_count'],result.resource_maps['relationship_compilation']['http_requests_per_complete_schedule'])
+       strict_plan=copy.deepcopy(plan)
+       for task in strict_plan['tasks']:
+        if task['kind']=='route_identity':task['config'].pop('recreated_identity_paths',None)
+       with self.assertRaises(ValueError):validate_route_receipts(receipt,strict_plan)
+       forged_identity=copy.deepcopy(receipt);forged_identity['route_identities'][0]['phases'][0]['recreated_identities']=[]
+       with self.assertRaises(ValueError):validate_route_receipts(forged_identity,plan)
        forged=copy.deepcopy(receipt);phase=forged['route_identities'][0]['phases'][0];phase['checks'][0]['observed']['recipeIngredient'][0]['quantity']=999
        with self.assertRaises(ValueError):validate_route_receipts(forged,plan)
      finally:server.terminate();server.communicate(timeout=10)

@@ -1,0 +1,15 @@
+{
+  "status": "LOCAL_NATIVE_VALIDATED_LIVE_PENDING",
+  "native_route_test_methods": 3,
+  "native_route_test_duration_seconds": 62.37,
+  "healthy_native_schedules": 6,
+  "injected_fault_schedules_rejected": 9,
+  "transport_equivalence_cases": 466,
+  "instruction_id_replacements": "explicitly declared and independently reconstructed; never counted as a bug",
+  "actual_mealie_route_rename_and_reuse": "pending",
+  "windows_powershell_execution": "not executable in this Linux environment",
+  "full_reset_replay": "pending",
+  "compatibility_discovered_tests": 117,
+  "compatibility_skipped_native_tests": 13,
+  "compatibility_duration_seconds": 218.357
+}

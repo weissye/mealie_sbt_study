@@ -1,0 +1,27 @@
+[
+  {
+    "path": "source/recipe.py",
+    "url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/db/models/recipe/recipe.py",
+    "sha256": "fa12a5cf58ed68e496ebc85ca503bdda31e2cee3412c7f352e41e8adc43c9316"
+  },
+  {
+    "path": "source/instruction.py",
+    "url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/db/models/recipe/instruction.py",
+    "sha256": "2dfedafefe0b2d1f38950bab70301a4019be030f5c773c61e605fd852e7f7cef"
+  },
+  {
+    "path": "source/auto_init.py",
+    "url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/db/models/_model_utils/auto_init.py",
+    "sha256": "afb5d869a06d87bc17fc79b3ab0a1d1a76b3f2ccf7438e4904d4c37b882e955c"
+  },
+  {
+    "path": "source/repository_recipes.py",
+    "url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/repos/repository_recipes.py",
+    "sha256": "ab7bc0f281825dd6fc64a69be5194d7c8e0ad4a90a286403189c0ce0624f9767"
+  },
+  {
+    "path": "source/repository_generic.py",
+    "url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/repos/repository_generic.py",
+    "sha256": "1a81d303aef6dc94d35891ab913a73f5a34a826c56fcffbf3c2af11d94ad449a"
+  }
+]

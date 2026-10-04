@@ -14,7 +14,7 @@ ROUTE_CODE=CODE.replace("  if(ctx.mode==='reject_link'){",r'''
   if(ctx.mode==='reject_link'){''',1)
 ROUTE_CODE=ROUTE_CODE.replace("  if(ctx.mode==='prepare_action'){",r'''
   function routeFields(value){var out={};ctx.preserve_fields.forEach(function(f){if(Object.prototype.hasOwnProperty.call(value,f))out[f]=clone(value[f]);});return out;}
-  function routeView(expected,targets){function walk(o){if(!o||typeof o!=='object')return;var target=targets[o[ctx.identity_field]];if(target)([ctx.route_field,ctx.change_field].concat(ctx.timestamp_fields)).forEach(function(f){if(Object.prototype.hasOwnProperty.call(o,f)&&Object.prototype.hasOwnProperty.call(target,f))o[f]=target[f];});Object.keys(o).forEach(function(k){walk(o[k]);});}walk(expected);return expected;}
+  function routeView(expected,targets){function walk(o){if(!o||typeof o!=='object')return;var target=targets[o[ctx.identity_field]];if(target)([ctx.route_field,ctx.change_field].concat(ctx.timestamp_fields)).forEach(function(f){if(Object.prototype.hasOwnProperty.call(o,f)&&Object.prototype.hasOwnProperty.call(target,f))o[f]=target[f];});if(target)(ctx.recreated_identity_paths||[]).forEach(function(path){var rows=valuesAt(o,path.slice(0,-5)),current=valuesAt(target,path.slice(0,-5));if(rows.length===1&&current.length===1&&Array.isArray(rows[0])&&Array.isArray(current[0])&&rows[0].length===current[0].length)rows[0].forEach(function(row,index){row.id=current[0][index].id;});});Object.keys(o).forEach(function(k){walk(o[k]);});}walk(expected);return expected;}
   if(ctx.mode==='route_initialize')store(ctx.route_variable,{task_id:ctx.route_task,namespace:pvg.rtv.get('sbt_rel_namespace'),ids:[],initial_targets:{},targets:{},initial_routes:[],baselines:{},source_ids:{},phases:[],alias_checks:[]});
   if(ctx.mode==='route_target_before'){
     identity(ctx,body);var rec=read(ctx.route_variable),id=body[ctx.identity_field];rec.ids[ctx.index-1]=id;rec.initial_routes[ctx.index-1]=body[ctx.route_field];rec.targets[id]=clone(body);rec.initial_targets[id]=clone(body);pvg.rtv.set(ctx.initial_route_variable,encodeURIComponent(body[ctx.route_field]));store(ctx.route_variable,rec);
@@ -31,6 +31,8 @@ ROUTE_CODE=ROUTE_CODE.replace("  if(ctx.mode==='prepare_action'){",r'''
   if(ctx.mode==='route_target_after'){
     var rec=read(ctx.route_variable),expected=rec.pending.expected,protectedBody=clone(body);
     ctx.timestamp_fields.forEach(function(f){var v=body[f];if(typeof v!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(v)||isNaN(Date.parse(v.replace(/\.(\d+)(?=Z|[+-])/,function(_,d){return '.'+(d+'000').slice(0,3);}))))routeFail('invalid_timestamp',expected,body);if(Object.prototype.hasOwnProperty.call(expected,f))protectedBody[f]=expected[f];else delete protectedBody[f];});
+    rec.pending.recreated_identities=[];
+    (ctx.recreated_identity_paths||[]).forEach(function(path){var arrayPath=path.slice(0,-5),oldArray=valuesAt(expected,arrayPath),newArray=valuesAt(protectedBody,arrayPath);if(oldArray.length!==1||newArray.length!==1||!Array.isArray(oldArray[0])||!Array.isArray(newArray[0])||oldArray[0].length!==newArray[0].length)routeFail('child_identity_shape',expected,body);oldArray[0].forEach(function(row,index){var oldId=row.id,newId=newArray[0][index].id;if(typeof oldId!=='string'||typeof newId!=='string'||!/^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i.test(oldId)||!/^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i.test(newId))routeFail('invalid_child_identity',expected,body);if(oldId!==newId)rec.pending.recreated_identities.push({path:path,index:index,before:oldId,after:newId});newArray[0][index].id=oldId;});if(newArray[0].length!==valuesAt(body,path).filter(function(id,index,all){return all.indexOf(id)===index;}).length)routeFail('duplicate_child_identity',expected,body);});
     if(stable(expected)!==stable(protectedBody))routeFail('updated_target_identity_or_state',expected,body);
     var previous=read(ctx.record_variable);previous[ctx.route_parameter]=body[ctx.route_field];previous[ctx.route_field]=body[ctx.route_field];store(ctx.record_variable,previous);identity(ctx,body);
     rec.targets[body[ctx.identity_field]]=clone(body);rec.pending.observed=clone(body);store(ctx.route_variable,rec);store(ctx.snapshot_variable,body);
@@ -51,7 +53,7 @@ ROUTE_CODE=ROUTE_CODE.replace("store('sbt_rel_execution_receipt',receipt);","if(
 
 def append_route_identity(blueprint,info,entities,cfg,add_request,request_schema,response_schema,property_schema,root):
     required={'resource_type','operation','route_field','identity_field','timestamp_fields','mode','control_field','source_link','referrers'}
-    if not isinstance(cfg,dict) or set(cfg)!=required or cfg['mode'] not in ('control','rename','reuse'):raise ValueError('Invalid explicit route identity policy.')
+    if not isinstance(cfg,dict) or set(cfg)-{'recreated_identity_paths'}!=required or cfg['mode'] not in ('control','rename','reuse'):raise ValueError('Invalid explicit route identity policy.')
     typ=cfg['resource_type'];targets=blueprint['instances'].get(typ,[])
     if len(targets)!=3:raise ValueError('Route testing requires three owned targets.')
     op=cfg['operation'];getter=entities[typ].get_op.op;get=getter.method+' '+getter.path
@@ -61,6 +63,14 @@ def append_route_identity(blueprint,info,entities,cfg,add_request,request_schema
     route=[f for f in info[targets[0]]['route_fields'] if f['response_field']==field]
     if len(route)!=1:raise ValueError('Changed field must be a documented route binding.')
     parameter=route[0]['parameter']
+    recreated=cfg.get('recreated_identity_paths',[])
+    if not isinstance(recreated,list) or len(set(recreated))!=len(recreated):raise ValueError('Invalid recreated identity paths.')
+    for path in recreated:
+        if not isinstance(path,str) or path.count('[]')!=1 or not path.endswith('[].id'):raise ValueError('Recreated identity must be an explicit child array UUID ID.')
+        array=root(property_schema(response_schema(get),path[:-5]));array_nodes=[root(x) for x in array.get('anyOf',[array]) if root(x).get('type')!='null']
+        if len(array_nodes)!=1 or array_nodes[0].get('type')!='array':raise ValueError('Recreated identity requires a documented child array.')
+        schema=root(property_schema(array_nodes[0].get('items',{}),'id'));branches=schema.get('anyOf',[schema]);nodes=[root(x) for x in branches if root(x).get('type')!='null']
+        if len(nodes)!=1 or nodes[0].get('format')!='uuid':raise ValueError('Recreated identity must be a documented UUID.')
     if root(property_schema(request_schema(op),field,writable=True)).get('type')!='string':raise ValueError('Route field must be writable string.')
     property_schema(response_schema(get),identity)
     times=cfg['timestamp_fields']
@@ -81,7 +91,7 @@ def append_route_identity(blueprint,info,entities,cfg,add_request,request_schema
         for instance in blueprint['instances'][rule['resource_type']]:refs.append(dict(rule,instance=instance,operation=readop))
     if len({r['resource_type'] for r in refs})<2:raise ValueError('Two referrer families required.')
     task_id='route-identity:'+typ;variable='rel_route_test_'+hashlib.sha256(task_id.encode()).hexdigest()[:12]
-    common={'route_task':task_id,'route_variable':variable,'route_field':field,'identity_field':identity,'timestamp_fields':times,'route_parameter':parameter,'change_field':cfg['control_field'] if cfg['mode']=='control' else field}
+    common={'route_task':task_id,'route_variable':variable,'route_field':field,'identity_field':identity,'timestamp_fields':times,'recreated_identity_paths':recreated,'route_parameter':parameter,'change_field':cfg['control_field'] if cfg['mode']=='control' else field}
     def ctx(instance,mode,**extra):return dict(info[instance],mode=mode,**common,**extra)
     steps=[]
     # Establish an acyclic source reference after generic prefix construction.

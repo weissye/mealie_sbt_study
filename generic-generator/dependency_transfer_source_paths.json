@@ -70,5 +70,17 @@
   "evidence/dependency-transfer-complete-20261004/verify_campaign.py",
   "evidence/dependency-transfer-complete-20261004/checksums.json",
   "scripts/Save-Generic-Route-Identity.ps1",
-  "generic-generator/route_identity_validation.json"
+  "generic-generator/route_identity_validation.json",
+  "docs/research/20261004/Mealie_Route_PUT_Control_Qualification.md",
+  "evidence/route-put-control-20261004/campaign-original.zip",
+  "evidence/route-put-control-20261004/verify_campaign.py",
+  "evidence/route-put-control-20261004/source-provenance.json",
+  "evidence/route-put-control-20261004/checksums.json",
+  "evidence/route-put-control-20261004/source/instruction.py",
+  "evidence/route-put-control-20261004/source/repository_recipes.py",
+  "evidence/route-put-control-20261004/source/recipe.py",
+  "evidence/route-put-control-20261004/source/auto_init.py",
+  "evidence/route-put-control-20261004/source/repository_generic.py",
+  "README-ROUTE-IDENTITY-POLICY.md",
+  "generic-generator/route_identity_policy_validation.json"
 ]
