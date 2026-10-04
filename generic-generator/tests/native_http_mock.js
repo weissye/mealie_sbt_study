@@ -3,7 +3,9 @@
 const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');
 const root=process.argv[2],seed=1,fault=process.env.NATIVE_MOCK_FAULT||'',missingMode='';
 const model=JSON.parse(fs.readFileSync(path.join(root,'relationship_scenario_plan.json'),'utf8'));
+const routeModel=model.tasks.some(t=>t.kind==='route_identity');
 const expandedViews=model.tasks.some(t=>t.kind==='dependency_transfer'||(t.kind==='shared_update'&&t.referrers.some(r=>r.object_path)));
+const initialRouteOwners={};
 const actors=[],rtv={},objects={},requests=[],selected=[],failures=[];
 let callbackBytes=0,counter=0,random=seed,activeRequests=0,maximumActive=0,corrupt=false,currentTask=null,sharedChanged=false;
 function uuid(){return '00000000-0000-4000-8000-'+String(++counter).padStart(12,'0');}
@@ -27,9 +29,10 @@ function serve(method,url,options){
       const data=JSON.parse(body),resource=createOps[url];const id=uuid(),slug='owned-'+counter;
       result={...data,id,slug,groupId:fakeScope.groupId,userId:fakeScope.id,householdId:fakeScope.householdId};
       if(model.tasks.some(t=>t.kind==='dependency_transfer')&&['api/foods','api/units'].includes(resource))Object.assign(result,{createdAt:'2026-10-04T00:00:00Z',updatedAt:'2026-10-04T00:00:00Z'});
-      if(resource==='api/recipes')Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});
+      if(resource==='api/recipes'){Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});if(routeModel)Object.assign(result,{description:result.description||'',dateUpdated:'2026-10-04T00:00:00.000001Z',updatedAt:'2026-10-04T00:00:00.000001Z'});}
       if(resource==='api/households/shopping/lists')Object.assign(result,{listItems:[],recipeReferences:[]});
       if(resource==='api/households/shopping/items')Object.assign(result,{food:null,foodId:null,unit:fault==='projection-null'?17:null,unitId:null,referencedRecipe:null,recipeReferences:model.semantic_program?[]:[{id:uuid(),shoppingListItemId:id,recipeId:'44444444-4444-4444-8444-444444444444',recipeQuantity:2,recipeScale:1}]});
+      if(routeModel&&resource==='api/recipes')initialRouteOwners[slug]=id;
       const itemUrl=url+'/'+(resource==='api/recipes'?slug:id);objects[itemUrl]=result;
       if(resource==='api/recipes')result=slug;
       else if(resource==='api/households/shopping/items')result={createdItems:[result],updatedItems:[],deletedItems:[]};
@@ -39,6 +42,7 @@ function serve(method,url,options){
         result=JSON.parse(JSON.stringify(result));
         result.recipeReferences.forEach(ref=>{const recipe=Object.values(objects).find(x=>x.recipeIngredient&&x.id===ref.recipeId);if(recipe)ref.recipe={id:recipe.id,name:recipe.name,description:recipe.description||'',dateUpdated:recipe.dateUpdated||'before',updatedAt:recipe.updatedAt||'before'};});
       }
+      if(routeModel){result=JSON.parse(JSON.stringify(result));function routeHydrate(node){if(!node||typeof node!=='object')return;for(const k of ['referencedRecipe','recipe'])if(node[k]?.id){const current=Object.values(objects).find(x=>x.recipeIngredient&&x.id===node[k].id);if(current){if(fault==='route-stale-view')continue;node[k]=JSON.parse(JSON.stringify(current));}}for(const v of Object.values(node))if(v&&typeof v==='object')routeHydrate(v);}routeHydrate(result);}
       if(expandedViews&&fault!=='embedded-stale'){
         result=JSON.parse(JSON.stringify(result));
         function hydrate(node){if(!node||typeof node!=='object')return;for(const field of ['food','unit']){if(node[field]?.id){const family=field==='food'?'foods':'units',current=objects['/api/'+family+'/'+node[field].id];if(current)node[field]=JSON.parse(JSON.stringify(current));}}for(const value of Object.values(node))if(value&&typeof value==='object')hydrate(value);}
@@ -83,7 +87,8 @@ function serve(method,url,options){
       else if(data.description?.includes('-stale-write')&&model.tasks.some(t=>t.rule?.stale_snapshot&&t.rule.mode==='delete')&&fault!=='stale-accepted'){status=422;result={detail:'Removed dependency'};if(fault==='stale-partial')objects[url].description=data.description;if(fault==='stale-other-source')for(const other of Object.values(objects))if(other.recipeIngredient&&other.id!==objects[url].id)other.recipeIngredient[0].quantity=999;}
       else{if(data.description?.includes('-post-delete-')&&fault==='reference-followup-ignored')data.description=objects[url].description;
         if(data.description?.includes('-post-delete-')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
-        objects[url]={...objects[url],...data};result=objects[url];corrupt=fault==='readback';
+        const oldSlug=objects[url].slug;objects[url]={...objects[url],...data};result=objects[url];
+        if(routeModel&&url.startsWith('/api/recipes/')){result.dateUpdated=new Date().toISOString().replace(/(\.\d{3})Z$/,'$1'+'123Z');result.updatedAt=result.dateUpdated;if(data.slug!==oldSlug){if(fault==='route-id-changed')result.id=uuid();if(fault==='route-reference-migrated'&&initialRouteOwners[result.slug]&&initialRouteOwners[result.slug]!==result.id){const prior=initialRouteOwners[result.slug];for(const other of Object.values(objects)){for(const ingredient of other.recipeIngredient||[])if(ingredient.referencedRecipe?.id===prior)ingredient.referencedRecipe=JSON.parse(JSON.stringify(result));for(const ref of other.recipeReferences||[])if(ref.recipeId===prior)ref.recipeId=result.id;}}if(fault!=='route-new-missing')objects['/api/recipes/'+result.slug]=result;if(fault!=='route-old-retained')delete objects[url];if(fault==='route-quantity')for(const other of Object.values(objects))if(other.recipeIngredient&&other.id!==result.id&&other.recipeIngredient.length)other.recipeIngredient[0].quantity=999;}}corrupt=fault==='readback';
         if(model.tasks.some(t=>t.kind==='dependency_transfer')&&Object.values(objects).some(x=>x.name?.includes('-old-before-transfer'))){
           if(!result.recipeIngredient&&!result.recipeReferences)result.updatedAt=new Date().toISOString().replace(/(\.\d{3})Z$/,'$1'+'790Z');
           if(fault==='transfer-quantity'&&result.recipeIngredient)result.recipeIngredient[0].quantity=999;

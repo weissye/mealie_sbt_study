@@ -5,6 +5,7 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools.reference_receipts import validate_reference_receipts
 from tools.transfer_receipts import validate_transfer_receipts
+from tools.route_receipts import validate_route_receipts
 
 
 def classify(path):
@@ -17,8 +18,13 @@ def classify(path):
         receipt=acceptance.get('runtime_receipt',{})
         validate_reference_receipts(receipt,plan)
         validate_transfer_receipts(receipt,plan)
+        validate_route_receipts(receipt,plan)
         result.update(status='PASS',outcomes=[r['outcome'] for r in receipt.get('reference_lifecycles',[])])
     else:
+        route_failures=[line for line in output.splitlines() if ' WARN [' in line and 'FAIL: Route identity mismatch: ' in line]
+        if route_failures:
+            result.update(status='ROUTE_CANDIDATE',first_failure=json.loads(route_failures[0].split('FAIL: Route identity mismatch: ',1)[1].removesuffix('.')))
+            return result
         transfer_failures=[line for line in output.splitlines() if ' WARN [' in line and 'FAIL: Dependency transfer mismatch: ' in line]
         if transfer_failures:
             payload=transfer_failures[0].split('FAIL: Dependency transfer mismatch: ',1)[1].removesuffix('.')

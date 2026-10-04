@@ -1,0 +1,33 @@
+{
+  "static_suite": {
+    "tests_discovered": 117,
+    "skipped_native_tests": 13,
+    "status": "PASS"
+  },
+  "native_route_suite": {
+    "status": "PASS",
+    "healthy_schedules": 6,
+    "fault_schedules": 6,
+    "faults": [
+      "changed stable UUID",
+      "retired alias retained",
+      "protected quantity changed",
+      "stale embedded alias",
+      "new route missing",
+      "reference migration on alias reuse"
+    ],
+    "native_test_methods_passed": 3
+  },
+  "legacy_transport_equivalence": {
+    "cases": 466,
+    "status": "PASS"
+  },
+  "windows_powershell_native_tested": false,
+  "live_mealie_route_campaign_accepted": false,
+  "archived_previous_live_campaign": {
+    "runs": 8,
+    "responses": 1108,
+    "distinct_owned_uuid": 96,
+    "independent_validation": "PASS"
+  }
+}
