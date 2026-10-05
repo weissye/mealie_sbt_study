@@ -105,12 +105,14 @@ if __package__:
     from .transfer_receipts import validate_transfer_receipts
     from .route_receipts import validate_route_receipts
     from .copy_receipts import validate_copy_receipts
+    from .identity_receipts import validate_identity_receipts
 else:
     from semantic_receipts import validate_semantic_receipts
     from reference_receipts import validate_reference_receipts
     from transfer_receipts import validate_transfer_receipts
     from route_receipts import validate_route_receipts
     from copy_receipts import validate_copy_receipts
+    from identity_receipts import validate_identity_receipts
 
 def validate_negative_receipts(receipt, plan):
     expected = {t['id']: t for t in plan['tasks'] if t['kind'] == 'negative_link'}
@@ -218,12 +220,13 @@ def redact(value):
         return [redact(item) for item in value]
     if isinstance(value, str):
         from urllib.parse import quote, quote_plus
-        secret = os.environ.get('SBT_REL_PASSWORD', '')
-        if secret:
-            for variant in sorted({secret, quote(secret, safe=''), quote_plus(secret)}, key=len, reverse=True):
-                value = value.replace(variant, '<REDACTED>')
+        secrets = {v for k,v in os.environ.items() if k == 'SBT_REL_PASSWORD' or (k.startswith('SBT_IDP_') and k.endswith('_PASSWORD'))}
+        for secret in secrets:
+            if secret:
+                for variant in sorted({secret, quote(secret, safe=''), quote_plus(secret)}, key=len, reverse=True):
+                    value = value.replace(variant, '<REDACTED>')
         value = re.sub(r'[A-Za-z0-9_-]{12,}\.[A-Za-z0-9_-]{12,}\.[A-Za-z0-9_-]{12,}', '<REDACTED_TOKEN>', value)
-        value = re.sub(r"(setting\s+'sbt_rel_token'\s+to\s+')[^']*", r'\1<REDACTED_TOKEN>', value)
+        value = re.sub(r"(setting\s+'(?:sbt_rel_token|idp_token_[A-Za-z0-9_]+)'\s+to\s+')[^']*", r'\1<REDACTED_TOKEN>', value)
         value = re.sub(r'(?i)Bearer\s+[^\s"\\,}]+', 'Bearer <REDACTED>', value)
         value = re.sub(r'(?i)(password=)[^&\s"\\]+', r'\1<REDACTED>', value)
         value = re.sub(r'(?i)(["\x27](?:access_token|refresh_token|password)["\x27]\s*:\s*["\x27])[^"\x27]*', r'\1<REDACTED>', value)
@@ -374,7 +377,7 @@ def main():
             if not receipt:
                 status['status'] = 'INCONCLUSIVE_RECEIPT_MISSING'
                 raise ValueError('Native exit was zero but the complete runtime receipt was not observed.')
-            if any(t['kind']=='copy_isolation' for t in plan['tasks']):
+            if plan.get('identity_program') or any(t['kind']=='copy_isolation' for t in plan['tasks']):
                 status['runtime_receipt'] = receipt
             validate_negative_receipts(receipt, plan)
             validate_legal_receipts(receipt, plan)
@@ -385,6 +388,7 @@ def main():
             validate_transfer_receipts(receipt, plan)
             validate_route_receipts(receipt, plan)
             validate_copy_receipts(receipt, plan)
+            validate_identity_receipts(receipt, plan)
             if receipt.get('task_count') != compilation['task_count'] or receipt.get('response_count') != compilation['http_requests_per_complete_schedule'] or receipt.get('owned_instances') != sum(map(len, plan['instances'].values())):
                 raise ValueError('Runtime receipt does not cover the complete generated model.')
             status.update(status='NATIVE_RELATIONSHIP_CALLBACKS_PASS', live_accepted=True, runtime_receipt=receipt)

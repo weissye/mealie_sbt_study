@@ -11,6 +11,9 @@ from .relationship_runtime_js import CODE, SHARED_CODE, EXPANDED_CODE
 
 
 def compile_relationships(plan, maps, raw, runtime):
+    if isinstance(runtime, dict) and 'identity_program' in runtime:
+        from .identity_program import compile_identity_program
+        return compile_identity_program(raw, runtime)
     if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle', 'dependency_transfer', 'route_identity', 'copy_isolation'}:
         raise ValueError('Invalid relationship runtime configuration.')
     if 'semantic_program' in runtime and not runtime['semantic_program']:

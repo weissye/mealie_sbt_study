@@ -1,0 +1,3296 @@
+{
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "identity_program": {
+    "label": "mealie-identity-separate",
+    "actors": {
+      "admin": {
+        "username": {
+          "$env": "SBT_REL_USERNAME"
+        },
+        "password_env": "SBT_REL_PASSWORD"
+      },
+      "A": {
+        "username": {
+          "$namespace": "-a@example.invalid"
+        },
+        "password_env": "SBT_IDP_A_PASSWORD"
+      },
+      "B": {
+        "username": {
+          "$namespace": "-b@example.invalid"
+        },
+        "password_env": "SBT_IDP_B_PASSWORD"
+      }
+    },
+    "bootstrap_actor": "admin",
+    "steps": [
+      {
+        "id": "admin_login",
+        "actor": "admin",
+        "operation": "POST /api/auth/token",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "authenticate": true
+      },
+      {
+        "id": "admin_self",
+        "actor": "admin",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "admin_self",
+                "admin"
+              ]
+            },
+            true
+          ]
+        }
+      },
+      {
+        "id": "group_a",
+        "actor": "admin",
+        "operation": "POST /api/admin/groups",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-group-a"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "house_a",
+        "actor": "admin",
+        "operation": "POST /api/admin/households",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-house-a"
+          },
+          "groupId": {
+            "$response": [
+              "group_a",
+              "id"
+            ]
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "group_b",
+        "actor": "admin",
+        "operation": "POST /api/admin/groups",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-group-b"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "house_b",
+        "actor": "admin",
+        "operation": "POST /api/admin/households",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-house-b"
+          },
+          "groupId": {
+            "$response": [
+              "group_b",
+              "id"
+            ]
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "user_a",
+        "actor": "admin",
+        "operation": "POST /api/admin/users",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "username": {
+            "$namespace": "-a"
+          },
+          "fullName": {
+            "$namespace": "-a"
+          },
+          "email": {
+            "$namespace": "-a@example.invalid"
+          },
+          "password": {
+            "$env": "SBT_IDP_A_PASSWORD"
+          },
+          "group": {
+            "$response": [
+              "group_a",
+              "name"
+            ]
+          },
+          "household": {
+            "$response": [
+              "house_a",
+              "name"
+            ]
+          },
+          "admin": false,
+          "canManage": false,
+          "canManageHousehold": false,
+          "canOrganize": false,
+          "canInvite": false
+        },
+        "owned": true
+      },
+      {
+        "id": "login_a",
+        "actor": "A",
+        "operation": "POST /api/auth/token",
+        "after": [
+          "user_a"
+        ],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "authenticate": true
+      },
+      {
+        "id": "self_a",
+        "actor": "A",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$and": [
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_a",
+                    "admin"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_a",
+                    "canManage"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_a",
+                    "canManageHousehold"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_a",
+                    "canOrganize"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_a",
+                    "canInvite"
+                  ]
+                },
+                false
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_a_id",
+        "actor": "A",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_a_id",
+                "id"
+              ]
+            },
+            {
+              "$response": [
+                "user_a",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_a_groupId",
+        "actor": "A",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_a_groupId",
+                "groupId"
+              ]
+            },
+            {
+              "$response": [
+                "group_a",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_a_householdId",
+        "actor": "A",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_a_householdId",
+                "householdId"
+              ]
+            },
+            {
+              "$response": [
+                "house_a",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "user_b",
+        "actor": "admin",
+        "operation": "POST /api/admin/users",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "username": {
+            "$namespace": "-b"
+          },
+          "fullName": {
+            "$namespace": "-b"
+          },
+          "email": {
+            "$namespace": "-b@example.invalid"
+          },
+          "password": {
+            "$env": "SBT_IDP_B_PASSWORD"
+          },
+          "group": {
+            "$response": [
+              "group_b",
+              "name"
+            ]
+          },
+          "household": {
+            "$response": [
+              "house_b",
+              "name"
+            ]
+          },
+          "admin": false,
+          "canManage": false,
+          "canManageHousehold": false,
+          "canOrganize": false,
+          "canInvite": false
+        },
+        "owned": true
+      },
+      {
+        "id": "login_b",
+        "actor": "B",
+        "operation": "POST /api/auth/token",
+        "after": [
+          "user_b"
+        ],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "authenticate": true
+      },
+      {
+        "id": "self_b",
+        "actor": "B",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$and": [
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_b",
+                    "admin"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_b",
+                    "canManage"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_b",
+                    "canManageHousehold"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_b",
+                    "canOrganize"
+                  ]
+                },
+                false
+              ]
+            },
+            {
+              "$equal": [
+                {
+                  "$response": [
+                    "self_b",
+                    "canInvite"
+                  ]
+                },
+                false
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_b_id",
+        "actor": "B",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_b_id",
+                "id"
+              ]
+            },
+            {
+              "$response": [
+                "user_b",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_b_groupId",
+        "actor": "B",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_b_groupId",
+                "groupId"
+              ]
+            },
+            {
+              "$response": [
+                "group_b",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "guard_b_householdId",
+        "actor": "B",
+        "operation": "GET /api/users/self",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "guard": {
+          "$equal": [
+            {
+              "$response": [
+                "guard_b_householdId",
+                "householdId"
+              ]
+            },
+            {
+              "$response": [
+                "house_b",
+                "id"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "create_a",
+        "actor": "A",
+        "operation": "POST /api/recipes",
+        "after": [
+          "guard_a_householdId",
+          "guard_b_householdId"
+        ],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-source-a"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "read_a",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "create_a",
+              ""
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "seed_a",
+        "actor": "A",
+        "operation": "PUT /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "read_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "body": {
+          "$merge": [
+            {
+              "$response": [
+                "read_a",
+                ""
+              ]
+            },
+            {
+              "description": {
+                "$namespace": "-protected-a"
+              },
+              "settings": {
+                "$merge": [
+                  {
+                    "$response": [
+                      "read_a",
+                      "settings"
+                    ]
+                  },
+                  {
+                    "public": false,
+                    "locked": false
+                  }
+                ]
+              },
+              "recipeIngredient": [
+                {
+                  "quantity": 2,
+                  "note": {
+                    "$namespace": "-ingredient-a"
+                  },
+                  "referenceId": {
+                    "$uuid": true
+                  },
+                  "food": null,
+                  "unit": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "before_a",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "read_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "list_a",
+        "actor": "A",
+        "operation": "POST /api/households/shopping/lists",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "_list-a"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "add_a",
+        "actor": "A",
+        "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          },
+          "recipe_id": {
+            "$response": [
+              "before_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "body": {
+          "recipeIncrementQuantity": 1
+        }
+      },
+      {
+        "id": "list_before_a",
+        "actor": "A",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "create_b",
+        "actor": "B",
+        "operation": "POST /api/recipes",
+        "after": [
+          "guard_a_householdId",
+          "guard_b_householdId"
+        ],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "-source-b"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "read_b",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "create_b",
+              ""
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "seed_b",
+        "actor": "B",
+        "operation": "PUT /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "read_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "body": {
+          "$merge": [
+            {
+              "$response": [
+                "read_b",
+                ""
+              ]
+            },
+            {
+              "description": {
+                "$namespace": "-protected-b"
+              },
+              "settings": {
+                "$merge": [
+                  {
+                    "$response": [
+                      "read_b",
+                      "settings"
+                    ]
+                  },
+                  {
+                    "public": false,
+                    "locked": false
+                  }
+                ]
+              },
+              "recipeIngredient": [
+                {
+                  "quantity": 2,
+                  "note": {
+                    "$namespace": "-ingredient-b"
+                  },
+                  "referenceId": {
+                    "$uuid": true
+                  },
+                  "food": null,
+                  "unit": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "before_b",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "read_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "list_b",
+        "actor": "B",
+        "operation": "POST /api/households/shopping/lists",
+        "after": [],
+        "route": {},
+        "expected_codes": [
+          201
+        ],
+        "required": true,
+        "body": {
+          "name": {
+            "$namespace": "_list-b"
+          }
+        },
+        "owned": true
+      },
+      {
+        "id": "add_b",
+        "actor": "B",
+        "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          },
+          "recipe_id": {
+            "$response": [
+              "before_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true,
+        "body": {
+          "recipeIncrementQuantity": 1
+        }
+      },
+      {
+        "id": "list_before_b",
+        "actor": "B",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      },
+      {
+        "id": "foreign_read_a",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "list_before_a",
+          "list_before_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_copy_a",
+        "actor": "A",
+        "operation": "POST /api/recipes/{slug}/duplicate",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "name": {
+            "$namespace": "-forbidden-copy-a"
+          }
+        }
+      },
+      {
+        "id": "after_foreign_copy_a",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_copy_a"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_update_a",
+        "actor": "A",
+        "operation": "PUT /api/recipes/{slug}",
+        "after": [
+          "after_foreign_copy_a"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "$merge": [
+            {
+              "$response": [
+                "before_b",
+                ""
+              ]
+            },
+            {
+              "description": {
+                "$namespace": "-forbidden-write-a"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_update_a"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_delete_a",
+        "actor": "A",
+        "operation": "DELETE /api/recipes/{slug}",
+        "after": [
+          "after_foreign_update_a"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "after_foreign_delete_a",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_delete_a"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_list_read_a",
+        "actor": "A",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [
+          "after_foreign_delete_a"
+        ],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_add_a",
+        "actor": "A",
+        "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          },
+          "recipe_id": {
+            "$response": [
+              "before_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "recipeIncrementQuantity": 1
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list",
+        "actor": "A",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [
+          "foreign_add_a"
+        ],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_read_b",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "list_before_a",
+          "list_before_b",
+          "after_foreign_add_a_list"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_copy_b",
+        "actor": "B",
+        "operation": "POST /api/recipes/{slug}/duplicate",
+        "after": [],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "name": {
+            "$namespace": "-forbidden-copy-b"
+          }
+        }
+      },
+      {
+        "id": "after_foreign_copy_b",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_copy_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_update_b",
+        "actor": "B",
+        "operation": "PUT /api/recipes/{slug}",
+        "after": [
+          "after_foreign_copy_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "$merge": [
+            {
+              "$response": [
+                "before_a",
+                ""
+              ]
+            },
+            {
+              "description": {
+                "$namespace": "-forbidden-write-b"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_update_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_delete_b",
+        "actor": "B",
+        "operation": "DELETE /api/recipes/{slug}",
+        "after": [
+          "after_foreign_update_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "after_foreign_delete_b",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_delete_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_list_read_b",
+        "actor": "B",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [
+          "after_foreign_delete_b"
+        ],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false
+      },
+      {
+        "id": "foreign_add_b",
+        "actor": "B",
+        "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          },
+          "recipe_id": {
+            "$response": [
+              "before_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          403,
+          404
+        ],
+        "required": false,
+        "body": {
+          "recipeIncrementQuantity": 1
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list",
+        "actor": "B",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [
+          "foreign_add_b"
+        ],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "owner_final_a",
+        "actor": "A",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_add_a",
+          "foreign_add_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_a",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "list_final_a",
+        "actor": "A",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_a",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "owner_final_b",
+        "actor": "B",
+        "operation": "GET /api/recipes/{slug}",
+        "after": [
+          "foreign_add_a",
+          "foreign_add_b"
+        ],
+        "route": {
+          "slug": {
+            "$response": [
+              "before_b",
+              "slug"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "list_final_b",
+        "actor": "B",
+        "operation": "GET /api/households/shopping/lists/{item_id}",
+        "after": [],
+        "route": {
+          "item_id": {
+            "$response": [
+              "list_b",
+              "id"
+            ]
+          }
+        },
+        "expected_codes": [
+          200
+        ],
+        "required": false
+      },
+      {
+        "id": "finish",
+        "actor": "A",
+        "operation": "GET /api/users/self",
+        "after": [
+          "admin_login",
+          "admin_self",
+          "group_a",
+          "house_a",
+          "group_b",
+          "house_b",
+          "user_a",
+          "login_a",
+          "self_a",
+          "guard_a_id",
+          "guard_a_groupId",
+          "guard_a_householdId",
+          "user_b",
+          "login_b",
+          "self_b",
+          "guard_b_id",
+          "guard_b_groupId",
+          "guard_b_householdId",
+          "create_a",
+          "read_a",
+          "seed_a",
+          "before_a",
+          "list_a",
+          "add_a",
+          "list_before_a",
+          "create_b",
+          "read_b",
+          "seed_b",
+          "before_b",
+          "list_b",
+          "add_b",
+          "list_before_b",
+          "foreign_read_a",
+          "foreign_copy_a",
+          "foreign_update_a",
+          "foreign_delete_a",
+          "foreign_list_read_a",
+          "foreign_add_a",
+          "foreign_read_b",
+          "foreign_copy_b",
+          "foreign_update_b",
+          "foreign_delete_b",
+          "foreign_list_read_b",
+          "foreign_add_b",
+          "owner_final_a",
+          "list_final_a",
+          "owner_final_b",
+          "list_final_b"
+        ],
+        "route": {},
+        "expected_codes": [
+          200
+        ],
+        "required": true
+      }
+    ],
+    "checks": [
+      {
+        "id": "actor-a-id",
+        "left": {
+          "response": [
+            "self_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_a",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "actor-a-groupId",
+        "left": {
+          "response": [
+            "self_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_a",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "actor-a-householdId",
+        "left": {
+          "response": [
+            "self_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_a",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "actor-b-id",
+        "left": {
+          "response": [
+            "self_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_b",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "actor-b-groupId",
+        "left": {
+          "response": [
+            "self_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_b",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "actor-b-householdId",
+        "left": {
+          "response": [
+            "self_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "user_b",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "two-distinct-users",
+        "left": {
+          "response": [
+            "self_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "id"
+          ]
+        },
+        "operator": "not_equal"
+      },
+      {
+        "id": "scope-groupId",
+        "left": {
+          "response": [
+            "self_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "groupId"
+          ]
+        },
+        "operator": "not_equal"
+      },
+      {
+        "id": "scope-householdId",
+        "left": {
+          "response": [
+            "self_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "householdId"
+          ]
+        },
+        "operator": "not_equal"
+      },
+      {
+        "id": "recipe-owner-a-userId",
+        "left": {
+          "response": [
+            "before_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-a-userId",
+        "left": {
+          "response": [
+            "list_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "recipe-owner-a-groupId",
+        "left": {
+          "response": [
+            "before_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-a-groupId",
+        "left": {
+          "response": [
+            "list_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "recipe-owner-a-householdId",
+        "left": {
+          "response": [
+            "before_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-a-householdId",
+        "left": {
+          "response": [
+            "list_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_a",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-reference-a",
+        "left": {
+          "response": [
+            "before_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "recipeReferences[].recipeId"
+          ]
+        },
+        "operator": "subset"
+      },
+      {
+        "id": "recipe-owner-b-userId",
+        "left": {
+          "response": [
+            "before_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-b-userId",
+        "left": {
+          "response": [
+            "list_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "recipe-owner-b-groupId",
+        "left": {
+          "response": [
+            "before_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-b-groupId",
+        "left": {
+          "response": [
+            "list_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "recipe-owner-b-householdId",
+        "left": {
+          "response": [
+            "before_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-owner-b-householdId",
+        "left": {
+          "response": [
+            "list_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "self_b",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "list-reference-b",
+        "left": {
+          "response": [
+            "before_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "recipeReferences[].recipeId"
+          ]
+        },
+        "operator": "subset"
+      },
+      {
+        "id": "foreign-no-effect-a-id",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-slug",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "slug"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-description",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "description"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-userId",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "userId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-groupId",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-householdId",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-recipeIngredient",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeIngredient"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-a-recipeInstructions",
+        "left": {
+          "response": [
+            "owner_final_a",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeInstructions"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a-id",
+        "left": {
+          "response": [
+            "list_final_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a-userId",
+        "left": {
+          "response": [
+            "list_final_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "userId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a-groupId",
+        "left": {
+          "response": [
+            "list_final_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a-householdId",
+        "left": {
+          "response": [
+            "list_final_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a-recipeReferences",
+        "left": {
+          "response": [
+            "list_final_a",
+            "recipeReferences"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "recipeReferences"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-a_listItems",
+        "left": {
+          "response": [
+            "list_final_a",
+            "listItems"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "listItems"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-id",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-slug",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "slug"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-description",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "description"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-userId",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "userId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-groupId",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-householdId",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-recipeIngredient",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeIngredient"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign-no-effect-b-recipeInstructions",
+        "left": {
+          "response": [
+            "owner_final_b",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeInstructions"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b-id",
+        "left": {
+          "response": [
+            "list_final_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "id"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b-userId",
+        "left": {
+          "response": [
+            "list_final_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "userId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b-groupId",
+        "left": {
+          "response": [
+            "list_final_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "groupId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b-householdId",
+        "left": {
+          "response": [
+            "list_final_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "householdId"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b-recipeReferences",
+        "left": {
+          "response": [
+            "list_final_b",
+            "recipeReferences"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "recipeReferences"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "foreign_list-no-effect-b_listItems",
+        "left": {
+          "response": [
+            "list_final_b",
+            "listItems"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "listItems"
+          ]
+        },
+        "operator": "equal"
+      },
+      {
+        "id": "after_foreign_copy_a-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_a-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_a",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_a-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_a",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_a-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_a",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_b",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list-recipeReferences",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "recipeReferences"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "recipeReferences"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_a_list_listItems",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_a_list",
+            "listItems"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_a",
+            "listItems"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_copy_b-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_copy_b",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_update_b-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_update_b",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-slug",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "slug"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "slug"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-description",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "description"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "description"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-recipeIngredient",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "recipeIngredient"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeIngredient"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_delete_b-recipeInstructions",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_delete_b",
+            "recipeInstructions"
+          ]
+        },
+        "right": {
+          "response": [
+            "before_a",
+            "recipeInstructions"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list-id",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "id"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "id"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list-userId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "userId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "userId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list-groupId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "groupId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "groupId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list-householdId",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "householdId"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "householdId"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list-recipeReferences",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "recipeReferences"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "recipeReferences"
+          ]
+        }
+      },
+      {
+        "id": "after_foreign_add_b_list_listItems",
+        "operator": "equal",
+        "left": {
+          "response": [
+            "after_foreign_add_b_list",
+            "listItems"
+          ]
+        },
+        "right": {
+          "response": [
+            "list_before_b",
+            "listItems"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "LOCAL_NATIVE_AND_BACKWARD_COMPATIBILITY_PASS",
+  "live_mealie_execution": false,
+  "contract_version": "v3.28.0",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "configuration_tests": 3,
+  "native_test_methods": 1,
+  "native_scenarios": 8,
+  "healthy_native_runs": 4,
+  "injected_fault_runs": 4,
+  "faults": [
+    "wrong copy owner",
+    "copy state leak",
+    "cross-group access",
+    "elevated regular account"
+  ],
+  "campaign_orchestration_mock_runs": 4,
+  "legacy_transport_regression_tests": 5,
+  "legacy_compiled_regression_tests": 15,
+  "java_heap_mib": 512,
+  "sample_size_assertion_mib": 4,
+  "powershell_tested_on_windows": false,
+  "windows_dpapi_tested": false,
+  "all_http_in_interfaces": true,
+  "http_overlap": false,
+  "reset_replay_accepted": false
+}
