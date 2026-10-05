@@ -7,16 +7,13 @@ $ErrorActionPreference = 'Stop'
 $Root = (Resolve-Path -LiteralPath $Root).Path
 $evidence = 'evidence/scope-controls-20261005-073218'
 $paths = @(
-    'evidence/scope-controls-20261005-073218/qualification.json',
-    'evidence/scope-controls-20261005-073218/generator-and-scripts-snapshot.zip',
-    'evidence/scope-controls-20261005-073218/qualification_oracle.py',
     'evidence/scope-controls-20261005-073218/HANDOFF.md',
-    'evidence/scope-controls-20261005-073218/verify_campaign.py',
     'evidence/scope-controls-20261005-073218/campaign-original.zip',
-    'evidence/scope-controls-20261005-073218/environment.json',
-    'evidence/scope-controls-20261005-073218/source-provenance.json',
     'evidence/scope-controls-20261005-073218/checksums.json',
-    'docs/research/20261005/Mealie_Scope_Controls_Findings.md',
+    'evidence/scope-controls-20261005-073218/qualification.json',
+    'evidence/scope-controls-20261005-073218/qualification_oracle.py',
+    'evidence/scope-controls-20261005-073218/verify_campaign.py',
+    'docs/research/20261005/Mealie_Cross_Household_List_Mutation_After_Error.md',
     'scripts/Save-Generic-Scope-Findings.ps1'
 )
 foreach ($path in $paths) {
@@ -45,7 +42,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Evidence staging failed.' }
 git -C $Root diff --cached --quiet -- @paths
 $difference = $LASTEXITCODE
 if ($difference -eq 1) {
-    git -C $Root commit --only -m 'Preserve scope-controls confirmation and household state evidence' -- @paths
+    git -C $Root commit --only -m 'Archive qualified scope controls and cross-household list state discrepancy' -- @paths
     if ($LASTEXITCODE -ne 0) { throw 'Evidence commit failed.' }
 } elseif ($difference -ne 0) {
     throw 'Staged evidence check failed.'

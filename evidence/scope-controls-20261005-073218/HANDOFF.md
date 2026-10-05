@@ -1,9 +1,12 @@
-# Scope controls findings handoff
+# Scope controls handoff — 2026-10-05
 
-This follows evidence/multi-identity-20261005-065704/HANDOFF.md. Original foreign-reference HTTP 500 repeats with fresh identities/resources under seed 264758 after seed 844524. Missing-reference controls also return 500 without changing inspected list content. Same-group recipe sharing passes. Foreign-household list operations return 500 and owner readback shows an added item in four observations across two fresh samples.
-
-Keep server-error robustness and household isolation/state deviation separate until mechanism is qualified. The captured household traceback is not evidence for every reference error. No concurrency claim. Prior copy and quantity findings remain separate.
-
-Next closure work: independent fresh-seed household confirmation, minimal-prefix qualification, pinned environment capture, and source-level diagnostic review. Do not silently replace the deprecated endpoint while confirming the original finding. Testing its bulk successor is later coverage.
-
-Run verify_campaign.py before commit. It is offline and sends no API calls. Credentials remain local; do not archive DPAPI secrets, tokens, passwords, or raw Docker environment values.
+Source commit: 81d332221c3f567044c9a15f85297cb064b08f69.
+Four complete preserved runs; 186 responses independently verified.
+Existing unavailable-recipe error: eight manifestations.
+Separate cross-household list state change after 500: four observations, one finding.
+Read access denied; owner read confirms an added quantity-2 item and unchanged existing items.
+No recorded intervening mutation of the victim list.
+Minimal reproduction and clean reset/replay remain pending. No global novelty claim.
+Archive push must be confirmed by SCOPE_FINDINGS_PUSH_VERIFIED and its remote SHA.
+Next: qualify owner-visible persistence and scope policy, then remediation regression.
+After closure, choose a different multi-user mechanism rather than rerun the full campaign.
