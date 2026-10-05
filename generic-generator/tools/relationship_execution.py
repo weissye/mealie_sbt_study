@@ -104,11 +104,13 @@ if __package__:
     from .reference_receipts import validate_reference_receipts
     from .transfer_receipts import validate_transfer_receipts
     from .route_receipts import validate_route_receipts
+    from .copy_receipts import validate_copy_receipts
 else:
     from semantic_receipts import validate_semantic_receipts
     from reference_receipts import validate_reference_receipts
     from transfer_receipts import validate_transfer_receipts
     from route_receipts import validate_route_receipts
+    from copy_receipts import validate_copy_receipts
 
 def validate_negative_receipts(receipt, plan):
     expected = {t['id']: t for t in plan['tasks'] if t['kind'] == 'negative_link'}
@@ -372,6 +374,8 @@ def main():
             if not receipt:
                 status['status'] = 'INCONCLUSIVE_RECEIPT_MISSING'
                 raise ValueError('Native exit was zero but the complete runtime receipt was not observed.')
+            if any(t['kind']=='copy_isolation' for t in plan['tasks']):
+                status['runtime_receipt'] = receipt
             validate_negative_receipts(receipt, plan)
             validate_legal_receipts(receipt, plan)
             validate_shared_update_receipts(receipt, plan)
@@ -380,6 +384,7 @@ def main():
             validate_semantic_receipts(receipt, plan)
             validate_transfer_receipts(receipt, plan)
             validate_route_receipts(receipt, plan)
+            validate_copy_receipts(receipt, plan)
             if receipt.get('task_count') != compilation['task_count'] or receipt.get('response_count') != compilation['http_requests_per_complete_schedule'] or receipt.get('owned_instances') != sum(map(len, plan['instances'].values())):
                 raise ValueError('Runtime receipt does not cover the complete generated model.')
             status.update(status='NATIVE_RELATIONSHIP_CALLBACKS_PASS', live_accepted=True, runtime_receipt=receipt)

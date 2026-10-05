@@ -1,0 +1,53 @@
+{
+  "status": "SIX_NAME_ROUTE_RUNS_INDEPENDENTLY_VERIFIED",
+  "campaign_sha256": "2b152b1f3bbc6664f2da13879155809be61220398a22e5aae4042159096a841e",
+  "runs": [
+    {
+      "path": "control/live-1.zip",
+      "sha256": "12a80152d3e8bf99dd58afc08a8cdf77cf534818f478e81c280ac4d62f8d1e71",
+      "response_count": 129,
+      "owned_instances": 12,
+      "raw_observations": 18
+    },
+    {
+      "path": "control/live-2.zip",
+      "sha256": "981c8acd0e287c8668e76bd8bafd90ee93964a0db5e7dd29fdf3506ee9b41c51",
+      "response_count": 129,
+      "owned_instances": 12,
+      "raw_observations": 18
+    },
+    {
+      "path": "rename/live-1.zip",
+      "sha256": "7caa06548b6fe90574359c71bd8b5436c23468988eb2bd391b81b79f78295d08",
+      "response_count": 129,
+      "owned_instances": 12,
+      "raw_observations": 18
+    },
+    {
+      "path": "rename/live-2.zip",
+      "sha256": "3d5147b4657a2d507fa26115ada384f57c51631afc068ce3c680b9b91a159705",
+      "response_count": 129,
+      "owned_instances": 12,
+      "raw_observations": 18
+    },
+    {
+      "path": "reuse/live-1.zip",
+      "sha256": "5a872a734a5e96fbdf123d048a570ce63d83b48e04fc2a40e6f95e23f8dc5439",
+      "response_count": 130,
+      "owned_instances": 12,
+      "raw_observations": 18
+    },
+    {
+      "path": "reuse/live-2.zip",
+      "sha256": "d55f84a4a842dace7265b73e1e509c4c1d9cde26245a5ad1031186fa7e7ab774",
+      "response_count": 130,
+      "owned_instances": 12,
+      "raw_observations": 18
+    }
+  ],
+  "response_count": 776,
+  "raw_observations": 108,
+  "new_bug_confirmed": false,
+  "reset_replay_accepted": false,
+  "source_commit": "ddcce85563abde276a183cab8dd05a9d08e01e71"
+}

@@ -11,7 +11,7 @@ from .relationship_runtime_js import CODE, SHARED_CODE, EXPANDED_CODE
 
 
 def compile_relationships(plan, maps, raw, runtime):
-    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle', 'dependency_transfer', 'route_identity'}:
+    if not isinstance(runtime, dict) or set(runtime) - {'bootstrap', 'actions', 'write_defaults', 'contract_sha256', 'response_bindings', 'scope_checks', 'relationship_identity_views', 'relationship_write_views', 'compact_callbacks', 'shared_target_updates', 'detached_target_deletions', 'attached_target_deletions', 'interleave_mutations', 'mutate_during_construction', 'create_defaults', 'semantic_program', 'reference_lifecycle', 'dependency_transfer', 'route_identity', 'copy_isolation'}:
         raise ValueError('Invalid relationship runtime configuration.')
     if 'semantic_program' in runtime and not runtime['semantic_program']:
         raise ValueError('semantic_program must be a nonempty explicit policy.')
@@ -48,6 +48,11 @@ def compile_relationships(plan, maps, raw, runtime):
         if any(runtime.get(k) for k in ('dependency_transfer','reference_lifecycle','semantic_program','shared_target_updates','detached_target_deletions','attached_target_deletions')):raise ValueError('Route identity requires a separate profile.')
         from .route_identity import ROUTE_CODE
         callback_code = ROUTE_CODE
+    if 'copy_isolation' in runtime:
+        if any(runtime.get(k) for k in ('route_identity','dependency_transfer','reference_lifecycle','semantic_program','shared_target_updates','detached_target_deletions','attached_target_deletions')):
+            raise ValueError('Copy isolation requires a separate opt-in profile.')
+        from .copy_isolation import COPY_CODE
+        callback_code = COPY_CODE
     blueprint = copy.deepcopy(maps['relationship_scenario_plan'])
     schemas = raw.get('components', {}).get('schemas', {})
     aliases = {a['alias']: a['canonical'] for a in maps['resource_catalog']['entity_aliases']}
@@ -540,6 +545,11 @@ def compile_relationships(plan, maps, raw, runtime):
         from .route_identity import append_route_identity
         route_tasks = append_route_identity(blueprint, info, entities, runtime['route_identity'], add_request, request_schema, response_schema, property_schema, root)
         interface_steps.update(route_tasks)
+    copy_tasks = {}
+    if 'copy_isolation' in runtime:
+        from .copy_isolation import append_copy_isolation
+        copy_tasks = append_copy_isolation(blueprint, info, entities, runtime['copy_isolation'], add_request, request_schema, response_schema, property_schema, root)
+        interface_steps.update(copy_tasks)
     semantic_tasks = {}
     if runtime.get('semantic_program'):
         from .semantic_campaign import append_semantic_program
@@ -591,6 +601,8 @@ def compile_relationships(plan, maps, raw, runtime):
         finish_context['expected_reference_tasks'] = list(reference_tasks)
     if transfer_tasks:
         finish_context['expected_transfer_tasks'] = list(transfer_tasks)
+    if copy_tasks:
+        finish_context['expected_copy_tasks'] = list(copy_tasks)
     if route_tasks:
         finish_context['expected_route_tasks'] = list(route_tasks)
     if semantic_tasks:

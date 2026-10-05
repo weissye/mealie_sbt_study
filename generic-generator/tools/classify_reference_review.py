@@ -6,6 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools.reference_receipts import validate_reference_receipts
 from tools.transfer_receipts import validate_transfer_receipts
 from tools.route_receipts import validate_route_receipts
+from tools.copy_receipts import validate_copy_receipts,CopyMismatch
 
 
 def classify(path):
@@ -14,11 +15,26 @@ def classify(path):
         output=archive.read('execution-review/run-output.txt').decode('utf-8-sig')
         plan=json.loads(archive.read('relationship_scenario_plan.json').decode('utf-8-sig'))
     result={'status':'BLOCKED','review':str(path),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'new_bug_confirmed':False,'server_requests_sent_by_classifier':0}
+    if any(t['kind']=='copy_isolation' for t in plan['tasks']):
+        receipt=acceptance.get('runtime_receipt')
+        if receipt:
+            try:
+                validate_copy_receipts(receipt,plan)
+            except CopyMismatch as error:
+                result.update(status='COPY_CANDIDATE',first_failure={'stage':'independent_copy_qualification','message':str(error),'phase':getattr(error,'phase',None),'task_id':getattr(error,'task_id',None)})
+                return result
+            except (ValueError,KeyError,TypeError) as error:
+                result.update(reason='Incomplete or unqualified copy evidence: '+str(error))
+                return result
+        elif acceptance.get('live_accepted') is True:
+            result.update(reason='Missing copy receipt.')
+            return result
     if acceptance.get('live_accepted') is True:
         receipt=acceptance.get('runtime_receipt',{})
         validate_reference_receipts(receipt,plan)
         validate_transfer_receipts(receipt,plan)
         validate_route_receipts(receipt,plan)
+        validate_copy_receipts(receipt,plan)
         result.update(status='PASS',outcomes=[r['outcome'] for r in receipt.get('reference_lifecycles',[])])
     else:
         route_failures=[line for line in output.splitlines() if ' WARN [' in line and 'FAIL: Route identity mismatch: ' in line]

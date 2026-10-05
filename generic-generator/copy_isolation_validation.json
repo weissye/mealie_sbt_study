@@ -1,0 +1,44 @@
+{
+  "status": "LOCAL_HARNESS_VALIDATED_NOT_LIVE_MEALIE",
+  "native_runtime": "ef04cca/20250714-0453/master",
+  "java_heap_mib": 512,
+  "native_positive_replays": 8,
+  "native_injected_fault_replays": 17,
+  "native_integration_replays": 9,
+  "native_classifier_integration": "PASS and COPY_CANDIDATE tested",
+  "transport_separation_tests": 5,
+  "existing_compiled_relationship_tests": 15,
+  "exact_legacy_profiles": {
+    "profiles": [
+      "mealie-route-control",
+      "mealie-route-rename",
+      "mealie-route-reuse",
+      "mealie-reference-food-control",
+      "mealie-transfer-unit-transfer",
+      "mealie-control-food-integer-no-merge"
+    ],
+    "result": "BYTE_IDENTICAL_GENERATED_JS_AND_IDENTICAL_RESOURCE_MAPS"
+  },
+  "campaign_archive_portability": [
+    "POSIX",
+    "Windows"
+  ],
+  "offline_verified_fresh_owned_identities": 104,
+  "live_mealie_run": false,
+  "reset_replay_accepted": false,
+  "powershell_runtime_execution": "Not available in local Linux environment; scripts follow the user-verified previous runner and literal Git path-array pattern. Windows execution remains to be performed.",
+  "source_provenance": {
+    "recipe_service_url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/services/recipe/recipe_service.py",
+    "retrieved_sha256": "c9cd8d29d30831fc80bdd4e8e26bbbfe67e983daf4649965ab317f88072a6505"
+  },
+  "test_logs": {
+    "copy-tests-final.log": "...\n----------------------------------------------------------------------\nRan 3 tests in 180.370s\n\nOK\n",
+    "copy-integration-tests.log": "...\n----------------------------------------------------------------------\nRan 3 tests in 76.145s\n\nOK\n",
+    "copy-compat-tests.log": ".....\n----------------------------------------------------------------------\nRan 5 tests in 54.486s\n\nOK\n",
+    "copy-existing-compiled.log": "...............\n----------------------------------------------------------------------\nRan 15 tests in 27.949s\n\nOK\n"
+  },
+  "packaged_source_files": 26,
+  "package_overlay_tests": "..s\n----------------------------------------------------------------------\nRan 3 tests in 6.267s\n\nOK (skipped=1)\n",
+  "archive_source_verification": "Six native name-route reviews independently validated after release overlay.",
+  "native_campaign_verifier": "Eight independently classified mock reviews, 104 distinct owned identities; both POSIX and Windows archive paths verified."
+}

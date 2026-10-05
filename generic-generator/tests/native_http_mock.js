@@ -3,13 +3,15 @@
 const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');
 const root=process.argv[2],seed=1,fault=process.env.NATIVE_MOCK_FAULT||'',missingMode='';
 const model=JSON.parse(fs.readFileSync(path.join(root,'relationship_scenario_plan.json'),'utf8'));
+const copyModel=model.tasks.some(t=>t.kind==='copy_isolation');
+let copySourceId=null,copyCloneId=null;
 const routeModel=model.tasks.some(t=>t.kind==='route_identity');
 const nameDrivenRoute=model.tasks.some(t=>t.kind==='route_identity'&&t.config.route_driver_field==='name');
 const expandedViews=model.tasks.some(t=>t.kind==='dependency_transfer'||(t.kind==='shared_update'&&t.referrers.some(r=>r.object_path)));
 const initialRouteOwners={};
 const actors=[],rtv={},objects={},requests=[],selected=[],failures=[];
 let callbackBytes=0,counter=0,random=seed,activeRequests=0,maximumActive=0,corrupt=false,currentTask=null,sharedChanged=false;
-function uuid(){return '00000000-0000-4000-8000-'+String(++counter).padStart(12,'0');}
+function uuid(){return (process.env.NATIVE_MOCK_UUID_PREFIX||'00000000')+'-0000-4000-8000-'+String(++counter).padStart(12,'0');}
 function pick(n){random=(Math.imul(random,1664525)+1013904223)>>>0;return random%n;}
 function interpolate(value){return value;}
 const createOps={};
@@ -30,7 +32,7 @@ function serve(method,url,options){
       const data=JSON.parse(body),resource=createOps[url];const id=uuid(),slug=routeModel&&resource==='api/recipes'?data.name.toLowerCase().replace(/_/g,'-'):'owned-'+counter;
       result={...data,id,slug,groupId:fakeScope.groupId,userId:fakeScope.id,householdId:fakeScope.householdId};
       if(model.tasks.some(t=>t.kind==='dependency_transfer')&&['api/foods','api/units'].includes(resource))Object.assign(result,{createdAt:'2026-10-04T00:00:00Z',updatedAt:'2026-10-04T00:00:00Z'});
-      if(resource==='api/recipes'){Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});if(routeModel)Object.assign(result,{description:result.description||'',recipeInstructions:[{id:uuid(),text:'Preserve this instruction',title:'',summary:'',ingredientReferences:[],noteReferences:[]}],dateUpdated:'2026-10-04T00:00:00.000001Z',updatedAt:'2026-10-04T00:00:00.000001Z'});}
+      if(resource==='api/recipes'){Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});if(routeModel||copyModel)Object.assign(result,{description:result.description||'',recipeInstructions:[{id:uuid(),text:'Preserve this instruction',title:'',summary:'',ingredientReferences:[],noteReferences:[]}],dateUpdated:'2026-10-04T00:00:00.000001Z',updatedAt:'2026-10-04T00:00:00.000001Z'});}
       if(resource==='api/households/shopping/lists')Object.assign(result,{listItems:[],recipeReferences:[]});
       if(resource==='api/households/shopping/items')Object.assign(result,{food:null,foodId:null,unit:fault==='projection-null'?17:null,unitId:null,referencedRecipe:null,recipeReferences:model.semantic_program?[]:[{id:uuid(),shoppingListItemId:id,recipeId:'44444444-4444-4444-8444-444444444444',recipeQuantity:2,recipeScale:1}]});
       if(routeModel&&resource==='api/recipes')initialRouteOwners[slug]=id;
@@ -38,12 +40,24 @@ function serve(method,url,options){
       if(resource==='api/recipes')result=slug;
       else if(resource==='api/households/shopping/items')result={createdItems:[result],updatedItems:[],deletedItems:[]};
       if(fault==='ambiguous-create'&&resource==='api/households/shopping/items')result.createdItems.push({...result.createdItems[0],id:uuid()});
+    }else if(copyModel&&method==='post'&&url.endsWith('/duplicate')){
+      const original=objects[url.slice(0,-10)];
+      if(!original){status=404;result={detail:'Not found'};}
+      else{
+        result=JSON.parse(JSON.stringify(original));copySourceId=original.id;result.id=uuid();copyCloneId=result.id;result.name=JSON.parse(body).name;result.slug=result.name.toLowerCase();
+        const remap={};for(const ingredient of result.recipeIngredient){const old=ingredient.referenceId;ingredient.referenceId=uuid();remap[old]=ingredient.referenceId;}
+        for(const step of result.recipeInstructions){step.id=uuid();if(fault!=='copy-dangling')for(const ref of step.ingredientReferences||[])ref.referenceId=remap[ref.referenceId];}
+        if(fault==='copy-child-reuse')result.recipeIngredient[0].referenceId=original.recipeIngredient[0].referenceId;
+        if(fault==='copy-quantity')result.recipeIngredient[0].quantity=999;
+        objects['/api/recipes/'+result.slug]=result;
+        if(fault==='copy-incoming-migrated')for(const item of Object.values(objects))if(item.id!==copyCloneId)for(const ref of item.recipeReferences||[])if(ref.recipeId===copySourceId)ref.recipeId=copyCloneId;
+      }
     }else if(method==='get'&&objects[url]){result=objects[url];
       if(model.tasks.some(t=>t.rule?.stale_snapshot)&&result.recipeReferences){
         result=JSON.parse(JSON.stringify(result));
         result.recipeReferences.forEach(ref=>{const recipe=Object.values(objects).find(x=>x.recipeIngredient&&x.id===ref.recipeId);if(recipe)ref.recipe={id:recipe.id,name:recipe.name,description:recipe.description||'',dateUpdated:recipe.dateUpdated||'before',updatedAt:recipe.updatedAt||'before'};});
       }
-      if(routeModel){result=JSON.parse(JSON.stringify(result));function routeHydrate(node){if(!node||typeof node!=='object')return;for(const k of ['referencedRecipe','recipe'])if(node[k]?.id){const current=Object.values(objects).find(x=>x.recipeIngredient&&x.id===node[k].id);if(current){if(fault==='route-stale-view')continue;node[k]=JSON.parse(JSON.stringify(current));}}for(const v of Object.values(node))if(v&&typeof v==='object')routeHydrate(v);}routeHydrate(result);}
+      if(routeModel||copyModel){result=JSON.parse(JSON.stringify(result));function routeHydrate(node){if(!node||typeof node!=='object')return;for(const k of ['referencedRecipe','recipe'])if(node[k]?.id){const current=Object.values(objects).find(x=>x.recipeIngredient&&x.id===node[k].id);if(current){if(fault==='route-stale-view')continue;node[k]=JSON.parse(JSON.stringify(current));}}for(const v of Object.values(node))if(v&&typeof v==='object')routeHydrate(v);}routeHydrate(result);}
       if(expandedViews&&fault!=='embedded-stale'){
         result=JSON.parse(JSON.stringify(result));
         function hydrate(node){if(!node||typeof node!=='object')return;for(const field of ['food','unit']){if(node[field]?.id){const family=field==='food'?'foods':'units',current=objects['/api/'+family+'/'+node[field].id];if(current)node[field]=JSON.parse(JSON.stringify(current));}}for(const value of Object.values(node))if(value&&typeof value==='object')hydrate(value);}
@@ -57,8 +71,9 @@ function serve(method,url,options){
       }
     }else if((method==='put'||method==='patch')&&objects[url]){const data=JSON.parse(body);
       if(nameDrivenRoute&&url.startsWith('/api/recipes/')&&data.name)data.slug=data.name===objects[url].name?objects[url].slug:data.name.toLowerCase().replace(/_/g,'-');
-      if(routeModel&&url.startsWith('/api/recipes/')&&data.recipeInstructions)data.recipeInstructions=data.recipeInstructions.map(step=>({...step,id:uuid()}));
+      if((routeModel||copyModel)&&url.startsWith('/api/recipes/')&&data.recipeInstructions)data.recipeInstructions=data.recipeInstructions.map(step=>({...step,id:uuid()}));
       if(routeModel&&fault==='route-instruction-content'&&data.recipeInstructions&&(data.description?.includes('-route-')||data.slug?.includes('-route-')))data.recipeInstructions[0].text='CORRUPTED_INSTRUCTION';
+      if(copyModel&&url.startsWith('/api/recipes/'))for(const ingredient of data.recipeIngredient||[]){ingredient.referenceId=ingredient.referenceId||uuid();if(ingredient.note===undefined)ingredient.note='';if(ingredient.display===undefined)ingredient.display='';}
       const sharedUpdate=(url.startsWith('/api/foods/')||url.startsWith('/api/units/'))&&data.name?.includes('-updated');
       if(sharedUpdate){sharedChanged=true;if(fault==='shared-update-ignored')data.name=objects[url].name;}
       if(url.startsWith('/api/households/shopping/items/')){
@@ -92,6 +107,10 @@ function serve(method,url,options){
       else{if(data.description?.includes('-post-delete-')&&fault==='reference-followup-ignored')data.description=objects[url].description;
         if(data.description?.includes('-post-delete-')&&fault==='reference-rebind-ignored'&&data.recipeIngredient?.some(x=>x.food||x.unit))data.recipeIngredient=objects[url].recipeIngredient;
         const oldSlug=objects[url].slug;objects[url]={...objects[url],...data};result=objects[url];
+        if(copyModel&&copyCloneId&&url.startsWith('/api/recipes/')&&fault==='copy-leak'){
+          const counterpart=Object.values(objects).find(x=>x.id===(result.id===copySourceId?copyCloneId:copySourceId));
+          if(counterpart){counterpart.description=result.description;counterpart.recipeIngredient=JSON.parse(JSON.stringify(result.recipeIngredient));counterpart.recipeInstructions=JSON.parse(JSON.stringify(result.recipeInstructions));}
+        }
         if(routeModel&&url.startsWith('/api/recipes/')){result.dateUpdated=new Date().toISOString().replace(/(\.\d{3})Z$/,'$1'+'123Z');result.updatedAt=result.dateUpdated;if(data.slug!==undefined&&data.slug!==oldSlug){if(fault==='route-id-changed')result.id=uuid();if(fault==='route-reference-migrated'&&initialRouteOwners[result.slug]&&initialRouteOwners[result.slug]!==result.id){const prior=initialRouteOwners[result.slug];for(const other of Object.values(objects)){for(const ingredient of other.recipeIngredient||[])if(ingredient.referencedRecipe?.id===prior)ingredient.referencedRecipe=JSON.parse(JSON.stringify(result));for(const ref of other.recipeReferences||[])if(ref.recipeId===prior)ref.recipeId=result.id;}}if(fault!=='route-new-missing')objects['/api/recipes/'+result.slug]=result;if(fault!=='route-old-retained')delete objects[url];if(fault==='route-quantity')for(const other of Object.values(objects))if(other.recipeIngredient&&other.id!==result.id&&other.recipeIngredient.length)other.recipeIngredient[0].quantity=999;}}corrupt=fault==='readback';
         if(model.tasks.some(t=>t.kind==='dependency_transfer')&&Object.values(objects).some(x=>x.name?.includes('-old-before-transfer'))){
           if(!result.recipeIngredient&&!result.recipeReferences)result.updatedAt=new Date().toISOString().replace(/(\.\d{3})Z$/,'$1'+'790Z');

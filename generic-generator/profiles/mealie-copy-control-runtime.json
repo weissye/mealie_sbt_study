@@ -1,0 +1,172 @@
+{
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "response_bindings": {
+    "POST /api/organizers/categories": {
+      "evidence_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858"
+    },
+    "POST /api/organizers/tags": {
+      "evidence_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858"
+    },
+    "POST /api/households/shopping/items": {
+      "array_field": "createdItems"
+    }
+  },
+  "bootstrap": [
+    {
+      "operation": "GET /api/users/self",
+      "fields": [
+        "id",
+        "groupId",
+        "householdId"
+      ]
+    },
+    {
+      "operation": "GET /api/groups/self",
+      "fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "GET /api/households/self",
+      "fields": [
+        "id",
+        "groupId"
+      ]
+    }
+  ],
+  "write_defaults": {
+    "PUT /api/recipes/{slug}": [
+      {
+        "path": "recipeIngredient[].quantity",
+        "value": 1
+      }
+    ]
+  },
+  "actions": [
+    {
+      "operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+      "source_type": "api/households/shopping/lists",
+      "target_type": "api/recipes",
+      "target_parameter": "recipe_id",
+      "target_field": "id",
+      "readback_path": "recipeReferences[].recipeId",
+      "body": {
+        "recipeIncrementQuantity": 1
+      },
+      "evidence_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858"
+    }
+  ],
+  "scope_checks": [
+    {
+      "left": [
+        0,
+        "groupId"
+      ],
+      "right": [
+        1,
+        "id"
+      ]
+    },
+    {
+      "left": [
+        0,
+        "householdId"
+      ],
+      "right": [
+        2,
+        "id"
+      ]
+    },
+    {
+      "left": [
+        2,
+        "groupId"
+      ],
+      "right": [
+        1,
+        "id"
+      ]
+    }
+  ],
+  "compact_callbacks": true,
+  "copy_isolation": {
+    "resource_type": "api/recipes",
+    "copy_operation": "POST /api/recipes/{slug}/duplicate",
+    "write_operation": "PUT /api/recipes/{slug}",
+    "identity_field": "id",
+    "route_field": "slug",
+    "name_field": "name",
+    "content_fields": [
+      "description",
+      "recipeIngredient",
+      "recipeInstructions",
+      "recipeCategory",
+      "tags"
+    ],
+    "fresh_child_paths": [
+      "recipeIngredient[].referenceId",
+      "recipeInstructions[].id"
+    ],
+    "recreated_write_paths": [
+      "recipeInstructions[].id"
+    ],
+    "derived_paths": [
+      "recipeIngredient[].display"
+    ],
+    "source_links": [
+      {
+        "source_index": 1,
+        "target_index": 3,
+        "field_path": "recipeIngredient[].referencedRecipe"
+      },
+      {
+        "source_index": 2,
+        "target_index": 1,
+        "field_path": "recipeIngredient[].referencedRecipe"
+      }
+    ],
+    "referrers": [
+      {
+        "resource_type": "api/recipes",
+        "preserve_fields": [
+          "id",
+          "slug",
+          "name",
+          "description",
+          "recipeIngredient",
+          "recipeInstructions"
+        ],
+        "reference_path": "recipeIngredient[].referencedRecipe.id"
+      },
+      {
+        "resource_type": "api/households/shopping/lists",
+        "preserve_fields": [
+          "recipeReferences",
+          "listItems"
+        ],
+        "reference_path": "recipeReferences[].recipeId"
+      }
+    ],
+    "seed_field": "recipeInstructions",
+    "seed": {
+      "title": "Copy isolation instruction",
+      "summary": "Protected instruction",
+      "text": "Keep this instruction independent",
+      "ingredientReferences": [],
+      "noteReferences": []
+    },
+    "internal_reference": null,
+    "mutations": [
+      {
+        "side": "source",
+        "path": "description",
+        "suffix": "copy-source-description"
+      },
+      {
+        "side": "copy",
+        "path": "description",
+        "suffix": "copy-clone-description"
+      }
+    ]
+  }
+}
