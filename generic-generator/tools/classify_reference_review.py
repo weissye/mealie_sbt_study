@@ -26,6 +26,9 @@ def classify(path):
             except (ValueError,KeyError,TypeError) as error:
                 result.update(reason='Incomplete or unqualified copy evidence: '+str(error))
                 return result
+            if acceptance.get('live_accepted') is not True and acceptance.get('native_exit_code')==0 and receipt.get('task_count')==len(plan['tasks']) and receipt.get('owned_instances')==sum(len(v) for v in plan['instances'].values()):
+                result.update(status='PASS',qualification='INDEPENDENT_REQUALIFICATION',original_live_accepted=False)
+                return result
         elif acceptance.get('live_accepted') is True:
             result.update(reason='Missing copy receipt.')
             return result

@@ -67,7 +67,7 @@ def qualify(record,task):
     def normalized(body,ignore):
         result=fields(body,cfg['content_fields'])
         for path in ignore:
-            if path.split('.')[0] in result:replace(result,path,['<derived>']*len(values(result,path)))
+            if path.split('.')[0].removesuffix('[]') in result:replace(result,path,['<derived>']*len(values(result,path)))
         return result
     def child_ids(body,path):
         result=values(body,path)

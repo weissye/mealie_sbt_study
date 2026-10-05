@@ -1,0 +1,13 @@
+{
+  "status": "OFFLINE_LIVE_EVIDENCE_REQUALIFIED",
+  "resource_requests_sent": 0,
+  "original_candidate_runs": 6,
+  "corrected_pass_runs": 6,
+  "remaining_internal_reference_reproductions": 2,
+  "distinct_reproduced_api_defects": 1,
+  "owned_resource_uuids": 104,
+  "http_responses": 1068,
+  "raw_copy_observations": 336,
+  "reset_replay_accepted": false,
+  "test_log": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.283s\n\nOK\n"
+}

@@ -1,0 +1,19 @@
+{
+  "source_git_commit": "6f002aa383c073f4a1d51cb406015fb595591bf6",
+  "contract_version": "v3.28.0",
+  "campaign_sha256": "d3db9a3a1caad3356b079ba7deb515e37c8c4e3554f357a921ba4889e0851c08",
+  "pinned_frontend_url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/frontend/app/components/Domain/Recipe/RecipePage/RecipePageParts/RecipePageInstructions.vue",
+  "pinned_frontend_sha256": "d4db984be1efe2c9acb1578afec329e185c6074d91b21ce66018dc07d48a9d32",
+  "frontend_lines": [
+    419,
+    461,
+    804,
+    807
+  ],
+  "pinned_backend_url": "https://raw.githubusercontent.com/mealie-recipes/mealie/v3.28.0/mealie/services/recipe/recipe_service.py",
+  "pinned_backend_sha256": "c9cd8d29d30831fc80bdd4e8e26bbbfe67e983daf4649965ab317f88072a6505",
+  "backend_function": "duplicate_one",
+  "no_browser_ui_reproduction": true,
+  "no_upstream_novelty_claim": true,
+  "reset_replay_accepted": false
+}

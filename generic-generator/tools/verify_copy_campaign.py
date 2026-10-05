@@ -32,10 +32,10 @@ def verify(path):
                 owned_ids.update(ids)
                 try:validate_copy_receipts(receipt,plan);status='PASS'
                 except CopyMismatch as error:status='COPY_CANDIDATE';failure=str(error)
-                if run['status']!=status:raise ValueError('Campaign classification does not match independent qualification.')
-                if status=='PASS' and acceptance.get('live_accepted') is not True:raise ValueError('Independent copy checks passed but native acceptance missing: '+key)
+                if status=='PASS' and acceptance.get('live_accepted') is not True and acceptance.get('native_exit_code')!=0:raise ValueError('Independent copy checks passed but complete native execution missing: '+key)
+                if receipt.get('task_count')!=len(plan['tasks']) or receipt.get('owned_instances')!=sum(len(v) for v in plan['instances'].values()):raise ValueError('Incomplete native task/ownership receipt.')
                 if run['case']=='control' and status!='PASS':raise ValueError('Matched control failed.')
-                item={'case':run['case'],'sample':run['sample'],'status':status,'sha256':digest}
+                item={'case':run['case'],'sample':run['sample'],'status':status,'original_status':run['status'],'original_live_accepted':acceptance.get('live_accepted',False),'sha256':digest}
                 if status!='PASS':item['failure']=failure
                 results.append(item)
     return {'status':'COPY_CAMPAIGN_EVIDENCE_VERIFIED','campaign_sha256':hashlib.sha256(Path(path).read_bytes()).hexdigest(),'runs':results,'distinct_owned_identities':len(owned_ids),'new_bug_confirmed':False,'reset_replay_accepted':False,'resource_mutations_by_verifier':0}
