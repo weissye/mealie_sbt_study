@@ -4,6 +4,7 @@ const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('ass
 const root=process.argv[2],seed=1,fault=process.env.NATIVE_MOCK_FAULT||'',missingMode='';
 const model=JSON.parse(fs.readFileSync(path.join(root,'relationship_scenario_plan.json'),'utf8'));
 const routeModel=model.tasks.some(t=>t.kind==='route_identity');
+const nameDrivenRoute=model.tasks.some(t=>t.kind==='route_identity'&&t.config.route_driver_field==='name');
 const expandedViews=model.tasks.some(t=>t.kind==='dependency_transfer'||(t.kind==='shared_update'&&t.referrers.some(r=>r.object_path)));
 const initialRouteOwners={};
 const actors=[],rtv={},objects={},requests=[],selected=[],failures=[];
@@ -26,7 +27,7 @@ function serve(method,url,options){
     else if(url==='/api/groups/self')result={id:fault==='scope'?uuid():fakeScope.groupId};
     else if(url==='/api/households/self')result={id:fakeScope.householdId,groupId:fakeScope.groupId};
     else if(method==='post'&&createOps[url]){
-      const data=JSON.parse(body),resource=createOps[url];const id=uuid(),slug='owned-'+counter;
+      const data=JSON.parse(body),resource=createOps[url];const id=uuid(),slug=routeModel&&resource==='api/recipes'?data.name.toLowerCase().replace(/_/g,'-'):'owned-'+counter;
       result={...data,id,slug,groupId:fakeScope.groupId,userId:fakeScope.id,householdId:fakeScope.householdId};
       if(model.tasks.some(t=>t.kind==='dependency_transfer')&&['api/foods','api/units'].includes(resource))Object.assign(result,{createdAt:'2026-10-04T00:00:00Z',updatedAt:'2026-10-04T00:00:00Z'});
       if(resource==='api/recipes'){Object.assign(result,{recipeIngredient:[],recipeCategory:[],tags:[]});if(routeModel)Object.assign(result,{description:result.description||'',recipeInstructions:[{id:uuid(),text:'Preserve this instruction',title:'',summary:'',ingredientReferences:[],noteReferences:[]}],dateUpdated:'2026-10-04T00:00:00.000001Z',updatedAt:'2026-10-04T00:00:00.000001Z'});}
@@ -55,6 +56,7 @@ function serve(method,url,options){
         result=JSON.parse(JSON.stringify(result));result.recipeIngredient.forEach(x=>{if(x.food)x.food.id=uuid();});corrupt=false;
       }
     }else if((method==='put'||method==='patch')&&objects[url]){const data=JSON.parse(body);
+      if(nameDrivenRoute&&url.startsWith('/api/recipes/')&&data.name)data.slug=data.name===objects[url].name?objects[url].slug:data.name.toLowerCase().replace(/_/g,'-');
       if(routeModel&&url.startsWith('/api/recipes/')&&data.recipeInstructions)data.recipeInstructions=data.recipeInstructions.map(step=>({...step,id:uuid()}));
       if(routeModel&&fault==='route-instruction-content'&&data.recipeInstructions&&(data.description?.includes('-route-')||data.slug?.includes('-route-')))data.recipeInstructions[0].text='CORRUPTED_INSTRUCTION';
       const sharedUpdate=(url.startsWith('/api/foods/')||url.startsWith('/api/units/'))&&data.name?.includes('-updated');
@@ -127,6 +129,7 @@ function serve(method,url,options){
     else if(method==='get'){status=404;result={detail:'Not found'};}
     else if(method==='post'&&url.includes('/recipe/')){const offset=url.lastIndexOf('/recipe/'),source=url.slice(0,offset),target=url.slice(offset+8);result=objects[source];assert(result);result.recipeReferences.push({recipeId:target});status=200;}
     else throw new Error('Unrecognized mock HTTP '+method+' '+url);
+    if(fault==='route-write-response-id'&&method==='put'&&url.startsWith('/api/recipes/')&&JSON.parse(body).name?.includes('-route-'))result={...result,id:uuid()};
     return {status,result};
   }finally{activeRequests--;}
 }

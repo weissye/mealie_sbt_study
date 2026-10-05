@@ -1,5 +1,6 @@
 """Independent route change receipt validation. No HTTP requests."""
 import copy
+import json
 from datetime import datetime
 from uuid import UUID
 
@@ -59,7 +60,8 @@ def validate_route_receipts(receipt,plan):
         if len(record['phases'])!=len(task['phases']):raise ValueError('Incomplete route phases.')
         expected_alias=[]
         for n,(actual,phase) in enumerate(zip(record['phases'],task['phases'])):
-            id=ids[phase['target_index']-1];before=targets[id];value=initial[phase['reuse_index']-1] if 'reuse_index' in phase else record['namespace']+'-'+phase['suffix'];expected=copy.deepcopy(before);expected[change]=value
+            id=ids[phase['target_index']-1];before=targets[id];value=record['initial_targets'][ids[phase['reuse_index']-1]][change] if 'reuse_index' in phase else record['namespace']+'-'+phase['suffix'];expected=copy.deepcopy(before);expected[change]=value
+            if cfg['mode']!='control':expected[field]=initial[phase['reuse_index']-1] if 'reuse_index' in phase else record['namespace']+'-'+phase['suffix']
             observed=actual.get('observed');protected=copy.deepcopy(observed)
             if not isinstance(observed,dict):raise ValueError('Missing route target observation.')
             for timestamp in cfg['timestamp_fields']:
@@ -81,6 +83,37 @@ def validate_route_receipts(receipt,plan):
                 if len(set(observed_ids))!=len(observed_ids):raise ValueError('Duplicate child identity.')
             if actual.get('recreated_identities',[])!=changes:raise ValueError('Unrecorded child identity replacement.')
             if actual.get('phase')!=phase or actual.get('before')!=before or actual.get('expected')!=expected or actual.get('value')!=value or protected!=expected:raise ValueError('Route identity or protected state mismatch.')
+            if cfg.get('capture_route_evidence'):
+                raw=[x for x in record.get('raw_observations',[]) if x.get('phase')==n]
+                if len(raw)!=3+len(refs):raise ValueError('Incomplete raw route observations.')
+                def one(kind):
+                    rows=[x for x in raw if x.get('kind')==kind]
+                    if len(rows)!=1:raise ValueError('Missing or duplicate '+kind+' observation.')
+                    return rows[0]
+                write=one('write');new_read=one('new_route');old_read=one('old_route')
+                if write.get('operation')!=task['operation'] or write.get('instance')!=task['targets'][phase['target_index']-1] or write.get('code') not in task['write_success_codes']:raise ValueError('Invalid raw write observation.')
+                try:request=json.loads(write['request_body'])
+                except (KeyError,TypeError,ValueError) as e:raise ValueError('Missing exact write request.') from e
+                if request.get(change)!=value:raise ValueError('Raw write did not contain the configured change.')
+                if 'id' in request and request['id']!=id:raise ValueError('Raw write changed stable identity.')
+                if not isinstance(write.get('body'),str):raise ValueError('Missing raw write response body.')
+                if write['body']:
+                    returned=json.loads(write['body'])
+                    if isinstance(returned,dict) and any(f in returned and returned[f]!=expected[f] for f in (identity,field,change)):
+                        raise ValueError('Raw write response changed identity or route.')
+                if new_read.get('code')!=200 or json.loads(new_read['body'])!=observed:raise ValueError('Raw new-route read differs from validated state.')
+                old_code=200 if cfg['mode']=='control' else 404
+                if old_read.get('code')!=old_code:raise ValueError('Raw old-route status differs from policy.')
+                if old_code==200 and json.loads(old_read['body']).get(identity)!=id:raise ValueError('Raw old-route identity differs.')
+                source_rows=[x for x in raw if x.get('kind')=='referrer']
+                if sorted(x['instance'] for x in source_rows)!=sorted(r['instance'] for r in refs):raise ValueError('Incomplete raw referrer reads.')
+                for source in source_rows:
+                    if source.get('code')!=200:raise ValueError('Raw referrer read failed.')
+                    expected_check=next(c for c in actual['checks'] if c['instance']==source['instance'])
+                    source_body=json.loads(source['body'])
+                    rule=next(r for r in refs if r['instance']==source['instance'])
+                    projected={f:source_body[f] for f in rule['preserve_fields'] if f in source_body}
+                    if projected!=expected_check['observed']:raise ValueError('Raw referrer differs from validated state.')
             targets[id]=copy.deepcopy(observed)
             checks=actual.get('checks',[])
             if sorted(c['instance'] for c in checks)!=sorted(r['instance'] for r in refs):raise ValueError('Missing/duplicate referrer check.')
@@ -90,6 +123,7 @@ def validate_route_receipts(receipt,plan):
             expected_id=id if cfg['mode']=='control' else None
             expected_alias.append({'phase':n,'code':200 if expected_id else 404,'expected_id':expected_id,'observed_id':expected_id})
         if cfg['mode']=='reuse':expected_alias.append({'phase':2,'code':200,'expected_id':ids[2],'observed_id':ids[2]})
+        if cfg.get('capture_route_evidence') and len(record.get('raw_observations',[]))!=len(task['phases'])*(3+len(refs)):raise ValueError('Unexpected raw route observations.')
         if record['alias_checks']!=expected_alias or record['targets']!=targets:raise ValueError('Incorrect final alias resolution.')
         for id,target in zip(ids,task['targets']):
             if owned[target].get(field)!=targets[id][field]:raise ValueError('Final route binding is stale.')

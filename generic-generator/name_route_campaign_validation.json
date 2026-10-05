@@ -1,0 +1,36 @@
+{
+  "release": "name-driven-route-migration-and-old-alias-reuse",
+  "baseline_source_commit": "fb00bc2102a8914d5ab8a5c2c9e4689fadd4884e",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "native_version": "ef04cca/20250714-0453/master; 0.7.5-SNAPSHOT",
+  "native_heap_mib": 512,
+  "local_live_mealie_execution": false,
+  "windows_execution_tested": false,
+  "regression": {
+    "existing_cli_compatibility_tests_passed": 5,
+    "legacy_route_native_replays_passed": 3,
+    "legacy_response_counts": {
+      "control": 113,
+      "rename": 113,
+      "reuse": 114
+    },
+    "raw_evidence_extraction_tests_passed": 2,
+    "server_metadata_native_test_cases_passed": 3,
+    "route_configuration_tests_passed": 3,
+    "native_route_replays_passed": 6,
+    "native_injected_faults_rejected": 10,
+    "native_route_test_duration_seconds": 88.504,
+    "raw_write_read_evidence_verified_on_failure": true,
+    "write_response_identity_fault_detected": true,
+    "packaged_overlay_configuration_tests_passed": 3
+  },
+  "policy": {
+    "driver_opt_in": true,
+    "raw_capture_opt_in": true,
+    "previous_profiles_retained": true,
+    "http_in_interfaces_only": true,
+    "automatic_resource_deletion": false,
+    "full_reset_replay_accepted": false,
+    "confirmed_new_bugs": 0
+  }
+}
