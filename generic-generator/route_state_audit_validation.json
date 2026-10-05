@@ -1,0 +1,24 @@
+{
+  "status": "LOCAL_VALIDATION_PASS_WINDOWS_LIVE_PENDING",
+  "test_methods_passed": 6,
+  "duration_seconds": 7.26,
+  "native_replays_checked": 3,
+  "http_requests_per_native_replay": 31,
+  "authentication_posts_per_replay": 1,
+  "resource_mutations_per_replay": 0,
+  "missing_resource_classification": "ORIGINAL_RESOURCES_UNAVAILABLE; not counted as a bug",
+  "injected_discrepancies_checked": [
+    "quantity",
+    "stable identity",
+    "name",
+    "instruction text",
+    "unrelated timestamp",
+    "requested alias resolution"
+  ],
+  "wrong_sha_prevents_http_requests": true,
+  "original_archive_nested_hashes_verified": 6,
+  "original_control_receipts_verified": 2,
+  "server_data_migration_performed": false,
+  "windows_powershell_execution": "not available in Linux runtime",
+  "password_and_token_redaction_checked": true
+}
