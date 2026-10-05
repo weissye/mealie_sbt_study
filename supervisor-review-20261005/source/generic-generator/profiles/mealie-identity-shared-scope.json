@@ -1,0 +1,8 @@
+{
+  "resource_types": [
+    "api/recipes",
+    "api/households/shopping/lists"
+  ],
+  "instances_per_type": 2,
+  "recursive_relationships": []
+}

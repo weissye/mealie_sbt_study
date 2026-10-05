@@ -1,0 +1,46 @@
+[
+  {
+    "case": "F01-addition",
+    "mode": "functional_live_prepared",
+    "archive": "tmp/collision-evidence-freeze/confirmation-sample-2.zip",
+    "nested_entry": null,
+    "native_review_sha256": "7fd55883b9f2920f05520f64c6a12df21539b5fdceaca40ab38ed1f4d062901a",
+    "transformation": "Remove unused legacy wrappers; prefix sbtRel identifiers; one localhost transport on port 9928. All request definitions and contexts preserved."
+  },
+  {
+    "case": "F02-food-removal",
+    "mode": "functional_live_prepared",
+    "archive": "tmp/removal-package/evidence/removal-findings-20261004/campaign.zip",
+    "nested_entry": "food-integer-lifecycle/live-1.zip",
+    "native_review_sha256": "1671b94e79e7b22d7cb7e39e609df54131e884f935a80d87114145148c5ac166",
+    "transformation": "Remove unused legacy wrappers; prefix sbtRel identifiers; one localhost transport on port 9928. All request definitions and contexts preserved."
+  },
+  {
+    "case": "F02-unit-removal",
+    "mode": "functional_live_prepared",
+    "archive": "tmp/removal-package/evidence/removal-findings-20261004/campaign.zip",
+    "nested_entry": "unit-integer-lifecycle/live-1.zip",
+    "native_review_sha256": "6d08028b2c4c6d1f33ce3c91d9a99fe6668b51a0ebb69568446811dcf74eb3d4",
+    "transformation": "Remove unused legacy wrappers; prefix sbtRel identifiers; one localhost transport on port 9928. All request definitions and contexts preserved."
+  },
+  {
+    "case": "F03-copy-reference",
+    "mode": "functional_live_prepared",
+    "archive": "tmp/copy-findings-release/evidence/copy-isolation-20261005-082853/campaign-original.zip",
+    "nested_entry": "internal-reference/live-1.zip",
+    "native_review_sha256": "c038e7bb26357fffd031fc7a1b18dbfc4103ec3e1c4793e8bdb79af79f56fc9a",
+    "transformation": "Remove unused legacy wrappers; prefix sbtRel identifiers; one localhost transport on port 9928. All request definitions and contexts preserved."
+  },
+  {
+    "case": "F04-recorded",
+    "mode": "recorded_evidence_only",
+    "live_reproduction_supplied": false,
+    "note": "Literal summary assertions are illustrative; independent original archive verification is authoritative."
+  },
+  {
+    "case": "F05-recorded",
+    "mode": "recorded_evidence_only",
+    "live_reproduction_supplied": false,
+    "note": "Literal summary assertions are illustrative; independent original archive verification is authoritative."
+  }
+]

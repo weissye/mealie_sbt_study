@@ -1,0 +1,29 @@
+{
+  "server_requests": 0,
+  "checks": [
+    {
+      "check": "quantity",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"ARCHIVE_AND_SEMANTIC_EVIDENCE_VERIFIED\",\n  \"server_requests\": 0,\n  \"run_count\": 24,\n  \"semantic_discrepancies\": 18,\n  \"successful_runs\": 6,\n  \"confirmed_internal_root_cause\": false,\n  \"confirmed_independent_bug_count\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "check": "copy",
+      "exit_code": 0,
+      "stdout": "COPY_CAMPAIGN_EVIDENCE_VERIFIED\n",
+      "stderr": ""
+    },
+    {
+      "check": "unavailable-reference",
+      "exit_code": 0,
+      "stdout": "MULTI_IDENTITY_EVIDENCE_VERIFIED: four complete runs; 206 responses; four HTTP 500 manifestations; one candidate defect. No API requests sent.\n",
+      "stderr": ""
+    },
+    {
+      "check": "household-state",
+      "exit_code": 0,
+      "stdout": "SCOPE_FINDINGS_VERIFIED: 186 responses; existing missing-reference error; four reproduced cross-household list mutations after HTTP 500. No API requests sent.\n",
+      "stderr": ""
+    }
+  ]
+}

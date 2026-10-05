@@ -1,0 +1,14 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:v3.28.0
+    ports:
+      - "127.0.0.1:9928:9000"
+    volumes:
+      - review-data:/app/data
+    environment:
+      ALLOW_SIGNUP: "false"
+      TZ: Asia/Jerusalem
+    mem_limit: 1000m
+    restart: unless-stopped
+volumes:
+  review-data:

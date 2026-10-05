@@ -1,0 +1,60 @@
+{
+  "freeze_date": "2026-10-05",
+  "jar_sha256": "5a8140409e200fb752a97b7317e1b259e668383d9d42814063b3365f0044981b",
+  "live_requests_sent": 0,
+  "windows_scripts_executed": false,
+  "case_audits": [
+    {
+      "case": "F01-addition",
+      "status": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE",
+      "tasks": 51,
+      "bytes": 2663475,
+      "sample_sha256": "9cf80bc9f19871ae18ff093ca7fe1428a409cd9f6da5442a1d5be8b6d19e7c70",
+      "model_sha256": {
+        "relationship_compilation.json": "18fb645d3ae8ed9c4f29da19d541e0caabacc314926d6ccc2b7af47806cd25e9",
+        "relationship_scenario_plan.json": "c30aca05658727f2215fff3d5aacd4bcba8c11f4ecd7eb778f1230d8c16eb2ea",
+        "spec/js/interfaces.shared.js": "f912fb71a7239d3fd0ba729d252666386161ac9651cb8133601e001ed2eb4915",
+        "spec/js/stories.js": "d8bb6e5a7b0a0c914ddb56abd728fc41bd8cd8268732015739424d502bd88939"
+      }
+    },
+    {
+      "case": "F02-food-removal",
+      "status": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE",
+      "tasks": 51,
+      "bytes": 2838351,
+      "sample_sha256": "0f854cf68443508a8cc9c3e793ae2198213bed5f1668bc67f8490ab1bb18170b",
+      "model_sha256": {
+        "relationship_compilation.json": "acd4bbf6ed0a963c55c443d4dbfbbd7e51f96d79e832cbd6a1e22c7dcc4ebe3b",
+        "relationship_scenario_plan.json": "638414e2d355dfaabd786f13a01f92fa777990850bf030d987b035c6a7e57f75",
+        "spec/js/interfaces.shared.js": "f912fb71a7239d3fd0ba729d252666386161ac9651cb8133601e001ed2eb4915",
+        "spec/js/stories.js": "44315f9eceea02440c04f695ef116fbe5af68393b8f2cdc172365f2e5a4e1e10"
+      }
+    },
+    {
+      "case": "F02-unit-removal",
+      "status": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE",
+      "tasks": 51,
+      "bytes": 2839143,
+      "sample_sha256": "855091ecbf287b0febc00c31f0b97d3dd61425f195bbd54fa5845ae6d0112296",
+      "model_sha256": {
+        "relationship_compilation.json": "9daa5627b9309f61ddd5b1eb239771c528296c0405d3100bf84f6b0b421a9bfc",
+        "relationship_scenario_plan.json": "fb16ae486deede93a8a6177cd3ad14ca37ef3723e6f0cc038857338492323097",
+        "spec/js/interfaces.shared.js": "f912fb71a7239d3fd0ba729d252666386161ac9651cb8133601e001ed2eb4915",
+        "spec/js/stories.js": "04fe816b0e382ff90059ac84754f44730be1c06116506ab42c88ab2f30c7e1dc"
+      }
+    },
+    {
+      "case": "F03-copy-reference",
+      "status": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE",
+      "tasks": 25,
+      "bytes": 1771090,
+      "sample_sha256": "157995a96bc0cb9c6718ff8bd0220b4f82295f57604a87c62244416f9657aa6e",
+      "model_sha256": {
+        "relationship_compilation.json": "d80bb08320c67a04edb4c65fbdd4457a3773e49edbc3317a91f48f689d251963",
+        "relationship_scenario_plan.json": "441909e32a64992eac181c6573cc7af0be0612c2a900155d121d205a49169b7f",
+        "spec/js/interfaces.shared.js": "f912fb71a7239d3fd0ba729d252666386161ac9651cb8133601e001ed2eb4915",
+        "spec/js/stories.js": "5ff9c84f702d42c7fcc0da79988983cd0601a52d09146300bd283f92caa10dc8"
+      }
+    }
+  ]
+}

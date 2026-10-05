@@ -1,0 +1,22 @@
+{
+  "HANDOFF.md": {
+    "sha256": "a576e32240e18ebc7530ef7312e0f5ce24aa8617e5d07fc9154878a8e7fe2bf8",
+    "normalized_lf": true
+  },
+  "campaign-original.zip": {
+    "sha256": "cf9d953788e19012fc73ea78a4575462e873ee3193775140c1cee28091fd0fd0",
+    "normalized_lf": false
+  },
+  "qualification.json": {
+    "sha256": "0cc1c01f9b87c7485ab33d9e362a0735f1aa4c05e2f340552e2abbd3357f3685",
+    "normalized_lf": true
+  },
+  "qualification_oracle.py": {
+    "sha256": "36422bfd54d1ea3a2e768091844cc05fb888aecd623d172251f9bfe6a0f366df",
+    "normalized_lf": true
+  },
+  "verify_campaign.py": {
+    "sha256": "e24153c963a68026cb7cea6459eaed2340551bf53e1343c60848414b3516e32f",
+    "normalized_lf": true
+  }
+}

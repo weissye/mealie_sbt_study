@@ -1,0 +1,85 @@
+{
+  "status": "PRESERVED_EVIDENCE_QUALIFIED",
+  "source_commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+  "server_version": "v3.28.0",
+  "response_count": 186,
+  "new_finding_reproductions": 4,
+  "reset_replay_completed": false,
+  "minimal_reproduction_completed": false,
+  "runs": [
+    {
+      "case": "reference-controls",
+      "sample": 1,
+      "sha256": "81bb65ae1378d35779538d58452387256fa4c9eec094c1f76f032cc70064b92f",
+      "responses": 47,
+      "http_500_count": 4,
+      "unauthorized_changes": []
+    },
+    {
+      "case": "reference-controls",
+      "sample": 2,
+      "sha256": "5314593f6cb5ca0ddf690bc7df6df2621404839f8c5ab3de47da4e5bad01fea8",
+      "responses": 47,
+      "http_500_count": 4,
+      "unauthorized_changes": []
+    },
+    {
+      "case": "household-controls",
+      "sample": 1,
+      "sha256": "44387476234de5ba682ae13b0858bc6dfbd23de8d6f283cd4c0a36938bef58b3",
+      "responses": 46,
+      "http_500_count": 2,
+      "unauthorized_changes": [
+        {
+          "actor": "A",
+          "victim": "B",
+          "list_id": "1c3fdffe-d4df-40f4-8cae-2cdc7824c8f3",
+          "new_item_id": "b7b16403-e06b-49d8-9bda-cfdec4b3975e",
+          "quantity": 2,
+          "recipe_id": "0e4b4828-361c-4c3e-a75b-6eaee849b8c2",
+          "before_items": 2,
+          "after_items": 3
+        },
+        {
+          "actor": "B",
+          "victim": "A",
+          "list_id": "4caae0cd-231c-4d48-9e96-a0322c5fe0a3",
+          "new_item_id": "2de1c4ea-40eb-4363-9ad7-6ec76daba8cc",
+          "quantity": 2,
+          "recipe_id": "25751243-264e-4605-a824-5b6cfee34c9f",
+          "before_items": 2,
+          "after_items": 3
+        }
+      ]
+    },
+    {
+      "case": "household-controls",
+      "sample": 2,
+      "sha256": "8ea34d55f3d5218dd6fb529dffe2a469f26ac0f31b1c5a8736059a8e24ad2e7d",
+      "responses": 46,
+      "http_500_count": 2,
+      "unauthorized_changes": [
+        {
+          "actor": "A",
+          "victim": "B",
+          "list_id": "f5ff43bd-c765-4d68-8052-6c5c75ec71e5",
+          "new_item_id": "53946f69-4b1e-45c0-969a-3bdcc0bf1f63",
+          "quantity": 2,
+          "recipe_id": "f395c381-b1db-44ae-a8c9-2c73a7680810",
+          "before_items": 2,
+          "after_items": 3
+        },
+        {
+          "actor": "B",
+          "victim": "A",
+          "list_id": "07aa6e52-d542-429c-94cb-727f3567ced3",
+          "new_item_id": "037b2f01-049d-4bcf-a6c5-9fb4b11ddfd8",
+          "quantity": 2,
+          "recipe_id": "84805ce1-6591-420a-8325-4ad36bbd7bc4",
+          "before_items": 2,
+          "after_items": 3
+        }
+      ]
+    }
+  ]
+}

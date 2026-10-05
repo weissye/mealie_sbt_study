@@ -1,0 +1,44 @@
+{
+  "resource_types": [
+    "api/foods",
+    "api/units",
+    "api/recipes",
+    "api/households/shopping/lists",
+    "api/households/shopping/items"
+  ],
+  "instances_per_type": 3,
+  "recursive_relationships": [],
+  "excluded_relationships": [
+    {
+      "source_type": "api/recipes",
+      "field_path": "recipeIngredient[].referencedRecipe"
+    },
+    {
+      "source_type": "api/households/shopping/items",
+      "field_path": "referencedRecipe"
+    }
+  ],
+  "target_bindings": [
+    {
+      "source_type": "api/recipes",
+      "target_type": "api/units",
+      "field_path": "recipeIngredient[].unit",
+      "after_fields": [
+        "recipeIngredient[].food"
+      ],
+      "target_indices": [
+        1,
+        1
+      ]
+    },
+    {
+      "source_type": "api/households/shopping/items",
+      "target_type": "api/units",
+      "field_path": "unit",
+      "target_index": 1,
+      "after_fields": [
+        "food"
+      ]
+    }
+  ]
+}

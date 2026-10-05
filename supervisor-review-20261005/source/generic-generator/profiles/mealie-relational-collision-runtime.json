@@ -1,0 +1,154 @@
+{
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "response_bindings": {
+    "POST /api/organizers/categories": {
+      "evidence_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858"
+    },
+    "POST /api/organizers/tags": {
+      "evidence_sha256": "0a8e4d643def5a3fb9ef42bff23e9ae6b14bb11e304b438e6cf05d5ab479f858"
+    },
+    "POST /api/households/shopping/items": {
+      "array_field": "createdItems"
+    }
+  },
+  "bootstrap": [
+    {
+      "operation": "GET /api/users/self",
+      "fields": [
+        "id",
+        "groupId",
+        "householdId"
+      ]
+    },
+    {
+      "operation": "GET /api/groups/self",
+      "fields": [
+        "id"
+      ]
+    },
+    {
+      "operation": "GET /api/households/self",
+      "fields": [
+        "id",
+        "groupId"
+      ]
+    }
+  ],
+  "write_defaults": {
+    "PUT /api/recipes/{slug}": [
+      {
+        "path": "recipeIngredient[].quantity",
+        "value": 2
+      },
+      {
+        "path": "recipeYieldQuantity",
+        "value": 1
+      }
+    ]
+  },
+  "actions": [],
+  "scope_checks": [
+    {
+      "left": [
+        0,
+        "groupId"
+      ],
+      "right": [
+        1,
+        "id"
+      ]
+    },
+    {
+      "left": [
+        0,
+        "householdId"
+      ],
+      "right": [
+        2,
+        "id"
+      ]
+    },
+    {
+      "left": [
+        2,
+        "groupId"
+      ],
+      "right": [
+        1,
+        "id"
+      ]
+    }
+  ],
+  "relationship_identity_views": [
+    {
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "field_path": "food",
+      "write_path": "foodId",
+      "target_field": "id",
+      "readback_path": "foodId"
+    },
+    {
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "field_path": "unit",
+      "write_path": "unitId",
+      "target_field": "id",
+      "readback_path": "unitId"
+    }
+  ],
+  "relationship_write_views": [],
+  "compact_callbacks": true,
+  "create_defaults": {
+    "POST /api/households/shopping/items": {
+      "quantity": 7
+    }
+  },
+  "semantic_program": {
+    "family": "combined",
+    "resource_type": "api/foods",
+    "reference_type": "api/recipes",
+    "container_type": "api/households/shopping/lists",
+    "resource_identity": "id",
+    "reference_identity": "id",
+    "merge": {
+      "operation": "PUT /api/foods/merge",
+      "from_field": "fromFood",
+      "to_field": "toFood",
+      "absent_codes": [
+        404
+      ]
+    },
+    "contribution": {
+      "add_operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+      "remove_operation": "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+      "target_parameter": "recipe_id",
+      "add_field": "recipeIncrementQuantity",
+      "remove_field": "recipeDecrementQuantity"
+    },
+    "reference_measure": {
+      "items_path": "recipeIngredient[]",
+      "key_paths": [
+        "food.id",
+        "unit.id"
+      ],
+      "amount_path": "quantity"
+    },
+    "container_measure": {
+      "items_path": "listItems[]",
+      "key_paths": [
+        "foodId",
+        "unitId"
+      ],
+      "amount_path": "quantity"
+    },
+    "container_references": {
+      "items_path": "recipeReferences[]",
+      "key_path": "recipeId",
+      "amount_path": "recipeQuantity"
+    },
+    "merge_key_index": 0,
+    "baseline_container_total": 7,
+    "baseline_reference_item_quantity": 2,
+    "tolerance": 1e-08,
+    "require_merge_collision": true
+  }
+}

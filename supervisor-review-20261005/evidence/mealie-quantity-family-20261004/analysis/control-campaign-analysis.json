@@ -1,0 +1,592 @@
+[
+  {
+    "case": "chain-readd",
+    "sample": 1,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 12,
+    "completed_order": [
+      "semantic:init",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:7:merge:api/foods#1",
+      "semantic:8:merge:api/foods#2",
+      "semantic:10:contribution:api/households/shopping/lists#2",
+      "semantic:9:contribution:api/households/shopping/lists#1",
+      "semantic:11:contribution:api/households/shopping/lists#3"
+    ],
+    "resource_ids": [
+      "3b00e5fe-4c68-4293-a6ad-ace903be25dc",
+      "f5539c40-bc00-4745-96e6-f0b2f6e407c3",
+      "fd5a0480-ce88-494b-b203-88c4178726a7",
+      "2e3824d8-0c1e-4d86-a7cd-1f5c91768cea",
+      "b68cf73d-d434-4f7f-9909-2b7e2e3ca029",
+      "ffaef00d-9c86-45da-b1fe-21c301932175",
+      "ab861eff-7a99-47f5-a1d5-ac5fa0a32557",
+      "44779060-c2cb-4316-9a65-8959690cec2a",
+      "de2abd39-79cf-45bb-94b9-d145ff7f0544",
+      "e3659ede-7c94-4e8f-a83f-97a8cfa3bb6f",
+      "abc8d23a-c34f-4d6f-bdf0-44ba505d7a5b",
+      "f32b1f3b-937d-4da4-ad83-58e4b2e401c2",
+      "917bc163-9866-4768-b540-d5d79391f282",
+      "c524887f-a8c4-4a68-9f36-5c6c9bbfcfe1",
+      "82b0ef75-6251-4b36-9685-188742306056"
+    ],
+    "task_id": "semantic:13:contribution:api/households/shopping/lists#2",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"ffaef00d-9c86-45da-b1fe-21c301932175\",\"917bc163-9866-4768-b540-d5d79391f282\"]": 4
+    },
+    "before": {
+      "[\"ffaef00d-9c86-45da-b1fe-21c301932175\",\"917bc163-9866-4768-b540-d5d79391f282\"]": 23
+    },
+    "expected": {
+      "totals": {
+        "[\"ffaef00d-9c86-45da-b1fe-21c301932175\",\"917bc163-9866-4768-b540-d5d79391f282\"]": 25
+      },
+      "references": {
+        "44779060-c2cb-4316-9a65-8959690cec2a": 3,
+        "c524887f-a8c4-4a68-9f36-5c6c9bbfcfe1": 1.5
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"ffaef00d-9c86-45da-b1fe-21c301932175\",\"917bc163-9866-4768-b540-d5d79391f282\"]": 26
+      },
+      "references": {
+        "44779060-c2cb-4316-9a65-8959690cec2a": 3,
+        "c524887f-a8c4-4a68-9f36-5c6c9bbfcfe1": 1.5
+      }
+    },
+    "merges_completed": 2,
+    "mutation_request": "16:24:22.640 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/ab861eff-7a99-47f5-a1d5-ac5fa0a32557/recipe/c524887f-a8c4-4a68-9f36-5c6c9bbfcfe1\"}]"
+  },
+  {
+    "case": "chain-readd",
+    "sample": 2,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 12,
+    "completed_order": [
+      "semantic:init",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:7:merge:api/foods#1",
+      "semantic:8:merge:api/foods#2",
+      "semantic:9:contribution:api/households/shopping/lists#1",
+      "semantic:10:contribution:api/households/shopping/lists#2",
+      "semantic:11:contribution:api/households/shopping/lists#3"
+    ],
+    "resource_ids": [
+      "bbfbf89d-2260-4321-bd4b-bc5489346258",
+      "14ede617-9373-4e7d-95bc-3f46d81764a5",
+      "58daefb0-201b-4f8c-b19f-0c6e8f2684c2",
+      "7010d100-a03b-4599-a162-18c2065463ac",
+      "2a632aa7-bd3c-4260-bdb6-f3a659e3788c",
+      "dfe8041e-a43e-48ce-827e-f1fec0e48693",
+      "97cae2e8-532d-42e5-b1e0-92ff6a394d3a",
+      "2b0337fe-e4f9-4bc8-bfa5-e242e40fa252",
+      "55fa5c6e-a1e4-4ee6-a7dd-a7783707a531",
+      "322b47f0-ceeb-45cf-b934-3c985d20f3f4",
+      "21254103-058b-4a2d-95dd-8fc280466936",
+      "92a03062-3eb7-4a1c-bdeb-5dfa162a9359",
+      "8094c07d-245f-4213-bfa4-fdd06ab6c161",
+      "bd85623e-e21d-471c-9c49-d1bf6e3f6bf8",
+      "88940439-97c1-4668-b350-e70356184705"
+    ],
+    "task_id": "semantic:12:contribution:api/households/shopping/lists#1",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"2a632aa7-bd3c-4260-bdb6-f3a659e3788c\",\"88940439-97c1-4668-b350-e70356184705\"]": 4
+    },
+    "before": {
+      "[\"2a632aa7-bd3c-4260-bdb6-f3a659e3788c\",\"88940439-97c1-4668-b350-e70356184705\"]": 23
+    },
+    "expected": {
+      "totals": {
+        "[\"2a632aa7-bd3c-4260-bdb6-f3a659e3788c\",\"88940439-97c1-4668-b350-e70356184705\"]": 25
+      },
+      "references": {
+        "322b47f0-ceeb-45cf-b934-3c985d20f3f4": 3,
+        "bd85623e-e21d-471c-9c49-d1bf6e3f6bf8": 1.5
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"2a632aa7-bd3c-4260-bdb6-f3a659e3788c\",\"88940439-97c1-4668-b350-e70356184705\"]": 26
+      },
+      "references": {
+        "322b47f0-ceeb-45cf-b934-3c985d20f3f4": 3,
+        "bd85623e-e21d-471c-9c49-d1bf6e3f6bf8": 1.5
+      }
+    },
+    "merges_completed": 2,
+    "mutation_request": "16:25:17.609 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/97cae2e8-532d-42e5-b1e0-92ff6a394d3a/recipe/bd85623e-e21d-471c-9c49-d1bf6e3f6bf8\"}]"
+  },
+  {
+    "case": "duplicate-no-merge",
+    "sample": 1,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 1,
+    "completed_order": [
+      "semantic:init"
+    ],
+    "resource_ids": [
+      "21493e31-150f-4fff-b46e-fcee14f71077",
+      "aa88d2e1-6e23-48d4-9fc4-e0d08eee6076",
+      "ee95d2ab-eae4-4d4a-9bd9-72942cf6e4cc",
+      "7ead471f-e341-4928-bbe1-9de3a7ddca5b",
+      "18f8726d-4821-49fb-aef9-daee785d4a0f",
+      "0b4984d6-95ff-4d35-ab7c-3ecad8c8f36b",
+      "7b1f3cca-0ad7-4398-a47e-9fb9229d44f0",
+      "59e622b4-599e-4397-a86d-83cbccf2aa6c",
+      "96ec5bcf-9957-4ce2-9b20-759b8430664a",
+      "41e6362c-41af-4eb6-88cf-97146f0a17f5",
+      "a58e2ee7-3756-4c1a-a40d-9c275362965d",
+      "79ab7caf-8e37-4f23-9c50-07ffbeffab01",
+      "99ee518c-3d85-435b-9a2d-720bfa8041c9",
+      "c5a56182-7175-4278-860c-c60c5fcd4b88",
+      "cda9312b-fa5c-4f27-9043-ea4d08a1ffad"
+    ],
+    "task_id": "semantic:1:contribution:api/households/shopping/lists#1",
+    "amount": 2,
+    "recipe_totals": {
+      "[\"aa88d2e1-6e23-48d4-9fc4-e0d08eee6076\",\"0b4984d6-95ff-4d35-ab7c-3ecad8c8f36b\"]": 4
+    },
+    "before": {
+      "[\"aa88d2e1-6e23-48d4-9fc4-e0d08eee6076\",\"0b4984d6-95ff-4d35-ab7c-3ecad8c8f36b\"]": 7
+    },
+    "expected": {
+      "totals": {
+        "[\"aa88d2e1-6e23-48d4-9fc4-e0d08eee6076\",\"0b4984d6-95ff-4d35-ab7c-3ecad8c8f36b\"]": 15
+      },
+      "references": {
+        "21493e31-150f-4fff-b46e-fcee14f71077": 2
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"aa88d2e1-6e23-48d4-9fc4-e0d08eee6076\",\"0b4984d6-95ff-4d35-ab7c-3ecad8c8f36b\"]": 13
+      },
+      "references": {
+        "21493e31-150f-4fff-b46e-fcee14f71077": 2
+      }
+    },
+    "merges_completed": 0,
+    "mutation_request": "16:18:22.539 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":2}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/7b1f3cca-0ad7-4398-a47e-9fb9229d44f0/recipe/21493e31-150f-4fff-b46e-fcee14f71077\"}]"
+  },
+  {
+    "case": "duplicate-no-merge",
+    "sample": 2,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 1,
+    "completed_order": [
+      "semantic:init"
+    ],
+    "resource_ids": [
+      "e877395e-fc9f-4557-a3c1-623c482fe201",
+      "04207ec2-1b33-46a8-a9a5-572c4bd0e977",
+      "08bed22f-fe4d-4c2c-85e3-a952d1dad3f2",
+      "18fa98b7-9765-48d0-9bdc-c711d1d68263",
+      "85a76726-6969-414d-8fec-c021de7b1644",
+      "c03f2c7b-1c9c-43b3-91e0-bfcc40ed5dfb",
+      "326f122a-f03e-4b5f-b24b-dcc1f573f14e",
+      "99a4359d-5374-4610-9d9b-407f93ef4130",
+      "ae679223-3c2e-497b-8194-621eefd4e439",
+      "52e2d629-a537-4f45-b7e2-75d55dad9079",
+      "34fe5397-0971-43c7-beab-69844377e944",
+      "f49ea35d-ec7b-4061-a20e-6601f5136216",
+      "e92bd411-c475-4a44-80b2-db8bfa7b58d0",
+      "3e180a2f-fbfa-4443-80b8-c7001a7b6d0d",
+      "ec2a5721-39ed-4bad-8bf4-5c8570766b82"
+    ],
+    "task_id": "semantic:3:contribution:api/households/shopping/lists#3",
+    "amount": 2,
+    "recipe_totals": {
+      "[\"e877395e-fc9f-4557-a3c1-623c482fe201\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 4
+    },
+    "before": {
+      "[\"326f122a-f03e-4b5f-b24b-dcc1f573f14e\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 7
+    },
+    "expected": {
+      "totals": {
+        "[\"326f122a-f03e-4b5f-b24b-dcc1f573f14e\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 7,
+        "[\"e877395e-fc9f-4557-a3c1-623c482fe201\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 8
+      },
+      "references": {
+        "08bed22f-fe4d-4c2c-85e3-a952d1dad3f2": 2
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"326f122a-f03e-4b5f-b24b-dcc1f573f14e\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 7,
+        "[\"e877395e-fc9f-4557-a3c1-623c482fe201\",\"99a4359d-5374-4610-9d9b-407f93ef4130\"]": 6
+      },
+      "references": {
+        "08bed22f-fe4d-4c2c-85e3-a952d1dad3f2": 2
+      }
+    },
+    "merges_completed": 0,
+    "mutation_request": "16:18:51.592 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":2}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/18fa98b7-9765-48d0-9bdc-c711d1d68263/recipe/08bed22f-fe4d-4c2c-85e3-a952d1dad3f2\"}]"
+  },
+  {
+    "case": "merge-no-decrement",
+    "sample": 1,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 8,
+    "completed_order": [
+      "semantic:init",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:7:merge:api/foods#1"
+    ],
+    "resource_ids": [
+      "fbdabcdc-50b7-494f-99f4-1ff200eec71a",
+      "5cdd6d02-a70b-4452-9a88-a3bebcf704a2",
+      "4f05be8b-ebf6-4777-b6d4-73d7912b657e",
+      "4346a711-0087-47e9-871a-54edd045f9aa",
+      "f5bde1ee-e2d5-480a-a802-ed759e54b6a1",
+      "82093e07-5edf-4a34-87ab-ce12f562913a",
+      "f641901a-1299-410c-bd83-3a865b5e19d9",
+      "05146084-f035-49d2-8204-1d09f6db594d",
+      "abe6b609-c4e4-4a22-b0c5-261e9c068ab7",
+      "0fec5312-79e0-4927-a987-cab067c9666d",
+      "b765178a-382b-4697-87b2-1d7f1c83f459",
+      "b4257368-76d1-4c98-aea0-46422693cc78",
+      "d3f96a6c-85a2-4be4-ad8b-326a5a229715",
+      "740ac460-3536-4921-9383-720a5612fb92",
+      "62a711d6-48a6-4347-a647-08e0cdc9c2ae"
+    ],
+    "task_id": "semantic:8:contribution:api/households/shopping/lists#1",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"abe6b609-c4e4-4a22-b0c5-261e9c068ab7\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 4
+    },
+    "before": {
+      "[\"abe6b609-c4e4-4a22-b0c5-261e9c068ab7\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 21,
+      "[\"b4257368-76d1-4c98-aea0-46422693cc78\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 6
+    },
+    "expected": {
+      "totals": {
+        "[\"abe6b609-c4e4-4a22-b0c5-261e9c068ab7\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 23,
+        "[\"b4257368-76d1-4c98-aea0-46422693cc78\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 6
+      },
+      "references": {
+        "05146084-f035-49d2-8204-1d09f6db594d": 3,
+        "5cdd6d02-a70b-4452-9a88-a3bebcf704a2": 2.5
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"abe6b609-c4e4-4a22-b0c5-261e9c068ab7\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 24,
+        "[\"b4257368-76d1-4c98-aea0-46422693cc78\",\"f5bde1ee-e2d5-480a-a802-ed759e54b6a1\"]": 6
+      },
+      "references": {
+        "05146084-f035-49d2-8204-1d09f6db594d": 3,
+        "5cdd6d02-a70b-4452-9a88-a3bebcf704a2": 2.5
+      }
+    },
+    "merges_completed": 1,
+    "mutation_request": "16:19:44.033 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/fbdabcdc-50b7-494f-99f4-1ff200eec71a/recipe/5cdd6d02-a70b-4452-9a88-a3bebcf704a2\"}]"
+  },
+  {
+    "case": "merge-no-decrement",
+    "sample": 2,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 8,
+    "completed_order": [
+      "semantic:init",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:7:merge:api/foods#1"
+    ],
+    "resource_ids": [
+      "faed0364-3116-43ab-8e47-46cde2286c57",
+      "72a2710b-837a-460b-9c7e-700635f1c235",
+      "4f86afa1-e763-4b6b-a21d-0f5a54e1ad7a",
+      "7e209ccf-a914-4007-8de7-7e2b61208d38",
+      "ed932ed6-c5b4-4aca-a0bb-e69d79e4c6cb",
+      "fb15c455-fa2b-477e-b6e9-177cf4ceea23",
+      "8f5a83f7-8945-4d9d-b601-0a840be7472a",
+      "2c161c5f-4a80-4709-aa19-bdefe068bff2",
+      "95b6270e-7e6e-4fdb-a426-5f3360a429ec",
+      "5574e74b-c0d5-4afc-ba81-bd79cfa6eeb7",
+      "b0c6aed3-c29f-4338-b5f3-629aefea9a58",
+      "6d15ca5f-a2c9-4eae-b639-5b7ac4e9999e",
+      "6e1bb489-3354-4b98-af43-af016c96327e",
+      "dc88940c-fff4-48cd-85ac-ed2db6ebeeb7",
+      "33724cd8-b636-4b53-a70e-b165c0298e75"
+    ],
+    "task_id": "semantic:8:contribution:api/households/shopping/lists#1",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"7e209ccf-a914-4007-8de7-7e2b61208d38\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 4
+    },
+    "before": {
+      "[\"7e209ccf-a914-4007-8de7-7e2b61208d38\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 21,
+      "[\"fb15c455-fa2b-477e-b6e9-177cf4ceea23\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 6
+    },
+    "expected": {
+      "totals": {
+        "[\"7e209ccf-a914-4007-8de7-7e2b61208d38\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 23,
+        "[\"fb15c455-fa2b-477e-b6e9-177cf4ceea23\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 6
+      },
+      "references": {
+        "ed932ed6-c5b4-4aca-a0bb-e69d79e4c6cb": 2.5,
+        "faed0364-3116-43ab-8e47-46cde2286c57": 3
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"7e209ccf-a914-4007-8de7-7e2b61208d38\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 24,
+        "[\"fb15c455-fa2b-477e-b6e9-177cf4ceea23\",\"6e1bb489-3354-4b98-af43-af016c96327e\"]": 6
+      },
+      "references": {
+        "ed932ed6-c5b4-4aca-a0bb-e69d79e4c6cb": 2.5,
+        "faed0364-3116-43ab-8e47-46cde2286c57": 3
+      }
+    },
+    "merges_completed": 1,
+    "mutation_request": "16:20:22.693 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/8f5a83f7-8945-4d9d-b601-0a840be7472a/recipe/ed932ed6-c5b4-4aca-a0bb-e69d79e4c6cb\"}]"
+  },
+  {
+    "case": "single-ingredient",
+    "sample": 1,
+    "status": "NATIVE_RELATIONSHIP_CALLBACKS_PASS",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 13,
+    "completed_order": [
+      "semantic:init",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:7:contribution:api/households/shopping/lists#1",
+      "semantic:9:contribution:api/households/shopping/lists#3",
+      "semantic:8:contribution:api/households/shopping/lists#2",
+      "semantic:10:contribution:api/households/shopping/lists#1",
+      "semantic:11:contribution:api/households/shopping/lists#2",
+      "semantic:12:contribution:api/households/shopping/lists#3"
+    ],
+    "resource_ids": [
+      "1425966a-6dd0-4856-9321-d599a5c7dd10",
+      "c931fe48-d949-45c7-9c88-88e9d9f90e97",
+      "ca04ef8c-1dbd-4a5e-9752-24ca70353fe1",
+      "c13f4498-0969-45c6-9c97-775fe17e80c2",
+      "08ea33d2-0dcf-4031-9da9-27b931d24d85",
+      "398050d5-690a-4451-b592-db54b47f55a8",
+      "678d9585-81db-4e16-9c4a-6d6307ef3df6",
+      "b009f2b5-c0b5-4485-9f1a-b945cfc1ca36",
+      "547ddc0f-6971-444b-8f3a-b95990cc9498",
+      "723354d6-cc66-42c5-be8c-df8a7c37050b",
+      "8776b05c-d7e9-4a18-ae4a-be22fa9a0213",
+      "d33cd739-960e-4e9d-8dcc-d1dcb6ae4ac4",
+      "295c16f4-fb85-40ba-bd57-cca325045e5d",
+      "17208f4f-7f4d-4749-8283-ba8ece1b28b4",
+      "08c1ca73-70d8-4afb-ba7d-5b2e278c33d4"
+    ],
+    "native_success": true,
+    "http_responses": 197,
+    "final_manual_totals": [
+      7,
+      7,
+      7
+    ]
+  },
+  {
+    "case": "single-ingredient",
+    "sample": 2,
+    "status": "NATIVE_RELATIONSHIP_CALLBACKS_PASS",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 13,
+    "completed_order": [
+      "semantic:init",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:5:contribution:api/households/shopping/lists#2",
+      "semantic:4:contribution:api/households/shopping/lists#1",
+      "semantic:6:contribution:api/households/shopping/lists#3",
+      "semantic:8:contribution:api/households/shopping/lists#2",
+      "semantic:9:contribution:api/households/shopping/lists#3",
+      "semantic:7:contribution:api/households/shopping/lists#1",
+      "semantic:12:contribution:api/households/shopping/lists#3",
+      "semantic:10:contribution:api/households/shopping/lists#1",
+      "semantic:11:contribution:api/households/shopping/lists#2"
+    ],
+    "resource_ids": [
+      "3043c1b6-db2e-454e-9a30-70654ade9261",
+      "46e4f1f5-7a76-4f8b-9a60-d54a7e4bad80",
+      "4a53c22e-9553-4a81-9ddb-9e8d84d3bbc9",
+      "5adb165a-9059-49af-b26a-1f528ee51173",
+      "901c4bf1-d060-46e8-821f-6c71850807f9",
+      "fc2615b4-043b-410b-9160-5596889660b6",
+      "d6872b3f-13b6-400f-8cce-7c1b11822d61",
+      "fcd4164a-d659-415d-8b00-a9215a953559",
+      "a504ac2e-913b-4a09-b9c2-0719b28bb06e",
+      "e3d89e95-74fd-43f7-9ae9-7853efa2b75c",
+      "50639c18-c28a-4667-b05e-1077498f0a0b",
+      "95344c9f-464c-4ab7-8eaf-033678a92f15",
+      "01e3e49e-f69b-45bf-9120-0c101c06effd",
+      "9c8cbb41-b566-4682-9478-5108ecace197",
+      "6d40fee4-3368-466b-9f7d-421b21dc099e"
+    ],
+    "native_success": true,
+    "http_responses": 197,
+    "final_manual_totals": [
+      7,
+      7,
+      7
+    ]
+  },
+  {
+    "case": "three-ingredient",
+    "sample": 1,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 8,
+    "completed_order": [
+      "semantic:init",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:4:merge:api/foods#1",
+      "semantic:6:contribution:api/households/shopping/lists#2",
+      "semantic:5:contribution:api/households/shopping/lists#1",
+      "semantic:7:contribution:api/households/shopping/lists#3"
+    ],
+    "resource_ids": [
+      "bd410c8b-48b3-44f3-a337-0da728a0c914",
+      "2e782b16-1c0c-4070-bc75-4c05deae41bd",
+      "3b521ce3-d719-43cf-a3a7-5b9e04cf9803",
+      "5074aa26-0674-4f29-af89-1a531e68e80d",
+      "3e7dc3fb-f7cb-4fc7-8145-ed6095a31bea",
+      "c86cbef3-1c48-408c-b62d-72b8adefe579",
+      "dcf2c3c9-e2ee-4886-8f8b-a7ff27772f2a",
+      "dc440a34-7554-4d87-bb82-e440cbfea76a",
+      "d3f5aac2-34bb-4ddb-a23d-8b5408bfd658",
+      "d84e67bd-fc3e-4dee-9414-2a52670d3b2f",
+      "e7d19a03-dc77-4d74-a6f8-155b232a7cbb",
+      "5af6efdd-2773-4f17-bd64-a298c7413e47",
+      "749e6fc9-9582-4ced-96aa-dbedd4976633",
+      "a1a564b4-d897-47ba-a191-7138f861bc71",
+      "3fd6890e-a925-4604-ba6c-b73fdab9c322"
+    ],
+    "task_id": "semantic:10:contribution:api/households/shopping/lists#3",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"5af6efdd-2773-4f17-bd64-a298c7413e47\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 4,
+      "[\"c86cbef3-1c48-408c-b62d-72b8adefe579\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 2
+    },
+    "before": {
+      "[\"5af6efdd-2773-4f17-bd64-a298c7413e47\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 4,
+      "[\"c86cbef3-1c48-408c-b62d-72b8adefe579\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 9
+    },
+    "expected": {
+      "totals": {
+        "[\"5af6efdd-2773-4f17-bd64-a298c7413e47\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 6,
+        "[\"c86cbef3-1c48-408c-b62d-72b8adefe579\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 10
+      },
+      "references": {
+        "2e782b16-1c0c-4070-bc75-4c05deae41bd": 1.5
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"5af6efdd-2773-4f17-bd64-a298c7413e47\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 7,
+        "[\"c86cbef3-1c48-408c-b62d-72b8adefe579\",\"3fd6890e-a925-4604-ba6c-b73fdab9c322\"]": 10
+      },
+      "references": {
+        "2e782b16-1c0c-4070-bc75-4c05deae41bd": 1.5
+      }
+    },
+    "merges_completed": 1,
+    "mutation_request": "16:22:42.129 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/e7d19a03-dc77-4d74-a6f8-155b232a7cbb/recipe/2e782b16-1c0c-4070-bc75-4c05deae41bd\"}]"
+  },
+  {
+    "case": "three-ingredient",
+    "sample": 2,
+    "status": "NATIVE_LIVE_REPLAY_NOT_ACCEPTED",
+    "independent_prefix_validation": "PASS",
+    "completed_semantic": 8,
+    "completed_order": [
+      "semantic:init",
+      "semantic:2:contribution:api/households/shopping/lists#2",
+      "semantic:1:contribution:api/households/shopping/lists#1",
+      "semantic:3:contribution:api/households/shopping/lists#3",
+      "semantic:4:merge:api/foods#1",
+      "semantic:6:contribution:api/households/shopping/lists#2",
+      "semantic:7:contribution:api/households/shopping/lists#3",
+      "semantic:5:contribution:api/households/shopping/lists#1"
+    ],
+    "resource_ids": [
+      "525914be-6782-4d42-b73f-57cfda204bf0",
+      "6babda87-c040-43aa-816f-5971e7a85a5d",
+      "766407d5-ff18-4e33-aa81-663e9ab87fc1",
+      "3753f6e7-2cd7-4f4d-9742-63852b6053c2",
+      "4afeb8ee-6e36-4d22-ae5e-51906194c58b",
+      "46ed1097-ed5b-4b8f-bce9-71f0eda26fb2",
+      "e804e2e3-2af2-43f2-80c3-b8c068ce2d1d",
+      "50c6497e-fd58-4230-bd49-0a3c3e2e4c89",
+      "96c6b92a-d75d-4f84-a948-1200afae641d",
+      "281e08dc-c5ca-409c-9b5e-9d6a3dda46ba",
+      "5f49be1a-57cf-44c1-ad2d-fb03eb66141b",
+      "c9668d94-ad60-46d4-97a7-014e2b351b64",
+      "47401a7f-139f-478f-aa56-b074109a08f6",
+      "c88d4f8f-9ad5-4e5c-a72d-d84cb3fdc5b0",
+      "f4a26aea-5a08-437e-9c15-d5aac9491660"
+    ],
+    "task_id": "semantic:9:contribution:api/households/shopping/lists#2",
+    "amount": 0.5,
+    "recipe_totals": {
+      "[\"6babda87-c040-43aa-816f-5971e7a85a5d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 2,
+      "[\"e804e2e3-2af2-43f2-80c3-b8c068ce2d1d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 4
+    },
+    "before": {
+      "[\"6babda87-c040-43aa-816f-5971e7a85a5d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 2,
+      "[\"e804e2e3-2af2-43f2-80c3-b8c068ce2d1d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 11
+    },
+    "expected": {
+      "totals": {
+        "[\"6babda87-c040-43aa-816f-5971e7a85a5d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 3,
+        "[\"e804e2e3-2af2-43f2-80c3-b8c068ce2d1d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 13
+      },
+      "references": {
+        "c88d4f8f-9ad5-4e5c-a72d-d84cb3fdc5b0": 1.5
+      }
+    },
+    "observed": {
+      "totals": {
+        "[\"6babda87-c040-43aa-816f-5971e7a85a5d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 3,
+        "[\"e804e2e3-2af2-43f2-80c3-b8c068ce2d1d\",\"281e08dc-c5ca-409c-9b5e-9d6a3dda46ba\"]": 14
+      },
+      "references": {
+        "c88d4f8f-9ad5-4e5c-a72d-d84cb3fdc5b0": 1.5
+      }
+    },
+    "merges_completed": 1,
+    "mutation_request": "16:23:25.571 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:\"Bearer <REDACTED>\", Content-Type:\"application/json\"}, expectedResponseCodes:[0:200.0], lib:\"REST\", method:\"POST\", callback:{}, body:\"{\"recipeIncrementQuantity\":0.5}\", parameters:{}, url:\"http://127.0.0.1:9925/api/households/shopping/lists/4afeb8ee-6e36-4d22-ae5e-51906194c58b/recipe/c88d4f8f-9ad5-4e5c-a72d-d84cb3fdc5b0\"}]"
+  }
+]

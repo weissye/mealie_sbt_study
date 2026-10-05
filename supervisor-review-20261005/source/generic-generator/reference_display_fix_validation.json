@@ -1,0 +1,11 @@
+{
+  "status": "REFERENCE_DISPLAY_FIX_VALIDATED",
+  "native_reference_tests": "PASS",
+  "native_heap_mib": 512,
+  "new_display_regression": "PASS: previous oracle fails on healthy derived display update",
+  "legacy_no_option_byte_comparison": "PASS",
+  "injected_fault_detection": "PASS",
+  "user_campaign": "CONTROL_STOPPED_BEFORE_ANY_DELETE",
+  "live_fixed_mealie_acceptance": false,
+  "powershell_minimum_free_mib": 1024
+}

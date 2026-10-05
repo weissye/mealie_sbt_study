@@ -1,0 +1,76 @@
+{
+  "status": "COPY_CAMPAIGN_EVIDENCE_VERIFIED",
+  "campaign_sha256": "d3db9a3a1caad3356b079ba7deb515e37c8c4e3554f357a921ba4889e0851c08",
+  "runs": [
+    {
+      "case": "control",
+      "sample": 1,
+      "status": "PASS",
+      "original_status": "PASS",
+      "original_live_accepted": true,
+      "sha256": "d4e8f2733373bc9f7a70ad331fad46cfa2d2f8d25fedb851b96c121255cd261d"
+    },
+    {
+      "case": "control",
+      "sample": 2,
+      "status": "PASS",
+      "original_status": "PASS",
+      "original_live_accepted": true,
+      "sha256": "74c1b7ab7dd5dd80339fc90217766af44b28f6ef44a4d70a9cfb01b5358c22ec"
+    },
+    {
+      "case": "source-first",
+      "sample": 1,
+      "status": "PASS",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "a6cede5f1ce7e5809fcf94d9cdecf04066f03f95370175c4a55fb4ec98831ac9"
+    },
+    {
+      "case": "source-first",
+      "sample": 2,
+      "status": "PASS",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "c0167772e52cf580167eeb449090e83c805573f70f83a7912a64efb58fcb3567"
+    },
+    {
+      "case": "copy-first",
+      "sample": 1,
+      "status": "PASS",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "0139e9875ed0c73592a4f1483002db96ca0ad3f09d210364f4ae44c1b3c22711"
+    },
+    {
+      "case": "copy-first",
+      "sample": 2,
+      "status": "PASS",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "9515574a19809e5b4cbf48c61e324d10e9eb66cebbdd4a93448d93714485576e"
+    },
+    {
+      "case": "internal-reference",
+      "sample": 1,
+      "status": "COPY_CANDIDATE",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "c038e7bb26357fffd031fc7a1b18dbfc4103ec3e1c4793e8bdb79af79f56fc9a",
+      "failure": "Dangling internal child reference."
+    },
+    {
+      "case": "internal-reference",
+      "sample": 2,
+      "status": "COPY_CANDIDATE",
+      "original_status": "COPY_CANDIDATE",
+      "original_live_accepted": false,
+      "sha256": "39d20a11f04eda68b319911b8d90c6a4289da3fa54abe77e35915f2343cded44",
+      "failure": "Dangling internal child reference."
+    }
+  ],
+  "distinct_owned_identities": 104,
+  "new_bug_confirmed": false,
+  "reset_replay_accepted": false,
+  "resource_mutations_by_verifier": 0
+}

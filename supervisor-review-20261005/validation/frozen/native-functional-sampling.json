@@ -1,0 +1,29 @@
+{
+  "runtime": "OpenJDK 17.0.20; supplied Provengo JAR; Linux",
+  "server_requests": 0,
+  "checks": [
+    {
+      "case": "F01-addition",
+      "exit_code": 0,
+      "audit_status": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE",
+      "tasks": 51,
+      "sample_bytes": 2663475
+    },
+    {
+      "case": "F02-food-removal",
+      "exit_code": 0,
+      "output": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE\nReview ZIP: tmp/supervisor-build/F02-food-removal-sampling.zip\nNo automatic deletion, retry, rollback, or full server reset/replay was performed.\n"
+    },
+    {
+      "case": "F02-unit-removal",
+      "exit_code": 0,
+      "output": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE\nReview ZIP: tmp/supervisor-build/F02-unit-removal-sampling.zip\nNo automatic deletion, retry, rollback, or full server reset/replay was performed.\n"
+    },
+    {
+      "case": "F03-copy-reference",
+      "exit_code": 0,
+      "output": "NATIVE_SYMBOLIC_SAMPLES_COMPLETE\nReview ZIP: tmp/supervisor-build/F03-copy-reference-sampling.zip\nNo automatic deletion, retry, rollback, or full server reset/replay was performed.\n"
+    }
+  ],
+  "windows_powershell_live_tested": false
+}

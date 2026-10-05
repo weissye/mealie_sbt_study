@@ -1,0 +1,82 @@
+{
+  "status": "REPRODUCED_SERVER_ERROR_WITH_FOREIGN_RECIPE_REFERENCE",
+  "distinct_defect_candidates": 1,
+  "manifestations": 4,
+  "responses": 206,
+  "source_commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+  "runs": [
+    {
+      "case": "shared",
+      "sample": 1,
+      "responses": 46,
+      "live_sha256": "96c84d7665a43d0a03b29ff68caf3004bb2a7706136bd5ea63b945c330d34557",
+      "independent_issues": [],
+      "namespace": "sbt-idp-e55ba68f-f45e-40b0-8ffe-110a27329587"
+    },
+    {
+      "case": "shared",
+      "sample": 2,
+      "responses": 46,
+      "live_sha256": "4a1aac9a47945aaa66fe0d6b0d6445d7f66c755e57c1fa909d2097abe43295eb",
+      "independent_issues": [],
+      "namespace": "sbt-idp-ec91ffd3-83f2-4e58-9bb7-4abd7501ec86"
+    },
+    {
+      "case": "separate",
+      "sample": 1,
+      "responses": 57,
+      "live_sha256": "dfef5bf8e4fc6f1d6d0dd237016f5ae264f9e2cad85966127f99a85e7653fb16",
+      "independent_issues": [
+        {
+          "step": "foreign_add_a",
+          "kind": "HTTP_POLICY_MISMATCH",
+          "expected": [
+            403,
+            404
+          ],
+          "observed": 500
+        },
+        {
+          "step": "foreign_add_b",
+          "kind": "HTTP_POLICY_MISMATCH",
+          "expected": [
+            403,
+            404
+          ],
+          "observed": 500
+        }
+      ],
+      "namespace": "sbt-idp-9a59d15a-5094-4835-80f9-f0989dbb353e"
+    },
+    {
+      "case": "separate",
+      "sample": 2,
+      "responses": 57,
+      "live_sha256": "3f2911f342bab79ca9392552a4cd1fb5993b8801b7b36ebff32265fa0ea92cfe",
+      "independent_issues": [
+        {
+          "step": "foreign_add_a",
+          "kind": "HTTP_POLICY_MISMATCH",
+          "expected": [
+            403,
+            404
+          ],
+          "observed": 500
+        },
+        {
+          "step": "foreign_add_b",
+          "kind": "HTTP_POLICY_MISMATCH",
+          "expected": [
+            403,
+            404
+          ],
+          "observed": 500
+        }
+      ],
+      "namespace": "sbt-idp-57780af0-fc81-47b3-a4c5-8e1db424a4b3"
+    }
+  ],
+  "unauthorized_mutation_demonstrated": false,
+  "root_cause_verified": false,
+  "reset_replay_verified": false
+}
