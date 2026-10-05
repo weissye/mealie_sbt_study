@@ -1,0 +1,13 @@
+{
+  "status": "LOCAL_NATIVE_MOCK_VALIDATION_PASS",
+  "test_methods": 3,
+  "healthy_native_replays": 4,
+  "injected_failure_replays": 1,
+  "heap_mib": 512,
+  "sample_bound_mib": 4,
+  "live_mealie_validated": false,
+  "legacy_core_changed": false,
+  "powershell_executed_locally": false,
+  "full_runner_mock_pass": true,
+  "full_runner_http_requests": 187
+}
