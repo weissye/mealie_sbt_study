@@ -1,0 +1,6 @@
+{
+  "snapshot_basis": "Git HEAD 81d332221c3f567044c9a15f85297cb064b08f69; not asserted as the exact installed source at live execution",
+  "original_archive_sha256": "cf9d953788e19012fc73ea78a4575462e873ee3193775140c1cee28091fd0fd0",
+  "native_generated_models_and_samples": "preserved inside original campaign live ZIPs",
+  "console_transcript": "No separate latest upload identified; campaign run-output files preserved"
+}

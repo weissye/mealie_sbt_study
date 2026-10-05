@@ -1,0 +1,16 @@
+{
+  "observed_server_version": "v3.28.0",
+  "base_url": "http://127.0.0.1:9925",
+  "original_seed": 844524,
+  "confirmation_seed": 264758,
+  "repository_head_before_review": "81d332221c3f567044c9a15f85297cb064b08f69",
+  "original_source_commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+  "contract_sha256_from_original_report": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "missing_capture": [
+    "actual Docker image digest",
+    "actual DB engine/version and deployment configuration",
+    "actual Java/Python/Provengo versions and jar hash",
+    "runtime host OS/resources"
+  ],
+  "docker_state_transferred": false
+}

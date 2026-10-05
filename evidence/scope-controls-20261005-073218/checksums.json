@@ -1,0 +1,10 @@
+{
+  "HANDOFF.md": "da079c66b9e9b2505024a0fae3d166bef09c5db99f09021505421185439233d6",
+  "campaign-original.zip": "cf9d953788e19012fc73ea78a4575462e873ee3193775140c1cee28091fd0fd0",
+  "environment.json": "e5787ecc45ffe427c0c3833b9bcbffc701112ca017eae2cf1730ba73101b68fe",
+  "generator-and-scripts-snapshot.zip": "dc0fc6535783fa8712f48806e9eec4b5ccdd4a17cece67bb04f0a16102445b98",
+  "qualification.json": "fa7e61fb4ca6b94be8bddc19cf0d98dd6f9594f20335c13109ab59f01240bbd4",
+  "qualification_oracle.py": "36422bfd54d1ea3a2e768091844cc05fb888aecd623d172251f9bfe6a0f366df",
+  "source-provenance.json": "0835724e164e2a2a2fb2ddf7149104c7f755b8206c358d640f89c73830dd42ad",
+  "verify_campaign.py": "251f47298eeed6d46001d876d8c0ff46780d64c36bba2480c8b714f8b40978fc"
+}
