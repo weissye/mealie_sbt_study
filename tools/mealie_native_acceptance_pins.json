@@ -1,0 +1,10 @@
+{
+  "generator_version": "0.26.19-parallel-crud.3",
+  "contract_normalized_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "critical_source_normalized_sha256": {
+    "__init__.py": "53571aae787639efea7e8efc65482c85cafcff492a5ebfb0a1d5e98513dfbaf4",
+    "pipeline.py": "76ff8987dd05bdd3b4dab6b30c8b927dc0b4d62bfe843c155e903d79ab6b2499",
+    "render/parallel_crud_v3.py": "d31d60125b815eaf163cae66f15c5eae6d9e230ce165ab1c72c28c93e97b1c31",
+    "render/http_interfaces.py": "0a2f639861bcf65002677558480fcaebe3f134bea0560fbef411fa667fcba667"
+  }
+}

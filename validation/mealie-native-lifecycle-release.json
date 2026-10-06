@@ -1,0 +1,13 @@
+{
+  "positive_native_fixture_pass": true,
+  "complete_http_calls": 29,
+  "bthreads": 20,
+  "faults_detected_after_delete_reached": [
+    "acknowledged DELETE without removal",
+    "accidental sibling removal"
+  ],
+  "real_prior_interleaving_evidence_independently_verified": true,
+  "live_mealie_deletion_extension_executed": false,
+  "windows_powershell_scripts_executed": false,
+  "git_push_performed_from_workspace": false
+}

@@ -1,0 +1,30 @@
+{
+  "paths": [
+    "README-MEALIE-NATIVE-LIFECYCLE.md",
+    "evidence/generator-interleaving-20261006-051538/HANDOFF.md",
+    "evidence/generator-interleaving-20261006-051538/SHA256.txt",
+    "evidence/generator-interleaving-20261006-051538/review-original.zip",
+    "scripts/Save-Mealie-Native-Lifecycle.ps1",
+    "scripts/Test-Mealie-Generator-Interleaving.ps1",
+    "scripts/Test-Mealie-Generator-Lifecycle.ps1",
+    "tools/audit_mealie_generator_native.py",
+    "tools/mealie_native_acceptance_pins.json",
+    "tools/render_native_child_lifecycle.py",
+    "tools/render_native_interleaved_dependencies.py",
+    "tools/run_mealie_child_lifecycle.py",
+    "tools/run_mealie_generator_live.py",
+    "tools/run_mealie_interleaved_dependencies.py",
+    "tools/test_mealie_action_transactions.py",
+    "tools/test_mealie_child_lifecycle_native.py",
+    "tools/test_mealie_interleaved_native.py",
+    "tools/test_mealie_interleaving_witness.py",
+    "tools/verify_mealie_interleaving_evidence.py",
+    "validation/mealie-native-lifecycle-release.json",
+    "validation/native-child-lifecycle-0.zip",
+    "validation/native-child-lifecycle-1.zip",
+    "validation/native-child-lifecycle-2.zip",
+    "validation/native-lifecycle-results.json",
+    "validation/mealie-native-lifecycle-source-paths.json",
+    "SHA256-NATIVE-LIFECYCLE.json"
+  ]
+}
