@@ -1,0 +1,25 @@
+{
+  "status": "NATIVE_FUNCTIONAL_ACCEPTANCE_VERIFIED",
+  "basis": "Submitted native log and generated model; raw HTTP response bodies were not independently retained",
+  "native_exit_code": 0,
+  "crud_workers": 2,
+  "bthreads": 7,
+  "create_calls": 2,
+  "update_calls": 2,
+  "readback_calls": 4,
+  "authentication_calls": 1,
+  "completed_symbolic_events": 22,
+  "retained_resources": true,
+  "deletion_tested": false,
+  "five_findings_reproduced": false,
+  "original_sha256": "e8055ffd85131a6b363829ec80e7a9024026b9b313d78693917e15c905ba16d6",
+  "sanitized_sha256": "317c0f4812a0c7a7a7ef1934a44f25e98a45558c0a1259a46b077585ed8a23dc",
+  "excluded_members": [
+    "model/products/internal/artifacts/1/1/1.txt",
+    "model/products/internal/artifacts/1/1/2.txt",
+    "model/products/internal/artifacts/1/1/3.json",
+    "model/products/internal/runs-db.db"
+  ],
+  "packaging_issue": "Native internal products contain authentication response tokens; excluded from shareable copy",
+  "generator_limitation": "Bounded compatibility renderer over generator_v56 Plan; original parallel-crud renderer not yet accepted"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "LOCAL_VALIDATION_PASS",
+  "native_successful_schedules": 12,
+  "native_injected_failure_schedules": 4,
+  "node_successful_schedules": 12,
+  "native_test_duration_seconds": 83.666,
+  "node_test_duration_seconds": 11.168,
+  "preceding_live_campaign_independent_prefix_checks": 4,
+  "preceding_live_resources_disjoint_per_pair": true,
+  "preceding_live_completed_orders_distinct_per_pair": true,
+  "core_generator_and_tools": "byte-identical to installed collision-controls delivery",
+  "new_live_execution": "pending",
+  "confirmed_new_bug_count": "not determined"
+}

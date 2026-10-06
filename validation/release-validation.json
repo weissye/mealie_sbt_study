@@ -1,0 +1,12 @@
+{
+  "native_positive_pass": true,
+  "injected_faults_detected": [
+    "nonpersisted child update",
+    "scalar change",
+    "parent collection loss"
+  ],
+  "stale_empty_replacement_regression_pass": true,
+  "witness_tests_passed": 4,
+  "live_mealie_corrected_release_executed": false,
+  "git_push_performed": false
+}

@@ -1,0 +1,57 @@
+{
+  "files": [
+    {
+      "path": "docs/MEALIE-NATIVE-F01.md",
+      "sha256_lf": "f6fedb9a868936fac5d12d533bcac8f5be4f7b02b5e13d1c6930530223dc0dce"
+    },
+    {
+      "path": "generated/EXAMPLE-ONLY.txt",
+      "sha256_lf": "a2c35877da4d28ddbd69a66192341e48672bb4cb30ead5acbb699b19dc9ae7d5"
+    },
+    {
+      "path": "generated/spec/js/interfaces.mealie.js",
+      "sha256_lf": "5b982c7fad30a9aca039806c3d4bc1305e870ce9cef67712dfe0415dd89eb80b"
+    },
+    {
+      "path": "generated/spec/js/stories.mealie.js",
+      "sha256_lf": "da68ab9fd8243de652e9807910844b10fd079b182cf77dadac2f50b46fd687c8"
+    },
+    {
+      "path": "profiles/mealie-native-f01.json",
+      "sha256_lf": "af79b7409e1c5de7dc2a1c9c64c5acb83df7b32ac7517160affb9fa13490adec"
+    },
+    {
+      "path": "scripts/Run-Mealie-Native-F01.ps1",
+      "sha256_lf": "b840e12a16edbe253ceeb0e02affbeadcaffda9d05506c0530e29130bb7df7bd"
+    },
+    {
+      "path": "scripts/Save-Mealie-Native-F01.ps1",
+      "sha256_lf": "5d8aa7d45c9848560da48fb29212dc89b6b097a3880bd0a54caa58c2c026fc1e"
+    },
+    {
+      "path": "tools/compile_native_lifecycle.py",
+      "sha256_lf": "932c37e82f7482b78bf28020763b286d66017d932a83700312c84d782455df15"
+    },
+    {
+      "path": "tools/native_lifecycle_interfaces.js",
+      "sha256_lf": "248e4297e0e1f3dedf61558084f46a3aa7e6082863689dd573d53741636e1ce2"
+    },
+    {
+      "path": "tools/run_native_f01.py",
+      "sha256_lf": "e5b831111a2f69178bdbe4510da539b25af263b85d856988cebf5a25388039bd"
+    },
+    {
+      "path": "tools/test_native_f01.py",
+      "sha256_lf": "bcb7812c97240f06c63637d7b4380c065767a52d020294569db0d8b1e2b58d00"
+    },
+    {
+      "path": "tools/verify_native_f01_release.py",
+      "sha256_lf": "8fde82af4859158c40f9ff4ba3926d7bc53a8dbb39d2b5d68a4e38ebcd71917a"
+    },
+    {
+      "path": "validation/native-f01-tests.json",
+      "sha256_lf": "e3c850d2be7e8098c8bb2366a503912493075f6dc925585443b8de9eafd9839b"
+    }
+  ],
+  "contract_pin": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292"
+}

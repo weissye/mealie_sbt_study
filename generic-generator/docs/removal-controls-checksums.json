@@ -1,0 +1,22 @@
+{
+  "generic-generator/profiles/mealie-control-food-integer-no-merge-scope.json": "038aa7934345665526135096d6cf2d0d515726a398548255ea1bdb4795d36b4f",
+  "generic-generator/profiles/mealie-control-food-integer-no-merge-runtime.json": "0c5e84b23802b3954befd537f1a2f41a1e64bf43bdbaa3c99442bf7521df9c13",
+  "generic-generator/profiles/mealie-control-food-integer-one-merge-scope.json": "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d",
+  "generic-generator/profiles/mealie-control-food-integer-one-merge-runtime.json": "d281aadc6aebb23e07c64137ce3687624d0aca280e70598b255151207f5113bb",
+  "generic-generator/profiles/mealie-control-unit-integer-no-merge-scope.json": "ad1f840771058bf573b52c806b7f0f6f8dfb164debfdeb34b5e3969b5a5d5273",
+  "generic-generator/profiles/mealie-control-unit-integer-no-merge-runtime.json": "60ff6be7a21f64bba3108442b88cbfab9c84b2e43283b39432bed3caf2212e05",
+  "generic-generator/profiles/mealie-control-unit-integer-one-merge-scope.json": "e47d5614b12eac9e936a26a590431822c53820130742a91687d05a1a99d1a48b",
+  "generic-generator/profiles/mealie-control-unit-integer-one-merge-runtime.json": "546dbf45a1d72f1f8c07f097467d1b9879045ac15c50cf955a5ce7c0a3ac3928",
+  "generic-generator/tests/test_native_callback_scope.py": "8a458f20f625e4f984b7800b34f1f604faee2e9d07c75dff18c93ac9bfa0effc",
+  "generic-generator/tests/test_removal_controls.py": "0f3aa4e74427fc5702c53bd14f930e35efb378a357ef4c04c80e64e2dfcd0986",
+  "scripts/Run-Generic-Removal-Controls.ps1": "ead2fa82a66bea0b33a954d6d586ea7935313f5e7c2053ca28956940a026111c",
+  "generic-generator/docs/removal-controls.md": "1bb64bfc9b883f477232df22e7c2cf005ab2802fa5c14a5d539da410b0897b69",
+  "evidence/removal-findings-20261004/campaign.zip": "f360a4b7c8a9c4cf14d92a27f5bc9cbe602f99672750a17250a20d2ceb833b34",
+  "evidence/removal-findings-20261004/verify_campaign.py": "0d7ed788370225aaa5573bdbd24acdb3f39b61ea82c80b5b1806a42484f87af1",
+  "evidence/removal-findings-20261004/verification-result.json": "bdf75704c05468324875b6f944d862cf6f2608df34dbf25180d6aae8880a7d30",
+  "evidence/removal-findings-20261004/README.md": "b728ac2c36bdb241a8bcbfc70e2ebf9236c0104500e69340cced62e16b9aeb26",
+  "generic-generator/docs/removal-controls-native.log": "67a28e2d82d06ba9d48dfd227dd185f28ea84732b8badb848b2411a7bbd6b641",
+  "generic-generator/docs/removal-controls-node.log": "4dd562bedc8d6b7f7446a517fc302a5b6aaf4eecce0450ac92f815bb8bf561b0",
+  "generic-generator/docs/removal-offline-verification.log": "9dac47170b40533eba6b0df29bc7c2db5835219af9a6e21a0fa2fee18cdc0d9a",
+  "generic-generator/docs/removal-controls-validation.json": "d536cb6202eb44b265eda5a46c2642c5dbcc1f19b214aecdd76f64fc06d584dd"
+}

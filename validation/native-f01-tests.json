@@ -1,0 +1,14 @@
+{
+  "offline_unit_tests": 4,
+  "http_fixture_executions": 6,
+  "prerequisite_orders": 2,
+  "injected_faults": [
+    "fractional_overcount",
+    "association_overcount"
+  ],
+  "node_syntax_check": true,
+  "native_provengo_executed_here": false,
+  "live_mealie_executed_here": false,
+  "actual_pinned_contract_binding_executed_here": false,
+  "windows_powershell_executed_here": false
+}

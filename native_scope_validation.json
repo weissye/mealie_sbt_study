@@ -1,0 +1,18 @@
+{
+  "validation": "native Provengo against a local HTTP fixture, not Mealie",
+  "runtime_version": "0.7.5-SNAPSHOT ef04cca/20250714-0453/master",
+  "runtime_sha256": "5a8140409e200fb752a97b7317e1b259e668383d9d42814063b3365f0044981b",
+  "java_heap_limit_mib": 512,
+  "native_success": true,
+  "sample_bytes": 2869119,
+  "sample_mib": 2.736,
+  "tasks": 109,
+  "http_requests": 378,
+  "owned_instances": 35,
+  "negative_receipts": 7,
+  "legal_receipts": 17,
+  "mealie_live_acceptance_pending": true,
+  "reset_replay_accepted": false,
+  "full_suite": "63 tests passed, including optional native regression",
+  "transport_cases": 466
+}

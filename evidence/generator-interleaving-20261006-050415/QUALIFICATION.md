@@ -1,0 +1,3 @@
+# Prior run qualification
+
+The supplied review reported NATIVE_INTERLEAVED_DEPENDENCY_NOT_ACCEPTED. A parent refresh read an empty collection; a child was then created; the parent PUT explicitly submitted listItems: []; its response contained no items; the child GET returned 404. The preservation oracle did not account for the stale submitted replacement. No new Mealie defect is confirmed from this run. The corrected acceptance protects its read/modify/write action with native scheduling events and fixes the synthetic server's replacement behavior. This reduced scheduling window is explicit; no claim is made of testing concurrent server writes.

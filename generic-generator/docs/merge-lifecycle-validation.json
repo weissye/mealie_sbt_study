@@ -1,0 +1,13 @@
+{
+  "status": "LOCAL_VALIDATION_PASS",
+  "live_mealie_execution": "pending",
+  "focused_tests": 12,
+  "native_test_methods": 1,
+  "native_successful_schedules": 6,
+  "native_injected_failure_schedules": 4,
+  "native_heap": "512 MiB",
+  "runner_heap": "1 GiB",
+  "native_version": "ef04cca/20250714-0453/master",
+  "generator_and_execution_sources": "byte-identical to installed collision-controls delta",
+  "backward_compatibility": "Focused old-family regressions passed; prior core unchanged. Existing full compatibility runner is invoked on user computer."
+}

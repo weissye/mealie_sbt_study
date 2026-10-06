@@ -1,0 +1,17 @@
+{
+  "status": "INDEPENDENT_RECEIPTS_QUALIFIED_PASS",
+  "original_sha256": "e7249ca3f75564e95c18eee3bc4e006192d9eeaaaf58b8717b00ef9d3edd29c2",
+  "responses": 18,
+  "http_requests": 19,
+  "bthreads": 14,
+  "stable_resource_identities": 4,
+  "child_bindings_preserved": 2,
+  "children_share_one_parent": true,
+  "child_quantities": [
+    1,
+    1
+  ],
+  "native_exit": 0,
+  "new_bug_confirmed": false,
+  "limitation": "Parent update phase precedes child construction; no linked-state interleaving coverage; no deletion"
+}

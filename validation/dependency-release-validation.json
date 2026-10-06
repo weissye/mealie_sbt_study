@@ -1,0 +1,12 @@
+{
+  "offline_renderer_tests": 6,
+  "positive_native_fixture": "PASS",
+  "injected_nonpersisted_update": "DETECTED",
+  "fixture_http_requests": 19,
+  "fixture_target": "Local synthetic HTTP fixture only",
+  "live_mealie_execution": "PENDING",
+  "windows_wrapper_execution": "PENDING",
+  "generic_generator_original_renderer_fixed": false,
+  "five_findings_reproduced": false,
+  "fixture_tests_before_final_metadata_only_change": true
+}

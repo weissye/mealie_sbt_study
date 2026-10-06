@@ -1,0 +1,279 @@
+[
+  {
+    "status": "LOCAL_NATIVE_INTERLEAVED_FIXTURE_PASS",
+    "exit_code": 0,
+    "requests": [
+      [
+        "POST",
+        "/api/auth/token"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/d2a24f07-0acc-4386-9414-f563c48299ca"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/e9dbf604-c304-4476-b9da-bf3dcdb22206"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/d2a24f07-0acc-4386-9414-f563c48299ca"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/lists/d2a24f07-0acc-4386-9414-f563c48299ca"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/d2a24f07-0acc-4386-9414-f563c48299ca"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/fa66faf9-0325-48a6-b307-44d9e42d202d"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/items/e9dbf604-c304-4476-b9da-bf3dcdb22206"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/e9dbf604-c304-4476-b9da-bf3dcdb22206"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/items/fa66faf9-0325-48a6-b307-44d9e42d202d"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/fa66faf9-0325-48a6-b307-44d9e42d202d"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/fa66faf9-0325-48a6-b307-44d9e42d202d"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/e9dbf604-c304-4476-b9da-bf3dcdb22206"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dc542c7-2361-44c1-abbf-9e7dac944d81"
+      ]
+    ],
+    "resource_count": 4,
+    "target": "Local synthetic fixture only; not Mealie",
+    "output": "Native interleaving: two new lists and two items; parent updates mixed with child construction; resources retained; no deletion or live retry.\nNATIVE_INTERLEAVED_DEPENDENCY_PASS\nReview ZIP: /workspace/scratch/af53c30af484/tmp/mealie-live-acceptance-fixture-root/runs/generator-interleaved-dependencies-20261006-050952-282479/review.zip\n",
+    "parent_write_with_existing_children_verified": true
+  },
+  {
+    "status": "INJECTED_NONPERSISTED_UPDATE_DETECTED",
+    "exit_code": 2,
+    "requests": [
+      [
+        "POST",
+        "/api/auth/token"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8c0ba3c3-4afd-44e6-8ec3-58c7a4aa3685"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/fc65dd4f-51cd-4ad4-bff9-0166e78632e9"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/5bbe7d5d-ebf6-4e91-aba4-ea50294c3d53"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/fc65dd4f-51cd-4ad4-bff9-0166e78632e9"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/lists/fc65dd4f-51cd-4ad4-bff9-0166e78632e9"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/fc65dd4f-51cd-4ad4-bff9-0166e78632e9"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8c0ba3c3-4afd-44e6-8ec3-58c7a4aa3685"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/lists/8c0ba3c3-4afd-44e6-8ec3-58c7a4aa3685"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8c0ba3c3-4afd-44e6-8ec3-58c7a4aa3685"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/items/5bbe7d5d-ebf6-4e91-aba4-ea50294c3d53"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/5bbe7d5d-ebf6-4e91-aba4-ea50294c3d53"
+      ]
+    ],
+    "resource_count": 3,
+    "target": "Local synthetic fixture only; not Mealie",
+    "output": "Native interleaving: two new lists and two items; parent updates mixed with child construction; resources retained; no deletion or live retry.\nSTATE_DIFFERENCE_REQUIRES_QUALIFICATION\nReview ZIP: /workspace/scratch/af53c30af484/tmp/mealie-live-acceptance-fixture-root/runs/generator-interleaved-dependencies-20261006-050957-544397/review.zip\n"
+  },
+  {
+    "status": "INJECTED_SCALAR_CHANGE_DETECTED",
+    "exit_code": 2,
+    "requests": [
+      [
+        "POST",
+        "/api/auth/token"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/9762a479-198d-4961-9b13-5d70a0501015"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/74ca3add-62f5-4044-aafc-01eea80202f6"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/8f999004-61b5-45b5-b5f8-cc257644e36e"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/items/8f999004-61b5-45b5-b5f8-cc257644e36e"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/8f999004-61b5-45b5-b5f8-cc257644e36e"
+      ]
+    ],
+    "resource_count": 3,
+    "target": "Local synthetic fixture only; not Mealie",
+    "output": "Native interleaving: two new lists and two items; parent updates mixed with child construction; resources retained; no deletion or live retry.\nSTATE_DIFFERENCE_REQUIRES_QUALIFICATION\nReview ZIP: /workspace/scratch/af53c30af484/tmp/mealie-live-acceptance-fixture-root/runs/generator-interleaved-dependencies-20261006-051002-374306/review.zip\n"
+  },
+  {
+    "status": "INJECTED_PARENT_COLLECTION_LOSS_DETECTED",
+    "exit_code": 2,
+    "requests": [
+      [
+        "POST",
+        "/api/auth/token"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/lists"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/8dfe85f0-834e-4be1-895a-845886c3612f"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/lists/dbb5e2e3-fa9a-40f1-86aa-332a00c49624"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/399ca6ec-2034-4fd4-bbcb-1f1682e734a1"
+      ],
+      [
+        "POST",
+        "/api/households/shopping/items"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/b9d84b10-6cbc-459d-ae5f-cec3b76abbf8"
+      ],
+      [
+        "PUT",
+        "/api/households/shopping/items/399ca6ec-2034-4fd4-bbcb-1f1682e734a1"
+      ],
+      [
+        "GET",
+        "/api/households/shopping/items/399ca6ec-2034-4fd4-bbcb-1f1682e734a1"
+      ]
+    ],
+    "resource_count": 4,
+    "target": "Local synthetic fixture only; not Mealie",
+    "output": "Native interleaving: two new lists and two items; parent updates mixed with child construction; resources retained; no deletion or live retry.\nSTATE_DIFFERENCE_REQUIRES_QUALIFICATION\nReview ZIP: /workspace/scratch/af53c30af484/tmp/mealie-live-acceptance-fixture-root/runs/generator-interleaved-dependencies-20261006-051006-866375/review.zip\n"
+  }
+]

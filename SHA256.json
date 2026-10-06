@@ -1,0 +1,21 @@
+{
+  "README-MEALIE-NATIVE-INTERLEAVING.md": "7a61d24eea9205396361f0aecaabc92bb4eb798c39c10f205fa77864e43a365a",
+  "scripts/Test-Mealie-Generator-Interleaving.ps1": "dda404e6389a1c9942f7f6ede7dc20a353316732907a1744272d849460090930",
+  "validation/release-validation.json": "74cb0345c835be43a3fb34c499f555d9d4f78be8933c1915d8e133d9e21b8a62",
+  "validation/native-fixed-2.zip": "b370f80962b08fb95580f88343f13f788e34a2d495ab2b8f474762611ee74786",
+  "validation/native-fixed-results.json": "c1c232d8b4fc9e693762f92eb3ad267e0a375f50d3941cd7b383816b89e92997",
+  "validation/native-fixed-3.zip": "fc40e07bdecffa6e3033e8e207c8fa2923f4295affd195aed01fb0cf453f4857",
+  "validation/native-fixed-1.zip": "2c38128ed1726d517888f2a33250b5f2fc49636a2eff0fba30fb0898b659e8e8",
+  "validation/native-fixed-0.zip": "d76a4178dbd014900859d855250cfca29f9504425c529e8816a88a241f30b5b0",
+  "tools/run_mealie_generator_live.py": "75f382dd10e4f58a0664c764ba79e92a94afb1a07b22363cc269122e0660c26b",
+  "tools/render_native_interleaved_dependencies.py": "94b83932075d0771a9b3757b0fbef105e1c3fa739d7bbdf4ac48507f4bf96a08",
+  "tools/audit_mealie_generator_native.py": "87f6135bc0f40fc9727fa0f5f292c6ee63cccb3d745ea5ec263831f08001a147",
+  "tools/run_mealie_interleaved_dependencies.py": "8770b47959359b9c4003f84b689bc9658f02295bcf02fca459a96d3d310fac64",
+  "tools/test_mealie_interleaved_native.py": "ae0762b00b33bdaf96473d01edf247877c68dd4e50c899cae307628f0d86f300",
+  "tools/test_mealie_interleaving_witness.py": "fc86753462b172ac1d5f7c9c640e57e76cb59c91177b43f45871caffa13078af",
+  "tools/mealie_native_acceptance_pins.json": "13204a72fc8a401293231f265e70ff247c99746bfbcd273a6d41256019153cc2",
+  "tools/test_mealie_action_transactions.py": "b3864f6668b3bc1a03eac7ece34227218c67c12b22e5bf1549fcf401e377bbaf",
+  "evidence/generator-interleaving-20261006-050415/QUALIFICATION.md": "52ef72f5e61e195869272e8e4ad01e281eb128588a5e58a6e1ff523bf42b25b8",
+  "evidence/generator-interleaving-20261006-050415/SHA256.txt": "d283fee89978558b5d2f54600cb18645d7d738df61d05250a68c59d2ca215c27",
+  "evidence/generator-interleaving-20261006-050415/review-original.zip": "3147876d1498b2b4c027e4ee1b1545d63597c0018ca1d002dfd8f535f8fa955a"
+}

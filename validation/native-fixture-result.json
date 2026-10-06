@@ -1,0 +1,31 @@
+{
+  "exit_code": 2,
+  "requests": [
+    [
+      "POST",
+      "/api/auth/token"
+    ],
+    [
+      "POST",
+      "/api/organizers/tags"
+    ],
+    [
+      "POST",
+      "/api/organizers/tags"
+    ],
+    [
+      "GET",
+      "/api/organizers/tags/5a2df788-fe9d-4ad3-88f0-f5881839ff24"
+    ],
+    [
+      "PUT",
+      "/api/organizers/tags/5a2df788-fe9d-4ad3-88f0-f5881839ff24"
+    ],
+    [
+      "GET",
+      "/api/organizers/tags/5a2df788-fe9d-4ad3-88f0-f5881839ff24"
+    ]
+  ],
+  "tag_count": 2,
+  "target": "local synthetic fixture only"
+}

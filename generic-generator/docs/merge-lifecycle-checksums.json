@@ -1,0 +1,12 @@
+{
+  "generic-generator/profiles/mealie-control-food-integer-lifecycle-scope.json": "2be4fab943a424fbeb7ca3529f790c8dee9ca022eb51bd59971cc0ee3ac5e00d",
+  "generic-generator/profiles/mealie-control-food-integer-lifecycle-runtime.json": "94cf88e5d73fd630e61f25f8c79a0fd71e53f30ab6d387f448a04d105e82cb1b",
+  "generic-generator/profiles/mealie-control-unit-integer-lifecycle-scope.json": "e47d5614b12eac9e936a26a590431822c53820130742a91687d05a1a99d1a48b",
+  "generic-generator/profiles/mealie-control-unit-integer-lifecycle-runtime.json": "65410b7a7b8e6617965a1572277d1b77771b8df50b7f1656062c1bf920d3c657",
+  "generic-generator/tests/semantic_http_fixture.js": "9cccc224bbde257169c362b864567dac61f062e62381ac1e081b959a7445431b",
+  "generic-generator/tests/test_semantic_controls.py": "59f874de0b1aac0d62c18190bbffa3f1458d8f87f1acd3fa71851a1a4dd278ea",
+  "generic-generator/tests/test_native_callback_scope.py": "50d60403dbce68f8f968b2942abff744457cd1d4e1f46bb16891414e3d0732e8",
+  "scripts/Run-Generic-Merge-Lifecycle.ps1": "342a885f225f05688c74b1d204d49e2406cab6ef129649dd5722fdf2e1d2c1db",
+  "generic-generator/docs/merge-lifecycle.md": "ed55e39af13aad8d0b2d7c6d3e671ccbdd60207d80721a3570b1cd5a4f3c0dec",
+  "generic-generator/docs/merge-lifecycle-validation.json": "2a0f22096d02953aee08c83874db8d2489a629471e3180613abe4fd0da5f81ae"
+}

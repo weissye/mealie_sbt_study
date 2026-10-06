@@ -1,0 +1,31 @@
+{
+  "status": "GENERIC_SHARED_UPDATE_REGRESSION_PASS",
+  "test_count": 68,
+  "test_seconds": 132.074,
+  "native_runtime_tests_enabled": true,
+  "native_runtime_heap_mib": 512,
+  "native_sample_size_verified_below_mib": 8,
+  "native_http_fixture_not_mealie": true,
+  "transport_comparison_cases": 466,
+  "legacy_byte_identical_profiles": [
+    "mealie-relational-map-pilot.json",
+    "mealie-relational-alternate-paths.json"
+  ],
+  "new_model": {
+    "task_count": 119,
+    "http_requests": 468,
+    "owned_instances": 35,
+    "shared_update_tasks": 10,
+    "referrer_checks": 30,
+    "legal_receipts": 17,
+    "negative_receipts": 7
+  },
+  "faults_detected": [
+    "shared-update-ignored",
+    "shared-reference-changed",
+    "route-id"
+  ],
+  "live_mealie_expansion_pending": true,
+  "deletion_executed": false,
+  "reset_replay_accepted": false
+}
