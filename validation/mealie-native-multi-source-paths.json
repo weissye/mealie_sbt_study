@@ -1,0 +1,28 @@
+{
+  "paths": [
+    "README-MEALIE-NATIVE-MULTI-DEPENDENCIES.md",
+    "evidence/generator-child-lifecycle-20261006-052852/HANDOFF.md",
+    "evidence/generator-child-lifecycle-20261006-052852/SHA256.txt",
+    "evidence/generator-child-lifecycle-20261006-052852/execution-original.txt",
+    "evidence/generator-child-lifecycle-20261006-052852/review-original.zip",
+    "scripts/Save-Mealie-Native-Multi-Dependencies.ps1",
+    "scripts/Test-Mealie-Generator-Multi-Dependencies.ps1",
+    "tools/audit_mealie_generator_native.py",
+    "tools/infer_native_schema_links.py",
+    "tools/mealie_native_acceptance_pins.json",
+    "tools/render_native_interleaved_dependencies.py",
+    "tools/render_native_multi_dependencies.py",
+    "tools/run_mealie_generator_live.py",
+    "tools/run_mealie_multi_dependencies.py",
+    "tools/test_mealie_multi_native.py",
+    "tools/test_native_schema_links.py",
+    "tools/verify_mealie_child_lifecycle_evidence.py",
+    "validation/mealie-native-multi-release.json",
+    "validation/native-multi-0.zip",
+    "validation/native-multi-1.zip",
+    "validation/native-multi-2.zip",
+    "validation/native-multi-results.json",
+    "validation/mealie-native-multi-source-paths.json",
+    "SHA256-NATIVE-MULTI.json"
+  ]
+}

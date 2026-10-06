@@ -1,0 +1,117 @@
+
+PS C:\work\temp\mealie_sbt_study> 
+PS C:\work\temp\mealie_sbt_study> & {
+>>     $ErrorActionPreference = 'Stop'                                                                                                      
+>>     $root = 'C:\work\temp\mealie_sbt_study'                                                                                              
+>>                                                                                                                                          
+>>     Expand-Archive `                                                                                                                     
+>>         -LiteralPath "$env:USERPROFILE\Downloads\mealie_native_lifecycle_and_verified_evidence.zip" `                                    
+>>         -DestinationPath $root -Force
+>> 
+>>     Set-Location $root
+>>     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+>> 
+>>     Unblock-File '.\scripts\Save-Mealie-Native-Lifecycle.ps1'
+>>     Unblock-File '.\scripts\Test-Mealie-Generator-Lifecycle.ps1'
+>> 
+>>     & .\scripts\Save-Mealie-Native-Lifecycle.ps1 -Root $root -Push
+>> 
+>>     & .\scripts\Test-Mealie-Generator-Lifecycle.ps1 `
+>>         -Root $root `
+>>         -Username 'changeme@example.com'
+>> }
+{
+  "status": "REAL_INTERLEAVING_EVIDENCE_VERIFIED",
+  "http_calls": 25,
+  "business_responses": 24,
+  "bthreads": 18,
+  "new_bug_confirmed": false,
+  "resource_mutations_sent_by_verifier": 0
+}
+warning: in the working copy of 'README-MEALIE-NATIVE-LIFECYCLE.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SHA256-NATIVE-LIFECYCLE.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/generator-interleaving-20261006-051538/HANDOFF.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/generator-interleaving-20261006-051538/SHA256.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Save-Mealie-Native-Lifecycle.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Test-Mealie-Generator-Interleaving.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Test-Mealie-Generator-Lifecycle.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/audit_mealie_generator_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mealie_native_acceptance_pins.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/render_native_child_lifecycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/render_native_interleaved_dependencies.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_child_lifecycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_generator_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_interleaved_dependencies.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_action_transactions.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_child_lifecycle_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_interleaved_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_interleaving_witness.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/verify_mealie_interleaving_evidence.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/mealie-native-lifecycle-release.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/mealie-native-lifecycle-source-paths.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/native-lifecycle-results.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README-MEALIE-NATIVE-LIFECYCLE.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'SHA256-NATIVE-LIFECYCLE.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/generator-interleaving-20261006-051538/HANDOFF.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/generator-interleaving-20261006-051538/SHA256.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Save-Mealie-Native-Lifecycle.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Test-Mealie-Generator-Interleaving.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/Test-Mealie-Generator-Lifecycle.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/audit_mealie_generator_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/mealie_native_acceptance_pins.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/render_native_child_lifecycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/render_native_interleaved_dependencies.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_child_lifecycle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_generator_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/run_mealie_interleaved_dependencies.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_action_transactions.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_child_lifecycle_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_interleaved_native.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/test_mealie_interleaving_witness.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/verify_mealie_interleaving_evidence.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/mealie-native-lifecycle-release.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/mealie-native-lifecycle-source-paths.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'validation/native-lifecycle-results.json', LF will be replaced by CRLF the next time Git touches it
+[main 6b8dcf9] Preserve native interleaving acceptance and add verified child deletion lifecycle
+ 26 files changed, 1456 insertions(+)
+ create mode 100644 README-MEALIE-NATIVE-LIFECYCLE.md
+ create mode 100644 SHA256-NATIVE-LIFECYCLE.json
+ create mode 100644 evidence/generator-interleaving-20261006-051538/HANDOFF.md
+ create mode 100644 evidence/generator-interleaving-20261006-051538/SHA256.txt
+ create mode 100644 evidence/generator-interleaving-20261006-051538/review-original.zip
+ create mode 100644 scripts/Save-Mealie-Native-Lifecycle.ps1
+ create mode 100644 scripts/Test-Mealie-Generator-Interleaving.ps1
+ create mode 100644 scripts/Test-Mealie-Generator-Lifecycle.ps1
+ create mode 100644 tools/audit_mealie_generator_native.py
+ create mode 100644 tools/mealie_native_acceptance_pins.json
+ create mode 100644 tools/render_native_child_lifecycle.py
+ create mode 100644 tools/render_native_interleaved_dependencies.py
+ create mode 100644 tools/run_mealie_child_lifecycle.py
+ create mode 100644 tools/run_mealie_generator_live.py
+ create mode 100644 tools/run_mealie_interleaved_dependencies.py
+ create mode 100644 tools/test_mealie_action_transactions.py
+ create mode 100644 tools/test_mealie_child_lifecycle_native.py
+ create mode 100644 tools/test_mealie_interleaved_native.py
+ create mode 100644 tools/test_mealie_interleaving_witness.py
+ create mode 100644 tools/verify_mealie_interleaving_evidence.py
+ create mode 100644 validation/mealie-native-lifecycle-release.json
+ create mode 100644 validation/mealie-native-lifecycle-source-paths.json
+ create mode 100644 validation/native-child-lifecycle-0.zip
+ create mode 100644 validation/native-child-lifecycle-1.zip
+ create mode 100644 validation/native-child-lifecycle-2.zip
+ create mode 100644 validation/native-lifecycle-results.json
+Enumerating objects: 36, done.
+Counting objects: 100% (36/36), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (33/33), 7.05 MiB | 2.50 MiB/s, done.
+Total 33 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 3 local objects.                                                                       
+To https://github.com/weissye/mealie_sbt_study.git
+   4df22f7..6b8dcf9  HEAD -> main
+NATIVE_LIFECYCLE_SOURCE_AND_EVIDENCE_PUSH_VERIFIED: 6b8dcf9768dbe69d5081378466b64de37b669c8b
+Mealie password (hidden): 
+Native child lifecycle: two new lists and two items; delete only the first owned child after verified updates; parents and sibling retained; no retry.
+NATIVE_CHILD_LIFECYCLE_PASS
+Review ZIP: C:\work\temp\mealie_sbt_study\runs\generator-child-lifecycle-20261006-052852-481153\review.zip
+PS C:\work\temp\mealie_sbt_study> 

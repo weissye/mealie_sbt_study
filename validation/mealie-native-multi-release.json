@@ -1,0 +1,15 @@
+{
+  "schema_inference_tests_passed": 4,
+  "native_positive_fixture_pass": true,
+  "native_expected_http_calls": 39,
+  "native_bthreads": 26,
+  "post_prerequisite_linked_child_reads": 2,
+  "injected_faults_detected": [
+    "wrong optional binding at create",
+    "wrong optional binding at update"
+  ],
+  "archived_real_child_lifecycle_independently_verified": true,
+  "live_mealie_multi_dependency_release_executed": false,
+  "windows_powershell_executed": false,
+  "git_push_performed_from_workspace": false
+}
