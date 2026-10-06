@@ -6,5 +6,11 @@
   "added_quantity": 2,
   "identity_rule": "retain_existing",
   "note_separator": " | ",
-  "response_envelope": {"created":"createdItems","updated":"updatedItems","deleted":"deletedItems"}
+  "response_envelope": {
+    "created": "createdItems",
+    "updated": "updatedItems",
+    "deleted": "deletedItems"
+  },
+  "note_comparison": "unordered_multiset",
+  "note_order_qualification": "Both contribution notes and their exact multiplicities are required; their concatenation order is not constrained."
 }

@@ -74,3 +74,8 @@ def render(plan, document, base_url, namespace, parent_key, child_key, target_ke
     stories+='\nbthread("verify:merge:views",function(){sync({waitFor:EventSet("merge-read-verified",function(e){return e.name==="SBT:MergeReadVerified";})});depMergeParentReadback();depVerifychild2update();depMembershipchild2();'+finals+'sync({request:Event("SBT:MergeVerified")});});'
     manifest['merge_checks']=['retained identity','quantity sum','explicit note policy','stable direct/embedded dependencies','independent item GET','parent collection GET','other list item unchanged','prerequisite GETs']
     return interfaces+'\n',stories+'\n',manifest
+
+
+# Native merge note policy: unordered multiplicity v1
+from native_merge_note_policy import repair_renderer as _repair_merge_note_renderer
+render = _repair_merge_note_renderer(render)

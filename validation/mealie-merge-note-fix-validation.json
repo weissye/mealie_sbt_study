@@ -1,0 +1,62 @@
+{
+  "scope": "Archived generated callbacks executed locally with RTV/HTTP stubs; no API requests and no native replay",
+  "python_tests_passed": 6,
+  "archived_javascript_cases_passed": 11,
+  "live_mealie_corrected_merge_tested": false,
+  "powershell_executed_locally": false,
+  "files": {
+    "README-MEALIE-MERGE-NOTE-FIX.md": {
+      "normalization": "LF",
+      "sha256": "f2b53b73347532508e90eebc62b3ef58ea9483e1f601316abb08731805b6fddf"
+    },
+    "evidence/merge-note-order-20261006-070250/HANDOFF.md": {
+      "normalization": "LF",
+      "sha256": "fdfa5ee37ca5da4a5883d1064597034328e708eb40df5f56f9ef5fd574e85bed"
+    },
+    "evidence/merge-note-order-20261006-070250/SHA256.txt": {
+      "normalization": "LF",
+      "sha256": "83e71487a189b11b9609d0ec9f9cc3a03cb59869671e9fa089bb26d0c113ffed"
+    },
+    "evidence/merge-note-order-20261006-070250/qualification.json": {
+      "normalization": "LF",
+      "sha256": "51b01d46690e4a2e24ba339da923204613875808f4b4be4c9f704f4e34dab2d1"
+    },
+    "evidence/merge-note-order-20261006-070250/review-original.zip": {
+      "normalization": "raw",
+      "sha256": "dae83aa32bf866848893ad171a326706d13b46698ec4ea06275e77b95bb576ee"
+    },
+    "scripts/Save-Mealie-Merge-Note-Fix.ps1": {
+      "normalization": "LF",
+      "sha256": "412539cf470303b79d265d68b297f87a577739533acf7b35247fca279c57c047"
+    },
+    "scripts/Test-Mealie-Merge-Note-Fix.ps1": {
+      "normalization": "LF",
+      "sha256": "c45361e5896752e9091d0b04284ddb65044267b3f848fc0f447d3e2ff6d2be50"
+    },
+    "tools/apply_mealie_merge_note_fix.py": {
+      "normalization": "LF",
+      "sha256": "ad46dadb16aa83008c7a58a9be0fe917cf0b85a8244667dc4f006fe0092b9eb6"
+    },
+    "tools/native_merge_note_policy.py": {
+      "normalization": "LF",
+      "sha256": "d44834eeda1a32b2a0e0e42a8d5050469d21317ab294f5906c152033b4575265"
+    },
+    "tools/test_mealie_merge_note_fix.py": {
+      "normalization": "LF",
+      "sha256": "1122837565b01b8fad10d35b3947d0d0ad77ab3eaca2d3e8488ab3b5d21562e1"
+    },
+    "tools/verify_mealie_merge_note_original.py": {
+      "normalization": "LF",
+      "sha256": "e26be726bfe2a88a79c0929b1305b8796853ec617e675212220a73823849a3d6"
+    },
+    "tools/verify_mealie_merge_note_patch.py": {
+      "normalization": "LF",
+      "sha256": "746967679820df1743cae5e5a8c5d6c77ca11e7bf92d2d5cd656ab947dde33a6"
+    },
+    "validation/mealie-merge-note-fix-paths.json": {
+      "normalization": "LF",
+      "sha256": "b9781e62b240d8a70fc93e77bac44dcef16b21b362723d9be518dc4c5e91e57d"
+    }
+  },
+  "windows_line_ending_regression": "LF and CRLF fixtures plus emulated Windows writes passed; user-supplied original source also passed install/idempotence/hash/AST checks"
+}

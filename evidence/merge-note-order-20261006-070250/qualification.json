@@ -1,0 +1,16 @@
+{
+  "classification": "NOTE_ORDER_ORACLE_FALSE_POSITIVE",
+  "archive_sha256": "dae83aa32bf866848893ad171a326706d13b46698ec4ea06275e77b95bb576ee",
+  "planned_http_calls": 46,
+  "actual_http_before_failure": 40,
+  "business_responses": 39,
+  "identity_preserved_in_merge_response": true,
+  "quantity_before": 1,
+  "quantity_added": 2,
+  "quantity_in_merge_response": 3,
+  "direct_dependencies_preserved_in_merge_response": true,
+  "notes_preserved_but_order_reversed": true,
+  "independent_post_merge_reads": 0,
+  "new_bug_confirmed": false,
+  "limitation": "No independent post-merge GET reached. Current-state or a fresh corrected experiment is still needed for persistence and unrelated-item checks."
+}

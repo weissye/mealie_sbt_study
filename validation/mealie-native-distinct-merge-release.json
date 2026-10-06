@@ -26,7 +26,7 @@
       "normalization": "raw"
     },
     "profiles/mealie-native-merge-policy.json": {
-      "sha256": "1f314f0e3dd9d65d4daf45fbafec7fed05e37c6cdad62c8f0eda211bd48b9d6d",
+      "sha256": "cfdfd7f743f009a7bf096b26f930ef09da807ebd7fa1788446f787b81b977929",
       "normalization": "LF"
     },
     "scripts/Save-Mealie-Native-Distinct-Merge.ps1": {
@@ -50,7 +50,7 @@
       "normalization": "LF"
     },
     "tools/render_native_distinct_merge.py": {
-      "sha256": "7a6662742132096dd28c1dd3d3e63bb51fadeadd70695e459b7102258f1f3aee",
+      "sha256": "b0d06a8c707c7f1eb922ab86cbb613978994499ae120df0c1f1be526d9f2953c",
       "normalization": "LF"
     },
     "tools/render_native_interleaved_dependencies.py": {
@@ -117,5 +117,6 @@
       "sha256": "64ed3a4bdfa0ffb12bf9ac2849247f62b430fb6bda60ceae956f1e9b4c9bdc13",
       "normalization": "LF"
     }
-  }
+  },
+  "merge_note_fix": "Additive wrapper; original quantity/identity/dependency checks retained; note order corrected separately from original evidence."
 }

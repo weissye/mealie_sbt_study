@@ -1,0 +1,21 @@
+{
+  "paths": [
+    "README-MEALIE-MERGE-NOTE-FIX.md",
+    "evidence/merge-note-order-20261006-070250/HANDOFF.md",
+    "evidence/merge-note-order-20261006-070250/SHA256.txt",
+    "evidence/merge-note-order-20261006-070250/qualification.json",
+    "evidence/merge-note-order-20261006-070250/review-original.zip",
+    "profiles/mealie-native-merge-policy.json",
+    "scripts/Save-Mealie-Merge-Note-Fix.ps1",
+    "scripts/Test-Mealie-Merge-Note-Fix.ps1",
+    "tools/apply_mealie_merge_note_fix.py",
+    "tools/native_merge_note_policy.py",
+    "tools/render_native_distinct_merge.py",
+    "tools/test_mealie_merge_note_fix.py",
+    "tools/verify_mealie_merge_note_original.py",
+    "tools/verify_mealie_merge_note_patch.py",
+    "validation/mealie-merge-note-fix-paths.json",
+    "validation/mealie-merge-note-fix-validation.json",
+    "validation/mealie-native-distinct-merge-release.json"
+  ]
+}
