@@ -1,0 +1,121 @@
+{
+  "validation_scope": "Native Provengo against a local synthetic HTTP fixture, not a live Mealie validation",
+  "success_scenarios": 2,
+  "injected_faults_detected": 3,
+  "offline_tests": 8,
+  "powershell_runtime_available_locally": false,
+  "files": {
+    "README-MEALIE-NATIVE-DISTINCT-MERGE.md": {
+      "sha256": "94068ce2be1451d2f75ee7d30a8591403d421c11c8de7560768b2b97b0704c06",
+      "normalization": "LF"
+    },
+    "evidence/generator-multi-merge-20261006-054723/HANDOFF.md": {
+      "sha256": "a31e778f86cda9430913f39edf1762a67941e0e9b3353a83fbf83f514e62ff9a",
+      "normalization": "LF"
+    },
+    "evidence/generator-multi-merge-20261006-054723/SHA256.txt": {
+      "sha256": "79133c6fd87586dee4343eec4ccf3c0171f54bbc2accf4fe4ea82e757508e218",
+      "normalization": "LF"
+    },
+    "evidence/generator-multi-merge-20261006-054723/qualification.json": {
+      "sha256": "8f9a16cc9a6d77895e054a95df06bd9d7cac56056f5e5c69d343af6ec77baaa5",
+      "normalization": "LF"
+    },
+    "evidence/generator-multi-merge-20261006-054723/review-original.zip": {
+      "sha256": "514b24ff33d817c05f63aa824b1318e6e9108e513001e18779eb212203edeca3",
+      "normalization": "raw"
+    },
+    "profiles/mealie-native-merge-policy.json": {
+      "sha256": "1f314f0e3dd9d65d4daf45fbafec7fed05e37c6cdad62c8f0eda211bd48b9d6d",
+      "normalization": "LF"
+    },
+    "scripts/Save-Mealie-Native-Distinct-Merge.ps1": {
+      "sha256": "4397f0d29ce261419945fbbeb2e656eee3218bb32c9539219be2654b7c0094c4",
+      "normalization": "LF"
+    },
+    "scripts/Test-Mealie-Native-Distinct-Merge.ps1": {
+      "sha256": "6b832fb02efdd8e8ffac99161b2fe021fe9946f473e5d4ad0eb55f065e2eebbc",
+      "normalization": "LF"
+    },
+    "tools/audit_mealie_generator_native.py": {
+      "sha256": "87f6135bc0f40fc9727fa0f5f292c6ee63cccb3d745ea5ec263831f08001a147",
+      "normalization": "LF"
+    },
+    "tools/infer_native_schema_links.py": {
+      "sha256": "65b79e962619d77dec7bad8d2a16b2112e21d681a439c65252694bb5992a5336",
+      "normalization": "LF"
+    },
+    "tools/mealie_native_acceptance_pins.json": {
+      "sha256": "13204a72fc8a401293231f265e70ff247c99746bfbcd273a6d41256019153cc2",
+      "normalization": "LF"
+    },
+    "tools/render_native_distinct_merge.py": {
+      "sha256": "7a6662742132096dd28c1dd3d3e63bb51fadeadd70695e459b7102258f1f3aee",
+      "normalization": "LF"
+    },
+    "tools/render_native_interleaved_dependencies.py": {
+      "sha256": "94b83932075d0771a9b3757b0fbef105e1c3fa739d7bbdf4ac48507f4bf96a08",
+      "normalization": "LF"
+    },
+    "tools/render_native_multi_dependencies.py": {
+      "sha256": "2b82ae138c015695b9bcdbc60002d86c38568e469a1c1b46356b6d39db7bcbd3",
+      "normalization": "LF"
+    },
+    "tools/run_mealie_distinct_merge.py": {
+      "sha256": "bfbda98510a0530f939701c39f6b4f0ac1008aef2939bacdbc1850c12a6b267c",
+      "normalization": "LF"
+    },
+    "tools/run_mealie_generator_live.py": {
+      "sha256": "75f382dd10e4f58a0664c764ba79e92a94afb1a07b22363cc269122e0660c26b",
+      "normalization": "LF"
+    },
+    "tools/test_mealie_distinct_merge_native.py": {
+      "sha256": "fcdb6b3df5dec7c3dec588df9e8e662dcbaa49eb81e6170322531653c84d48f1",
+      "normalization": "LF"
+    },
+    "tools/test_mealie_distinct_merge_renderer.py": {
+      "sha256": "f167e72537b6916e55b0b7168d669d3e642ad6f9d6a24074a5508051630edf96",
+      "normalization": "LF"
+    },
+    "tools/test_native_schema_links.py": {
+      "sha256": "745f97f3c171b43ea5f99459dca8ad02deaf7c3c4daff16b75629f8009ed00d2",
+      "normalization": "LF"
+    },
+    "tools/verify_mealie_distinct_merge_release.py": {
+      "sha256": "8026ca375788fba36991223f205717a29bbe121e6b49c9f3915ff0670bda588b",
+      "normalization": "LF"
+    },
+    "tools/verify_mealie_multi_merge_original.py": {
+      "sha256": "902b99f476845d8fa7087331f41a5555f255d3468994d4eb3dab968c28cbe504",
+      "normalization": "LF"
+    },
+    "validation/distinct-merge-native-0.zip": {
+      "sha256": "79cce64f1b3a98b7bf8f83f74cb1724b742db61ef0dca95f115b69297b879916",
+      "normalization": "raw"
+    },
+    "validation/distinct-merge-native-1.zip": {
+      "sha256": "b92127b0cc029c879edc978fed6236cd3ae7c26541b4dc9d7d43df3114630a20",
+      "normalization": "raw"
+    },
+    "validation/distinct-merge-native-2.zip": {
+      "sha256": "b55e0ee87f8c0c75ce9964e9a8a6b826868e8455707da20d27f41820e16eb56b",
+      "normalization": "raw"
+    },
+    "validation/distinct-merge-native-3.zip": {
+      "sha256": "5cf154ef6c8f56290814c5b5af899d966926e50c818d180ea6fa7001b9e47610",
+      "normalization": "raw"
+    },
+    "validation/distinct-merge-native-4.zip": {
+      "sha256": "b68f3ee6d854509e106c027f16291132f792a436671f7ed73ffc63964b2c9529",
+      "normalization": "raw"
+    },
+    "validation/distinct-merge-native-results.json": {
+      "sha256": "670905b551fb2f4f84daf35a5ddf1c4064c5dfa4f3da505bb3200d85f520d3f4",
+      "normalization": "LF"
+    },
+    "validation/mealie-native-distinct-merge-paths.json": {
+      "sha256": "64ed3a4bdfa0ffb12bf9ac2849247f62b430fb6bda60ceae956f1e9b4c9bdc13",
+      "normalization": "LF"
+    }
+  }
+}

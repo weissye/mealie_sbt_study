@@ -1,0 +1,33 @@
+{
+  "paths": [
+    "README-MEALIE-NATIVE-DISTINCT-MERGE.md",
+    "evidence/generator-multi-merge-20261006-054723/HANDOFF.md",
+    "evidence/generator-multi-merge-20261006-054723/SHA256.txt",
+    "evidence/generator-multi-merge-20261006-054723/qualification.json",
+    "evidence/generator-multi-merge-20261006-054723/review-original.zip",
+    "profiles/mealie-native-merge-policy.json",
+    "scripts/Save-Mealie-Native-Distinct-Merge.ps1",
+    "scripts/Test-Mealie-Native-Distinct-Merge.ps1",
+    "tools/audit_mealie_generator_native.py",
+    "tools/infer_native_schema_links.py",
+    "tools/mealie_native_acceptance_pins.json",
+    "tools/render_native_distinct_merge.py",
+    "tools/render_native_interleaved_dependencies.py",
+    "tools/render_native_multi_dependencies.py",
+    "tools/run_mealie_distinct_merge.py",
+    "tools/run_mealie_generator_live.py",
+    "tools/test_mealie_distinct_merge_native.py",
+    "tools/test_mealie_distinct_merge_renderer.py",
+    "tools/test_native_schema_links.py",
+    "tools/verify_mealie_distinct_merge_release.py",
+    "tools/verify_mealie_multi_merge_original.py",
+    "validation/distinct-merge-native-0.zip",
+    "validation/distinct-merge-native-1.zip",
+    "validation/distinct-merge-native-2.zip",
+    "validation/distinct-merge-native-3.zip",
+    "validation/distinct-merge-native-4.zip",
+    "validation/distinct-merge-native-results.json",
+    "validation/mealie-native-distinct-merge-paths.json",
+    "validation/mealie-native-distinct-merge-release.json"
+  ]
+}

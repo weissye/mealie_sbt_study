@@ -1,0 +1,11 @@
+{
+  "status": "MODEL_CREATE_IDENTITY_ASSUMPTION_NOT_ACCEPTED",
+  "archive_sha256": "514b24ff33d817c05f63aa824b1318e6e9108e513001e18779eb212203edeca3",
+  "responses": 27,
+  "http_calls_before_first_failure": 28,
+  "observed": "Second same-binding POST returned existing item in updatedItems, quantity 1 to 2, concatenated notes",
+  "post_merge_independent_get": false,
+  "new_bug_confirmed": false,
+  "source_and_previous_evidence_commit": "4ed9abd607ccca385e44aa696bd436ce4b325940",
+  "qualification": "Response-only merge observation. Original replay remains unchanged; do not reinterpret as a distinct-item creation."
+}
