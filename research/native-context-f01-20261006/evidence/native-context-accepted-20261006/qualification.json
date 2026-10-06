@@ -1,0 +1,611 @@
+{
+  "status": "USER_NATIVE_CONTEXT_ACCEPTANCE_PASS",
+  "source": "Uploaded successful native run transcript; selected metadata and parsed independent snapshots only",
+  "native_exit": 0,
+  "http_requests": 29,
+  "methods": {
+    "POST": 6,
+    "GET": 17,
+    "PATCH": 2,
+    "PUT": 4
+  },
+  "seed": 767471548,
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "bindings": {
+    "ROUTE_Recipe_1": "sbt-767471548-recipe-1-name",
+    "ID_ShoppingListOut_1": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+    "ROUTE_ShoppingListOut_1": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+    "ID_Recipe_1": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+    "ID_IngredientFood_1": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+    "ROUTE_IngredientFood_1": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+    "ID_IngredientUnit_1": "badd98b5-024f-46b4-b07c-33075a374a25",
+    "ROUTE_IngredientUnit_1": "badd98b5-024f-46b4-b07c-33075a374a25",
+    "ID_ShoppingListItemOut_1": "7a612779-99c3-4e55-a1e6-49416593415e",
+    "ROUTE_ShoppingListItemOut_1": "7a612779-99c3-4e55-a1e6-49416593415e"
+  },
+  "verified": [
+    {
+      "logicalId": "Recipe_1",
+      "revision": 1.0
+    },
+    {
+      "logicalId": "IngredientFood_1",
+      "revision": 1.0
+    },
+    {
+      "logicalId": "IngredientUnit_1",
+      "revision": 1.0
+    },
+    {
+      "logicalId": "ShoppingListOut_1",
+      "revision": 1.0
+    },
+    {
+      "logicalId": "Recipe_1",
+      "revision": 2.0
+    },
+    {
+      "logicalId": "IngredientFood_1",
+      "revision": 2.0
+    },
+    {
+      "logicalId": "ShoppingListOut_1",
+      "revision": 2.0
+    },
+    {
+      "logicalId": "IngredientUnit_1",
+      "revision": 2.0
+    },
+    {
+      "logicalId": "Recipe_1",
+      "revision": 3.0
+    },
+    {
+      "logicalId": "ShoppingListItemOut_1",
+      "revision": 1.0
+    },
+    {
+      "logicalId": "ShoppingListItemOut_1",
+      "revision": 2.0
+    }
+  ],
+  "independent_snapshots": [
+    {
+      "key": "SNAPSHOT_ShoppingListOut_1",
+      "response": {
+        "name": "sbt-767471548-ShoppingListOut-1-name",
+        "extras": {},
+        "createdAt": "2026-10-06T17:35:41.307491Z",
+        "updatedAt": "2026-10-06T17:35:41.307493Z",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "id": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+        "listItems": [],
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "recipeReferences": [],
+        "labelSettings": []
+      }
+    },
+    {
+      "key": "SNAPSHOT_Recipe_1",
+      "response": {
+        "id": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+        "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "name": "sbt-767471548-Recipe-1-name",
+        "slug": "sbt-767471548-recipe-1-name",
+        "image": null,
+        "recipeServings": 0.0,
+        "recipeYieldQuantity": 0.0,
+        "recipeYield": null,
+        "totalTime": null,
+        "prepTime": null,
+        "cookTime": null,
+        "performTime": null,
+        "description": "",
+        "recipeCategory": [],
+        "tags": [],
+        "tools": [],
+        "rating": null,
+        "orgURL": null,
+        "dateAdded": "2026-10-06",
+        "dateUpdated": "2026-10-06T17:35:41.081577Z",
+        "createdAt": "2026-10-06T17:35:41.082820Z",
+        "updatedAt": "2026-10-06T17:35:41.082821Z",
+        "lastMade": null,
+        "recipeIngredient": [
+          {
+            "quantity": 0.0,
+            "unit": null,
+            "food": null,
+            "referencedRecipe": null,
+            "note": "1 Cup Flour",
+            "display": "1 Cup Flour",
+            "title": null,
+            "originalText": null,
+            "substitutions": [],
+            "referenceId": "61cb1f82-e7a6-4ee5-97aa-dd0920c4ac8a"
+          }
+        ],
+        "recipeInstructions": [
+          {
+            "id": "26bc59d1-5641-4b5f-8b79-348c7fc20e29",
+            "title": "",
+            "summary": "",
+            "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+            "ingredientReferences": [],
+            "noteReferences": []
+          }
+        ],
+        "nutrition": {
+          "calories": null,
+          "carbohydrateContent": null,
+          "cholesterolContent": null,
+          "fatContent": null,
+          "fiberContent": null,
+          "proteinContent": null,
+          "saturatedFatContent": null,
+          "sodiumContent": null,
+          "sugarContent": null,
+          "transFatContent": null,
+          "unsaturatedFatContent": null
+        },
+        "settings": {
+          "public": false,
+          "showNutrition": false,
+          "showAssets": false,
+          "landscapeView": false,
+          "disableComments": false,
+          "locked": false
+        },
+        "assets": [],
+        "notes": [],
+        "extras": {},
+        "comments": []
+      }
+    },
+    {
+      "key": "SNAPSHOT_IngredientFood_1",
+      "response": {
+        "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+        "name": "sbt-767471548-IngredientFood-1-name",
+        "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+        "description": "",
+        "extras": {},
+        "labelId": null,
+        "aliases": [],
+        "substitutions": [],
+        "householdsWithIngredientFood": [],
+        "label": null,
+        "createdAt": "2026-10-06T17:35:41.766719Z",
+        "updatedAt": "2026-10-06T17:35:41.766722Z"
+      }
+    },
+    {
+      "key": "SNAPSHOT_Recipe_1",
+      "response": {
+        "id": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+        "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "name": "sbt-767471548-Recipe-1-name",
+        "slug": "sbt-767471548-recipe-1-name",
+        "image": null,
+        "recipeServings": 0.0,
+        "recipeYieldQuantity": 0.0,
+        "recipeYield": null,
+        "totalTime": null,
+        "prepTime": null,
+        "cookTime": null,
+        "performTime": null,
+        "description": "sbt-767471548-Recipe_1-updated",
+        "recipeCategory": [],
+        "tags": [],
+        "tools": [],
+        "rating": null,
+        "orgURL": null,
+        "dateAdded": "2026-10-06",
+        "dateUpdated": "2026-10-06T17:35:42.352989Z",
+        "createdAt": "2026-10-06T17:35:41.082820Z",
+        "updatedAt": "2026-10-06T17:35:42.354413Z",
+        "lastMade": null,
+        "recipeIngredient": [
+          {
+            "quantity": 0.0,
+            "unit": null,
+            "food": null,
+            "referencedRecipe": null,
+            "note": "1 Cup Flour",
+            "display": "1 Cup Flour",
+            "title": null,
+            "originalText": null,
+            "substitutions": [],
+            "referenceId": "61cb1f82-e7a6-4ee5-97aa-dd0920c4ac8a"
+          }
+        ],
+        "recipeInstructions": [
+          {
+            "id": "8f5ff81c-9216-4f78-a4c1-609dcd190db2",
+            "title": "",
+            "summary": "",
+            "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+            "ingredientReferences": [],
+            "noteReferences": []
+          }
+        ],
+        "nutrition": {
+          "calories": null,
+          "carbohydrateContent": null,
+          "cholesterolContent": null,
+          "fatContent": null,
+          "fiberContent": null,
+          "proteinContent": null,
+          "saturatedFatContent": null,
+          "sodiumContent": null,
+          "sugarContent": null,
+          "transFatContent": null,
+          "unsaturatedFatContent": null
+        },
+        "settings": {
+          "public": false,
+          "showNutrition": false,
+          "showAssets": false,
+          "landscapeView": false,
+          "disableComments": false,
+          "locked": false
+        },
+        "assets": [],
+        "notes": [],
+        "extras": {},
+        "comments": []
+      }
+    },
+    {
+      "key": "SNAPSHOT_IngredientUnit_1",
+      "response": {
+        "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+        "name": "sbt-767471548-IngredientUnit-1-name",
+        "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+        "description": "",
+        "extras": {},
+        "fraction": true,
+        "abbreviation": "",
+        "pluralAbbreviation": "",
+        "useAbbreviation": false,
+        "aliases": [],
+        "standardQuantity": null,
+        "standardUnit": null,
+        "createdAt": "2026-10-06T17:35:42.692251Z",
+        "updatedAt": "2026-10-06T17:35:42.692253Z"
+      }
+    },
+    {
+      "key": "SNAPSHOT_IngredientFood_1",
+      "response": {
+        "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+        "name": "sbt-767471548-IngredientFood-1-name",
+        "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+        "description": "sbt-767471548-IngredientFood_1-updated",
+        "extras": {},
+        "labelId": null,
+        "aliases": [],
+        "substitutions": [],
+        "householdsWithIngredientFood": [],
+        "label": null,
+        "createdAt": "2026-10-06T17:35:41.766719Z",
+        "updatedAt": "2026-10-06T17:35:43.467681Z"
+      }
+    },
+    {
+      "key": "SNAPSHOT_ShoppingListOut_1",
+      "response": {
+        "name": "sbt-767471548-ShoppingListOut_1-updated",
+        "extras": {},
+        "createdAt": "2026-10-06T17:35:41.307491Z",
+        "updatedAt": "2026-10-06T17:35:44.020259Z",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "id": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+        "listItems": [],
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "recipeReferences": [],
+        "labelSettings": []
+      }
+    },
+    {
+      "key": "SNAPSHOT_IngredientUnit_1",
+      "response": {
+        "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+        "name": "sbt-767471548-IngredientUnit-1-name",
+        "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+        "description": "sbt-767471548-IngredientUnit_1-updated",
+        "extras": {},
+        "fraction": true,
+        "abbreviation": "",
+        "pluralAbbreviation": "",
+        "useAbbreviation": false,
+        "aliases": [],
+        "standardQuantity": null,
+        "standardUnit": null,
+        "createdAt": "2026-10-06T17:35:42.692251Z",
+        "updatedAt": "2026-10-06T17:35:44.261523Z"
+      }
+    },
+    {
+      "key": "SNAPSHOT_Recipe_1",
+      "response": {
+        "id": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+        "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "name": "sbt-767471548-Recipe-1-name",
+        "slug": "sbt-767471548-recipe-1-name",
+        "image": null,
+        "recipeServings": 0.0,
+        "recipeYieldQuantity": 0.0,
+        "recipeYield": null,
+        "totalTime": null,
+        "prepTime": null,
+        "cookTime": null,
+        "performTime": null,
+        "description": "sbt-767471548-Recipe_1-updated",
+        "recipeCategory": [],
+        "tags": [],
+        "tools": [],
+        "rating": null,
+        "orgURL": null,
+        "dateAdded": "2026-10-06",
+        "dateUpdated": "2026-10-06T17:35:45.019513Z",
+        "createdAt": "2026-10-06T17:35:41.082820Z",
+        "updatedAt": "2026-10-06T17:35:45.020714Z",
+        "lastMade": null,
+        "recipeIngredient": [
+          {
+            "quantity": 1.0,
+            "unit": {
+              "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+              "name": "sbt-767471548-IngredientUnit-1-name",
+              "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+              "description": "sbt-767471548-IngredientUnit_1-updated",
+              "extras": {},
+              "fraction": true,
+              "abbreviation": "",
+              "pluralAbbreviation": "",
+              "useAbbreviation": false,
+              "aliases": [],
+              "standardQuantity": null,
+              "standardUnit": null,
+              "createdAt": "2026-10-06T17:35:42.692251Z",
+              "updatedAt": "2026-10-06T17:35:44.261523Z"
+            },
+            "food": {
+              "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+              "name": "sbt-767471548-IngredientFood-1-name",
+              "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+              "description": "sbt-767471548-IngredientFood_1-updated",
+              "extras": {},
+              "labelId": null,
+              "aliases": [],
+              "substitutions": [],
+              "householdsWithIngredientFood": [],
+              "label": null,
+              "createdAt": "2026-10-06T17:35:41.766719Z",
+              "updatedAt": "2026-10-06T17:35:43.467681Z"
+            },
+            "referencedRecipe": null,
+            "note": null,
+            "display": "1 sbt-767471548-IngredientUnit-1-name sbt-767471548-IngredientFood-1-name",
+            "title": null,
+            "originalText": null,
+            "substitutions": [],
+            "referenceId": "292b88c2-3774-485a-aaba-d670867f318e"
+          },
+          {
+            "quantity": 1.0,
+            "unit": {
+              "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+              "name": "sbt-767471548-IngredientUnit-1-name",
+              "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+              "description": "sbt-767471548-IngredientUnit_1-updated",
+              "extras": {},
+              "fraction": true,
+              "abbreviation": "",
+              "pluralAbbreviation": "",
+              "useAbbreviation": false,
+              "aliases": [],
+              "standardQuantity": null,
+              "standardUnit": null,
+              "createdAt": "2026-10-06T17:35:42.692251Z",
+              "updatedAt": "2026-10-06T17:35:44.261523Z"
+            },
+            "food": {
+              "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+              "name": "sbt-767471548-IngredientFood-1-name",
+              "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+              "description": "sbt-767471548-IngredientFood_1-updated",
+              "extras": {},
+              "labelId": null,
+              "aliases": [],
+              "substitutions": [],
+              "householdsWithIngredientFood": [],
+              "label": null,
+              "createdAt": "2026-10-06T17:35:41.766719Z",
+              "updatedAt": "2026-10-06T17:35:43.467681Z"
+            },
+            "referencedRecipe": null,
+            "note": null,
+            "display": "1 sbt-767471548-IngredientUnit-1-name sbt-767471548-IngredientFood-1-name",
+            "title": null,
+            "originalText": null,
+            "substitutions": [],
+            "referenceId": "13d3b7cb-1b79-48c9-9e61-4eaace4ea081"
+          }
+        ],
+        "recipeInstructions": [
+          {
+            "id": "79abb869-9474-4bf4-b2cd-3b7a980293c9",
+            "title": "",
+            "summary": "",
+            "text": "Recipe steps as well as other fields in the recipe page support markdown syntax.\n\n**Add a link**\n\n[My Link](https://demo.mealie.io)\n",
+            "ingredientReferences": [],
+            "noteReferences": []
+          }
+        ],
+        "nutrition": {
+          "calories": null,
+          "carbohydrateContent": null,
+          "cholesterolContent": null,
+          "fatContent": null,
+          "fiberContent": null,
+          "proteinContent": null,
+          "saturatedFatContent": null,
+          "sodiumContent": null,
+          "sugarContent": null,
+          "transFatContent": null,
+          "unsaturatedFatContent": null
+        },
+        "settings": {
+          "public": false,
+          "showNutrition": false,
+          "showAssets": false,
+          "landscapeView": false,
+          "disableComments": false,
+          "locked": false
+        },
+        "assets": [],
+        "notes": [],
+        "extras": {},
+        "comments": []
+      }
+    },
+    {
+      "key": "SNAPSHOT_ShoppingListItemOut_1",
+      "response": {
+        "quantity": 1.0,
+        "unit": {
+          "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+          "name": "sbt-767471548-IngredientUnit-1-name",
+          "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+          "description": "sbt-767471548-IngredientUnit_1-updated",
+          "extras": {},
+          "fraction": true,
+          "abbreviation": "",
+          "pluralAbbreviation": "",
+          "useAbbreviation": false,
+          "aliases": [],
+          "standardQuantity": null,
+          "standardUnit": null,
+          "createdAt": "2026-10-06T17:35:42.692251Z",
+          "updatedAt": "2026-10-06T17:35:44.261523Z"
+        },
+        "food": {
+          "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+          "name": "sbt-767471548-IngredientFood-1-name",
+          "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+          "description": "sbt-767471548-IngredientFood_1-updated",
+          "extras": {},
+          "labelId": null,
+          "aliases": [],
+          "substitutions": [],
+          "householdsWithIngredientFood": [],
+          "label": null,
+          "createdAt": "2026-10-06T17:35:41.766719Z",
+          "updatedAt": "2026-10-06T17:35:43.467681Z"
+        },
+        "referencedRecipe": null,
+        "note": "sbt-767471548-ShoppingListItemOut-1-note",
+        "display": "1 sbt-767471548-IngredientUnit-1-name sbt-767471548-IngredientFood-1-name sbt-767471548-ShoppingListItemOut-1-note",
+        "shoppingListId": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+        "checked": false,
+        "position": 0,
+        "foodId": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+        "labelId": null,
+        "unitId": "badd98b5-024f-46b4-b07c-33075a374a25",
+        "extras": {},
+        "id": "7a612779-99c3-4e55-a1e6-49416593415e",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "label": null,
+        "recipeReferences": [
+          {
+            "recipeId": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+            "recipeQuantity": 1.0,
+            "recipeScale": 1.0,
+            "recipeNote": null,
+            "id": "7569b260-fdc9-48c9-a90a-58db436f13c7",
+            "shoppingListItemId": "7a612779-99c3-4e55-a1e6-49416593415e"
+          }
+        ],
+        "createdAt": "2026-10-06T17:35:45.476039Z",
+        "updatedAt": "2026-10-06T17:35:45.476043Z"
+      }
+    },
+    {
+      "key": "SNAPSHOT_ShoppingListItemOut_1",
+      "response": {
+        "quantity": 1.0,
+        "unit": {
+          "id": "badd98b5-024f-46b4-b07c-33075a374a25",
+          "name": "sbt-767471548-IngredientUnit-1-name",
+          "pluralName": "sbt-767471548-IngredientUnit-1-pluralName",
+          "description": "sbt-767471548-IngredientUnit_1-updated",
+          "extras": {},
+          "fraction": true,
+          "abbreviation": "",
+          "pluralAbbreviation": "",
+          "useAbbreviation": false,
+          "aliases": [],
+          "standardQuantity": null,
+          "standardUnit": null,
+          "createdAt": "2026-10-06T17:35:42.692251Z",
+          "updatedAt": "2026-10-06T17:35:44.261523Z"
+        },
+        "food": {
+          "id": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+          "name": "sbt-767471548-IngredientFood-1-name",
+          "pluralName": "sbt-767471548-IngredientFood-1-pluralName",
+          "description": "sbt-767471548-IngredientFood_1-updated",
+          "extras": {},
+          "labelId": null,
+          "aliases": [],
+          "substitutions": [],
+          "householdsWithIngredientFood": [],
+          "label": null,
+          "createdAt": "2026-10-06T17:35:41.766719Z",
+          "updatedAt": "2026-10-06T17:35:43.467681Z"
+        },
+        "referencedRecipe": null,
+        "note": "sbt-767471548-ShoppingListItemOut_1-updated",
+        "display": "1 sbt-767471548-IngredientUnit-1-name sbt-767471548-IngredientFood-1-name sbt-767471548-ShoppingListItemOut_1-updated",
+        "shoppingListId": "79c77d14-7e92-47fc-8395-34d9edeecebe",
+        "checked": false,
+        "position": 0,
+        "foodId": "321105ff-af80-4dab-b66d-a62a7c29b5f9",
+        "labelId": null,
+        "unitId": "badd98b5-024f-46b4-b07c-33075a374a25",
+        "extras": {},
+        "id": "7a612779-99c3-4e55-a1e6-49416593415e",
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "label": null,
+        "recipeReferences": [
+          {
+            "recipeId": "15dfd8c7-eda5-4628-be9b-a22a06123c38",
+            "recipeQuantity": 1.0,
+            "recipeScale": 1.0,
+            "recipeNote": null,
+            "id": "7569b260-fdc9-48c9-a90a-58db436f13c7",
+            "shoppingListItemId": "7a612779-99c3-4e55-a1e6-49416593415e"
+          }
+        ],
+        "createdAt": "2026-10-06T17:35:45.476039Z",
+        "updatedAt": "2026-10-06T17:35:46.113725Z"
+      }
+    }
+  ],
+  "f01_executed": false,
+  "raw_transcript_sha256": "a7eaa86f1220f244936c1a4612687c53356bd23c17fb3ea88045f435313b4b3a",
+  "raw_transcript_included": false,
+  "generator_archive_sha256": "ab0f8ffc9669becbd627445677fb07c2771525b6ac3e2bb953e6ebc41ec273e8"
+}

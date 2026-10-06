@@ -1,0 +1,8 @@
+{
+  "status": "UTF16_ARCHIVE_AND_COLLECTOR_REGRESSION_PASS",
+  "source_change": "Strict BOM-aware UTF16LE/BE and UTF8 decoding",
+  "real_accepted_log_archived_after_utf16_encoding": true,
+  "native_fixture_log_collected_after_utf16_encoding": true,
+  "collected_receipts": 10,
+  "sut_requests_during_fix_validation": 0
+}

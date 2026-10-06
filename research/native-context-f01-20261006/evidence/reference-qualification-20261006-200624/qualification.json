@@ -1,0 +1,23 @@
+{
+  "classification": "GENERATOR_PERSISTENCE_EXPECTATION_UNQUALIFIED",
+  "new_bug_confirmed": false,
+  "source_seed": 360159558,
+  "readback_archive_sha256": "69a0682beb4035576049dd9c3932dcd109ee7afc93df5c651291ac2642d512a5",
+  "archive_checksums_verified": 7,
+  "resource_read_codes": [
+    200,
+    200,
+    200
+  ],
+  "resource_mutations_in_audit": 0,
+  "item_uuid": "423bc0f3-1136-4cb2-b635-e01675ea7879",
+  "recipe_uuid": "eb73e32d-701a-4d05-8e98-7037288592f7",
+  "list_uuid": "74c0f75d-fa41-4f3f-8c7e-a439417c8358",
+  "item_present_in_list": true,
+  "referencedRecipe": null,
+  "recipeReferences": [],
+  "food_unit_ids_match_native_run": true,
+  "limitation": "Current reads do not recover original POST response or exclude intervening writes. Native fail-mode events after first failure are not successful operations.",
+  "repair": "Generic selection prefers explicit nested foreign-key records over an embedded parent object for the same target. Persistence is still a runtime hypothesis.",
+  "f01_recipe_contribution_implemented": false
+}

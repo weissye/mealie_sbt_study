@@ -1,0 +1,93 @@
+{
+  "status": "LOCAL_VALIDATION_COMPLETE",
+  "native_fixture_results": [
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 0,
+      "fault": null,
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    },
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 1,
+      "fault": "quantity",
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    },
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 1,
+      "fault": "reference",
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    },
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 1,
+      "fault": "identity",
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    },
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 1,
+      "fault": "duplicate",
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    }
+  ],
+  "python_regression_tests": {
+    "baseline": 8,
+    "contribution": 4
+  },
+  "node_callback_checks": 56,
+  "actual_mealie_f01_executed": false,
+  "actual_mealie_baseline": "User-native run accepted; source and parsed observations frozen separately",
+  "engine": {
+    "version": "0.7.5-SNAPSHOT",
+    "jar_sha256": "b7d2189ae18528968d7adef029a84748468b68530c50cbf7a11ace54ef611487",
+    "same_exact_build_as_user_verified": false
+  },
+  "archive_regression": "Exact accepted source regeneration and idempotent archival passed",
+  "installer_regression": "Preflight 12 Python tests, 56 Node checks, install and repeated install passed",
+  "evidence_collector_regression": "10 operation/readback receipts retained in both success and injected quantity failure",
+  "powershell_wrappers_executed_locally": false,
+  "receipt_logging_native_regressions": [
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 0,
+      "fault": null,
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    },
+    {
+      "status": "NATIVE_FIXTURE_REGRESSION_PASS",
+      "native_exit": 1,
+      "fault": "quantity",
+      "http_requests": 34,
+      "contributions": 2,
+      "independent_readbacks_after_second": 4,
+      "native_provengo_executed": true,
+      "mealie_executed": false
+    }
+  ]
+}

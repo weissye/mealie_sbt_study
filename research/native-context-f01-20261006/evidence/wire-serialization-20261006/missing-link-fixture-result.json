@@ -1,0 +1,9 @@
+{
+  "status": "NATIVE_FIXTURE_EXPECTED_RESULT",
+  "exit_code": 1,
+  "expected_exit": 1,
+  "http_requests": 26,
+  "native_provengo_executed": true,
+  "mealie_requests": 0,
+  "missing_link_injected": true
+}

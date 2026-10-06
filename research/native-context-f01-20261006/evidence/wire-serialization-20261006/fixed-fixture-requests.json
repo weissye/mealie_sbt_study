@@ -1,0 +1,118 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/auth/token"
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/lists"
+  },
+  {
+    "method": "POST",
+    "path": "/api/foods"
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/79c34336-6c8a-47e9-aff4-981e3b744594"
+  },
+  {
+    "method": "POST",
+    "path": "/api/units"
+  },
+  {
+    "method": "GET",
+    "path": "/api/units/f34609f6-6aec-40e5-990a-07021d8e6bd4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/79c34336-6c8a-47e9-aff4-981e3b744594"
+  },
+  {
+    "method": "GET",
+    "path": "/api/units/f34609f6-6aec-40e5-990a-07021d8e6bd4"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/foods/79c34336-6c8a-47e9-aff4-981e3b744594"
+  },
+  {
+    "method": "POST",
+    "path": "/api/recipes"
+  },
+  {
+    "method": "GET",
+    "path": "/api/foods/79c34336-6c8a-47e9-aff4-981e3b744594"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/units/f34609f6-6aec-40e5-990a-07021d8e6bd4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/units/f34609f6-6aec-40e5-990a-07021d8e6bd4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/fddbb6f0-1e4e-44d8-8712-e6b5fb8d8ec0"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/fddbb6f0-1e4e-44d8-8712-e6b5fb8d8ec0"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/households/shopping/lists/fddbb6f0-1e4e-44d8-8712-e6b5fb8d8ec0"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/lists/fddbb6f0-1e4e-44d8-8712-e6b5fb8d8ec0"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "GET",
+    "path": "/api/recipes/sbt-920571960-recipe-1-name"
+  },
+  {
+    "method": "POST",
+    "path": "/api/households/shopping/items"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/items/c5b85fd6-cc35-45a1-b299-27fef180186d"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/items/c5b85fd6-cc35-45a1-b299-27fef180186d"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/households/shopping/items/c5b85fd6-cc35-45a1-b299-27fef180186d"
+  },
+  {
+    "method": "GET",
+    "path": "/api/households/shopping/items/c5b85fd6-cc35-45a1-b299-27fef180186d"
+  }
+]
