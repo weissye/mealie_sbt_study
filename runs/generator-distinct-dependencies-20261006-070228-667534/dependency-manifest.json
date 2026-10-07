@@ -1,0 +1,114 @@
+{
+  "dependency": {
+    "source": "api/households/shopping/items",
+    "target": "api/households/shopping/lists",
+    "field": "shoppingListId",
+    "provenance": [
+      {
+        "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody/content/application~1json/properties/shoppingListId",
+        "rule": "D2:structural_verified_id",
+        "detail": "Create request body property 'shoppingListId' matches entity 'api/households/shopping/lists'"
+      }
+    ]
+  },
+  "workers": [
+    {
+      "owner": "parent:1",
+      "role": "parent",
+      "identity_field": "id",
+      "marker_field": "name",
+      "create": "/api/households/shopping/lists",
+      "read": "/api/households/shopping/lists/{item_id}",
+      "update": "/api/households/shopping/lists/{item_id}"
+    },
+    {
+      "owner": "parent:2",
+      "role": "parent",
+      "identity_field": "id",
+      "marker_field": "name",
+      "create": "/api/households/shopping/lists",
+      "read": "/api/households/shopping/lists/{item_id}",
+      "update": "/api/households/shopping/lists/{item_id}"
+    },
+    {
+      "owner": "child:1",
+      "role": "child",
+      "identity_field": "id",
+      "marker_field": "note",
+      "create": "/api/households/shopping/items",
+      "read": "/api/households/shopping/items/{item_id}",
+      "update": "/api/households/shopping/items/{item_id}"
+    },
+    {
+      "owner": "child:2",
+      "role": "child",
+      "identity_field": "id",
+      "marker_field": "note",
+      "create": "/api/households/shopping/items",
+      "read": "/api/households/shopping/items/{item_id}",
+      "update": "/api/households/shopping/items/{item_id}"
+    },
+    {
+      "owner": "prereq:0",
+      "role": "prerequisite",
+      "family": "api/foods",
+      "identity_field": "id",
+      "marker_field": "name"
+    },
+    {
+      "owner": "prereq:1",
+      "role": "prerequisite",
+      "family": "api/units",
+      "identity_field": "id",
+      "marker_field": "name"
+    }
+  ],
+  "instances_per_family": 2,
+  "delete_tested": false,
+  "full_crud": false,
+  "identity_policy": "Plan response field or schema-supported id convention",
+  "update_policy": "Snapshot replacement protected by a native action transaction; no collection-preservation semantics inferred from OpenAPI",
+  "scheduling_constraint": "One mutation action and its verification at a time; lifecycles remain interleaved",
+  "optional_schema_dependencies": [
+    {
+      "target": "api/foods",
+      "field": "foodId",
+      "embedded_field": "food",
+      "source_refs": [
+        "#/components/schemas/IngredientFood-Input"
+      ],
+      "target_get_refs": [
+        "#/components/schemas/IngredientFood-Output"
+      ],
+      "rule": "Canonical Input/Output schema reference + schema-checked companion identity field",
+      "optional": true,
+      "identity_variable": "dep_prereq0_id",
+      "owner": "prereq:0",
+      "marker_field": "name",
+      "identity_field": "id"
+    },
+    {
+      "target": "api/units",
+      "field": "unitId",
+      "embedded_field": "unit",
+      "source_refs": [
+        "#/components/schemas/IngredientUnit-Input"
+      ],
+      "target_get_refs": [
+        "#/components/schemas/IngredientUnit-Output"
+      ],
+      "rule": "Canonical Input/Output schema reference + schema-checked companion identity field",
+      "optional": true,
+      "identity_variable": "dep_prereq1_id",
+      "owner": "prereq:1",
+      "marker_field": "name",
+      "identity_field": "id"
+    }
+  ],
+  "additional_workers": [],
+  "readiness_policy": "First independently verified ready resource in each selected family; collect all families without fixed readiness order",
+  "known_inference_gap": "Installed plan has one required dependency; reference-backed optional dependencies are added by this generic renderer extension",
+  "scenario": "distinct",
+  "parent_binding_policy": "Two distinct independently verified ready parents, assigned by readiness order; optional food/unit bindings shared",
+  "merge_policy": null
+}

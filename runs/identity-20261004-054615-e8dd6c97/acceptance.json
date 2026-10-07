@@ -1,0 +1,45 @@
+{
+  "result": "M1_IDENTITY_ACCEPTANCE_PASS",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/auth/token",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/self",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/self",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/households/self",
+      "status": 200
+    }
+  ],
+  "identity_scope_confirmed": true,
+  "instance_count": 3,
+  "observed_link_count": 3,
+  "scope": {
+    "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+    "household": "436203bb-45fe-494d-aae5-736e1592c775"
+  },
+  "user_id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+  "permissions": {
+    "admin": true,
+    "canManage": true,
+    "canManageHousehold": true,
+    "canOrganize": true
+  },
+  "fixtures_validated": false,
+  "reset_replay_validated": false,
+  "ready_for_live_pilot": false,
+  "run_id": "identity-20261004-054615-e8dd6c97",
+  "base_url": "http://127.0.0.1:9925",
+  "contract_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292"
+}

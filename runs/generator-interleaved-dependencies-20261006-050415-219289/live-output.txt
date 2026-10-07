@@ -1,0 +1,95 @@
+        / /
+     /\/ /   ____
+  /\/ /\/ / |  _ \ _ __  _____   __ ___  _ __   __ _  ___
+ /  \/\/\/  | |_) | '__|/ _ \ \ / // _ \| '_ \ / _` |/ _ \
+ \  /\/\/\  |  __/| |  | (_) \ V /|  __/| | | | (_| | (_) |
+  \/\ \/\ \ |_|   |_|   \___/ \_/  \___||_| |_|\__, |\___/
+     \/\ \                                     |___/
+        \ \
+
+08:04:41.379 INFO [SETUP] We'd love to hear from you! hello@provengo.tech or https://provengo.tech/feedback/
+08:04:41.379 INFO [SETUP] Project path: C:\work\temp\mealie_sbt_study\runs\generator-interleaved-dependencies-20261006-050415-219289\model
+08:04:41.395 INFO [RUN] Preparing to run
+08:04:42.329 INFO [RUN>C:\work\temp\mealie_sbt_study\runs\generator-interleaved-dependencies-20261006-050415-219289\samples.json] Read 1 tests from C:\work\temp\mealie_sbt_study\runs\generator-interleaved-dependencies-20261006-050415-219289\samples.json
+08:04:42.329 INFO [RUN>TEST-1] Executing test number 1
+08:04:42.381 INFO [RUN>TEST-1] Selected: [POST {headers:{Content-Type:"application/x-www-form-urlencoded"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"POST", callback:{}, body:"username=changeme%40example.com&password=<REDACTED>", parameters:{}, url:"http://127.0.0.1:9925/api/auth/token"}]
+08:04:42.833 INFO [RUN>TEST-1] RTV: setting 'mealie_acceptance_token' to '<REDACTED>'
+08:04:42.995 INFO [RUN>TEST-1] Selected: [SBT:LiveAuthReady]
+08:04:43.015 INFO [RUN>TEST-1] Selected: [SBT:ChildWaiting {owner:"child:2"}]
+08:04:43.037 INFO [RUN>TEST-1] Selected: [SBT:ParentWaiting {owner:"parent:1"}]
+08:04:43.053 INFO [RUN>TEST-1] Selected: [SBT:ParentWaiting {owner:"parent:2"}]
+08:04:43.083 INFO [RUN>TEST-1] Selected: [SBT:ChildWaiting {owner:"child:1"}]
+08:04:43.100 INFO [RUN>TEST-1] Selected: [SBT:DependenciesEnabled]
+08:04:43.136 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:201.0], lib:"REST", method:"POST", callback:{}, body:"{"name": "sbt-dep-41fcc66da4fe4546-parent2"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists"}]
+08:04:43.290 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depCreateparent2","body":{"name":"sbt-dep-41fcc66da4fe4546-parent2","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:43.171328Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:43.290 INFO [RUN>TEST-1] RTV: setting 'dep_parent2_id' to '07162c94-039d-404f-bafe-71d65af222c2'
+08:04:43.306 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:201.0], lib:"REST", method:"POST", callback:{}, body:"{"name": "sbt-dep-41fcc66da4fe4546-parent1"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists"}]
+08:04:43.459 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depCreateparent1","body":{"name":"sbt-dep-41fcc66da4fe4546-parent1","extras":{},"createdAt":"2026-10-06T05:04:43.340200Z","updatedAt":"2026-10-06T05:04:43.340203Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"9741420f-5451-437f-9c1f-3e957b3a423e","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:43.459 INFO [RUN>TEST-1] RTV: setting 'dep_parent1_id' to '9741420f-5451-437f-9c1f-3e957b3a423e'
+08:04:43.483 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"parent:2", stage:"create"}]
+08:04:43.483 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"parent:1", stage:"create"}]
+08:04:43.514 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:43.588 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depVerifyparent2create","body":{"name":"sbt-dep-41fcc66da4fe4546-parent2","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:43.171328Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:43.589 INFO [RUN>TEST-1] RTV: setting 'dep_parent2_snapshot' to '{"name":"sbt-dep-41fcc66da4fe4546-parent2","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:43.171328Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}'
+08:04:43.591 INFO [RUN>TEST-1] RTV: setting 'dep_parent2_updatebody' to '{"createdAt":"2026-10-06T05:04:43.171324Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent2-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}'
+08:04:43.609 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"parent:2", stage:"create"}]
+08:04:43.646 INFO [RUN>TEST-1] Selected: [SBT:DependencyReady {owner:"parent:2", family:"api/households/shopping/lists", identity_variable:"dep_parent2_id"}]
+08:04:43.675 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:43.742 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depVerifyparent2refresh","body":{"name":"sbt-dep-41fcc66da4fe4546-parent2","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:43.171328Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:43.743 INFO [RUN>TEST-1] RTV: setting 'dep_parent2_snapshot' to '{"name":"sbt-dep-41fcc66da4fe4546-parent2","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:43.171328Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}'
+08:04:43.744 INFO [RUN>TEST-1] RTV: setting 'dep_parent2_updatebody' to '{"createdAt":"2026-10-06T05:04:43.171324Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent2-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}'
+08:04:43.767 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:201.0], lib:"REST", method:"POST", callback:{}, body:"{"note": "sbt-dep-41fcc66da4fe4546-child2", "shoppingListId": "07162c94-039d-404f-bafe-71d65af222c2"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items"}]
+08:04:45.578 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depCreatechild2","body":{"createdItems":[{"quantity":1,"unit":null,"food":null,"referencedRecipe":null,"note":"sbt-dep-41fcc66da4fe4546-child2","display":"1 sbt-dep-41fcc66da4fe4546-child2","shoppingListId":"07162c94-039d-404f-bafe-71d65af222c2","checked":false,"position":0,"foodId":null,"labelId":null,"unitId":null,"extras":{},"id":"e2a4968e-a439-4875-977d-ecdfd586ecd8","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","householdId":"436203bb-45fe-494d-aae5-736e1592c775","label":null,"recipeReferences":[],"createdAt":"2026-10-06T05:04:45.367659Z","updatedAt":"2026-10-06T05:04:45.367668Z"}],"updatedItems":[],"deletedItems":[]}}
+08:04:45.580 INFO [RUN>TEST-1] RTV: setting 'dep_child2_id' to 'e2a4968e-a439-4875-977d-ecdfd586ecd8'
+08:04:45.581 INFO [RUN>TEST-1] RTV: setting 'dep_child2_parent' to '07162c94-039d-404f-bafe-71d65af222c2'
+08:04:45.606 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/9741420f-5451-437f-9c1f-3e957b3a423e"}]
+08:04:45.708 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depVerifyparent1create","body":{"name":"sbt-dep-41fcc66da4fe4546-parent1","extras":{},"createdAt":"2026-10-06T05:04:43.340200Z","updatedAt":"2026-10-06T05:04:43.340203Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"9741420f-5451-437f-9c1f-3e957b3a423e","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:45.709 INFO [RUN>TEST-1] RTV: setting 'dep_parent1_snapshot' to '{"name":"sbt-dep-41fcc66da4fe4546-parent1","extras":{},"createdAt":"2026-10-06T05:04:43.340200Z","updatedAt":"2026-10-06T05:04:43.340203Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"9741420f-5451-437f-9c1f-3e957b3a423e","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}'
+08:04:45.710 INFO [RUN>TEST-1] RTV: setting 'dep_parent1_updatebody' to '{"createdAt":"2026-10-06T05:04:43.340200Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"9741420f-5451-437f-9c1f-3e957b3a423e","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent1-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}'
+08:04:45.732 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"parent:1", stage:"create"}]
+08:04:45.765 INFO [RUN>TEST-1] Selected: [PUT {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"PUT", callback:{}, body:"{"createdAt":"2026-10-06T05:04:43.171324Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent2-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:46.077 INFO [RUN>TEST-1] DEPENDENCY_RECEIPT {"operation":"depUpdateparent2","body":{"name":"sbt-dep-41fcc66da4fe4546-parent2-updated","extras":{},"createdAt":"2026-10-06T05:04:43.171324Z","updatedAt":"2026-10-06T05:04:45.957471Z","groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"householdId":"436203bb-45fe-494d-aae5-736e1592c775","recipeReferences":[],"labelSettings":[]}}
+08:04:46.077 INFO [RUN>TEST-1] INTERLEAVED_WRITE_BODY {"operation":"depUpdateparent2","body":{"createdAt":"2026-10-06T05:04:43.171324Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"07162c94-039d-404f-bafe-71d65af222c2","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent2-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}}
+08:04:46.113 INFO [RUN>TEST-1] Selected: [SBT:DependencyReady {owner:"parent:1", family:"api/households/shopping/lists", identity_variable:"dep_parent1_id"}]
+08:04:46.141 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"child:2", stage:"create"}]
+08:04:46.160 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/e2a4968e-a439-4875-977d-ecdfd586ecd8"}]
+08:04:46.333 WARN [RUN>TEST-1] FAIL: A REST call returned the unexpected response code.
+actual 404, expected: [200].
+08:04:46.333 WARN [RUN>TEST-1] ### Switching to test fail mode. ###
+08:04:46.349 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"child:2", stage:"create"}]
+08:04:46.365 INFO [RUN>TEST-1] Test Fail Mode, skipping actuation
+08:04:46.397 INFO [RUN>TEST-1] Selected: [POST {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:201.0], lib:"REST", method:"POST", callback:{}, body:"{"note": "sbt-dep-41fcc66da4fe4546-child1", "shoppingListId": "07162c94-039d-404f-bafe-71d65af222c2"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items"}]
+08:04:46.460 INFO [RUN>TEST-1] Selected: [PUT {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"PUT", callback:{}, body:"@{dep_child2_updatebody}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/e2a4968e-a439-4875-977d-ecdfd586ecd8"}]
+08:04:46.508 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"parent:2", stage:"update"}]
+08:04:46.556 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/9741420f-5451-437f-9c1f-3e957b3a423e"}]
+08:04:46.606 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:46.650 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"parent:2", stage:"update"}]
+08:04:46.695 INFO [RUN>TEST-1] Selected: [PUT {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"PUT", callback:{}, body:"{"createdAt":"2026-10-06T05:04:43.340200Z","extras":{},"groupId":"9b5df7cd-2607-4762-b6fd-c150494b6eb3","id":"9741420f-5451-437f-9c1f-3e957b3a423e","listItems":[],"name":"sbt-dep-41fcc66da4fe4546-parent1-updated","userId":"1dfff957-be69-4fe8-b80e-da08e3cfb257"}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/9741420f-5451-437f-9c1f-3e957b3a423e"}]
+08:04:46.729 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"child:1", stage:"create"}]
+08:04:46.760 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"child:2", stage:"update"}]
+08:04:46.797 INFO [RUN>TEST-1] Selected: [SBT:WorkerFinished {owner:"parent:2", reason:"complete"}]
+08:04:46.824 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/@{dep_child1_id}"}]
+08:04:46.856 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"child:1", stage:"create"}]
+08:04:46.888 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"parent:1", stage:"update"}]
+08:04:46.920 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/9741420f-5451-437f-9c1f-3e957b3a423e"}]
+08:04:46.983 INFO [RUN>TEST-1] Selected: [PUT {headers:{Authorization:"Bearer <REDACTED>", Content-Type:"application/json"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"PUT", callback:{}, body:"@{dep_child1_updatebody}", parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/@{dep_child1_id}"}]
+08:04:47.015 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/e2a4968e-a439-4875-977d-ecdfd586ecd8"}]
+08:04:47.063 INFO [RUN>TEST-1] Selected: [SBT:CrudStep {owner:"child:1", stage:"update"}]
+08:04:47.098 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"parent:1", stage:"update"}]
+08:04:47.126 INFO [RUN>TEST-1] Selected: [SBT:WorkerFinished {owner:"parent:1", reason:"complete"}]
+08:04:47.158 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/@{dep_child1_id}"}]
+08:04:47.203 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/@{dep_child1_parent}"}]
+08:04:47.241 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"child:1", stage:"update"}]
+08:04:47.270 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:47.303 INFO [RUN>TEST-1] Selected: [SBT:WorkerFinished {owner:"child:1", reason:"complete"}]
+08:04:47.329 INFO [RUN>TEST-1] Selected: [SBT:CrudVerified {owner:"child:2", stage:"update"}]
+08:04:47.360 INFO [RUN>TEST-1] Selected: [SBT:WorkerFinished {owner:"child:2", reason:"complete"}]
+08:04:47.392 INFO [RUN>TEST-1] Selected: [SBT:AllWorkersFinished]
+08:04:47.425 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/e2a4968e-a439-4875-977d-ecdfd586ecd8"}]
+08:04:47.474 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/items/@{dep_child1_id}"}]
+08:04:47.520 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/@{dep_child1_parent}"}]
+08:04:47.557 INFO [RUN>TEST-1] Selected: [SBT:FinalVerified {owner:"child:1"}]
+08:04:47.583 INFO [RUN>TEST-1] Selected: [GET {headers:{Authorization:"Bearer <REDACTED>"}, expectedResponseCodes:[0:200.0], lib:"REST", method:"GET", callback:{}, parameters:{}, url:"http://127.0.0.1:9925/api/households/shopping/lists/07162c94-039d-404f-bafe-71d65af222c2"}]
+08:04:47.631 INFO [RUN>TEST-1] Selected: [SBT:FinalVerified {owner:"child:2"}]
+08:04:47.680 INFO [RUN] Test Result: FAIL
+

@@ -1,0 +1,10 @@
+{
+  "policy_source": "Explicit Mealie experiment policy; not derived from OpenAPI",
+  "qualification": "Prior observed response suggested merge. This experiment independently checks persisted state; a mismatch requires policy qualification before bug classification.",
+  "quantity_field": "quantity",
+  "quantity_rule": "sum",
+  "added_quantity": 2,
+  "identity_rule": "retain_existing",
+  "note_separator": " | ",
+  "response_envelope": {"created":"createdItems","updated":"updatedItems","deleted":"deletedItems"}
+}

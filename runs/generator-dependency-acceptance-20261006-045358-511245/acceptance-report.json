@@ -1,0 +1,44 @@
+{
+  "status": "NATIVE_DEPENDENCY_FUNCTIONAL_ACCEPTANCE_PASS",
+  "resource_scope": "New resources owned by the authenticated account only",
+  "full_crud": false,
+  "deletion_tested": false,
+  "automatic_retry": false,
+  "five_findings_reproduced": false,
+  "native_live_executed": true,
+  "application_requests_in_interfaces": true,
+  "business_step_bridge": false,
+  "expected_http_calls": 19,
+  "expected_workers": 4,
+  "expected_bthreads": 14,
+  "contract_normalized_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "critical_source_normalized_sha256": {
+    "__init__.py": "53571aae787639efea7e8efc65482c85cafcff492a5ebfb0a1d5e98513dfbaf4",
+    "pipeline.py": "76ff8987dd05bdd3b4dab6b30c8b927dc0b4d62bfe843c155e903d79ab6b2499",
+    "render/parallel_crud_v3.py": "d31d60125b815eaf163cae66f15c5eae6d9e230ce165ab1c72c28c93e97b1c31",
+    "render/http_interfaces.py": "0a2f639861bcf65002677558480fcaebe3f134bea0560fbef411fa667fcba667"
+  },
+  "generator_version_expected": "0.26.19-parallel-crud.3",
+  "seed": 366859156,
+  "namespace": "sbt-dep-cad0466548d440bc",
+  "symbolic_audit": {
+    "status": "NATIVE_SYMBOLIC_WORKERS_COMPLETE",
+    "event_count": 47,
+    "expected_workers": 4,
+    "finished_workers": 4,
+    "missing_workers": [],
+    "unsuccessful_workers": {},
+    "pending_verifications": [],
+    "steps": {
+      "create": 4,
+      "update": 4
+    },
+    "symbolic_verifier_events": 8,
+    "errors": [],
+    "runtime_verifiers_evaluated": false,
+    "bugs_reproduced": 0
+  },
+  "native_exit_code": 0,
+  "response_receipts": 18,
+  "qualification": "Native callback readbacks and captured response bodies; no claim of whole-system or bug reproduction coverage"
+}

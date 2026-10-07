@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "title": "Mealie",
+    "openapi_version": "3.1.0",
+    "cli_args": {}
+  },
+  "coverage": {
+    "total_operations": 3,
+    "covered_operations": 3,
+    "uncovered_operations": []
+  },
+  "security_schemes": {
+    "OAuth2PasswordBearer": {
+      "type": "oauth2",
+      "scheme": "",
+      "location": "",
+      "param_name": ""
+    }
+  },
+  "entities": [
+    {
+      "key": "api/organizers/tags",
+      "display_name": "RecipeTagResponse",
+      "plural_display_name": "RecipeTagResponses",
+      "schema_name": "RecipeTagResponse",
+      "collection_path": "/api/organizers/tags",
+      "item_path": "/api/organizers/tags/{item_id}",
+      "confidence": 1.0,
+      "provenance": [
+        {
+          "pointer": "#/paths/~1api~1organizers~1tags~1{item_id}/get/responses/200",
+          "rule": "E3c:item_response_schema",
+          "detail": "Item GET /api/organizers/tags/{item_id} response 200 references RecipeTagResponse"
+        }
+      ],
+      "key_fields": [
+        "item_id"
+      ],
+      "composite_key": false,
+      "key_confidence": 0.7,
+      "key_provenance": [
+        {
+          "pointer": "/api/organizers/tags/{item_id}",
+          "rule": "K1:path_parameter_only",
+          "detail": "Path parameter 'item_id' has no matching schema property; using path evidence only"
+        },
+        {
+          "pointer": "/api/organizers/tags/{item_id}",
+          "rule": "K1/K2:item_path_parameters",
+          "detail": "Key field(s) derived from item path parameters: ['item_id']"
+        },
+        {
+          "pointer": "#/components/schemas/RecipeTagResponse",
+          "rule": "K5:response_field_generic_id_fallback",
+          "detail": "Path parameter 'item_id' has no same-named schema property, but the schema has a generic 'id' property; treating that as the response-body identifier field for server-assigned-key handling."
+        }
+      ],
+      "operations": [
+        {
+          "method": "POST",
+          "path": "/api/organizers/tags",
+          "js_function": "createOneApiOrganizersTagsPost",
+          "kind": "create",
+          "success_codes": [
+            201
+          ],
+          "error_codes": [
+            422
+          ],
+          "has_default_response": false,
+          "source_pointer": "#/paths/~1api~1organizers~1tags/post"
+        },
+        {
+          "method": "GET",
+          "path": "/api/organizers/tags/{item_id}",
+          "js_function": "getOneApiOrganizersTagsItemIdGet",
+          "kind": "get",
+          "success_codes": [
+            200
+          ],
+          "error_codes": [
+            422
+          ],
+          "has_default_response": false,
+          "source_pointer": "#/paths/~1api~1organizers~1tags~1{item_id}/get"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/organizers/tags/{item_id}",
+          "js_function": "updateOneApiOrganizersTagsItemIdPut",
+          "kind": "update",
+          "success_codes": [
+            200
+          ],
+          "error_codes": [
+            422
+          ],
+          "has_default_response": false,
+          "source_pointer": "#/paths/~1api~1organizers~1tags~1{item_id}/put"
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "standalone_operations": [],
+  "response_code_coverage": [
+    {
+      "method": "POST",
+      "path": "/api/organizers/tags",
+      "declared_codes": [
+        "201",
+        "422"
+      ],
+      "has_default": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/organizers/tags/{item_id}",
+      "declared_codes": [
+        "200",
+        "422"
+      ],
+      "has_default": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/organizers/tags/{item_id}",
+      "declared_codes": [
+        "200",
+        "422"
+      ],
+      "has_default": false
+    }
+  ],
+  "unsupported_constructs": {
+    "remote_refs": [],
+    "ambiguities": [
+      "Key inference for entity 'api/organizers/tags' has reduced confidence (0.7); path parameter(s) ['item_id'] could not be fully cross-validated against the schema."
+    ],
+    "document_level": []
+  },
+  "warnings": [],
+  "isolation_audit": {
+    "opened_files": [],
+    "denied_files": []
+  }
+}

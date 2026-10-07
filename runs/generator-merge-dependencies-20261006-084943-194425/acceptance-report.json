@@ -1,0 +1,83 @@
+{
+  "status": "NATIVE_DISTINCT_MERGE_PASS",
+  "resource_scope": "New resources owned by the authenticated account only",
+  "full_crud": false,
+  "deletion_tested": false,
+  "automatic_retry": false,
+  "five_findings_reproduced": false,
+  "native_live_executed": true,
+  "application_requests_in_interfaces": true,
+  "business_step_bridge": false,
+  "expected_http_calls": 46,
+  "expected_workers": 6,
+  "expected_bthreads": 29,
+  "scenario": "merge",
+  "contract_normalized_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "critical_source_normalized_sha256": {
+    "__init__.py": "53571aae787639efea7e8efc65482c85cafcff492a5ebfb0a1d5e98513dfbaf4",
+    "pipeline.py": "76ff8987dd05bdd3b4dab6b30c8b927dc0b4d62bfe843c155e903d79ab6b2499",
+    "render/parallel_crud_v3.py": "d31d60125b815eaf163cae66f15c5eae6d9e230ce165ab1c72c28c93e97b1c31",
+    "render/http_interfaces.py": "0a2f639861bcf65002677558480fcaebe3f134bea0560fbef411fa667fcba667"
+  },
+  "generator_version_expected": "0.26.19-parallel-crud.3",
+  "put_semantics_qualification": "A submitted collection replacement can explain a state difference; a verifier failure alone is not a confirmed bug",
+  "seed": 714935437,
+  "namespace": "sbt-dep-a4b8a517d0894dc1",
+  "scheduling_constraint": "Native mutation action transaction: protects refresh/write/readback from other modeled mutations; lifecycle orders remain variable",
+  "explicit_merge_policy": {
+    "policy_source": "Explicit Mealie experiment policy; not derived from OpenAPI",
+    "qualification": "Prior observed response suggested merge. This experiment independently checks persisted state; a mismatch requires policy qualification before bug classification.",
+    "quantity_field": "quantity",
+    "quantity_rule": "sum",
+    "added_quantity": 2,
+    "identity_rule": "retain_existing",
+    "note_separator": " | ",
+    "response_envelope": {
+      "created": "createdItems",
+      "updated": "updatedItems",
+      "deleted": "deletedItems"
+    },
+    "note_comparison": "unordered_multiset",
+    "note_order_qualification": "Both contribution notes and their exact multiplicities are required; their concatenation order is not constrained."
+  },
+  "selected_candidate": 1,
+  "sample_candidates": 4,
+  "interleaving_witness": {
+    "first_child_create": 29,
+    "second_child_create": 75,
+    "prerequisite_updates_between": [
+      60,
+      68
+    ],
+    "parent_updates_between": [
+      36,
+      44
+    ],
+    "binding_policy": "distinct parent instances"
+  },
+  "symbolic_audit": {
+    "status": "NATIVE_SYMBOLIC_WORKERS_COMPLETE",
+    "event_count": 112,
+    "expected_workers": 6,
+    "finished_workers": 6,
+    "missing_workers": [],
+    "unsuccessful_workers": {},
+    "pending_verifications": [],
+    "steps": {
+      "create": 6,
+      "update": 6
+    },
+    "symbolic_verifier_events": 12,
+    "errors": [],
+    "runtime_verifiers_evaluated": false,
+    "bugs_reproduced": 0
+  },
+  "expected_post_prerequisite_child_reads": 2,
+  "native_exit_code": 0,
+  "response_receipts": 45,
+  "post_prerequisite_child_reads": 2,
+  "distinct_children_verified": true,
+  "merge_independent_readbacks_present": true,
+  "new_bug_confirmed": false,
+  "qualification": "Native callback readbacks and captured response bodies; no claim of whole-system or bug reproduction coverage"
+}

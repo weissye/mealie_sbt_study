@@ -1,0 +1,202 @@
+[
+  {
+    "operation": "depUpdateprereq1",
+    "body": {
+      "abbreviation": "",
+      "aliases": [],
+      "description": "",
+      "extras": {},
+      "fraction": true,
+      "id": "de9f533d-8f7a-47b4-afad-b46ae9f6876e",
+      "name": "sbt-dep-cb745db756f44a69-prereq1-updated",
+      "pluralAbbreviation": "",
+      "pluralName": null,
+      "standardQuantity": null,
+      "standardUnit": null,
+      "useAbbreviation": false
+    }
+  },
+  {
+    "operation": "depUpdateparent1",
+    "body": {
+      "createdAt": "2026-10-06T08:14:06.011435Z",
+      "extras": {},
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "edcf83e6-38fe-4420-a765-3ad4b9ac4abc",
+      "listItems": [],
+      "name": "sbt-dep-cb745db756f44a69-parent1-updated",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257"
+    }
+  },
+  {
+    "operation": "depUpdateprereq0",
+    "body": {
+      "aliases": [],
+      "description": "",
+      "extras": {},
+      "householdsWithIngredientFood": [],
+      "id": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+      "labelId": null,
+      "name": "sbt-dep-cb745db756f44a69-prereq0-updated",
+      "pluralName": null,
+      "substitutions": []
+    }
+  },
+  {
+    "operation": "depUpdatechild2",
+    "body": {
+      "checked": false,
+      "display": "1 sbt-dep-cb745db756f44a69-prereq1-updated sbt-dep-cb745db756f44a69-prereq0-updated sbt-dep-cb745db756f44a69-child2",
+      "extras": {},
+      "food": {
+        "id": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+        "name": "sbt-dep-cb745db756f44a69-prereq0-updated",
+        "pluralName": null,
+        "description": "",
+        "extras": {},
+        "labelId": null,
+        "aliases": [],
+        "substitutions": [],
+        "householdsWithIngredientFood": [],
+        "label": null,
+        "createdAt": "2026-10-06T08:14:05.568179Z",
+        "updatedAt": "2026-10-06T08:14:09.229977Z"
+      },
+      "foodId": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+      "labelId": null,
+      "note": "sbt-dep-cb745db756f44a69-child2-updated",
+      "position": 0,
+      "quantity": 1,
+      "recipeReferences": [],
+      "referencedRecipe": null,
+      "shoppingListId": "a89296eb-3e1b-4117-b78f-3b85e992c846",
+      "unit": {
+        "id": "de9f533d-8f7a-47b4-afad-b46ae9f6876e",
+        "name": "sbt-dep-cb745db756f44a69-prereq1-updated",
+        "pluralName": null,
+        "description": "",
+        "extras": {},
+        "fraction": true,
+        "abbreviation": "",
+        "pluralAbbreviation": "",
+        "useAbbreviation": false,
+        "aliases": [],
+        "standardQuantity": null,
+        "standardUnit": null,
+        "createdAt": "2026-10-06T08:14:05.723913Z",
+        "updatedAt": "2026-10-06T08:14:08.418029Z"
+      },
+      "unitId": "de9f533d-8f7a-47b4-afad-b46ae9f6876e"
+    }
+  },
+  {
+    "operation": "depUpdateparent2",
+    "body": {
+      "createdAt": "2026-10-06T08:14:06.265409Z",
+      "extras": {},
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "a89296eb-3e1b-4117-b78f-3b85e992c846",
+      "listItems": [
+        {
+          "quantity": 1,
+          "unit": {
+            "id": "de9f533d-8f7a-47b4-afad-b46ae9f6876e",
+            "name": "sbt-dep-cb745db756f44a69-prereq1-updated",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "fraction": true,
+            "abbreviation": "",
+            "pluralAbbreviation": "",
+            "useAbbreviation": false,
+            "aliases": [],
+            "standardQuantity": null,
+            "standardUnit": null,
+            "createdAt": "2026-10-06T08:14:05.723913Z",
+            "updatedAt": "2026-10-06T08:14:08.418029Z"
+          },
+          "food": {
+            "id": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+            "name": "sbt-dep-cb745db756f44a69-prereq0-updated",
+            "pluralName": null,
+            "description": "",
+            "extras": {},
+            "labelId": null,
+            "aliases": [],
+            "substitutions": [],
+            "householdsWithIngredientFood": [],
+            "label": null,
+            "createdAt": "2026-10-06T08:14:05.568179Z",
+            "updatedAt": "2026-10-06T08:14:09.229977Z"
+          },
+          "referencedRecipe": null,
+          "note": "sbt-dep-cb745db756f44a69-child2-updated",
+          "display": "1 sbt-dep-cb745db756f44a69-prereq1-updated sbt-dep-cb745db756f44a69-prereq0-updated sbt-dep-cb745db756f44a69-child2-updated",
+          "shoppingListId": "a89296eb-3e1b-4117-b78f-3b85e992c846",
+          "checked": false,
+          "position": 0,
+          "foodId": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+          "labelId": null,
+          "unitId": "de9f533d-8f7a-47b4-afad-b46ae9f6876e",
+          "extras": {},
+          "id": "f577ca0a-654f-47c6-b448-898524157be5",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [],
+          "createdAt": "2026-10-06T08:14:08.016049Z",
+          "updatedAt": "2026-10-06T08:14:09.785562Z"
+        }
+      ],
+      "name": "sbt-dep-cb745db756f44a69-parent2-updated",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257"
+    }
+  },
+  {
+    "operation": "depUpdatechild1",
+    "body": {
+      "checked": false,
+      "display": "1 sbt-dep-cb745db756f44a69-prereq1-updated sbt-dep-cb745db756f44a69-prereq0-updated sbt-dep-cb745db756f44a69-child1",
+      "extras": {},
+      "food": {
+        "id": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+        "name": "sbt-dep-cb745db756f44a69-prereq0-updated",
+        "pluralName": null,
+        "description": "",
+        "extras": {},
+        "labelId": null,
+        "aliases": [],
+        "substitutions": [],
+        "householdsWithIngredientFood": [],
+        "label": null,
+        "createdAt": "2026-10-06T08:14:05.568179Z",
+        "updatedAt": "2026-10-06T08:14:09.229977Z"
+      },
+      "foodId": "459c2a5b-06eb-4fd0-8e32-0ec3c9329681",
+      "labelId": null,
+      "note": "sbt-dep-cb745db756f44a69-child1-updated",
+      "position": 0,
+      "quantity": 1,
+      "recipeReferences": [],
+      "referencedRecipe": null,
+      "shoppingListId": "edcf83e6-38fe-4420-a765-3ad4b9ac4abc",
+      "unit": {
+        "id": "de9f533d-8f7a-47b4-afad-b46ae9f6876e",
+        "name": "sbt-dep-cb745db756f44a69-prereq1-updated",
+        "pluralName": null,
+        "description": "",
+        "extras": {},
+        "fraction": true,
+        "abbreviation": "",
+        "pluralAbbreviation": "",
+        "useAbbreviation": false,
+        "aliases": [],
+        "standardQuantity": null,
+        "standardUnit": null,
+        "createdAt": "2026-10-06T08:14:05.723913Z",
+        "updatedAt": "2026-10-06T08:14:08.418029Z"
+      },
+      "unitId": "de9f533d-8f7a-47b4-afad-b46ae9f6876e"
+    }
+  }
+]

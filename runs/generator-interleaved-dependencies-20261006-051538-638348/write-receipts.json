@@ -1,0 +1,109 @@
+[
+  {
+    "operation": "depUpdatechild2",
+    "body": {
+      "checked": false,
+      "display": "1 sbt-dep-b80e157db8134de7-child2",
+      "extras": {},
+      "food": null,
+      "foodId": null,
+      "labelId": null,
+      "note": "sbt-dep-b80e157db8134de7-child2-updated",
+      "position": 0,
+      "quantity": 1,
+      "recipeReferences": [],
+      "referencedRecipe": null,
+      "shoppingListId": "517b52bc-2d2e-491d-8715-926c4bce3db9",
+      "unit": null,
+      "unitId": null
+    }
+  },
+  {
+    "operation": "depUpdateparent2",
+    "body": {
+      "createdAt": "2026-10-06T05:15:53.416855Z",
+      "extras": {},
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "517b52bc-2d2e-491d-8715-926c4bce3db9",
+      "listItems": [
+        {
+          "quantity": 1,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "sbt-dep-b80e157db8134de7-child2-updated",
+          "display": "1 sbt-dep-b80e157db8134de7-child2-updated",
+          "shoppingListId": "517b52bc-2d2e-491d-8715-926c4bce3db9",
+          "checked": false,
+          "position": 0,
+          "foodId": null,
+          "labelId": null,
+          "unitId": null,
+          "extras": {},
+          "id": "e7b555c7-6264-45af-a492-5a0f053d88b8",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [],
+          "createdAt": "2026-10-06T05:15:55.552090Z",
+          "updatedAt": "2026-10-06T05:15:56.122633Z"
+        },
+        {
+          "quantity": 1,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "sbt-dep-b80e157db8134de7-child1",
+          "display": "1 sbt-dep-b80e157db8134de7-child1",
+          "shoppingListId": "517b52bc-2d2e-491d-8715-926c4bce3db9",
+          "checked": false,
+          "position": 0,
+          "foodId": null,
+          "labelId": null,
+          "unitId": null,
+          "extras": {},
+          "id": "645e3351-3b77-4cb2-a9b6-506a011ae8c1",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [],
+          "createdAt": "2026-10-06T05:15:57.753941Z",
+          "updatedAt": "2026-10-06T05:15:57.753945Z"
+        }
+      ],
+      "name": "sbt-dep-b80e157db8134de7-parent2-updated",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257"
+    }
+  },
+  {
+    "operation": "depUpdatechild1",
+    "body": {
+      "checked": false,
+      "display": "1 sbt-dep-b80e157db8134de7-child1",
+      "extras": {},
+      "food": null,
+      "foodId": null,
+      "labelId": null,
+      "note": "sbt-dep-b80e157db8134de7-child1-updated",
+      "position": 0,
+      "quantity": 1,
+      "recipeReferences": [],
+      "referencedRecipe": null,
+      "shoppingListId": "517b52bc-2d2e-491d-8715-926c4bce3db9",
+      "unit": null,
+      "unitId": null
+    }
+  },
+  {
+    "operation": "depUpdateparent1",
+    "body": {
+      "createdAt": "2026-10-06T05:15:53.665828Z",
+      "extras": {},
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "id": "26276e49-fcad-4212-a526-a4b6688e8765",
+      "listItems": [],
+      "name": "sbt-dep-b80e157db8134de7-parent1-updated",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257"
+    }
+  }
+]

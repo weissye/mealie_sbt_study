@@ -1,0 +1,5 @@
+Generated:
+  C:\work\temp\mealie_sbt_study\runs\native-f01-20261006-093342-e16ae422\core-baseline\spec\js\interfaces.mealie.js
+  C:\work\temp\mealie_sbt_study\runs\native-f01-20261006-093342-e16ae422\core-baseline\spec\js\stories.mealie.js
+  C:\work\temp\mealie_sbt_study\runs\native-f01-20261006-093342-e16ae422\core-baseline\spec\js\generation_report.json
+  C:\work\temp\mealie_sbt_study\runs\native-f01-20261006-093342-e16ae422\core-baseline\spec\js\dependency_graph.json

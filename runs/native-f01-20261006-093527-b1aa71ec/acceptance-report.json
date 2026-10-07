@@ -1,0 +1,10 @@
+{
+  "status": "F01_INCOMPLETE",
+  "live_replay_started": false,
+  "core_modified": false,
+  "historical_stories_reused": false,
+  "core_baseline_generated": true,
+  "native_compiler": "optional declarative lifecycle extension",
+  "generator_core_dir": "C:\\work\\temp\\mealie_sbt_study\\generic-generator\\generator_v56",
+  "error": "[WinError 2] The system cannot find the file specified"
+}

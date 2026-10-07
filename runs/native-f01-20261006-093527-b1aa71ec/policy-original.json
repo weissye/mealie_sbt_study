@@ -1,0 +1,313 @@
+{
+  "finding": "F01",
+  "policy_source": "Explicit arithmetic/relationship reproduction policy, not inferred from OpenAPI",
+  "historical_anchor": {
+    "before": 17,
+    "recipe_total": 4,
+    "scale": 0.5,
+    "expected": 19,
+    "observed": 20
+  },
+  "authentication": {
+    "path": "/api/auth/token"
+  },
+  "arithmetic": {
+    "tolerance": 1e-08
+  },
+  "operations": {
+    "food_create": {
+      "method": "POST",
+      "path": "/api/foods"
+    },
+    "food_read": {
+      "method": "GET",
+      "path": "/api/foods/{item_id}",
+      "url": "/api/foods/@{food_id}"
+    },
+    "unit_create": {
+      "method": "POST",
+      "path": "/api/units"
+    },
+    "unit_read": {
+      "method": "GET",
+      "path": "/api/units/{item_id}",
+      "url": "/api/units/@{unit_id}"
+    },
+    "recipe_create": {
+      "method": "POST",
+      "path": "/api/recipes"
+    },
+    "recipe_read": {
+      "method": "GET",
+      "path": "/api/recipes/{slug}",
+      "url": "/api/recipes/@{recipe_slug}"
+    },
+    "recipe_update": {
+      "method": "PUT",
+      "path": "/api/recipes/{slug}",
+      "url": "/api/recipes/@{recipe_slug}"
+    },
+    "list_create": {
+      "method": "POST",
+      "path": "/api/households/shopping/lists"
+    },
+    "list_read": {
+      "method": "GET",
+      "path": "/api/households/shopping/lists/{item_id}",
+      "url": "/api/households/shopping/lists/@{list_id}"
+    },
+    "item_create": {
+      "method": "POST",
+      "path": "/api/households/shopping/items"
+    },
+    "contribution": {
+      "method": "POST",
+      "path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+      "url": "/api/households/shopping/lists/@{list_id}/recipe/@{recipe_id}"
+    }
+  },
+  "actors": {
+    "food": {
+      "steps": [
+        "food-create"
+      ]
+    },
+    "unit": {
+      "steps": [
+        "unit-create"
+      ]
+    },
+    "recipe": {
+      "depends": [
+        "food",
+        "unit"
+      ],
+      "steps": [
+        "recipe-create",
+        "recipe-build"
+      ]
+    },
+    "list": {
+      "steps": [
+        "list-create"
+      ]
+    },
+    "quantity": {
+      "depends": [
+        "recipe",
+        "list"
+      ],
+      "steps": [
+        "manual-baseline",
+        "whole-recipe",
+        "half-recipe"
+      ]
+    }
+  },
+  "steps": {
+    "food-create": {
+      "operation": "food_create",
+      "body": {
+        "name": "$namespace-food"
+      },
+      "capture": {
+        "food_id": "id"
+      },
+      "verify": [
+        {
+          "operation": "food_read",
+          "capture": {
+            "food_name": "name"
+          },
+          "equals": {
+            "id": "@{food_id}",
+            "name": "$namespace-food"
+          },
+          "snapshot": "food_snapshot"
+        }
+      ]
+    },
+    "unit-create": {
+      "operation": "unit_create",
+      "body": {
+        "name": "$namespace-unit"
+      },
+      "capture": {
+        "unit_id": "id"
+      },
+      "verify": [
+        {
+          "operation": "unit_read",
+          "capture": {
+            "unit_name": "name"
+          },
+          "equals": {
+            "id": "@{unit_id}",
+            "name": "$namespace-unit"
+          },
+          "snapshot": "unit_snapshot"
+        }
+      ]
+    },
+    "list-create": {
+      "operation": "list_create",
+      "body": {
+        "name": "$namespace-list"
+      },
+      "capture": {
+        "list_id": "id"
+      },
+      "verify": [
+        {
+          "operation": "list_read",
+          "equals": {
+            "id": "@{list_id}",
+            "name": "$namespace-list",
+            "listItems": []
+          },
+          "snapshot": "list_current"
+        }
+      ]
+    },
+    "recipe-create": {
+      "operation": "recipe_create",
+      "body": {
+        "name": "$namespace-recipe"
+      },
+      "capture": {
+        "recipe_slug": "$"
+      },
+      "verify": [
+        {
+          "operation": "recipe_read",
+          "capture": {
+            "recipe_id": "id"
+          },
+          "equals": {
+            "name": "$namespace-recipe"
+          },
+          "snapshot": "recipe_current",
+          "prepare": {
+            "operation": "recipe_update",
+            "variable": "recipe_update_body",
+            "override": {
+              "recipeIngredient": [
+                {
+                  "quantity": 2,
+                  "food": {
+                    "id": "@{food_id}",
+                    "name": "@{food_name}"
+                  },
+                  "unit": {
+                    "id": "@{unit_id}",
+                    "name": "@{unit_name}"
+                  },
+                  "note": ""
+                },
+                {
+                  "quantity": 2,
+                  "food": {
+                    "id": "@{food_id}",
+                    "name": "@{food_name}"
+                  },
+                  "unit": {
+                    "id": "@{unit_id}",
+                    "name": "@{unit_name}"
+                  },
+                  "note": ""
+                }
+              ],
+              "settings": "$snapshot:recipe_settings"
+            }
+          },
+          "snapshot_fields": {
+            "recipe_settings": "settings"
+          },
+          "snapshot_overrides": {
+            "recipe_settings": {
+              "disableAmounts": false
+            }
+          }
+        }
+      ]
+    },
+    "recipe-build": {
+      "operation": "recipe_update",
+      "body": "@{recipe_update_body}",
+      "verify": [
+        {
+          "operation": "recipe_read",
+          "equals": {
+            "id": "@{recipe_id}",
+            "name": "$namespace-recipe",
+            "settings.disableAmounts": false
+          },
+          "snapshot": "recipe_current"
+        }
+      ]
+    },
+    "manual-baseline": {
+      "operation": "item_create",
+      "body": {
+        "shoppingListId": "@{list_id}",
+        "foodId": "@{food_id}",
+        "unitId": "@{unit_id}",
+        "quantity": 13,
+        "note": ""
+      },
+      "verify": [
+        {
+          "operation": "recipe_read",
+          "snapshot": "recipe_current",
+          "equals": {
+            "id": "@{recipe_id}"
+          }
+        },
+        {
+          "operation": "list_read",
+          "arithmetic": {
+            "initial": 13
+          }
+        }
+      ]
+    },
+    "whole-recipe": {
+      "operation": "contribution",
+      "scale": 1,
+      "verify": [
+        {
+          "operation": "recipe_read",
+          "snapshot": "recipe_current",
+          "equals": {
+            "id": "@{recipe_id}"
+          }
+        },
+        {
+          "operation": "list_read",
+          "arithmetic": {
+            "scale": 1
+          }
+        }
+      ]
+    },
+    "half-recipe": {
+      "operation": "contribution",
+      "scale": 0.5,
+      "verify": [
+        {
+          "operation": "recipe_read",
+          "snapshot": "recipe_current",
+          "equals": {
+            "id": "@{recipe_id}"
+          }
+        },
+        {
+          "operation": "list_read",
+          "arithmetic": {
+            "scale": 0.5
+          }
+        }
+      ]
+    }
+  }
+}

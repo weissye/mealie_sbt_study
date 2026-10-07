@@ -1,0 +1,347 @@
+{
+  "status": "READ_ONLY_CALLBACKS_COMPLETE",
+  "observations": [
+    {
+      "index": -2,
+      "code": 200,
+      "body": {
+        "version": "v3.28.0"
+      }
+    },
+    {
+      "index": -1,
+      "code": 200,
+      "body": {
+        "id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "username": "admin",
+        "fullName": "Change Me",
+        "email": "changeme@example.com",
+        "authMethod": "Mealie",
+        "admin": true,
+        "group": "Home",
+        "household": "Family",
+        "advanced": true,
+        "showAnnouncements": true,
+        "lastReadAnnouncement": null,
+        "canInvite": true,
+        "canManage": true,
+        "canManageHousehold": true,
+        "canOrganize": true,
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "groupSlug": "home",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+        "householdSlug": "family",
+        "tokens": [],
+        "cacheKey": "1234"
+      }
+    },
+    {
+      "index": 0,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 1,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 2,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 3,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 4,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 5,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 6,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 7,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 8,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 9,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 10,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 11,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 12,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 13,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 14,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 15,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 16,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 17,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 18,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 19,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 20,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 21,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 22,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 23,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 24,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 25,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 26,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "Not found.",
+          "error": true,
+          "exception": null
+        }
+      }
+    },
+    {
+      "index": 27,
+      "code": 404,
+      "body": {
+        "detail": {
+          "message": "No Entry Found",
+          "error": true,
+          "exception": null
+        }
+      }
+    }
+  ]
+}

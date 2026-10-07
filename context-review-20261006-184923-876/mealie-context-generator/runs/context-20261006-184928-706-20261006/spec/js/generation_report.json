@@ -1,0 +1,193 @@
+{
+  "status": "GENERATED_NOT_NATIVE_EXECUTED",
+  "source_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "contract_version": "v3.28.0",
+  "seed": 20261006,
+  "instances": 1,
+  "scope_paths": [
+    "/api/foods",
+    "/api/units",
+    "/api/recipes",
+    "/api/households/shopping/lists",
+    "/api/households/shopping/items"
+  ],
+  "entities": [
+    {
+      "entity": "IngredientFood",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1foods/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1foods~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    },
+    {
+      "entity": "IngredientUnit",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1units/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1units~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    },
+    {
+      "entity": "Recipe",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1recipes/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/get",
+          "rule": "response id convention; route parameter matched to property"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes/post/responses",
+          "rule": "string response used as single string route parameter; hypothesis checked by GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody",
+          "rule": "array items with explicit references; two embedded objects share selected dependencies"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [
+        {
+          "field": "recipeIngredient",
+          "links": [
+            {
+              "field": "unit",
+              "target": "IngredientUnit",
+              "required": [
+                "id",
+                "name"
+              ]
+            },
+            {
+              "field": "food",
+              "target": "IngredientFood",
+              "required": [
+                "id",
+                "name"
+              ]
+            }
+          ],
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody"
+        }
+      ],
+      "identity_mode": "primitive-route",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    },
+    {
+      "entity": "ShoppingListOut",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1lists/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1lists~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "name",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    },
+    {
+      "entity": "ShoppingListItemOut",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/responses",
+          "rule": "unique matching identity across schema-compatible response arrays; ambiguity is failure"
+        }
+      ],
+      "create_dependencies": [
+        {
+          "field": "referencedRecipe",
+          "target": "Recipe",
+          "object": true,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "shoppingListId",
+          "target": "ShoppingListOut",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "foodId",
+          "target": "IngredientFood",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "unitId",
+          "target": "IngredientUnit",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        }
+      ],
+      "embedded_links": [],
+      "identity_mode": "collection",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "note",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    }
+  ],
+  "inference_policy": "generic schema/title/key conventions; ambiguous cases fail; these conventions are not mathematical consequences of OpenAPI",
+  "oracle_policy": "expected request projection, generic write/read preservation hypothesis; no observed-response learning of expected quantity",
+  "unsupported": [
+    "Recipe contribution quantity transitions",
+    "Merge equivalence and quantity algebra",
+    "Copy deep-isolation policy",
+    "Cross-account authorization policy",
+    "DELETE absence when not documented",
+    "Native Context startup configuration"
+  ],
+  "native_executed": false,
+  "sut_executed": false,
+  "file_sha256": {
+    "interfaces.mealie.js": "cc1930185a20280698350cd70390277b1bf98d7ff0309118690ebdf5eac8e1a2",
+    "dal.js": "dc4a107d17468304e523ca0fe15e6a7c1c4ad2d8619a9e7f48392ee9cfdcc590",
+    "stories.mealie.js": "fdfd401fd26aba02b70c9189c745eb773105d1c878ca0d572c764886fc5cf113"
+  }
+}

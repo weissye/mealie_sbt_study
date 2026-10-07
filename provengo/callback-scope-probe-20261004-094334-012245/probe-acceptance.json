@@ -1,0 +1,7 @@
+{
+  "automatic_retry": false,
+  "error": "[WinError 2] The system cannot find the file specified: 'C:\\\\work\\\\temp\\\\mealie_sbt_study\\\\provengo\\\\callback-scope-probe-20261004-094334-012245\\\\samples.json'",
+  "resource_mutations": 0,
+  "sample_exit_code": 0,
+  "status": "SCOPE_PROBE_NOT_ACCEPTED"
+}

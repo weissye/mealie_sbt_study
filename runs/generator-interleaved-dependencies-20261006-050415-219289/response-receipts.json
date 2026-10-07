@@ -1,0 +1,129 @@
+[
+  {
+    "operation": "depCreateparent2",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent2",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.171324Z",
+      "updatedAt": "2026-10-06T05:04:43.171328Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "07162c94-039d-404f-bafe-71d65af222c2",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "operation": "depCreateparent1",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent1",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.340200Z",
+      "updatedAt": "2026-10-06T05:04:43.340203Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "9741420f-5451-437f-9c1f-3e957b3a423e",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "operation": "depVerifyparent2create",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent2",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.171324Z",
+      "updatedAt": "2026-10-06T05:04:43.171328Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "07162c94-039d-404f-bafe-71d65af222c2",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "operation": "depVerifyparent2refresh",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent2",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.171324Z",
+      "updatedAt": "2026-10-06T05:04:43.171328Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "07162c94-039d-404f-bafe-71d65af222c2",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "operation": "depCreatechild2",
+    "body": {
+      "createdItems": [
+        {
+          "quantity": 1,
+          "unit": null,
+          "food": null,
+          "referencedRecipe": null,
+          "note": "sbt-dep-41fcc66da4fe4546-child2",
+          "display": "1 sbt-dep-41fcc66da4fe4546-child2",
+          "shoppingListId": "07162c94-039d-404f-bafe-71d65af222c2",
+          "checked": false,
+          "position": 0,
+          "foodId": null,
+          "labelId": null,
+          "unitId": null,
+          "extras": {},
+          "id": "e2a4968e-a439-4875-977d-ecdfd586ecd8",
+          "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+          "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+          "label": null,
+          "recipeReferences": [],
+          "createdAt": "2026-10-06T05:04:45.367659Z",
+          "updatedAt": "2026-10-06T05:04:45.367668Z"
+        }
+      ],
+      "updatedItems": [],
+      "deletedItems": []
+    }
+  },
+  {
+    "operation": "depVerifyparent1create",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent1",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.340200Z",
+      "updatedAt": "2026-10-06T05:04:43.340203Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "9741420f-5451-437f-9c1f-3e957b3a423e",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  },
+  {
+    "operation": "depUpdateparent2",
+    "body": {
+      "name": "sbt-dep-41fcc66da4fe4546-parent2-updated",
+      "extras": {},
+      "createdAt": "2026-10-06T05:04:43.171324Z",
+      "updatedAt": "2026-10-06T05:04:45.957471Z",
+      "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+      "userId": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+      "id": "07162c94-039d-404f-bafe-71d65af222c2",
+      "listItems": [],
+      "householdId": "436203bb-45fe-494d-aae5-736e1592c775",
+      "recipeReferences": [],
+      "labelSettings": []
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "status": "COMPILED_NOT_LIVE_ACCEPTED",
+  "task_count": 46,
+  "http_requests_per_complete_schedule": 46,
+  "symbolic_actor_count": 3,
+  "identity_actor_count": 3,
+  "regular_actor_count": 2,
+  "active_operations": [
+    "DELETE /api/recipes/{slug}",
+    "GET /api/households/shopping/lists/{item_id}",
+    "GET /api/recipes/{slug}",
+    "GET /api/users/self",
+    "POST /api/admin/groups",
+    "POST /api/admin/households",
+    "POST /api/admin/users",
+    "POST /api/auth/token",
+    "POST /api/households/shopping/lists",
+    "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+    "POST /api/recipes",
+    "POST /api/recipes/{slug}/duplicate",
+    "PUT /api/recipes/{slug}"
+  ],
+  "live_accepted": false,
+  "full_json_schema_validator": false,
+  "policy": "EXPLICIT_PER_ACTOR_AUTHENTICATION_AND_SCOPE_EXPECTATIONS"
+}

@@ -1,0 +1,40 @@
+{
+  "creation_order": [
+    "api/foods",
+    "api/households/shopping/lists",
+    "api/recipes",
+    "api/units",
+    "api/households/shopping/items"
+  ],
+  "cycle_edges_removed": [],
+  "deletion_order": [
+    "api/households/shopping/items",
+    "api/units",
+    "api/recipes",
+    "api/households/shopping/lists",
+    "api/foods"
+  ],
+  "edges": [
+    {
+      "confidence": 0.9,
+      "field_name": "shoppingListId",
+      "provenance": [
+        {
+          "detail": "Create request body property 'shoppingListId' matches entity 'api/households/shopping/lists'",
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody/content/application~1json/properties/shoppingListId",
+          "rule": "D2:structural_verified_id"
+        }
+      ],
+      "source": "api/households/shopping/items",
+      "target": "api/households/shopping/lists"
+    }
+  ],
+  "had_cycle": false,
+  "nodes": [
+    "api/households/shopping/lists",
+    "api/households/shopping/items",
+    "api/recipes",
+    "api/foods",
+    "api/units"
+  ]
+}

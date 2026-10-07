@@ -1,0 +1,28 @@
+{
+  "status": "GENERATED_NOT_EXECUTED",
+  "contract_normalized_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "policy_sha256": "af79b7409e1c5de7dc2a1c9c64c5acb83df7b32ac7517160affb9fa13490adec",
+  "actors": [
+    "food",
+    "unit",
+    "recipe",
+    "list",
+    "quantity"
+  ],
+  "steps": [
+    "food-create",
+    "unit-create",
+    "list-create",
+    "recipe-create",
+    "recipe-build",
+    "manual-baseline",
+    "whole-recipe",
+    "half-recipe"
+  ],
+  "simultaneous_http": false,
+  "historical_stories_reused": false,
+  "core_modified": false,
+  "full_crud": false,
+  "deletion": false,
+  "semantic_policy_from_openapi": false
+}

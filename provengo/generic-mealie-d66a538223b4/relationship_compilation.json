@@ -1,0 +1,56 @@
+{
+  "active_operations": [
+    "GET /api/foods/{item_id}",
+    "GET /api/groups/self",
+    "GET /api/households/self",
+    "GET /api/households/shopping/items/{item_id}",
+    "GET /api/households/shopping/lists/{item_id}",
+    "GET /api/recipes/{slug}",
+    "GET /api/units/{item_id}",
+    "GET /api/users/self",
+    "POST /api/auth/token",
+    "POST /api/foods",
+    "POST /api/households/shopping/items",
+    "POST /api/households/shopping/lists",
+    "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}",
+    "POST /api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+    "POST /api/recipes",
+    "POST /api/units",
+    "PUT /api/households/shopping/items/{item_id}",
+    "PUT /api/households/shopping/lists/{item_id}",
+    "PUT /api/recipes/{slug}"
+  ],
+  "bootstrap_selected_fields_only": true,
+  "configured_identity_views": [
+    {
+      "field_path": "food",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "readback_path": "foodId",
+      "target_field": "id",
+      "write_path": "foodId"
+    },
+    {
+      "field_path": "unit",
+      "operation": "PUT /api/households/shopping/items/{item_id}",
+      "readback_path": "unitId",
+      "target_field": "id",
+      "write_path": "unitId"
+    }
+  ],
+  "configured_write_views": [],
+  "full_json_schema_validator": false,
+  "http_requests_per_complete_schedule": 197,
+  "identity_view_semantics": "EXPLICIT_CONFIGURATION_PENDING_LIVE_VERIFICATION",
+  "live_accepted": false,
+  "negative_task_count": 0,
+  "negative_task_policy": "qualified status rejection plus full source snapshot equality after GET",
+  "qualified_actions": 0,
+  "runtime_profile_sha256": "c3d03b639e4c168e39da5f8c6203b594c6d9497967f3c27c35d535ff5959390e",
+  "semantic_family": "combined",
+  "semantic_policy": "EXPLICIT_CONFIGURATION_PENDING_LIVE_VERIFICATION",
+  "source_openapi_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "status": "COMPILED_NOT_LIVE_ACCEPTED",
+  "symbolic_actor_count": 15,
+  "task_count": 43,
+  "write_view_semantics": "EXPLICIT_ASSOCIATION_CONFIGURATION_PENDING_NATIVE_WRITE_VERIFICATION"
+}

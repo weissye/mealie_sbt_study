@@ -1,0 +1,109 @@
+{
+  "run_id": "identity-20261004-054615-e8dd6c97",
+  "records": {
+    "instance-1": {
+      "entity_type": "Group",
+      "scope": {
+        "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3"
+      },
+      "identifiers": {
+        "id": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "slug": "home"
+      },
+      "values": {},
+      "state": "OBSERVED",
+      "symbols": [
+        "G1"
+      ]
+    },
+    "instance-2": {
+      "entity_type": "Household",
+      "scope": {
+        "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "household": "436203bb-45fe-494d-aae5-736e1592c775"
+      },
+      "identifiers": {
+        "id": "436203bb-45fe-494d-aae5-736e1592c775",
+        "slug": "family"
+      },
+      "values": {
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3"
+      },
+      "state": "OBSERVED",
+      "symbols": [
+        "H1"
+      ]
+    },
+    "instance-3": {
+      "entity_type": "User",
+      "scope": {
+        "group": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "household": "436203bb-45fe-494d-aae5-736e1592c775"
+      },
+      "identifiers": {
+        "id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "username": "admin"
+      },
+      "values": {
+        "groupId": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "householdId": "436203bb-45fe-494d-aae5-736e1592c775"
+      },
+      "state": "OBSERVED",
+      "symbols": [
+        "U1"
+      ]
+    }
+  },
+  "observations": [
+    {
+      "record_id": "instance-1",
+      "source": "GET /api/groups/self",
+      "status": 200,
+      "identifiers": {
+        "id": "9b5df7cd-2607-4762-b6fd-c150494b6eb3",
+        "slug": "home"
+      }
+    },
+    {
+      "record_id": "instance-2",
+      "source": "GET /api/households/self",
+      "status": 200,
+      "identifiers": {
+        "id": "436203bb-45fe-494d-aae5-736e1592c775",
+        "slug": "family"
+      }
+    },
+    {
+      "record_id": "instance-3",
+      "source": "GET /api/users/self",
+      "status": 200,
+      "identifiers": {
+        "id": "1dfff957-be69-4fe8-b80e-da08e3cfb257",
+        "username": "admin"
+      }
+    }
+  ],
+  "observed_edges": [
+    {
+      "relation": "Household.groupId",
+      "source": "instance-2",
+      "target": "instance-1",
+      "evidence": "GET /api/households/self",
+      "state": "OBSERVED"
+    },
+    {
+      "relation": "User.groupId",
+      "source": "instance-3",
+      "target": "instance-1",
+      "evidence": "GET /api/users/self",
+      "state": "OBSERVED"
+    },
+    {
+      "relation": "User.householdId",
+      "source": "instance-3",
+      "target": "instance-2",
+      "evidence": "GET /api/users/self",
+      "state": "OBSERVED"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "NATIVE_LIVE_FUNCTIONAL_ACCEPTANCE_PASS",
+  "seed": 1932513905,
+  "scope": "Two new tag create/read/update/readback lifecycles",
+  "application_requests_in_interfaces": true,
+  "business_step_bridge": false,
+  "delete_operations": 0,
+  "automatic_retry": false,
+  "five_findings_reproduced": false,
+  "credentials_source": "interactive environment only",
+  "authentication_overlay": "OpenAPI OAuth password flow",
+  "scope_selection": "Explicit bounded acceptance subset; not automatic whole-system coverage",
+  "semantic_runtime_profiles_supplied": false,
+  "native_live_executed": true,
+  "renderer": "New bounded Gitea-style compatibility renderer over generator_v56 Plan",
+  "original_parallel_crud_native_compatibility": "Incomplete in local sampling; not claimed fixed",
+  "symbolic_audit": {
+    "status": "NATIVE_SYMBOLIC_WORKERS_COMPLETE",
+    "event_count": 22,
+    "expected_workers": 2,
+    "finished_workers": 2,
+    "missing_workers": [],
+    "unsuccessful_workers": {},
+    "pending_verifications": [],
+    "steps": {
+      "create": 2,
+      "update": 2
+    },
+    "symbolic_verifier_events": 4,
+    "errors": [],
+    "runtime_verifiers_evaluated": false,
+    "bugs_reproduced": 0
+  },
+  "native_exit_code": 0,
+  "qualification": "Native exit and generated callback checks; independent external receipt qualification still pending"
+}

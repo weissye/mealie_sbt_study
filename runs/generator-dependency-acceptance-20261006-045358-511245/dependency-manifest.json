@@ -1,0 +1,56 @@
+{
+  "dependency": {
+    "source": "api/households/shopping/items",
+    "target": "api/households/shopping/lists",
+    "field": "shoppingListId",
+    "provenance": [
+      {
+        "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody/content/application~1json/properties/shoppingListId",
+        "rule": "D2:structural_verified_id",
+        "detail": "Create request body property 'shoppingListId' matches entity 'api/households/shopping/lists'"
+      }
+    ]
+  },
+  "workers": [
+    {
+      "owner": "parent:1",
+      "role": "parent",
+      "identity_field": "id",
+      "marker_field": "name",
+      "create": "/api/households/shopping/lists",
+      "read": "/api/households/shopping/lists/{item_id}",
+      "update": "/api/households/shopping/lists/{item_id}"
+    },
+    {
+      "owner": "parent:2",
+      "role": "parent",
+      "identity_field": "id",
+      "marker_field": "name",
+      "create": "/api/households/shopping/lists",
+      "read": "/api/households/shopping/lists/{item_id}",
+      "update": "/api/households/shopping/lists/{item_id}"
+    },
+    {
+      "owner": "child:1",
+      "role": "child",
+      "identity_field": "id",
+      "marker_field": "note",
+      "create": "/api/households/shopping/items",
+      "read": "/api/households/shopping/items/{item_id}",
+      "update": "/api/households/shopping/items/{item_id}"
+    },
+    {
+      "owner": "child:2",
+      "role": "child",
+      "identity_field": "id",
+      "marker_field": "note",
+      "create": "/api/households/shopping/items",
+      "read": "/api/households/shopping/items/{item_id}",
+      "update": "/api/households/shopping/items/{item_id}"
+    }
+  ],
+  "instances_per_family": 2,
+  "delete_tested": false,
+  "full_crud": false,
+  "identity_policy": "Plan response field or schema-supported id convention"
+}

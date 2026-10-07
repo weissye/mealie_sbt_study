@@ -1,0 +1,33 @@
+{
+  "automatic_retry": false,
+  "error": "Neither isolated variant passed. No native HTTP replay was started.",
+  "resource_mutations": 0,
+  "status": "SCOPE_PROBE_NOT_ACCEPTED",
+  "variants": [
+    {
+      "sample_bytes": 352481,
+      "sample_exists": true,
+      "sample_exit_code": 0,
+      "sampling_accepted": true,
+      "serialized_callback_bytes": [
+        132011,
+        131964
+      ],
+      "strategy": "baseline"
+    },
+    {
+      "error": "Native sampling did not produce a sample; inspect this variant sample-output.txt, including SCOPE_STAGE markers.",
+      "sample_exists": false,
+      "sample_exit_code": 0,
+      "sampling_accepted": false,
+      "strategy": "inside"
+    },
+    {
+      "error": "Native sampling did not produce a sample; inspect this variant sample-output.txt, including SCOPE_STAGE markers.",
+      "sample_exists": false,
+      "sample_exit_code": 0,
+      "sampling_accepted": false,
+      "strategy": "outside"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "status": "NATIVE_MULTI_DEPENDENCY_NOT_ACCEPTED",
+  "resource_scope": "New resources owned by the authenticated account only",
+  "full_crud": false,
+  "deletion_tested": false,
+  "automatic_retry": false,
+  "five_findings_reproduced": false,
+  "native_live_executed": true,
+  "application_requests_in_interfaces": true,
+  "business_step_bridge": false,
+  "expected_http_calls": 39,
+  "expected_workers": 6,
+  "expected_bthreads": 26,
+  "contract_normalized_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "critical_source_normalized_sha256": {
+    "__init__.py": "53571aae787639efea7e8efc65482c85cafcff492a5ebfb0a1d5e98513dfbaf4",
+    "pipeline.py": "76ff8987dd05bdd3b4dab6b30c8b927dc0b4d62bfe843c155e903d79ab6b2499",
+    "render/parallel_crud_v3.py": "d31d60125b815eaf163cae66f15c5eae6d9e230ce165ab1c72c28c93e97b1c31",
+    "render/http_interfaces.py": "0a2f639861bcf65002677558480fcaebe3f134bea0560fbef411fa667fcba667"
+  },
+  "generator_version_expected": "0.26.19-parallel-crud.3",
+  "put_semantics_qualification": "A submitted collection replacement can explain a state difference; a verifier failure alone is not a confirmed bug",
+  "seed": 1908551356,
+  "namespace": "sbt-dep-5a337dfea5c64e21",
+  "scheduling_constraint": "Native mutation action transaction: protects refresh/write/readback from other modeled mutations; lifecycle orders remain variable",
+  "selected_candidate": 1,
+  "sample_candidates": 4,
+  "interleaving_witness": {
+    "prerequisite_update_events": [
+      60,
+      68
+    ],
+    "parent": "parent:1",
+    "parent_update_event_index": 53,
+    "child_create_before": [
+      29
+    ],
+    "child_create_after": [
+      76
+    ]
+  },
+  "symbolic_audit": {
+    "status": "NATIVE_SYMBOLIC_WORKERS_COMPLETE",
+    "event_count": 99,
+    "expected_workers": 6,
+    "finished_workers": 6,
+    "missing_workers": [],
+    "unsuccessful_workers": {},
+    "pending_verifications": [],
+    "steps": {
+      "create": 6,
+      "update": 6
+    },
+    "symbolic_verifier_events": 12,
+    "errors": [],
+    "runtime_verifiers_evaluated": false,
+    "bugs_reproduced": 0
+  },
+  "expected_post_prerequisite_child_reads": 2,
+  "native_exit_code": 1,
+  "response_receipts": 27,
+  "post_prerequisite_child_reads": 2,
+  "qualification": "Native callback readbacks and captured response bodies; no claim of whole-system or bug reproduction coverage"
+}

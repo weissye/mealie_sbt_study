@@ -1,0 +1,88 @@
+{
+  "status": "ORIGINAL_RESOURCES_UNAVAILABLE",
+  "resource_mutations": 0,
+  "new_bug_confirmed": false,
+  "cases": [
+    {
+      "case": "rename",
+      "sample": 1,
+      "status": "RESOURCES_NOT_PRESENT_IN_THIS_SERVER",
+      "issues": [],
+      "original_read_codes": [
+        404,
+        404,
+        404,
+        404,
+        404,
+        404
+      ],
+      "requested_route_code": 404,
+      "child_identity_replacements": []
+    },
+    {
+      "case": "rename",
+      "sample": 2,
+      "status": "RESOURCES_NOT_PRESENT_IN_THIS_SERVER",
+      "issues": [],
+      "original_read_codes": [
+        404,
+        404,
+        404,
+        404,
+        404,
+        404
+      ],
+      "requested_route_code": 404,
+      "child_identity_replacements": []
+    },
+    {
+      "case": "reuse",
+      "sample": 1,
+      "status": "RESOURCES_NOT_PRESENT_IN_THIS_SERVER",
+      "issues": [],
+      "original_read_codes": [
+        404,
+        404,
+        404,
+        404,
+        404,
+        404
+      ],
+      "requested_route_code": 404,
+      "child_identity_replacements": []
+    },
+    {
+      "case": "reuse",
+      "sample": 2,
+      "status": "RESOURCES_NOT_PRESENT_IN_THIS_SERVER",
+      "issues": [],
+      "original_read_codes": [
+        404,
+        404,
+        404,
+        404,
+        404,
+        404
+      ],
+      "requested_route_code": 404,
+      "child_identity_replacements": []
+    }
+  ],
+  "limitation": "Current-state reads cannot recover the original PUT response or prove absence of intervening edits.",
+  "campaign_sha256": "328249805efe1249f7f667ce30ebd87b8975e943320e0fa7bdef96486f88d932",
+  "original_controls_verified": [
+    {
+      "sample": 1,
+      "responses": 113
+    },
+    {
+      "sample": 2,
+      "responses": 113
+    }
+  ],
+  "resource_reads": 28,
+  "authentication_requests": 1,
+  "metadata_reads": 2,
+  "project": "C:\\work\\temp\\mealie_sbt_study\\provengo\\route-state-audit-20261005-041430-768324",
+  "review_zip": "C:\\Users\\74243\\Downloads\\route-state-audit-20261005-041430-768324.zip"
+}

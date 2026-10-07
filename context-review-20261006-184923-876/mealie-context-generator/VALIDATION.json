@@ -1,0 +1,9 @@
+{
+  "status": "OFFLINE_UNIT_VALIDATION_PASS",
+  "python_tests": 5,
+  "callback_and_dal_checks": 35,
+  "parent_orders": 24,
+  "native_provengo_executed": false,
+  "sut_executed": false,
+  "powershell_executed": false
+}

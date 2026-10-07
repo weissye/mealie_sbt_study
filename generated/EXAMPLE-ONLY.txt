@@ -1,0 +1,1 @@
+Synthetic schema example, not a contract-bound live reproduction. Use Run-Mealie-Native-F01.ps1 -GenerateOnly.
