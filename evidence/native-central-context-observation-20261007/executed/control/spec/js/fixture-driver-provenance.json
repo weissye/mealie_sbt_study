@@ -1,0 +1,21 @@
+{
+  "fixture_only": true,
+  "central_cli_generated_lifecycle": true,
+  "test_driver_source": "compile_fixture.py",
+  "action_source": "#/paths/~1resources~1{id}~1action/post",
+  "read_source": [
+    {
+      "pointer": "#/paths/~1resources/post",
+      "rule": "collection POST plus unique item GET"
+    },
+    {
+      "pointer": "#/paths/~1resources~1{id}/get",
+      "rule": "response id convention; route parameter matched to property"
+    }
+  ],
+  "generator_source_sha256": {
+    "generator_v56/cli.py": "6f571e2d73a79414c8971ddfd35d394e76e45afc074d864ee42ea65ba2ea38ef",
+    "generator_v56/render/context_model.py": "496c311bcc849f07d1a14cb67be31844e9114699a5013f891240b78982e8fa5a",
+    "generator_v56/render/context_observation_common.py": "e92e7c88570a1f94c068a4b0dbd56d4c81b2a82a5980245f84eb14cc17139920"
+  }
+}

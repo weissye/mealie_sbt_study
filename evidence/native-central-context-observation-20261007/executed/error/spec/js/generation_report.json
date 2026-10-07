@@ -1,0 +1,52 @@
+{
+  "status": "GENERATED_NOT_NATIVE_EXECUTED",
+  "source_sha256": "618b24f439fdace33115f6d6595739ed3413adfff84032b804cab62814d34e86",
+  "contract_version": "1",
+  "seed": 20261007,
+  "instances": 1,
+  "scope_paths": [
+    "/resources"
+  ],
+  "entities": [
+    {
+      "entity": "FixtureResource",
+      "source": [
+        {
+          "pointer": "#/paths/~1resources/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1resources~1{id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "name",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    }
+  ],
+  "contribution": null,
+  "authentication": null,
+  "project_config": "config/provengo.yml",
+  "inference_policy": "generic schema/title/key conventions; ambiguous cases fail; these conventions are not mathematical consequences of OpenAPI",
+  "oracle_policy": "expected request projection, generic write/read preservation hypothesis; no observed-response learning of expected quantity",
+  "unsupported": [
+    "Recipe contribution quantity transitions",
+    "Merge equivalence and quantity algebra",
+    "Copy deep-isolation policy",
+    "Cross-account authorization policy",
+    "DELETE absence when not documented"
+  ],
+  "observation_support": "shared capture/readback primitives only; complex action binding not emitted",
+  "native_executed": false,
+  "sut_executed": false,
+  "file_sha256": {
+    "interfaces.fixture.js": "32776f4860c9e79f0c4885bd83b6645832ef516c4acb7318f483df71ee211125",
+    "dal.js": "9b20fcaaefd5770a4a73e623ce7c57b8ba7c083e32982e2af4279f4f880788d3",
+    "stories.fixture.js": "3f3d93af278cefb7190fead5f9d56bf187d3f196276d7ed51f2ea5e40a670c30"
+  }
+}

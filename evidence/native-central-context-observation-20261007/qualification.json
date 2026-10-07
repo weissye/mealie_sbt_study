@@ -1,0 +1,10 @@
+{
+  "status": "INDEPENDENT_NATIVE_CENTRAL_ACCEPTANCE_VERIFIED",
+  "cases": 3,
+  "fixture_responses": 21,
+  "native_version": "0.7.5-SNAPSHOT",
+  "mealie_requests": 0,
+  "F04_F05_reproduced": false,
+  "source_snapshot": "generator-source.zip",
+  "regeneration_comparison": "LF normalized; exact original archives retained"
+}
