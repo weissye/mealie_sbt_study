@@ -1,0 +1,302 @@
+{
+  "status": "CENTRAL_PROCESS_BINDING_ACCEPTANCE_PASS",
+  "fixture_only": true,
+  "sut_requests": 0,
+  "native_provengo_executed": true,
+  "cases": [
+    {
+      "case": "control",
+      "accepted": true,
+      "exit_code": 0,
+      "fixture_requests": [
+        {
+          "method": "POST",
+          "path": "/resources",
+          "status": 201,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/resources/fixture-1/action",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "code": 200,
+          "body": "{\"id\": \"fixture-1\", \"name\": \"sbt-20261007-FixtureResource_1-updated\"}",
+          "captureComplete": true,
+          "contractStatusValid": true,
+          "readbacks": [
+            {
+              "logicalId": "FixtureResource_1",
+              "code": 200,
+              "usable": true,
+              "actual": {
+                "id": "fixture-1",
+                "name": "sbt-20261007-FixtureResource_1-updated"
+              },
+              "identityMatches": true,
+              "expectedMatches": true
+            }
+          ],
+          "observationsComplete": true
+        }
+      ],
+      "model": [
+        {
+          "name": "sbt-20261007-FixtureResource_1-updated"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "case": "error",
+      "accepted": true,
+      "exit_code": 1,
+      "fixture_requests": [
+        {
+          "method": "POST",
+          "path": "/resources",
+          "status": 201,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/resources/fixture-1/action",
+          "status": 500,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "code": 500,
+          "body": "Internal Server Error",
+          "captureComplete": true,
+          "contractStatusValid": false,
+          "readbacks": [
+            {
+              "logicalId": "FixtureResource_1",
+              "code": 200,
+              "usable": true,
+              "actual": {
+                "id": "fixture-1",
+                "name": "sbt-20261007-FixtureResource_1-updated"
+              },
+              "identityMatches": true,
+              "expectedMatches": true
+            }
+          ],
+          "observationsComplete": true
+        }
+      ],
+      "model": [
+        {
+          "name": "sbt-20261007-FixtureResource_1-updated"
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "case": "changed",
+      "accepted": true,
+      "exit_code": 1,
+      "fixture_requests": [
+        {
+          "method": "POST",
+          "path": "/resources",
+          "status": 201,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource-1-name"
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "sbt-20261007-FixtureResource_1-updated"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/resources/fixture-1/action",
+          "status": 500,
+          "state": {
+            "id": "fixture-1",
+            "name": "injected-change"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/resources/fixture-1",
+          "status": 200,
+          "state": {
+            "id": "fixture-1",
+            "name": "injected-change"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "code": 500,
+          "body": "Internal Server Error",
+          "captureComplete": true,
+          "contractStatusValid": false,
+          "readbacks": [
+            {
+              "logicalId": "FixtureResource_1",
+              "code": 200,
+              "usable": true,
+              "actual": {
+                "id": "fixture-1",
+                "name": "injected-change"
+              },
+              "identityMatches": true,
+              "expectedMatches": false
+            }
+          ],
+          "observationsComplete": true
+        }
+      ],
+      "model": [
+        {
+          "name": "sbt-20261007-FixtureResource_1-updated"
+        }
+      ],
+      "reasons": []
+    }
+  ]
+}

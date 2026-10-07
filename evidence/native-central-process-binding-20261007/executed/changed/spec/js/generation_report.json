@@ -1,0 +1,63 @@
+{
+  "status": "GENERATED_NOT_NATIVE_EXECUTED",
+  "source_sha256": "618b24f439fdace33115f6d6595739ed3413adfff84032b804cab62814d34e86",
+  "contract_version": "1",
+  "seed": 20261007,
+  "instances": 1,
+  "scope_paths": [
+    "/resources"
+  ],
+  "entities": [
+    {
+      "entity": "FixtureResource",
+      "source": [
+        {
+          "pointer": "#/paths/~1resources/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1resources~1{id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "name",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "not emitted: transition effects are not specified by schemas alone"
+    }
+  ],
+  "contribution": null,
+  "authentication": null,
+  "project_config": "config/provengo.yml",
+  "inference_policy": "generic schema/title/key conventions; ambiguous cases fail; these conventions are not mathematical consequences of OpenAPI",
+  "oracle_policy": "expected request projection, generic write/read preservation hypothesis; no observed-response learning of expected quantity",
+  "unsupported": [
+    "Recipe contribution quantity transitions",
+    "Merge equivalence and quantity algebra",
+    "Copy deep-isolation policy",
+    "Cross-account authorization policy",
+    "DELETE absence when not documented"
+  ],
+  "observation_support": "shared capture/readback primitives; see process bindings",
+  "process_bindings": [
+    {
+      "bthread": "process_0_FixtureResource_1",
+      "action_pointer": "#/paths/~1resources~1{id}~1action/post",
+      "readback_pointer": "#/paths/~1resources~1{id}/get",
+      "resource": "FixtureResource_1",
+      "dependency_rule": "verified lifecycle revision; identity from DAL/RTV",
+      "expected_state": "verified DAL snapshot; transition semantics not inferred",
+      "success_state_mismatch": "recorded diagnostic; no implicit preservation assertion"
+    }
+  ],
+  "native_executed": false,
+  "sut_executed": false,
+  "file_sha256": {
+    "interfaces.fixture.js": "bb50830835119145f8407411e57d726cd238e91849bcc9ef3d3d17758a25589e",
+    "dal.js": "9b20fcaaefd5770a4a73e623ce7c57b8ba7c083e32982e2af4279f4f880788d3",
+    "stories.fixture.js": "bda576da47b3ba7751edf2d1752871f25d79d05d894923a3784be2b6ddc57b7f"
+  }
+}
