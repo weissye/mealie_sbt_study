@@ -1,0 +1,46 @@
+{
+  "status": "GENERATED_NOT_EXECUTED",
+  "contract_sha256": "4291e06b9e14a3ae5b0e309fcd2e26cfbd25373c709d6d9dbf2b0c7c819b2285",
+  "plan": {
+    "create": {
+      "path": "/resources",
+      "codes": [
+        201
+      ],
+      "source": "#/paths/~1resources/post"
+    },
+    "read": {
+      "path": "/resources/{id}",
+      "codes": [
+        200
+      ],
+      "source": "#/paths/~1resources~1{id}/get"
+    },
+    "update": {
+      "path": "/resources/{id}",
+      "codes": [
+        200
+      ],
+      "source": "#/paths/~1resources~1{id}/patch"
+    },
+    "action": {
+      "path": "/resources/{id}/action",
+      "codes": [
+        200
+      ],
+      "source": "#/paths/~1resources~1{id}~1action/post"
+    },
+    "initial": {
+      "name": "initial"
+    },
+    "delta": {
+      "name": "updated"
+    }
+  },
+  "limitations": [
+    "Fixture-only experimental renderer; existing generator entry points unchanged",
+    "Operation roles selected by fixture summary; not a universal action classifier",
+    "Context expected state is request-derived; response observations remain in RTV",
+    "No live F04 or boundary probe is generated"
+  ]
+}
