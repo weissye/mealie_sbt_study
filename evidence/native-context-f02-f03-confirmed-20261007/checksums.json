@@ -1,0 +1,18 @@
+{
+  ".gitattributes": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992",
+  "HANDOFF.md": "acff05dacce49c9a0877672a9daef8a936df9f2dd71c4dbc5b4c3b9d86807b78",
+  "F02\\generator-source.zip": "ef04ec3037de9997efff3d79477bfbbef69cb8de6d0a70526fe6aeb3367e60ad",
+  "F02\\qualification-original.json": "a1ce250bab1549c9b5a65fb7cc89034d6dfd2a4f51aef2d452b13ad09051e90b",
+  "F02\\review-original.zip": "96a2955a2a3e94da3f528d7f4309f8758fd48375309eff2148eacf5763bb9ab0",
+  "F03\\generator-source.zip": "68d9991abca77918c0518d30b77a659f8ec0ed295c9cb9a4be7b0afe544c1e14",
+  "F03\\qualification-original.json": "0ab121375af5c72893f817c0ddf02561b1f563c95432600156281c85be2ce994",
+  "F03\\review-original.zip": "c4d77aea71c87d445609fa4e08a3db4a651d9f0a960f295691f87cbc64c103ce",
+  "F02\\generated\\dal.js": "ae233d7593adc18adc56cd23acb199321aaf35f8c42095e72f167287b8736987",
+  "F02\\generated\\generation_report.json": "84e839a7237222cd561dec749f4bf986c5f520cda0cddf7de9e5e81d8fb24f84",
+  "F02\\generated\\interfaces.mealie.js": "4af7e23784fdddc8463173707a1220c9965f0a81374488c350c0ccc8676ddd8e",
+  "F02\\generated\\stories.mealie.js": "dd8714feb3205b665bc54fac306ff41425700fcc43fd45616899a3e7b90e874c",
+  "F03\\generated\\dal.js": "971a7cdb9803138b63ea95dc5d034a6e076117ab85b7a6c24782c79db1b696b3",
+  "F03\\generated\\generation_report.json": "dcc06e40fdb209af035db7ffb9e56675ee7d646e6576adb3fcbe54097cf1ee6a",
+  "F03\\generated\\interfaces.mealie.js": "ab7b39d42036da595b1d444b48ae28a66fdf97516a4dbf3052427c1156251368",
+  "F03\\generated\\stories.mealie.js": "355831846e5edfe228f125b05b8e49370e78a7e5e6ed788c31bb5986d7fb9be7"
+}

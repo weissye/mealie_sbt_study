@@ -1,0 +1,179 @@
+{
+  "status": "GENERATED_NOT_EXECUTED",
+  "source_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "seed": 717883341,
+  "plan": {
+    "mode": "copy",
+    "recipe_type": "Recipe",
+    "item_type": "",
+    "copy_path": "/api/recipes/{slug}/duplicate",
+    "copy_codes": [
+      201
+    ],
+    "detail": "/api/recipes/{slug}",
+    "parameter": "slug",
+    "ingredients": "recipeIngredient",
+    "steps": "recipeInstructions",
+    "references": "ingredientReferences",
+    "reference_id": "referenceId",
+    "text": "text",
+    "links": [
+      {
+        "field": "unit",
+        "target": "IngredientUnit",
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      {
+        "field": "food",
+        "target": "IngredientFood",
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    ],
+    "required_ready": {
+      "IngredientFood": 1,
+      "IngredientUnit": 1,
+      "Recipe": 1
+    },
+    "sources": [
+      "#/paths/~1api~1recipes~1{slug}~1duplicate/post",
+      "#/paths/~1api~1recipes~1{slug}/patch/requestBody",
+      "#/components/schemas/RecipeIngredient-Input/properties/referenceId",
+      "#/components/schemas/RecipeStep/properties/ingredientReferences",
+      "#/components/schemas/IngredientReferences/properties/referenceId"
+    ],
+    "hypothesis": "Copy preserves internal reference closure, corresponding ingredient links and source state. UUID schemas and copy description do not fully specify identity remapping. This is an opt-in generic graph-copy integrity hypothesis.",
+    "seed": 717883341,
+    "fixtures": [
+      {
+        "referenceId": "62a9a736-2c63-497b-a984-c47a1b9e9806",
+        "note": "sbt-717883341-ingredient-0",
+        "quantity": 2
+      },
+      {
+        "referenceId": "f009a1a8-be45-4cc3-a7ce-8fbff7420c17",
+        "note": "sbt-717883341-ingredient-1",
+        "quantity": 4
+      }
+    ],
+    "step_fixtures": [
+      {
+        "text": "sbt-717883341-step-0",
+        "ingredientReferences": [
+          {
+            "referenceId": "62a9a736-2c63-497b-a984-c47a1b9e9806"
+          },
+          {
+            "referenceId": "f009a1a8-be45-4cc3-a7ce-8fbff7420c17"
+          }
+        ]
+      },
+      {
+        "text": "sbt-717883341-step-1",
+        "ingredientReferences": [
+          {
+            "referenceId": "f009a1a8-be45-4cc3-a7ce-8fbff7420c17"
+          }
+        ]
+      }
+    ]
+  },
+  "entities": [
+    {
+      "entity": "IngredientFood",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1foods/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1foods~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "IngredientUnit",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1units/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1units~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "Recipe",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1recipes/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/get",
+          "rule": "response id convention; route parameter matched to property"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes/post/responses",
+          "rule": "string response used as single string route parameter; hypothesis checked by GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody",
+          "rule": "array items with explicit references; two embedded objects share selected dependencies"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [
+        {
+          "field": "recipeIngredient",
+          "links": [
+            {
+              "field": "unit",
+              "target": "IngredientUnit",
+              "required": [
+                "id",
+                "name"
+              ]
+            },
+            {
+              "field": "food",
+              "target": "IngredientFood",
+              "required": [
+                "id",
+                "name"
+              ]
+            }
+          ],
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody"
+        }
+      ],
+      "identity_mode": "primitive-route",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    }
+  ]
+}

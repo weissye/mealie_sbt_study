@@ -1,0 +1,286 @@
+{
+  "status": "GENERATED_NOT_EXECUTED",
+  "source_sha256": "90e19aa713ab4ba15352627aca7dc37290f868b213eb65a3e1564f3b7a7ff292",
+  "seed": 869772553,
+  "variant": "food",
+  "plan": {
+    "operation_path": "/api/households/shopping/lists/{item_id}/recipe",
+    "codes": [
+      200
+    ],
+    "recipe_type": "Recipe",
+    "list_type": "ShoppingListOut",
+    "item_type": "ShoppingListItemOut",
+    "ingredients_field": "recipeIngredient",
+    "quantity_field": "quantity",
+    "recipe_key": "recipeId",
+    "increment_field": "recipeIncrementQuantity",
+    "item_array": "listItems",
+    "item_refs": "recipeReferences",
+    "list_refs": "recipeReferences",
+    "reference_quantity": "recipeQuantity",
+    "reference_scale": "recipeScale",
+    "owner_key": "shoppingListId",
+    "child_key": "shoppingListItemId",
+    "keys": [
+      {
+        "source": "unit",
+        "item": "unitId"
+      },
+      {
+        "source": "food",
+        "item": "foodId"
+      }
+    ],
+    "recipe_detail": "/api/recipes/{slug}",
+    "recipe_parameter": "slug",
+    "list_detail": "/api/households/shopping/lists/{item_id}",
+    "list_parameter": "item_id",
+    "item_detail": "/api/households/shopping/items/{item_id}",
+    "item_parameter": "item_id",
+    "sources": [
+      "#/paths/~1api~1households~1shopping~1lists~1{item_id}~1recipe/post",
+      "#/paths/~1api~1recipes~1{slug}/patch/requestBody",
+      "#/paths/~1api~1households~1shopping~1items~1{item_id}/get",
+      "#/paths/~1api~1households~1shopping~1lists~1{item_id}/get",
+      "#/paths/~1api~1foods~1merge/put",
+      "#/paths/~1api~1households~1shopping~1lists~1{item_id}~1recipe~1{recipe_id}~1delete/post"
+    ],
+    "inference": "summary Add; array input; source Id; numeric Increment; unique container response; schema-linked item and references",
+    "hypothesis": "Canonical merge preserves aggregate quantities; removing one recipe subtracts its current canonical ingredient aggregate and leaves the manual baseline. Not implied by OpenAPI alone.",
+    "scales": [
+      1,
+      0.5
+    ],
+    "fixture_quantities": [
+      2,
+      2
+    ],
+    "mode": "removal",
+    "variant": "food",
+    "merge_type": "IngredientFood",
+    "merge_source_field": "food",
+    "merge_item_key": "foodId",
+    "merge_path": "/api/foods/merge",
+    "merge_method": "PUT",
+    "merge_codes": [
+      200
+    ],
+    "merge_from": "fromFood",
+    "merge_to": "toFood",
+    "remove_path": "/api/households/shopping/lists/{item_id}/recipe/{recipe_id}/delete",
+    "remove_codes": [
+      200
+    ],
+    "decrement": "recipeDecrementQuantity",
+    "manual_quantity": 7,
+    "dependency_links": [
+      {
+        "field": "unit",
+        "target": "IngredientUnit",
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      {
+        "field": "food",
+        "target": "IngredientFood",
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    ],
+    "item_create_path": "/api/households/shopping/items",
+    "item_create_codes": [
+      201
+    ],
+    "required_ready": {
+      "IngredientFood": 2,
+      "IngredientUnit": 1,
+      "Recipe": 1,
+      "ShoppingListOut": 1
+    },
+    "skip_merge": false,
+    "zero_fields_js": "delta[\"recipeServings\"]=1;delta[\"recipeYieldQuantity\"]=1;"
+  },
+  "entities": [
+    {
+      "entity": "IngredientFood",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1foods/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1foods~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "IngredientUnit",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1units/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1units~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "Recipe",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1recipes/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/get",
+          "rule": "response id convention; route parameter matched to property"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes/post/responses",
+          "rule": "string response used as single string route parameter; hypothesis checked by GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody",
+          "rule": "array items with explicit references; two embedded objects share selected dependencies"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [
+        {
+          "field": "recipeIngredient",
+          "links": [
+            {
+              "field": "unit",
+              "target": "IngredientUnit",
+              "required": [
+                "id",
+                "name"
+              ]
+            },
+            {
+              "field": "food",
+              "target": "IngredientFood",
+              "required": [
+                "id",
+                "name"
+              ]
+            }
+          ],
+          "pointer": "#/paths/~1api~1recipes~1{slug}/patch/requestBody"
+        }
+      ],
+      "identity_mode": "primitive-route",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "description",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "ShoppingListOut",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1lists/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1lists~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        }
+      ],
+      "create_dependencies": [],
+      "embedded_links": [],
+      "identity_mode": "object",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "name",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    },
+    {
+      "entity": "ShoppingListItemOut",
+      "source": [
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post",
+          "rule": "collection POST plus unique item GET"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items~1{item_id}/get",
+          "rule": "response id convention; route parameter matched to property"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody",
+          "rule": "prefer explicit foreign-key representation over embedded parent object",
+          "omitted_embedded_fields": [
+            "unit",
+            "food",
+            "referencedRecipe"
+          ],
+          "limitation": "write/read persistence remains a runtime hypothesis"
+        },
+        {
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/responses",
+          "rule": "unique matching identity across schema-compatible response arrays; ambiguity is failure"
+        }
+      ],
+      "create_dependencies": [
+        {
+          "field": "shoppingListId",
+          "target": "ShoppingListOut",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "foodId",
+          "target": "IngredientFood",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "unitId",
+          "target": "IngredientUnit",
+          "object": false,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody"
+        },
+        {
+          "field": "recipeReferences",
+          "subfield": "recipeId",
+          "target": "Recipe",
+          "object": false,
+          "array": true,
+          "pointer": "#/paths/~1api~1households~1shopping~1items/post/requestBody",
+          "template": {
+            "recipeQuantity": 1,
+            "recipeScale": 1
+          }
+        }
+      ],
+      "embedded_links": [],
+      "identity_mode": "collection",
+      "readback": "request-derived projection plus stable identity",
+      "update_field": "note",
+      "delete": "not emitted: absence response is not explicitly documented",
+      "complex_actions": "opt-in contribution hypothesis emitted"
+    }
+  ]
+}
