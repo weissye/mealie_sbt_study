@@ -1,0 +1,17 @@
+﻿{
+    "version":  "v001",
+    "repository":  "https://github.com/weissye/mealie_sbt_study.git",
+    "branch":  "research/mealie-20261008-v001-20261008-190930-752",
+    "day":  "2026-10-08",
+    "generator_source":  "C:\\work\\temp\\central-process-binding-20261007-133307-073\\payload",
+    "copied_artifacts":  18,
+    "missing":  [
+                    "Mealie_Generator_Provengo_v007*.zip"
+                ],
+    "notes":  [
+                  "Only generator Python source is snapshotted.",
+                  "Docker data, databases, credentials, products and JARs are not separately collected.",
+                  "Original archives may contain sensitive material; reviewed for common token/key patterns before commit.",
+                  "All distinct artifact hashes are preserved. Missing artifacts do not disappear silently."
+              ]
+}

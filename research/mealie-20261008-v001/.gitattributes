@@ -1,0 +1,2 @@
+*.zip -filter -diff -merge -text
+*.docx -filter -diff -merge -text

@@ -1,0 +1,110 @@
+﻿[
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Context_Actors_Run_Repair (1).zip",
+        "file":  "artifacts/0001-Context_Actors_Run_Repair (1).zip",
+        "sha256":  "60BE868AF2C4ACD7BDE7867A781828D6578FDF04F180DB75B7AF8A7EB2BD222E",
+        "bytes":  2031087
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Context_Actors_Run_Repair.zip",
+        "file":  "artifacts/0002-Context_Actors_Run_Repair.zip",
+        "sha256":  "E3DFE55EA456AB7965554A5521530F871D70D48BD0B6E94A4DEE3293DF2AFEF5",
+        "bytes":  2032055
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Consistency_v006.zip",
+        "file":  "artifacts/0003-Mealie_Consistency_v006.zip",
+        "sha256":  "B6E3AA5E38B1D2A6A91E0CAEAA31F28DC457DEC9F1FDB55AA2060A598A712D99",
+        "bytes":  96603
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Consistency_v006_SourceBundle.zip",
+        "file":  "artifacts/0004-Mealie_Consistency_v006_SourceBundle.zip",
+        "sha256":  "9D585CC35F380232926DBCC27FF1E08BF65AC8E0F1CFE0572ED0FBF7973F87E0",
+        "bytes":  213547
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Context_Actors_Logical_Interleaving_Delta (1).zip",
+        "file":  "artifacts/0005-Mealie_Context_Actors_Logical_Interleaving_Delta (1).zip",
+        "sha256":  "345C964922B6F7D52424F7E915A27F0911590529A675130F65F7927972984F7C",
+        "bytes":  1682754
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Context_Actors_Logical_Interleaving_Delta.zip",
+        "file":  "artifacts/0006-Mealie_Context_Actors_Logical_Interleaving_Delta.zip",
+        "sha256":  "52E37B836A0C355645E6F20D70215EB017FEC6C3AAAB7464E5D81B80F4264AAE",
+        "bytes":  45640
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Quantity_Consistency_Engineering_and_Research.docx",
+        "file":  "artifacts/0007-Mealie_Quantity_Consistency_Engineering_and_Research.docx",
+        "sha256":  "9E23D2657BB710C30EF5752501C1F6C1072B853E35339F4531DE32A98A3EB616",
+        "bytes":  38649
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Research_Collection_v001-20261008-155046-871\\files\\0008\\Mealie_Shared_Consistency_v005.zip",
+        "file":  "artifacts/0008-Mealie_Shared_Consistency_v005.zip",
+        "sha256":  "4A0A23872D6D4ACF218B46495F7A6603F2A506BCC8C62950E67747C3E69F2038",
+        "bytes":  6941
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Research_Collection_v001-20261008-155046-871\\files\\0012\\Mealie_Quantity_Consistency_Engineering_and_Research.docx",
+        "file":  "artifacts/0009-Mealie_Quantity_Consistency_Engineering_and_Research.docx",
+        "sha256":  "4185B873C1EE50E308A345644C908243AC943899550817913CA24FC2C936DEEB",
+        "bytes":  46035
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Research_Collector_v001.zip",
+        "file":  "artifacts/0010-Mealie_Research_Collector_v001.zip",
+        "sha256":  "4EC35EEFEB1D66975B9C9D1D0984E95FCD95D482B8C002841B0B7764F092BBA2",
+        "bytes":  3643
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Research_Collector_v002.zip",
+        "file":  "artifacts/0011-Mealie_Research_Collector_v002.zip",
+        "sha256":  "CA6D9E05C396C75945FF01C80BB71E5F8C21436C16431348F1281C1ED437AEF3",
+        "bytes":  3979
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_Server_Log_v001-20261008-183213.txt",
+        "file":  "artifacts/0012-Mealie_Server_Log_v001-20261008-183213.txt",
+        "sha256":  "F3BB5C9BE46E154DE77A25E7B5B6AC5DFDEB872212887DFA07FA5CE5FFB693A7",
+        "bytes":  3471663
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\Mealie_v005_Review_and_Server_Log_v001-20261008-183335-911.zip",
+        "file":  "artifacts/0013-Mealie_v005_Review_and_Server_Log_v001-20261008-183335-911.zip",
+        "sha256":  "723A3A5B6DD4AAFE3B2C582C4325723577BC144DA8F439377A04C716619AD1CB",
+        "bytes":  434373
+    },
+    {
+        "source":  "C:\\work\\temp\\mealie_sbt_study\\Mealie_Consistency_v006\\regression-v006-20261008-181623.zip",
+        "file":  "artifacts/0014-regression-v006-20261008-181623.zip",
+        "sha256":  "6343B948DBCEA7A7FB6D604F8123F488A2ED54173D9B51B4846CE2663CF33374",
+        "bytes":  22447
+    },
+    {
+        "source":  "C:\\work\\temp\\mealie_sbt_study\\Mealie_Consistency_v006\\regression-v006-20261008-182957.zip",
+        "file":  "artifacts/0015-regression-v006-20261008-182957.zip",
+        "sha256":  "E67FFCAEA21DFC6716C85546688F2B1252B3216F7E64BEF509F2971B536ECDD0",
+        "bytes":  20019
+    },
+    {
+        "source":  "C:\\work\\temp\\mealie_sbt_study\\Mealie_Consistency_v006\\runs\\v006-20261008-175533-878126\\review_v006.zip",
+        "file":  "artifacts/0016-review_v006.zip",
+        "sha256":  "F82741AB268E08548B4232B538A8DB82B625559F84B7137ED67D794A199CB3FA",
+        "bytes":  8022
+    },
+    {
+        "source":  "C:\\work\\temp\\mealie_sbt_study\\Mealie_Consistency_v006\\runs\\v006-20261008-182803-921246\\review_v006.zip",
+        "file":  "artifacts/0017-review_v006.zip",
+        "sha256":  "E048A5ECEC3427548E573BA678D33C955F8A8323E72843D9C2CB68B828699E36",
+        "bytes":  8043
+    },
+    {
+        "source":  "C:\\Users\\74243\\Downloads\\mealie-shared-v005-20261008-144029-984\\runs\\v005-20261008-151535-587106\\review.zip",
+        "file":  "artifacts/0018-review_v005-v005-20261008-151535-587106.zip",
+        "sha256":  "AEF4777006A1CAE995A60F929B2C0EAA1ED373B952D5AF86C559A39D35C6FEDC",
+        "bytes":  1271
+    }
+]
