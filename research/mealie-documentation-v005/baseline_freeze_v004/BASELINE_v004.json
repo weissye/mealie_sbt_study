@@ -1,0 +1,25 @@
+{
+  "version": "v004",
+  "baseline_status": "FROZEN_FOR_OFFLINE_PROVENANCE_AUDIT",
+  "baseline_compiler_version": "v016",
+  "source_archive_name": "Mealie_F04_F05_Evidence_Package (1).zip",
+  "source_zip_sha256": "924e363fdf399bd261e12cb89a4c8319c2f393ffd2849ba52a6548b0ffb4c378",
+  "source_master_manifest_sha256": "cd88c1e18889785d778b3cd5a4b451f59ae06a8811e6dfcc803ee757e23a428b",
+  "source_indexed_files": 415,
+  "source_actual_files": 416,
+  "compiler_files": [
+    {
+      "path": "delta/generator_v56/boundary_plan_v016.py",
+      "sha256": "b3c263afa82f5cb58dd569f094764a8d127f6022d98ba0f0b6f5f16780dcefac"
+    },
+    {
+      "path": "generate_package_v016.py",
+      "sha256": "40ca78d34087c9438a62dc1e770441d3902b6d5ab67dc7d85f8d60172ec7523b"
+    }
+  ],
+  "read_only_source": true,
+  "full_current_source_location": "User supplied immutable v016 archive; not rewritten or redistributed by this sidecar",
+  "older_generic_engine": "Historical generic-generator is a distinct source lineage; v016 is the package/compiler baseline, not proof of unchanged cross-system engine transfer",
+  "artifact_scope": "Metadata, immutable hashes, source layering and read-only verifier; no active boundary replay generation",
+  "remote_publication": "Not performed; GitHub write authentication unavailable in prior attempt"
+}

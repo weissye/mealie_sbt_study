@@ -1,0 +1,20 @@
+{
+  "version": "v005",
+  "files": {
+    "Automation_Lineage_v005.md": "b64fa484f85fc30fad358b76c092d47d3b705185250a5de265318907d220b81e",
+    "Discovery_Audit_v002.json": "6bc3cc43d56bd96fb891fb8f58bf80dfabb0ae44a210156386b0335c3eddcd6d",
+    "Mealie_Engineering_Report_v005.md": "daaef73004a1193c99dbf20f93f8c1da8f5dd953bf2738bd0f1719637a4e882f",
+    "Mealie_Research_Report_v005.md": "a79570a87456bc14a55ef77ef19135c72d550ad2b16fdd4e3bfbe6b3c7545632",
+    "README_v005.md": "67f5b206e9077b75eb3c421764721d1f1d5f0e8f8017071664b402c230665fd6",
+    "Research_Provenance_Addendum_v002.md": "c334e08e038929fbd1a04309ac2f31b8d3332976fd2ff492a6ce0cda68b5c6b7",
+    "baseline_freeze_v004/ADAPTER_INPUT_SCHEMA_v004.json": "bd9700721b653bec800b182f57cf591ecc3f72b3faac23b8f2cd36168f8400fa",
+    "baseline_freeze_v004/BASELINE_v004.json": "871f5e97ad7b3a6d293d3fd99396ef03fe77b6d1fd1fb447b362371549ed473c",
+    "baseline_freeze_v004/FREEZE_MANIFEST_v004.json": "2f090fd94ebe2164b894ca13f7ba45ddd190bfe7fd3bd1febd182ef87584f56f",
+    "baseline_freeze_v004/FREEZE_REPORT_v004.md": "3aeb7bc87b659b1eb58382085d9a7930814701944ab947584a70d453c0a40ddc",
+    "baseline_freeze_v004/INPUTS_AND_SEMANTICS_v004.json": "60dc91fb9babc08c40ae93cdccbeea4bdef944dde1a9e2f4c1dd00ca38bdc507",
+    "baseline_freeze_v004/README_v004.md": "6f9facb7ee47eb6eb9f29bbeb0cb2ed9dd7207365499344371acde46d9f5e50c",
+    "baseline_freeze_v004/SOURCE_INVENTORY_v004.json": "da5f15028742a1f76f707771b42eacd332fc1b12bc2a55c5413c425dd63419da",
+    "baseline_freeze_v004/VALIDATION_v004.json": "f404cdcac432b0e5963384a71e477f800c658a0a2c6d117e98950355596172ff",
+    "baseline_freeze_v004/Verify-Freeze-v004.py": "42554b925e9e96d1901b82a39d9eacf1e4df8ecbddfc2e9a64181e4c6e790b2c"
+  }
+}

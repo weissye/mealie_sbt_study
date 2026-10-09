@@ -1,0 +1,131 @@
+{
+  "version": "v004",
+  "source_hash_verified": true,
+  "master_manifest_hashes": 415,
+  "nested_manifests": [
+    {
+      "version": "v007",
+      "hashes": 13
+    },
+    {
+      "version": "v008",
+      "hashes": 14
+    },
+    {
+      "version": "v009",
+      "hashes": 4
+    },
+    {
+      "version": "v010",
+      "hashes": 41
+    },
+    {
+      "version": "v011",
+      "hashes": 41
+    },
+    {
+      "version": "v012",
+      "hashes": 41
+    },
+    {
+      "version": "v013",
+      "hashes": 41
+    },
+    {
+      "version": "v014",
+      "hashes": 59
+    },
+    {
+      "version": "v015",
+      "hashes": 59
+    },
+    {
+      "version": "v016",
+      "hashes": 59
+    }
+  ],
+  "template_output_matches": [
+    {
+      "file": "run_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "setup_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "check_boundary_fixture_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "check_runner_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "check_secret_redaction_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "fixture_server_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "js_shim_v016.js",
+      "bytes_match": true
+    },
+    {
+      "file": "Run-Boundary-Provengo-v016.ps1",
+      "bytes_match": true
+    },
+    {
+      "file": "verify_manifest_v016.py",
+      "bytes_match": true
+    },
+    {
+      "file": "README_v016.md",
+      "bytes_match": true
+    }
+  ],
+  "python_syntax_files": [
+    "check_runner_v016.py",
+    "run_v016.py",
+    "fixture_server_v016.py",
+    "setup_v016.py",
+    "plan_v016.py",
+    "generate_package_v016.py",
+    "check_boundary_fixture_v016.py",
+    "check_secret_redaction_v016.py",
+    "verify_manifest_v016.py",
+    "delta/generator_v56/boundary_plan_v016.py"
+  ],
+  "v016_native_receipt_status": "V016_LIVE_BOUNDARY_RUN_COMPLETE",
+  "v016_markers": [
+    "SETUP_RECIPE_A",
+    "SETUP_READ_RECIPE_A",
+    "SETUP_LIST_A",
+    "SETUP_LIST_C",
+    "SETUP_RECIPE_D",
+    "SETUP_READ_RECIPE_D",
+    "B1_SNAP_BEFORE",
+    "B1_PROBE",
+    "B1_SNAP_AFTER",
+    "B2_SNAP_BEFORE",
+    "B2_PROBE",
+    "B2_SNAP_AFTER",
+    "B3_SNAP_BEFORE",
+    "B3_PROBE",
+    "B3_SNAP_AFTER"
+  ],
+  "v016_compiler_matches_receipt": true,
+  "v016_contract_matches_report": true,
+  "contract_file_sha256": "571cd5fe0220c8f15c081b6b8c1ac491de0dc1154fcf4864655bc11e28bf0e46",
+  "contract_canonical_json_sha256": "9aad8c0a7d9bdbff2b8dbe1675044a86ba8d674c145cb60351654452aa142286",
+  "raw_jwt_pattern_matches": [],
+  "method": "Read-only ZIP, text and AST audit; no imports, generation or live requests",
+  "limits": [
+    "Existing receipt is audited, not a new live run",
+    "Template bytes match existing outputs; full package regeneration not executed",
+    "Pattern scan is not a proof of absence of every possible secret",
+    "Semantic intent is explicitly authored; OpenAPI-only semantic discovery not established"
+  ]
+}

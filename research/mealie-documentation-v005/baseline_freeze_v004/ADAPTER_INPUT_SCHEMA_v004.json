@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mealie-research:adapter-input:v004",
+  "title": "Proposed service adapter provenance contract",
+  "description": "Research-stage contract; not a claim that frozen v016 consumes this schema.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "system",
+    "contract_sha256",
+    "engine_baseline_sha256",
+    "bindings",
+    "invariants"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "v004"
+    },
+    "system": {
+      "type": "string"
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "engine_baseline_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "contract_pointer",
+          "provenance"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "contract_pointer": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "category",
+              "source"
+            ],
+            "properties": {
+              "category": {
+                "enum": [
+                  "contract_inferred",
+                  "documented_semantics",
+                  "author_declared",
+                  "template_configuration"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "statement",
+          "provenance"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "category",
+              "source"
+            ],
+            "properties": {
+              "category": {
+                "enum": [
+                  "contract_inferred",
+                  "documented_semantics",
+                  "author_declared",
+                  "template_configuration"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,75 @@
+{
+  "version": "v004",
+  "inputs": [
+    {
+      "path": "plan_v016.py",
+      "sha256": "f542a3e978c8eb76669ca80f5e4d55cf829afd4433ae05009991a830702ff48c",
+      "provenance": "Explicit semantic test intent and actor/schedule declarations; supplied input, not OpenAPI inference",
+      "copied_to_freeze_sidecar": false
+    },
+    {
+      "path": "delta/generator_v56/package_templates_v016.json",
+      "sha256": "2f115c446519612773cf1bb966c764d3b15af5601fdd99685e95de3f28d6fb7d",
+      "provenance": "Compiler-owned authored orchestration, setup, fixtures, checks, launcher and documentation templates",
+      "copied_to_freeze_sidecar": false
+    },
+    {
+      "path": "contract/mealie-openapi.v3.28.0.live-v007.json",
+      "sha256": "571cd5fe0220c8f15c081b6b8c1ac491de0dc1154fcf4864655bc11e28bf0e46",
+      "provenance": "Recorded API contract input; structural operation/schema information",
+      "copied_to_freeze_sidecar": false
+    }
+  ],
+  "plan_functions": [
+    {
+      "name": "make_plan",
+      "line": 31
+    }
+  ],
+  "template_outputs": [
+    {
+      "template": "run___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "setup___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "check_boundary_fixture___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "check_runner___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "check_secret_redaction___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "fixture_server___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "js_shim___V__.js",
+      "value_type": "str"
+    },
+    {
+      "template": "Run-Boundary-Provengo-__V__.ps1",
+      "value_type": "str"
+    },
+    {
+      "template": "verify_manifest___V__.py",
+      "value_type": "str"
+    },
+    {
+      "template": "README___V__.md",
+      "value_type": "str"
+    }
+  ],
+  "authorship_limit": "Explicit declarations are identified; individual human authoring time and complete authorship history are not available",
+  "structural_generation": "OpenAPI operation and schema binding",
+  "semantic_generation": "Explicit authored plan supplies test intent; package templates supply wrapper behavior",
+  "historical_discovery_audit": "Prior v002 audit documents original Oct5 automation separately; do not treat v016 as identical historical transactions"
+}

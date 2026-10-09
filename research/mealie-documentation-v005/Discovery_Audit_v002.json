@@ -1,0 +1,332 @@
+{
+  "version": "v002",
+  "review_date": "2026-10-09",
+  "method": "read-only artifact and source audit; no live requests",
+  "snapshot_sha256": "dc0fc6535783fa8712f48806e9eec4b5ccdd4a17cece67bb04f0a16102445b98",
+  "snapshot_limit": "Review checkout; exact Windows installed source not attested",
+  "runs": [
+    {
+      "case": "separate",
+      "sample": 1,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 57,
+      "response_count": 57,
+      "receipt_sha256": "a2193018a051c7341806bfb5d5db782732c0aad01dbbd641f80ea4b394960e3b",
+      "plan_sha256": "8d1731c198e80454ff7b946b545793b1c72cfb939795a96dab88a180e52c1196",
+      "interfaces_sha256": "26cbc5335c0a35fbccd36f34e90b507042917923e6abfe1fa8b16e869e8ec351",
+      "stories_sha256": "e400b6c72e6c25c2faec593db59c5df511cd362df8bddac4d0ffd73a570c8da1"
+    },
+    {
+      "case": "separate",
+      "sample": 2,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 57,
+      "response_count": 57,
+      "receipt_sha256": "56d5cd28420b7b203a72a12b6ebd6a915c3a07fc362520f19b70b2092beafe68",
+      "plan_sha256": "8d1731c198e80454ff7b946b545793b1c72cfb939795a96dab88a180e52c1196",
+      "interfaces_sha256": "26cbc5335c0a35fbccd36f34e90b507042917923e6abfe1fa8b16e869e8ec351",
+      "stories_sha256": "e400b6c72e6c25c2faec593db59c5df511cd362df8bddac4d0ffd73a570c8da1"
+    },
+    {
+      "case": "shared",
+      "sample": 1,
+      "native_exit": 0,
+      "status": "PASS",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 46,
+      "response_count": 46,
+      "receipt_sha256": "a0bb82bb70059d08bf6ede1e40e31665d2dfbaada97ecf5910c2b8a3a7283c4c",
+      "plan_sha256": "57baf60dcb200e372d1c215289dcddb681e58064000062f81f48ed3397aa7c19",
+      "interfaces_sha256": "a50161ec4a7b2b1d61cdecfbca5a22061441adf72844d98c312186300a0a470c",
+      "stories_sha256": "ebdc4b76fe29feda0bbb1cbe8a774d241bd1c488afa0e4bb53c707549b95fdf9"
+    },
+    {
+      "case": "shared",
+      "sample": 2,
+      "native_exit": 0,
+      "status": "PASS",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 46,
+      "response_count": 46,
+      "receipt_sha256": "67a3362b49f241da872f927290c4ec686c00aee5b803c6438d3e9f2f07acc4b6",
+      "plan_sha256": "57baf60dcb200e372d1c215289dcddb681e58064000062f81f48ed3397aa7c19",
+      "interfaces_sha256": "a50161ec4a7b2b1d61cdecfbca5a22061441adf72844d98c312186300a0a470c",
+      "stories_sha256": "ebdc4b76fe29feda0bbb1cbe8a774d241bd1c488afa0e4bb53c707549b95fdf9"
+    },
+    {
+      "case": "reference-controls",
+      "sample": 1,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 47,
+      "response_count": 47,
+      "receipt_sha256": "b779b410ae74ecb21a6bc3bd16a2de0881952565ee7c6f845008014731b0ea8a",
+      "plan_sha256": "ffb30e873b6badc996f5f705bcb703319212cced035b67d1a9ebba212710127b",
+      "interfaces_sha256": "19f6d2472578d3523f011c76d3f950f6869670285d53408ebb3e7fd93213e61b",
+      "stories_sha256": "6c4873b288cf3b070af730fed29e90c6f559d3ccc99d254b0b66f5c6644b6e09"
+    },
+    {
+      "case": "reference-controls",
+      "sample": 2,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 47,
+      "response_count": 47,
+      "receipt_sha256": "268289b48dde644ce4d733be07c6190ca0e6b343de20b8915e9c6d8d14c45930",
+      "plan_sha256": "ffb30e873b6badc996f5f705bcb703319212cced035b67d1a9ebba212710127b",
+      "interfaces_sha256": "19f6d2472578d3523f011c76d3f950f6869670285d53408ebb3e7fd93213e61b",
+      "stories_sha256": "6c4873b288cf3b070af730fed29e90c6f559d3ccc99d254b0b66f5c6644b6e09"
+    },
+    {
+      "case": "household-controls",
+      "sample": 1,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 46,
+      "response_count": 46,
+      "receipt_sha256": "7a056f26ebf2fc2ce1d516722ccffb8cb00c88d118a7c6faa322dc3cefa14f4e",
+      "plan_sha256": "c887f2bb9ee55ec1927cf530f438a4ea612bbb30c992aefd4cf8afba61559e28",
+      "interfaces_sha256": "dd830cb350ebbd166e19b2e7dd08495193f18093d016f5775161eb00612f1ebd",
+      "stories_sha256": "0963af4a5b1d2737b8b36a998a9662785ad27c6fa0d0f2e3e96ab6ead417f4e8"
+    },
+    {
+      "case": "household-controls",
+      "sample": 2,
+      "native_exit": 0,
+      "status": "IDENTITY_CANDIDATE",
+      "receipt_status": "LIVE_CALLBACKS_COMPLETE",
+      "task_count": 46,
+      "response_count": 46,
+      "receipt_sha256": "a90a844e425c420e8845cbb4c08860080852c3c797d7cf28d41ccc698688214f",
+      "plan_sha256": "c887f2bb9ee55ec1927cf530f438a4ea612bbb30c992aefd4cf8afba61559e28",
+      "interfaces_sha256": "dd830cb350ebbd166e19b2e7dd08495193f18093d016f5775161eb00612f1ebd",
+      "stories_sha256": "0963af4a5b1d2737b8b36a998a9662785ad27c6fa0d0f2e3e96ab6ead417f4e8"
+    }
+  ],
+  "profile_to_plan": [
+    {
+      "case": "separate",
+      "sample": 1,
+      "profile_path": "generic-generator/profiles/mealie-identity-separate-runtime.json",
+      "profile_sha256": "44794ad2541a5da51f8b04fdf6214acc12ab640921655c86e39d6c6305ce91d7",
+      "profile_step_count": 57,
+      "plan_step_count": 57,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 20,
+        "body": 2
+      }
+    },
+    {
+      "case": "separate",
+      "sample": 2,
+      "profile_path": "generic-generator/profiles/mealie-identity-separate-runtime.json",
+      "profile_sha256": "44794ad2541a5da51f8b04fdf6214acc12ab640921655c86e39d6c6305ce91d7",
+      "profile_step_count": 57,
+      "plan_step_count": 57,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 20,
+        "body": 2
+      }
+    },
+    {
+      "case": "shared",
+      "sample": 1,
+      "profile_path": "generic-generator/profiles/mealie-identity-shared-runtime.json",
+      "profile_sha256": "24ae9a04965467f4edad3428adf41ad5f10fd87ed1f607f43e5d70e63f89ca9d",
+      "profile_step_count": 46,
+      "plan_step_count": 46,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 18,
+        "body": 2
+      }
+    },
+    {
+      "case": "shared",
+      "sample": 2,
+      "profile_path": "generic-generator/profiles/mealie-identity-shared-runtime.json",
+      "profile_sha256": "24ae9a04965467f4edad3428adf41ad5f10fd87ed1f607f43e5d70e63f89ca9d",
+      "profile_step_count": 46,
+      "plan_step_count": 46,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 18,
+        "body": 2
+      }
+    },
+    {
+      "case": "reference-controls",
+      "sample": 1,
+      "profile_path": "generic-generator/profiles/mealie-reference-controls-runtime.json",
+      "profile_sha256": "8e904d1bec6d405283d66193e4d7f4f4b6028fc1bc29ce566420df034f325ee0",
+      "profile_step_count": 47,
+      "plan_step_count": 47,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 18,
+        "body": 2
+      }
+    },
+    {
+      "case": "reference-controls",
+      "sample": 2,
+      "profile_path": "generic-generator/profiles/mealie-reference-controls-runtime.json",
+      "profile_sha256": "8e904d1bec6d405283d66193e4d7f4f4b6028fc1bc29ce566420df034f325ee0",
+      "profile_step_count": 47,
+      "plan_step_count": 47,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 18,
+        "body": 2
+      }
+    },
+    {
+      "case": "household-controls",
+      "sample": 1,
+      "profile_path": "generic-generator/profiles/mealie-household-controls-runtime.json",
+      "profile_sha256": "2d65855fe79f9266fb2ee4225dbc0cfdcedbd34c85e0c9d456d6462c41fb70fb",
+      "profile_step_count": 46,
+      "plan_step_count": 46,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 17,
+        "body": 2
+      }
+    },
+    {
+      "case": "household-controls",
+      "sample": 2,
+      "profile_path": "generic-generator/profiles/mealie-household-controls-runtime.json",
+      "profile_sha256": "2d65855fe79f9266fb2ee4225dbc0cfdcedbd34c85e0c9d456d6462c41fb70fb",
+      "profile_step_count": 46,
+      "plan_step_count": 46,
+      "same_ordered_step_ids": true,
+      "same_check_declarations": true,
+      "differing_step_fields": {
+        "request_schema": 17,
+        "body": 2
+      }
+    }
+  ],
+  "source_comparisons": [
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/profiles/mealie-identity-separate-runtime.json",
+      "snapshot_sha256": "44794ad2541a5da51f8b04fdf6214acc12ab640921655c86e39d6c6305ce91d7",
+      "git_sha256": "44794ad2541a5da51f8b04fdf6214acc12ab640921655c86e39d6c6305ce91d7",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/generator_v56/render/identity_program.py",
+      "snapshot_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "git_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/tools/run_identity_campaign.py",
+      "snapshot_sha256": "034943de9f6d04f204f7a9554b8f3ed93efa16feb2b03271e19a0544942b2642",
+      "git_sha256": "034943de9f6d04f204f7a9554b8f3ed93efa16feb2b03271e19a0544942b2642",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/profiles/mealie-identity-shared-runtime.json",
+      "snapshot_sha256": "24ae9a04965467f4edad3428adf41ad5f10fd87ed1f607f43e5d70e63f89ca9d",
+      "git_sha256": "24ae9a04965467f4edad3428adf41ad5f10fd87ed1f607f43e5d70e63f89ca9d",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/generator_v56/render/identity_program.py",
+      "snapshot_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "git_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "f1f29cf5dad0991faa677d0cc98481f56ef5de28",
+      "path": "generic-generator/tools/run_identity_campaign.py",
+      "snapshot_sha256": "034943de9f6d04f204f7a9554b8f3ed93efa16feb2b03271e19a0544942b2642",
+      "git_sha256": "034943de9f6d04f204f7a9554b8f3ed93efa16feb2b03271e19a0544942b2642",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/profiles/mealie-reference-controls-runtime.json",
+      "snapshot_sha256": "8e904d1bec6d405283d66193e4d7f4f4b6028fc1bc29ce566420df034f325ee0",
+      "git_sha256": "8e904d1bec6d405283d66193e4d7f4f4b6028fc1bc29ce566420df034f325ee0",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/generator_v56/render/identity_program.py",
+      "snapshot_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "git_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/tools/run_scope_controls.py",
+      "snapshot_sha256": "9ed854bd57b1994e2bcc107a75809443817475899a3e8f7854cdd802e110662f",
+      "git_sha256": "9ed854bd57b1994e2bcc107a75809443817475899a3e8f7854cdd802e110662f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/profiles/mealie-household-controls-runtime.json",
+      "snapshot_sha256": "2d65855fe79f9266fb2ee4225dbc0cfdcedbd34c85e0c9d456d6462c41fb70fb",
+      "git_sha256": "2d65855fe79f9266fb2ee4225dbc0cfdcedbd34c85e0c9d456d6462c41fb70fb",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/generator_v56/render/identity_program.py",
+      "snapshot_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "git_sha256": "6d299ef87fcdc5037051591d49c8e37f4a5ad5ed83f6e9d9d600ffb33fc33a1f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    },
+    {
+      "commit": "81d332221c3f567044c9a15f85297cb064b08f69",
+      "path": "generic-generator/tools/run_scope_controls.py",
+      "snapshot_sha256": "9ed854bd57b1994e2bcc107a75809443817475899a3e8f7854cdd802e110662f",
+      "git_sha256": "9ed854bd57b1994e2bcc107a75809443817475899a3e8f7854cdd802e110662f",
+      "bytes_identical": true,
+      "text_identical_after_line_endings": true
+    }
+  ],
+  "findings": {
+    "original_execution_automation_supported": true,
+    "original_program_intent_explicit_in_profiles": true,
+    "openapi_only_semantic_discovery_established": false,
+    "invalid_JS_in_completed_original_runs_supported": false,
+    "later_JS_historical_generator_equivalence_established": false
+  }
+}

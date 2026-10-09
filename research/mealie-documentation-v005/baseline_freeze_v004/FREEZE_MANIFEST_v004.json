@@ -1,0 +1,13 @@
+{
+  "version": "v004",
+  "sha256": {
+    "ADAPTER_INPUT_SCHEMA_v004.json": "bd9700721b653bec800b182f57cf591ecc3f72b3faac23b8f2cd36168f8400fa",
+    "BASELINE_v004.json": "871f5e97ad7b3a6d293d3fd99396ef03fe77b6d1fd1fb447b362371549ed473c",
+    "FREEZE_REPORT_v004.md": "3aeb7bc87b659b1eb58382085d9a7930814701944ab947584a70d453c0a40ddc",
+    "INPUTS_AND_SEMANTICS_v004.json": "60dc91fb9babc08c40ae93cdccbeea4bdef944dde1a9e2f4c1dd00ca38bdc507",
+    "README_v004.md": "6f9facb7ee47eb6eb9f29bbeb0cb2ed9dd7207365499344371acde46d9f5e50c",
+    "SOURCE_INVENTORY_v004.json": "da5f15028742a1f76f707771b42eacd332fc1b12bc2a55c5413c425dd63419da",
+    "VALIDATION_v004.json": "f404cdcac432b0e5963384a71e477f800c658a0a2c6d117e98950355596172ff",
+    "Verify-Freeze-v004.py": "42554b925e9e96d1901b82a39d9eacf1e4df8ecbddfc2e9a64181e4c6e790b2c"
+  }
+}
